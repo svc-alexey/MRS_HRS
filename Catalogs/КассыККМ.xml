@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Catalog uuid="b14e0a53-7abb-424f-80d1-c566a0d8bca3">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.КассыККМ" category="Object">
+				<xr:TypeId>7d345830-79fa-4d8e-add1-9d6e622a92f1</xr:TypeId>
+				<xr:ValueId>41bb6a22-191c-401d-b167-13ed84b83d93</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.КассыККМ" category="Ref">
+				<xr:TypeId>77494b65-bc4c-4caa-b69b-00428e7f8fb2</xr:TypeId>
+				<xr:ValueId>e9841450-9eb0-4496-9e54-7fe1b4fe70ff</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.КассыККМ" category="Selection">
+				<xr:TypeId>eb7814da-d8a3-455e-b9b7-7327f83ed0b6</xr:TypeId>
+				<xr:ValueId>ed1f7e80-4afd-42d0-8475-1d54f963b36b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.КассыККМ" category="List">
+				<xr:TypeId>35c05b94-2c85-4ba3-8988-872ba5f82ca0</xr:TypeId>
+				<xr:ValueId>ceae09a5-c12b-4412-a86f-5a6a34cbbb50</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.КассыККМ" category="Manager">
+				<xr:TypeId>b6dbba5e-7761-4056-bdac-7d726dd237f2</xr:TypeId>
+				<xr:ValueId>f2fa1feb-c794-49a7-b4a0-78006fd7b028</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>КассыККМ</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>621cbef7-183d-4756-9863-460a19e5ff97</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="867cc7e6-661d-45f9-a82e-46be9264990b">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Склад</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>eef7300e-6b10-45a4-98e4-218c257542e9</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="6d822d8e-923a-4608-875b-3c70f74740ef">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Подразделение</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>28c359ff-dff2-42c0-8ff1-00147da35487</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="3d4239fa-4cb0-49e5-9f3d-e2e7fd8889ab">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ПЛ_РазрешитьПродажуПоНулевойЦене</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>3bf7ec4c-bdcf-4437-aa8e-8dbe14f88a50</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="817804c8-96b8-40f3-a0aa-cb5423283819">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>питКассовыйУзел</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>6302d39b-1187-42ef-8207-e116f553e6a3</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<TabularSection uuid="cba69019-edf2-49a5-a4b1-6d81a23ce4f6">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.КассыККМ.ДополнительныеРеквизиты" category="TabularSection">
+						<xr:TypeId>2829f064-63b5-4926-bd6a-a91ffc925bde</xr:TypeId>
+						<xr:ValueId>f1c6d093-37e9-46ab-9120-3799b5f4aa09</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.КассыККМ.ДополнительныеРеквизиты" category="TabularSectionRow">
+						<xr:TypeId>11545c8a-8162-49ca-a484-da7f3f9faab0</xr:TypeId>
+						<xr:ValueId>bb975490-2d0e-4a21-84a6-984dd0782585</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДополнительныеРеквизиты</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>813f268d-c513-4443-a134-a2081834ad09</ExtendedConfigurationObject>
+				</Properties>
+				<ChildObjects/>
+			</TabularSection>
+			<Form>ФормаЭлемента</Form>
+			<Form>ФормаСписка</Form>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>

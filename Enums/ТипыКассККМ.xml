@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Enum uuid="c697b921-032f-4ed4-99d4-8fcf2f4b562b">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ТипыКассККМ" category="Ref">
+				<xr:TypeId>6e41232d-591e-47af-834f-084616acc070</xr:TypeId>
+				<xr:ValueId>e219666a-00b7-46b0-a7d8-10fc3898163a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ТипыКассККМ" category="Manager">
+				<xr:TypeId>8ad6a11a-d0bf-4af9-b215-0b691cc084e3</xr:TypeId>
+				<xr:ValueId>88e2089b-97c9-4c2e-8caf-7ee7f9e5641d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ТипыКассККМ" category="List">
+				<xr:TypeId>35256be4-4c8f-48c9-96a5-1b1720aa4cae</xr:TypeId>
+				<xr:ValueId>8436bb6a-833e-4efc-93b3-6edeac4c7418</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ТипыКассККМ</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>0b05aed8-fa7c-4007-8440-588c8264cdf3</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="6b6e12bb-47ae-4faf-aad9-aa7395a57dc0">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ФискальныйРегистратор</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>1645e9aa-84dc-4cc0-8254-c55a54cd13a9</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="49010fd4-30d8-450e-bd99-2a4f76097e58">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>АвтономнаяККМ</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>cda1af7f-a79b-4660-ba19-734ff8c9744c</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Catalog uuid="63d8b9f1-1e6d-40e1-86df-6ed871bcfea1">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.питВидыМеню" category="Object">
+				<xr:TypeId>ce8e18c5-d2e9-4615-a634-057b20eae889</xr:TypeId>
+				<xr:ValueId>2c11675d-a821-43a0-bd26-8cf5d6199b57</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.питВидыМеню" category="Ref">
+				<xr:TypeId>47fee87e-5f79-4c00-bd76-9087ce4c8859</xr:TypeId>
+				<xr:ValueId>2ee27947-318b-41f3-876f-0a03dfce0505</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.питВидыМеню" category="Selection">
+				<xr:TypeId>a1babfb9-5e2b-495b-bc75-7498cd388f04</xr:TypeId>
+				<xr:ValueId>b3538b2c-9478-4499-9593-018d52053d48</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.питВидыМеню" category="List">
+				<xr:TypeId>a5016ffc-db99-4539-a1ba-f6798b12fabf</xr:TypeId>
+				<xr:ValueId>f269d699-7f21-4d2c-b612-2ac563f03ccc</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.питВидыМеню" category="Manager">
+				<xr:TypeId>4e739911-4011-4b00-bdbc-34c358e91ccf</xr:TypeId>
+				<xr:ValueId>59ad8efa-b9a0-4294-903a-518acaca9443</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>питВидыМеню</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>48972019-e89c-465e-ab19-67f1bd9f5a36</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="1c2b94d9-0715-48e3-aa94-03a530472bf3">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ФлагУникальности</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>39119e0c-aa38-4957-b360-27896129c00d</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="52636748-1b8d-4642-b2a2-5c7d47d50861">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаНачалаДействия</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>d452191e-c8c1-4239-87e1-6efdd89089bb</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="f56e9b20-840a-45cb-9928-123389f38b35">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаОкончанияДействия</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>3f1233ea-4cfb-4366-8bdf-3f55e911d64c</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="add0114c-f449-49f3-9242-030b5b523bd9">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВремяНачалаДействия</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>5d1b7895-6d99-4195-af46-9fd44e1047e5</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Time</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="3f79f30b-a8dc-410a-8b0e-30d0544b86c7">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВремяОкончанияДействия</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>b51975b2-e3ea-4b79-ad4a-78a5d2080039</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Time</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="c0b95988-1bd5-4aef-be8d-67d98b4f7a76">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДниНедели</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>2d94a033-ac8b-4f76-a48c-e2146b5539c3</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>7</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<TabularSection uuid="c9953051-e104-4614-a0ee-971bd384a049">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.питВидыМеню.ДополнительныеРеквизиты" category="TabularSection">
+						<xr:TypeId>f01ea24d-2403-44e4-9207-a662b5359e9a</xr:TypeId>
+						<xr:ValueId>70e8cd7d-7fc6-48ff-be73-207c32523f24</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.питВидыМеню.ДополнительныеРеквизиты" category="TabularSectionRow">
+						<xr:TypeId>2e404788-f191-49be-bd04-7b33c605bd93</xr:TypeId>
+						<xr:ValueId>5951cd09-c74a-44c6-b220-ce53cce8727e</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДополнительныеРеквизиты</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>0fdfe15e-0b99-4ea7-a1ba-0970efa46f71</ExtendedConfigurationObject>
+				</Properties>
+				<ChildObjects/>
+			</TabularSection>
+			<Form>ФормаЭлемента</Form>
+			<Form>ФормаСписка</Form>
+			<Form>ФормаГруппы</Form>
+			<Form>ФормаВыбора</Form>
+			<Form>ФормаВыбораГруппы</Form>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>

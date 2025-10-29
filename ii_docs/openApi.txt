@@ -1,0 +1,1656 @@
+openapi: 3.0.3
+info:
+  title: HRS Simphony items synchronise
+  version: 1.0.0
+  description: API для создания элементов меню с отслеживанием статуса синхронизации.
+  contact:
+    name: Артем Брюховецкий
+    url: https://about:blank
+    email: artem.bryuhovetskiy@mriyaresort.com
+
+paths:
+  /health:
+    get:
+      summary: Проверка состояния сервиса
+      operationId: healthCheck
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Сервис работает нормально
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+              examples:
+                healthy_service:
+                  summary: Здоровый сервис со всеми компонентами
+                  value:
+                    status: "healthy"
+                    uptime_sec: 3600
+                    database:
+                      connected: true
+                      status: "healthy"
+                      total_connections: 10
+                      active_connections: 2
+                      available_connections: 8
+                    menu_service:
+                      initialized: true
+                      cache_items: 150
+                      major_groups: 145
+                degraded_service:
+                  summary: Деградированный сервис с проблемами БД
+                  value:
+                    status: "healthy"
+                    uptime_sec: 1800
+                    database:
+                      connected: false
+                      status: "degraded"
+                      total_connections: 0
+                      active_connections: 0
+                      available_connections: 0
+                      last_error: "Connection timeout"
+                    menu_service:
+                      initialized: true
+                      cache_items: 0
+                      major_groups: 0
+                uninitialized_service:
+                  summary: Сервис с неинициализированными компонентами
+                  value:
+                    status: "healthy"
+                    uptime_sec: 30
+                    database:
+                      connected: false
+                      status: "not_initialized"
+                    menu_service:
+                      initialized: false
+        '500':
+          description: Внутренняя ошибка при проверке состояния
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 5050
+                message: "Internal server error"
+                service: "hrs-simphony-sync"
+                operation: "healthCheck"
+                product: "HRS"
+
+  /menu-item:
+    put:
+      summary: Создать новый элемент меню
+      operationId: createMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - in: header
+          name: X-User-Id
+          schema:
+            type: string
+          description: Идентификатор пользователя (опционально)
+        - in: header
+          name: X-Correlation-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор транзакции запроса
+        - in: header
+          name: X-Request-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор запроса
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MenuItemRequest'
+            examples:
+              food_item:
+                summary: Позиция еды
+                value:
+                  name: "Пицца Маргарита"
+                  stringNumberId: 14
+                  majGrpObjNum: 1000001
+                  famGrpObjNum: 100
+                  isVisible: 1
+                  hierStrucId: 3
+                  menuItemClass: 1001
+                  price: 350.00
+              alcohol_beverage:
+                summary: Алкогольный напиток
+                value:
+                  name: "Шампанское Дом Периньон"
+                  stringNumberId: 15
+                  majGrpObjNum: 2000005
+                  famGrpObjNum: 200
+                  isVisible: 1
+                  hierStrucId: 3
+                  menuItemClass: 1002
+                  price: 15000.00
+              non_alcohol_beverage:
+                summary: Безалкогольный напиток
+                value:
+                  name: "Кока-Кола 0.33"
+                  stringNumberId: 16
+                  majGrpObjNum: 3000010
+                  famGrpObjNum: 300
+                  isVisible: 1
+                  hierStrucId: 3
+                  menuItemClass: 1003
+                  price: 120.00
+      responses:
+        '200':
+          description: Элемент меню успешно создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemResponse'
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                invalid_request:
+                  summary: Некорректные параметры запроса
+                  value:
+                    code: 10000
+                    message: "Invalid input parameters"
+                    service: "hrs-simphony-sync"
+                    operation: "CreateMenuItem"
+                    product: "HRS"
+                string_number_id_not_unique:
+                  summary: Не уникальный stringNumberId
+                  value:
+                    code: 100001
+                    message: "StringNumberId already exists"
+                    service: "hrs-simphony-sync"
+                    operation: "CreateMenuItem"
+                    product: "HRS"
+                invalid_maj_grp_range:
+                  summary: Некорректный диапазон MajGrpObjNum
+                  value:
+                    code: 100002
+                    message: "MajGrpObjNum must be in valid range (1000000-1999999 FOOD, 2000000-2999999 ALC BEVERAGE, 3000000-3999999 N/ALC BEVERAGE, 4000000+ OTHER)"
+                    service: "hrs-simphony-sync"
+                    operation: "CreateMenuItem"
+                    product: "HRS"
+                missing_headers:
+                  summary: Отсутствуют обязательные заголовки
+                  value:
+                    code: 10003
+                    message: "Missing X-Correlation-Id header"
+                    service: "hrs-simphony-sync"
+                    operation: "ValidateHeaders"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 5050
+                message: "Internal server error"
+                service: "hrs-simphony-sync"
+                operation: "CreateMenuItem"
+                product: "HRS"
+
+  /menu-items:
+    post:
+      summary: Создать несколько элементов меню
+      operationId: createMenuItemsBulk
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkMenuItemRequest'
+            examples:
+              bulk_food_items:
+                summary: Несколько позиций еды
+                value:
+                  hierStrucId: 3
+                  items:
+                    - name: "Пицца Пепперони"
+                      stringNumberId: 17
+                      majGrpObjNum: 1000001
+                      famGrpObjNum: 100
+                      isVisible: 1
+                      menuItemClass: 1001
+                      price: 400.00
+                      fileNum: 11
+                    - name: "Салат Цезарь"
+                      stringNumberId: 18
+                      majGrpObjNum: 1000002
+                      famGrpObjNum: 101
+                      isVisible: 1
+                      menuItemClass: 1001
+                      price: 250.00
+                      fileNum: 12
+              bulk_beverages:
+                summary: Несколько напитков
+                value:
+                  hierStrucId: 3
+                  items:
+                    - name: "Вино Красное"
+                      stringNumberId: 19
+                      majGrpObjNum: 2000001
+                      famGrpObjNum: 200
+                      isVisible: 1
+                      menuItemClass: 1002
+                      price: 500.00
+                      fileNum: 6
+                    - name: "Сок Апельсиновый"
+                      stringNumberId: 20
+                      majGrpObjNum: 3000001
+                      famGrpObjNum: 300
+                      isVisible: 1
+                      menuItemClass: 1003
+                      price: 150.00
+                      fileNum: 16
+      responses:
+        '200':
+          description: Элементы меню успешно созданы
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkMenuItemResponse'
+              examples:
+                bulk_success:
+                  summary: Успешное создание нескольких элементов
+                  value:
+                    success: true
+                    created_items:
+                      - name: "Пицца Пепперони"
+                        stringNumberId: 17
+                        majGrpObjNum: 1000001
+                        famGrpObjNum: 100
+                        isVisible: 1
+                        hierStrucId: 3
+                        menuItemClass: 1001
+                        price: 400.00
+                        fileNum: 11
+                        created: "2024-03-15T10:30:00Z"
+                        success: true
+                      - name: "Салат Цезарь"
+                        stringNumberId: 18
+                        majGrpObjNum: 1000002
+                        famGrpObjNum: 101
+                        isVisible: 1
+                        hierStrucId: 3
+                        menuItemClass: 1001
+                        price: 250.00
+                        fileNum: 12
+                        created: "2024-03-15T10:30:00Z"
+                        success: true
+                    total_created: 2
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                invalid_bulk_request:
+                  summary: Некорректные параметры bulk запроса
+                  value:
+                    code: 10001
+                    message: "Invalid bulk input parameters"
+                    service: "hrs-simphony-sync"
+                    operation: "createMenuItemsBulk"
+                    product: "HRS"
+                duplicate_string_number_ids:
+                  summary: Дублирующиеся stringNumberId в bulk
+                  value:
+                    code: 10002
+                    message: "Duplicate stringNumberId in bulk request"
+                    service: "hrs-simphony-sync"
+                    operation: "createMenuItemsBulk"
+                    product: "HRS"
+                invalid_hier_struc_id:
+                  summary: Некорректный hierStrucId
+                  value:
+                    code: 10003
+                    message: "Invalid hierStrucId"
+                    service: "hrs-simphony-sync"
+                    operation: "createMenuItemsBulk"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 5050
+                message: "Internal server error"
+                service: "hrs-simphony-sync"
+                operation: "createMenuItemsBulk"
+                product: "HRS"
+
+  /master-record/menu-item:
+    get:
+      summary: Получить мастер-позицию в меню
+      operationId: getMasterMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: query
+          name: stringNumberId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Уникальный номер позиции (идентификатор)
+      responses:
+        '200':
+          description: Мастер-позиция меню успешно получена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemResponse'
+              examples:
+                master_item:
+                  summary: Пример мастер-позиции
+                  value:
+                    name: "Пицца Маргарита"
+                    stringNumberId: 14
+                    majGrpObjNum: 1000001
+                    famGrpObjNum: 100
+                    isVisible: 1
+                    hierStrucId: 3
+                    menuItemClass: 1001
+                    price: 350.00
+                    fileNum: 10
+                    created: "2024-03-15T10:30:00Z"
+                    success: true
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                invalid_string_number_id:
+                  summary: Некорректный stringNumberId
+                  value:
+                    code: 10004
+                    message: "Invalid stringNumberId"
+                    service: "hrs-simphony-sync"
+                    operation: "getMasterMenuItem"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 5050
+                message: "Internal server error"
+                service: "hrs-simphony-sync"
+                operation: "getMasterMenuItem"
+                product: "HRS"
+
+  /rvc-menu/menu-item:
+    get:
+      summary: Получить позицию из меню аутлета
+      operationId: getRvcMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: query
+          name: stringNumberId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Уникальный номер позиции (идентификатор)
+        - in: query
+          name: hierStrucId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: ID аутлета
+      responses:
+        '200':
+          description: Позиция меню аутлета успешно получена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemResponse'
+              examples:
+                rvc_item:
+                  summary: Пример позиции в аутлете
+                  value:
+                    name: "Пицца Маргарита"
+                    stringNumberId: 14
+                    majGrpObjNum: 1000001
+                    famGrpObjNum: 100
+                    isVisible: 1
+                    hierStrucId: 3
+                    menuItemClass: 1001
+                    price: 350.00
+                    fileNum: 10
+                    created: "2024-03-15T10:30:00Z"
+                    success: true
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                invalid_params:
+                  summary: Некорректные параметры
+                  value:
+                    code: 10006
+                    message: "Invalid input parameters"
+                    service: "hrs-simphony-sync"
+                    operation: "getRvcMenuItem"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 5050
+                message: "Internal server error"
+                service: "hrs-simphony-sync"
+                operation: "getRvcMenuItem"
+                product: "HRS"
+
+  /menu-item/{stringNumberId}:
+    delete:
+      summary: Удалить позицию меню
+      operationId: deleteMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: path
+          name: stringNumberId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Уникальный номер позиции для удаления
+      responses:
+        '200':
+          description: Позиция меню успешно удалена
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - success
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+              examples:
+                delete_success:
+                  summary: Успешное удаление
+                  value:
+                    success: true
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                invalid_string_number_id:
+                  summary: Некорректный stringNumberId
+                  value:
+                    code: 10008
+                    message: "Invalid stringNumberId"
+                    service: "hrs-simphony-sync"
+                    operation: "deleteMenuItem"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 5050
+                message: "Internal server error"
+                service: "hrs-simphony-sync"
+                operation: "deleteMenuItem"
+                product: "HRS"
+
+  /referencedata/rvc-hierarchy:
+    get:
+      summary: Получить иерархическую структуру RVC подразделений
+      operationId: getRvcHierarchy
+      tags:
+        - RVC
+        - Reference Data
+      parameters:
+        - in: header
+          name: X-User-Id
+          schema:
+            type: string
+          description: Идентификатор пользователя (опционально)
+        - in: header
+          name: X-Correlation-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор транзакции запроса
+        - in: header
+          name: X-Request-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор запроса
+      responses:
+        '200':
+          description: Успешное получение иерархической структуры RVC
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RvcHierarchyResponse'
+              examples:
+                hierarchy_response:
+                  summary: Пример иерархической структуры RVC
+                  value:
+                    data:
+                      - rvc_id: "001"
+                        hierunitid: 1
+                        rvc_name: "Головной офис"
+                      - rvc_id: "001.001"
+                        hierunitid: 2
+                        rvc_name: "Департамент продаж"
+                      - rvc_id: "001.002"
+                        hierunitid: 3
+                        rvc_name: "Финансовый департамент"
+                      - rvc_id: "001.002.001"
+                        hierunitid: 4
+                        rvc_name: "Отдел бухгалтерии"
+                    total_count: 4
+                    success: true
+                empty_hierarchy:
+                  summary: Пустая иерархия
+                  value:
+                    data: []
+                    total_count: 0
+                    success: true
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                missing_headers:
+                  summary: Отсутствуют обязательные заголовки
+                  value:
+                    code: 10003
+                    message: "Missing X-Correlation-Id header"
+                    service: "hrs-simphony-sync"
+                    operation: "GetRvcHierarchy"
+                    product: "HRS"
+                invalid_correlation_id:
+                  summary: Некорректный формат Correlation-Id
+                  value:
+                    code: 10004
+                    message: "Invalid X-Correlation-Id format"
+                    service: "hrs-simphony-sync"
+                    operation: "ValidateHeaders"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                database_error:
+                  summary: Ошибка подключения к базе данных
+                  value:
+                    code: 5001
+                    message: "Database connection failed"
+                    service: "hrs-simphony-sync"
+                    operation: "GetRvcHierarchy"
+                    product: "HRS"
+                    cause:
+                      error_type: "DATABASE_CONNECTION"
+                      details: "Connection timeout after 30 seconds"
+                query_error:
+                  summary: Ошибка выполнения SQL запроса
+                  value:
+                    code: 5002
+                    message: "SQL query execution failed"
+                    service: "hrs-simphony-sync"
+                    operation: "GetRvcHierarchy"
+                    product: "HRS"
+                    cause:
+                      error_type: "SQL_EXECUTION"
+                      query: "SELECT hu1.objectnumber AS RVC_ID..."
+                      details: "ORA-00942: table or view does not exist"
+                general_error:
+                  summary: Общая внутренняя ошибка
+                  value:
+                    code: 5050
+                    message: "Internal server error"
+                    service: "hrs-simphony-sync"
+                    operation: "GetRvcHierarchy"
+                    product: "HRS"
+
+  /referencedata/family-groups:
+    get:
+      summary: Получить справочник семейных групп (Family Groups)
+      operationId: getFamilyGroups
+      tags:
+        - Reference Data
+      parameters:
+        - in: header
+          name: X-User-Id
+          schema:
+            type: string
+          description: Идентификатор пользователя (опционально)
+        - in: header
+          name: X-Correlation-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор транзакции запроса
+        - in: header
+          name: X-Request-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор запроса
+      responses:
+        '200':
+          description: Успешное получение справочника семейных групп
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FamilyGroupResponse'
+              examples:
+                family_groups_response:
+                  summary: Пример справочника семейных групп
+                  value:
+                    data:
+                      - object_number: 100
+                        name: "Горячие блюда основные"
+                      - object_number: 101
+                        name: "Горячие блюда гарниры"
+                      - object_number: 200
+                        name: "Вина красные сухие"
+                      - object_number: 201
+                        name: "Вина красные полусухие"
+                      - object_number: 300
+                        name: "Безалкогольные газированные"
+                      - object_number: 301
+                        name: "Безалкогольные соки"
+                    total_count: 6
+                    success: true
+                empty_groups:
+                  summary: Пустой справочник
+                  value:
+                    data: []
+                    total_count: 0
+                    success: true
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                missing_headers:
+                  summary: Отсутствуют обязательные заголовки
+                  value:
+                    code: 10003
+                    message: "Missing X-Correlation-Id header"
+                    service: "hrs-simphony-sync"
+                    operation: "GetFamilyGroups"
+                    product: "HRS"
+                invalid_correlation_id:
+                  summary: Некорректный формат Correlation-Id
+                  value:
+                    code: 10004
+                    message: "Invalid X-Correlation-Id format"
+                    service: "hrs-simphony-sync"
+                    operation: "ValidateHeaders"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                database_error:
+                  summary: Ошибка подключения к базе данных
+                  value:
+                    code: 5001
+                    message: "Database connection failed"
+                    service: "hrs-simphony-sync"
+                    operation: "GetFamilyGroups"
+                    product: "HRS"
+                    cause:
+                      error_type: "DATABASE_CONNECTION"
+                      details: "Connection timeout after 30 seconds"
+                query_error:
+                  summary: Ошибка выполнения SQL запроса
+                  value:
+                    code: 5002
+                    message: "SQL query execution failed"
+                    service: "hrs-simphony-sync"
+                    operation: "GetFamilyGroups"
+                    product: "HRS"
+                    cause:
+                      error_type: "SQL_EXECUTION"
+                      query: "SELECT FAMILY_GROUP.objectnumber, string_table.stringtext FROM TRANSDB.FAMILY_GROUP, TRANSDB.STRING_TABLE WHERE FAMILY_GROUP.nameid=string_table.stringnumberid"
+                      details: "ORA-00942: table or view does not exist"
+                general_error:
+                  summary: Общая внутренняя ошибка
+                  value:
+                    code: 5050
+                    message: "Internal server error"
+                    service: "hrs-simphony-sync"
+                    operation: "GetFamilyGroups"
+                    product: "HRS"
+
+  /referencedata/major-groups:
+    get:
+      summary: Получить справочник основных групп (Major Groups)
+      operationId: getMajorGroups
+      tags:
+        - Reference Data
+      parameters:
+        - in: header
+          name: X-User-Id
+          schema:
+            type: string
+          description: Идентификатор пользователя (опционально)
+        - in: header
+          name: X-Correlation-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор транзакции запроса
+        - in: header
+          name: X-Request-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор запроса
+      responses:
+        '200':
+          description: Успешное получение справочника основных групп
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MajorGroupResponse'
+              examples:
+                major_groups_response:
+                  summary: Пример справочника основных групп
+                  value:
+                    data:
+                      - object_number: 1000001
+                        name: "Горячие блюда"
+                      - object_number: 1000002
+                        name: "Холодные закуски"
+                      - object_number: 2000001
+                        name: "Вино красное"
+                      - object_number: 2000002
+                        name: "Вино белое"
+                      - object_number: 3000001
+                        name: "Безалкогольные напитки"
+                      - object_number: 3000002
+                        name: "Соки натуральные"
+                    total_count: 6
+                    success: true
+                empty_groups:
+                  summary: Пустой справочник
+                  value:
+                    data: []
+                    total_count: 0
+                    success: true
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                missing_headers:
+                  summary: Отсутствуют обязательные заголовки
+                  value:
+                    code: 10003
+                    message: "Missing X-Correlation-Id header"
+                    service: "hrs-simphony-sync"
+                    operation: "GetMajorGroups"
+                    product: "HRS"
+                invalid_correlation_id:
+                  summary: Некорректный формат Correlation-Id
+                  value:
+                    code: 10004
+                    message: "Invalid X-Correlation-Id format"
+                    service: "hrs-simphony-sync"
+                    operation: "ValidateHeaders"
+                    product: "HRS"
+        '404':
+          description: Маршрут не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              example:
+                code: 404
+                message: "Route not found"
+                service: "hrs-simphony-sync"
+                operation: "Route"
+                product: "HRS"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                database_error:
+                  summary: Ошибка подключения к базе данных
+                  value:
+                    code: 5001
+                    message: "Database connection failed"
+                    service: "hrs-simphony-sync"
+                    operation: "GetMajorGroups"
+                    product: "HRS"
+                    cause:
+                      error_type: "DATABASE_CONNECTION"
+                      details: "Connection timeout after 30 seconds"
+                query_error:
+                  summary: Ошибка выполнения SQL запроса
+                  value:
+                    code: 5002
+                    message: "SQL query execution failed"
+                    service: "hrs-simphony-sync"
+                    operation: "GetMajorGroups"
+                    product: "HRS"
+                    cause:
+                      error_type: "SQL_EXECUTION"
+                      query: "SELECT REPORT_GROUP.objectnumber..."
+                      details: "ORA-00942: table or view does not exist"
+                general_error:
+                  summary: Общая внутренняя ошибка
+                  value:
+                    code: 5050
+                    message: "Internal server error"
+                    service: "hrs-simphony-sync"
+                    operation: "GetMajorGroups"
+                    product: "HRS"
+
+  /referencedata/report_group:
+    get:
+      summary: Получить справочник отчетных групп (Report Groups)
+      operationId: getReportGroups
+      tags:
+        - Reference Data
+      parameters:
+        - in: header
+          name: X-User-Id
+          schema:
+            type: string
+          description: Идентификатор пользователя (опционально)
+        - in: header
+          name: X-Correlation-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор транзакции запроса
+        - in: header
+          name: X-Request-Id
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Уникальный идентификатор запроса
+      responses:
+        '200':
+          description: Успешное получение справочника отчетных групп
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportGroupResponse'
+              examples:
+                report_groups_response:
+                  summary: Пример справочника отчетных групп
+                  value:
+                    data:
+                      - object_number: 100
+                        name: "Горячие блюда основные"
+                      - object_number: 101
+                        name: "Горячие блюда гарниры"
+                      - object_number: 200
+                        name: "Вина красные сухие"
+                      - object_number: 201
+                        name: "Вина красные полусухие"
+                    total_count: 4
+                    success: true
+                empty_groups:
+                  summary: Пустой справочник
+                  value:
+                    data: []
+                    total_count: 0
+                    success: true
+        '400':
+          description: Некорректные входные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+              examples:
+                missing_headers:
+                  summary: Отсутствуют обязательные заголовки
+                  value:
+                    code: 10003
+                    message: "Missing X-Correlation-Id header"
+                    operation: "GetReportGroups"
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+components:
+  schemas:
+    HealthStatus:
+      description: Информация о состоянии сервиса
+      type: object
+      required:
+        - status
+        - uptime_sec
+      properties:
+        status:
+          description: Общий статус сервиса
+          type: string
+          enum: ["healthy"]
+          example: "healthy"
+        uptime_sec:
+          description: Время работы сервиса в секундах
+          type: integer
+          format: int64
+          minimum: 0
+          example: 3600
+        database:
+          $ref: '#/components/schemas/DatabaseStatus'
+        menu_service:
+          $ref: '#/components/schemas/MenuServiceStatus'
+
+    DatabaseStatus:
+      description: Состояние подключения к базе данных
+      type: object
+      required:
+        - connected
+        - status
+      properties:
+        connected:
+          description: Статус подключения к БД
+          type: boolean
+          example: true
+        status:
+          description: Статус состояния БД
+          type: string
+          enum: ["healthy", "degraded", "not_initialized"]
+          example: "healthy"
+        total_connections:
+          description: Общее количество соединений в пуле
+          type: integer
+          minimum: 0
+          example: 10
+        active_connections:
+          description: Активные соединения
+          type: integer
+          minimum: 0
+          example: 2
+        available_connections:
+          description: Доступные соединения
+          type: integer
+          minimum: 0
+          example: 8
+        last_error:
+          description: Последняя ошибка БД (если есть)
+          type: string
+          example: "Connection timeout"
+
+    MenuServiceStatus:
+      description: Состояние MenuItemService
+      type: object
+      required:
+        - initialized
+      properties:
+        initialized:
+          description: Статус инициализации сервиса
+          type: boolean
+          example: true
+        cache_items:
+          description: Количество элементов в кэше
+          type: integer
+          minimum: 0
+          example: 150
+        major_groups:
+          description: Количество использованных majorGroup
+          type: integer
+          minimum: 0
+          example: 145
+        error:
+          description: Ошибка сервиса (если есть)
+          type: string
+          example: "Service initialization failed"
+
+    CommonFault:
+      description: Стандартная структура ошибки
+      required:
+        - code
+        - message
+        - service
+        - operation
+        - product
+      type: object
+      properties:
+        code:
+          description: Код ошибки
+          type: integer
+          format: int32
+          examples:
+            - 10000
+            - 100001
+            - 100002
+            - 5050
+            - 404
+        message:
+          description: Сообщение об ошибке
+          type: string
+          examples:
+            - "Invalid input parameters"
+            - "StringNumberId already exists"
+            - "MajGrpObjNum must be in valid range"
+            - "Internal server error"
+            - "Route not found"
+        service:
+          description: Сервис, в котором произошла ошибка
+          type: string
+          example: "hrs-simphony-sync"
+        operation:
+          description: Операция, во время которой произошла ошибка
+          type: string
+          examples:
+            - "CreateMenuItem"
+            - "GetRvcHierarchy"
+            - "ValidateHeaders"
+            - "healthCheck"
+        product:
+          description: Продукт, в котором произошла ошибка
+          type: string
+          example: "HRS"
+        cause:
+          description: Дополнительная информация о причине ошибки
+          type: object
+          nullable: true
+
+    MenuItemRequest:
+      description: Запрос на создание позиции меню
+      required:
+        - name
+        - stringNumberId
+        - majGrpObjNum
+        - famGrpObjNum
+        - isVisible
+        - hierStrucId
+        - menuItemClass
+        - price
+        - fileNum
+      type: object
+      properties:
+        name:
+          description: Наименование позиции меню
+          type: string
+          maxLength: 255
+          example: "Пицца Маргарита"
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          minimum: 1
+          example: 14
+        majGrpObjNum:
+          description: |
+            Значение справочника основной группы:
+            * 1000000 - 1999999 FOOD
+            * 2000000 - 2999999 ALC BEVERAGE
+            * 3000000 - 3999999 N/ALC BEVERAGE
+            * 4000000+ OTHER
+          type: integer
+          minimum: 1000000
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          minimum: 1
+          example: 100
+        isVisible:
+          description: Видимость позиции (1 - видимая, 0 - скрытая)
+          type: integer
+          enum: [0, 1]
+          example: 1
+        hierStrucId:
+          description: ID аутлета
+          type: integer
+          minimum: 1
+          example: 3
+        menuItemClass:
+          description: Категория меню
+          type: integer
+          minimum: 1
+          example: 1001
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 350.00
+        fileNum:
+          description: Позиция в меню при отображении (порядковый номер)
+          type: integer
+          minimum: 1
+          example: 10
+
+    PartialMenuItemRequest:
+      description: Частичный запрос на создание позиции меню без hierStrucId
+      required:
+        - name
+        - stringNumberId
+        - majGrpObjNum
+        - famGrpObjNum
+        - isVisible
+        - menuItemClass
+        - price
+        - fileNum
+      type: object
+      properties:
+        name:
+          description: Наименование позиции меню
+          type: string
+          maxLength: 255
+          example: "Пицца Маргарита"
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          minimum: 1
+          example: 14
+        majGrpObjNum:
+          description: |
+            Значение справочника основной группы:
+            * 1000000 - 1999999 FOOD
+            * 2000000 - 2999999 ALC BEVERAGE
+            * 3000000 - 3999999 N/ALC BEVERAGE
+            * 4000000+ OTHER
+          type: integer
+          minimum: 1000000
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          minimum: 1
+          example: 100
+        isVisible:
+          description: Видимость позиции (1 - видимая, 0 - скрытая)
+          type: integer
+          enum: [0, 1]
+          example: 1
+        menuItemClass:
+          description: Категория меню
+          type: integer
+          minimum: 1
+          example: 1001
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 350.00
+        fileNum:
+          description: Позиция в меню при отображении (порядковый номер)
+          type: integer
+          minimum: 1
+          example: 10
+
+    BulkMenuItemRequest:
+      description: Запрос на множественное создание позиций меню с общим hierStrucId
+      type: object
+      required:
+        - hierStrucId
+        - items
+      properties:
+        hierStrucId:
+          description: ID аутлета для всех позиций
+          type: integer
+          minimum: 1
+          example: 3
+        items:
+          description: Массив позиций меню
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/PartialMenuItemRequest'
+
+    MenuItemResponse:
+      description: Ответ при создании позиции меню
+      required:
+        - name
+        - stringNumberId
+        - majGrpObjNum
+        - famGrpObjNum
+        - isVisible
+        - hierStrucId
+        - menuItemClass
+        - price
+        - fileNum
+        - created
+        - success
+      type: object
+      properties:
+        name:
+          description: Наименование позиции меню
+          type: string
+          example: "Пицца Маргарита"
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          example: 14
+        majGrpObjNum:
+          description: Значение справочника основной группы
+          type: integer
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          example: 100
+        isVisible:
+          description: Видимость позиции (1 - видимая, 0 - скрытая)
+          type: integer
+          enum: [0, 1]
+          example: 1
+        hierStrucId:
+          description: ID аутлета
+          type: integer
+          example: 3
+        menuItemClass:
+          description: Категория меню
+          type: integer
+          example: 1001
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          example: 350.00
+        fileNum:
+          description: Позиция в меню при отображении
+          type: integer
+          example: 10
+        created:
+          description: Дата и время создания позиции
+          type: string
+          format: date-time
+          example: "2024-03-15T10:30:00Z"
+        success:
+          description: Статус успешного выполнения операции
+          type: boolean
+          example: true
+
+    BulkMenuItemResponse:
+      description: Ответ при множественном создании позиций меню
+      type: object
+      required:
+        - success
+        - created_items
+        - total_created
+      properties:
+        success:
+          description: Статус успешного выполнения операции
+          type: boolean
+          example: true
+        created_items:
+          description: Массив созданных позиций
+          type: array
+          items:
+            $ref: '#/components/schemas/MenuItemResponse'
+        total_created:
+          description: Общее количество созданных позиций
+          type: integer
+          minimum: 0
+          example: 2
+
+    RvcHierarchyItem:
+      description: Элемент иерархии RVC подразделений
+      required:
+        - rvc_id
+        - hierunitid
+      type: object
+      properties:
+        rvc_id:
+          description: Уникальный идентификатор RVC (Revenue Center)
+          type: string
+          example: "001.001.003"
+        hierunitid:
+          description: Внутренний идентификатор элемента иерархии
+          type: integer
+          example: 42
+        rvc_name:
+          description: Наименование подразделения RVC
+          type: string
+          nullable: true
+          example: "Отдел маркетинга"
+
+    RvcHierarchyResponse:
+      description: Ответ с иерархической структурой RVC подразделений
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов иерархии RVC
+          type: array
+          items:
+            $ref: '#/components/schemas/RvcHierarchyItem'
+        total_count:
+          description: Общее количество элементов в иерархии
+          type: integer
+          minimum: 0
+          example: 150
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    MajorGroupItem:
+      description: Элемент справочника основных групп
+      required:
+        - object_number
+        - name
+      type: object
+      properties:
+        object_number:
+          description: Уникальный номер объекта основной группы
+          type: integer
+          example: 1000001
+        name:
+          description: Наименование основной группы
+          type: string
+          nullable: true
+          example: "Горячие блюда"
+
+    MajorGroupResponse:
+      description: Ответ со справочником основных групп
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника основных групп
+          type: array
+          items:
+            $ref: '#/components/schemas/MajorGroupItem'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 45
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    FamilyGroupItem:
+      description: Элемент справочника семейных групп
+      required:
+        - object_number
+        - name
+      type: object
+      properties:
+        object_number:
+          description: Уникальный номер объекта семейной группы
+          type: integer
+          example: 100
+        name:
+          description: Наименование семейной группы
+          type: string
+          nullable: true
+          example: "Горячие блюда основные"
+
+    FamilyGroupResponse:
+      description: Ответ со справочником семейных групп
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника семейных групп
+          type: array
+          items:
+            $ref: '#/components/schemas/FamilyGroupItem'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 45
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+
+    ReportGroupItem:
+      description: Элемент справочника отчетных групп
+      required:
+        - object_number
+        - name
+      type: object
+      properties:
+        object_number:
+          description: Уникальный номер объекта отчетной группы
+          type: integer
+          example: 100
+        name:
+          description: Наименование отчетной группы
+          type: string
+          nullable: true
+          example: "Горячие блюда основные"
+
+    ReportGroupResponse:
+      description: Ответ со справочником отчетных групп
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника отчетных групп
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportGroupItem'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 45
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+  responses:
+    BadRequest:
+      description: Некорректный запрос
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CommonFault'
+
+    NotFound:
+      description: Ресурс не найден
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CommonFault'
+
+    InternalServerError:
+      description: Внутренняя ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CommonFault'
+
+  parameters:
+    XUserId:
+      in: header
+      name: X-User-Id
+      schema:
+        type: string
+      description: Идентификатор пользователя (опционально)
+
+    XCorrelationId:
+      in: header
+      name: X-Correlation-Id
+      schema:
+        type: string
+        format: uuid
+      required: true
+      description: Уникальный идентификатор транзакции запроса
+
+    XRequestId:
+      in: header
+      name: X-Request-Id
+      schema:
+        type: string
+        format: uuid
+      required: true
+      description: Уникальный идентификатор запроса

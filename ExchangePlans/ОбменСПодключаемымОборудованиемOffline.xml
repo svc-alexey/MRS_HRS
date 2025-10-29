@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<ExchangePlan uuid="1fcbf15f-55eb-4f4b-a2d4-e4ca3c4de632">
+		<InternalInfo>
+			<xr:ThisNode>b4956337-fbe1-47c1-b53d-fccb746bfe26</xr:ThisNode>
+			<xr:GeneratedType name="ExchangePlanObject.ОбменСПодключаемымОборудованиемOffline" category="Object">
+				<xr:TypeId>ff61809b-02ca-4f07-8515-081c5ee5e80d</xr:TypeId>
+				<xr:ValueId>2b34bc5f-9456-4bab-a67a-79bc241c0d96</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanRef.ОбменСПодключаемымОборудованиемOffline" category="Ref">
+				<xr:TypeId>8357f8b1-41dc-437e-803f-8d9ea301e0c3</xr:TypeId>
+				<xr:ValueId>6e029940-2a9b-48fa-9efe-a67c705ae115</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanSelection.ОбменСПодключаемымОборудованиемOffline" category="Selection">
+				<xr:TypeId>5f9d9fe5-e3b7-4317-b368-53bc82d968f6</xr:TypeId>
+				<xr:ValueId>6e8af361-e43e-4b9b-926e-d167ae97f866</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanList.ОбменСПодключаемымОборудованиемOffline" category="List">
+				<xr:TypeId>4b1c9428-0616-47dd-9736-f97f94e75438</xr:TypeId>
+				<xr:ValueId>911efca6-86f0-45d2-80f5-a37c6272bbd6</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanManager.ОбменСПодключаемымОборудованиемOffline" category="Manager">
+				<xr:TypeId>77417070-c771-4249-876a-ce5f48c7a78a</xr:TypeId>
+				<xr:ValueId>3d4b5722-86af-47b8-bc37-c07c8e683e44</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ОбменСПодключаемымОборудованиемOffline</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>ec31f361-6346-4ccc-8022-74e4b12fdc9e</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</ExchangePlan>
+</MetaDataObject>
