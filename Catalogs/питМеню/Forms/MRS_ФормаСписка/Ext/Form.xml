@@ -269,6 +269,28 @@
 					<CommandName>0</CommandName>
 					<ExtendedTooltip name="ФормаПодборExtendedTooltip" id="77"/>
 				</Button>
+				<Button name="MRS_УправлениеОчередью" id="139">
+					<Type>CommandBarButton</Type>
+					<CommandName>Catalog.питМеню.Command.MRS_УправлениеОчередьюSimphony</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Управление очередью Simphony</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="MRS_УправлениеОчередьюExtendedTooltip" id="140"/>
+				</Button>
+				<Button name="MRS_МониторингСинхронизации" id="141">
+					<Type>CommandBarButton</Type>
+					<CommandName>Catalog.питМеню.Command.MRS_МониторингСинхронизацииSimphony</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Мониторинг синхронизации</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="MRS_МониторингСинхронизацииExtendedTooltip" id="142"/>
+				</Button>
 			</ChildItems>
 		</CommandBar>
 		<UsualGroup name="ДеревоИСписок" id="1">
@@ -433,6 +455,41 @@
 							</Title>
 							<ContextMenu name="НоменклатураКонтекстноеМеню" id="57"/>
 							<ExtendedTooltip name="НоменклатураExtendedTooltip" id="84"/>
+						</LabelField>
+						<LabelField name="MRS_КартинкаСтатуса" id="130">
+							<DataPath>MRS_СтатусСинхронизацииSimphony</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>●</v8:content>
+								</v8:item>
+							</Title>
+							<Width>3</Width>
+							<HorizontalAlign>Center</HorizontalAlign>
+							<ContextMenu name="MRS_КартинкаСтатусаКонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="MRS_КартинкаСтатусаРасширеннаяПодсказка" id="132"/>
+						</LabelField>
+						<LabelField name="MRS_СтатусСинхронизацииSimphony" id="133">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус синхронизации</v8:content>
+								</v8:item>
+							</Title>
+							<Width>15</Width>
+							<ContextMenu name="MRS_СтатусСинхронизацииSimphonyКонтекстноеМеню" id="134"/>
+							<ExtendedTooltip name="MRS_СтатусСинхронизацииSimphonyРасширеннаяПодсказка" id="135"/>
+						</LabelField>
+						<LabelField name="MRS_КодSimphony" id="136">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код Simphony</v8:content>
+								</v8:item>
+							</Title>
+							<Width>12</Width>
+							<ContextMenu name="MRS_КодSimphonyКонтекстноеМеню" id="137"/>
+							<ExtendedTooltip name="MRS_КодSimphonyРасширеннаяПодсказка" id="138"/>
 						</LabelField>
 						<LabelField name="Код" id="12">
 							<ContextMenu name="КодКонтекстноеМеню" id="13"/>

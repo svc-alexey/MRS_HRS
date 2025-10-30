@@ -250,6 +250,90 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="MRS_ГруппаСинхронизацияSimphony" id="67">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Синхронизация с Simphony</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="MRS_ГруппаСинхронизацияSimphonyРасширеннаяПодсказка" id="68"/>
+			<ChildItems>
+				<UsualGroup name="MRS_ГруппаСтатусИКод" id="69">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус и код</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="MRS_ГруппаСтатусИКодРасширеннаяПодсказка" id="70"/>
+					<ChildItems>
+						<InputField name="MRS_СтатусСинхронизацииSimphony" id="71">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус синхронизации</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Текущий статус синхронизации с Simphony POS</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ReadOnly>true</ReadOnly>
+							<DataPath>Объект.MRS_СтатусСинхронизацииSimphony</DataPath>
+							<ContextMenu name="MRS_СтатусСинхронизацииSimphonyКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="MRS_СтатусСинхронизацииSimphonyРасширеннаяПодсказка" id="73"/>
+						</InputField>
+						<InputField name="MRS_КодSimphony" id="74">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код Simphony</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Уникальный код позиции в Simphony (stringNumberId)</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ReadOnly>true</ReadOnly>
+							<Width>15</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<DataPath>Объект.MRS_КодSimphony</DataPath>
+							<ContextMenu name="MRS_КодSimphonyКонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="MRS_КодSimphonyРасширеннаяПодсказка" id="76"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="MRS_ИсторияСинхронизации" id="77">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>История синхронизации →</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Открыть историю синхронизации с Simphony для этой позиции</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="MRS_ИсторияСинхронизацииКонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="MRS_ИсторияСинхронизацииРасширеннаяПодсказка" id="79"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="65">
 			<Title>
 				<v8:item>
