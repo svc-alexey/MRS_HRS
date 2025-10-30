@@ -17,134 +17,6 @@
 		<ExcludedCommand>Yes</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
-	<Attributes>
-		<Attribute name="ПериодС" id="1">
-			<Type>
-				<v8:Type>xs:dateTime</v8:Type>
-				<v8:DateQualifiers>
-					<v8:DateFractions>DateTime</v8:DateFractions>
-				</v8:DateQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ПериодПо" id="2">
-			<Type>
-				<v8:Type>xs:dateTime</v8:Type>
-				<v8:DateQualifiers>
-					<v8:DateFractions>DateTime</v8:DateFractions>
-				</v8:DateQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ПозицияМеню" id="3">
-			<Type>
-				<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ТолькоСОшибками" id="4">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ОтборСтатус" id="5">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>50</v8:Length>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ОтборОперация" id="6">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>50</v8:Length>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="СписокИстории" id="7">
-			<Type>
-				<v8:Type>cfg:ValueTable</v8:Type>
-			</Type>
-			<Columns>
-				<Column name="ДатаВремя" id="1">
-					<Type>
-						<v8:Type>xs:dateTime</v8:Type>
-						<v8:DateQualifiers>
-							<v8:DateFractions>DateTime</v8:DateFractions>
-						</v8:DateQualifiers>
-					</Type>
-				</Column>
-				<Column name="ПозицияМеню" id="2">
-					<Type>
-						<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
-					</Type>
-				</Column>
-				<Column name="Операция" id="3">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>10</v8:Length>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-				<Column name="Статус" id="4">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>20</v8:Length>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-				<Column name="HTTPСтатус" id="5">
-					<Type>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>3</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-						</v8:NumberQualifiers>
-					</Type>
-				</Column>
-				<Column name="Сообщение" id="6">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>1000</v8:Length>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-				<Column name="Пользователь" id="7">
-					<Type>
-						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
-					</Type>
-				</Column>
-				<Column name="ДлительностьМс" id="8">
-					<Type>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>10</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-						</v8:NumberQualifiers>
-					</Type>
-				</Column>
-				<Column name="УникальныйИдентификатор" id="9">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>36</v8:Length>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-			</Columns>
-		</Attribute>
-		<Attribute name="ДеталиЗапроса" id="8">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-				</v8:StringQualifiers>
-			</Type>
-			<MultiLine>true</MultiLine>
-		</Attribute>
-	</Attributes>
 	<ChildItems>
 		<UsualGroup name="ГруппаОтборы" id="1">
 			<Title>
@@ -217,6 +89,30 @@
 					<ContextMenu name="СписокИсторииКонтекстноеМеню" id="18"/>
 					<AutoCommandBar name="СписокИсторииКоманднаяПанель" id="19"/>
 					<ExtendedTooltip name="СписокИсторииРасширеннаяПодсказка" id="20"/>
+					<SearchStringAddition name="СписокИсторииСтрокаПоиска" id="36">
+						<AdditionSource>
+							<Item>СписокИстории</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокИсторииСтрокаПоискаКонтекстноеМеню" id="37"/>
+						<ExtendedTooltip name="СписокИсторииСтрокаПоискаРасширеннаяПодсказка" id="38"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокИсторииСостояниеПросмотра" id="39">
+						<AdditionSource>
+							<Item>СписокИстории</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокИсторииСостояниеПросмотраКонтекстноеМеню" id="40"/>
+						<ExtendedTooltip name="СписокИсторииСостояниеПросмотраРасширеннаяПодсказка" id="41"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокИсторииУправлениеПоиском" id="42">
+						<AdditionSource>
+							<Item>СписокИстории</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокИсторииУправлениеПоискомКонтекстноеМеню" id="43"/>
+						<ExtendedTooltip name="СписокИсторииУправлениеПоискомРасширеннаяПодсказка" id="44"/>
+					</SearchControlAddition>
 					<ChildItems>
 						<InputField name="СписокИсторииДатаВремя" id="21">
 							<DataPath>СписокИстории.ДатаВремя</DataPath>
@@ -254,10 +150,146 @@
 					<v8:content>Детали запроса</v8:content>
 				</v8:item>
 			</Title>
-			<Height>5</Height>
 			<EditMode>EnterOnInput</EditMode>
+			<Height>5</Height>
 			<ContextMenu name="ДеталиЗапросаКонтекстноеМеню" id="34"/>
 			<ExtendedTooltip name="ДеталиЗапросаРасширеннаяПодсказка" id="35"/>
 		</InputField>
 	</ChildItems>
+	<Attributes>
+		<Attribute name="ПериодС" id="1">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодПо" id="2">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПозицияМеню" id="3">
+			<Type>
+				<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоСОшибками" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборСтатус" id="5">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Fixed</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборОперация" id="6">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Fixed</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокИстории" id="7">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ДатаВремя" id="1">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПозицияМеню" id="2">
+					<Type>
+						<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Операция" id="3">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="HTTPСтатус" id="5">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>3</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сообщение" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>1000</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="7">
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДлительностьМс" id="8">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="УникальныйИдентификатор" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДеталиЗапроса" id="8">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
 </Form>

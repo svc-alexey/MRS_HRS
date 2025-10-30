@@ -28,8 +28,8 @@
 			<Name>питМеню</Name>
 			<Comment/>
 			<ExtendedConfigurationObject>cc5c5bda-89c3-44db-b6c5-c62dfeb874ec</ExtendedConfigurationObject>
-			<DefaultObjectForm>Catalog.питМеню.Form.MRS_ФормаУправленияОчередью</DefaultObjectForm>
-			<DefaultListForm>Catalog.питМеню.Form.MRS_ФормаМониторинга</DefaultListForm>
+			<DefaultObjectForm>Catalog.питМеню.Form.ФормаЭлемента</DefaultObjectForm>
+			<DefaultListForm>Catalog.питМеню.Form.ФормаСписка</DefaultListForm>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="d611af67-e78d-4882-ab71-1e6f73c54b01">

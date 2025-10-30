@@ -16,156 +16,6 @@
 		<ExcludedCommand>Yes</ExcludedCommand>
 	</CommandSet>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
-	<Attributes>
-		<Attribute name="ВОчереди" id="1">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="СОшибками" id="2">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ТребуетВнимания" id="3">
-			<Type>
-				<v8:Type>xs:decimal</v8:Type>
-				<v8:NumberQualifiers>
-					<v8:Digits>10</v8:Digits>
-					<v8:FractionDigits>0</v8:FractionDigits>
-				</v8:NumberQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ПоследняяОбработка" id="4">
-			<Type>
-				<v8:Type>xs:dateTime</v8:Type>
-				<v8:DateQualifiers>
-					<v8:DateFractions>DateTime</v8:DateFractions>
-				</v8:DateQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="СледующаяОбработка" id="5">
-			<Type>
-				<v8:Type>xs:dateTime</v8:Type>
-				<v8:DateQualifiers>
-					<v8:DateFractions>DateTime</v8:DateFractions>
-				</v8:DateQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="КассовыйУзел" id="6">
-			<Type>
-				<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ОтборПозицияМеню" id="7">
-			<Type>
-				<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ПоказыватьВОчереди" id="8">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ПоказыватьСОшибками" id="9">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ПоказыватьТребуетВнимания" id="10">
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="СписокОчереди" id="11">
-			<Type>
-				<v8:Type>cfg:ValueTable</v8:Type>
-			</Type>
-			<Columns>
-				<Column name="Выбран" id="1">
-					<Type>
-						<v8:Type>xs:boolean</v8:Type>
-					</Type>
-				</Column>
-				<Column name="ПозицияМеню" id="2">
-					<Type>
-						<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
-					</Type>
-				</Column>
-				<Column name="КассовыйУзел" id="3">
-					<Type>
-						<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
-					</Type>
-				</Column>
-				<Column name="Операция" id="4">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>10</v8:Length>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-				<Column name="Статус" id="5">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>20</v8:Length>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-				<Column name="ДатаПостановкиВОчередь" id="6">
-					<Type>
-						<v8:Type>xs:dateTime</v8:Type>
-						<v8:DateQualifiers>
-							<v8:DateFractions>DateTime</v8:DateFractions>
-						</v8:DateQualifiers>
-					</Type>
-				</Column>
-				<Column name="КоличествоПопыток" id="7">
-					<Type>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>2</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-						</v8:NumberQualifiers>
-					</Type>
-				</Column>
-				<Column name="СледующаяПопытка" id="8">
-					<Type>
-						<v8:Type>xs:dateTime</v8:Type>
-						<v8:DateQualifiers>
-							<v8:DateFractions>DateTime</v8:DateFractions>
-						</v8:DateQualifiers>
-					</Type>
-				</Column>
-				<Column name="ТекстОшибки" id="9">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>500</v8:Length>
-						</v8:StringQualifiers>
-					</Type>
-				</Column>
-			</Columns>
-		</Attribute>
-		<Attribute name="ДеталиПозиции" id="12">
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-				</v8:StringQualifiers>
-			</Type>
-			<MultiLine>true</MultiLine>
-		</Attribute>
-	</Attributes>
 	<ChildItems>
 		<UsualGroup name="ГруппаСтатистика" id="1">
 			<Title>
@@ -180,7 +30,7 @@
 			<ExtendedTooltip name="ГруппаСтатистикаРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
 				<LabelDecoration name="ДекорацияСтатистика" id="3">
-					<Title>
+					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Статистика очереди</v8:content>
@@ -191,37 +41,37 @@
 				</LabelDecoration>
 				<InputField name="ВОчереди" id="6">
 					<DataPath>ВОчереди</DataPath>
+					<ReadOnly>true</ReadOnly>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>В очереди</v8:content>
 						</v8:item>
 					</Title>
-					<ReadOnly>true</ReadOnly>
 					<ContextMenu name="ВОчередиКонтекстноеМеню" id="7"/>
 					<ExtendedTooltip name="ВОчередиРасширеннаяПодсказка" id="8"/>
 				</InputField>
 				<InputField name="СОшибками" id="9">
 					<DataPath>СОшибками</DataPath>
+					<ReadOnly>true</ReadOnly>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>С ошибками</v8:content>
 						</v8:item>
 					</Title>
-					<ReadOnly>true</ReadOnly>
 					<ContextMenu name="СОшибкамиКонтекстноеМеню" id="10"/>
 					<ExtendedTooltip name="СОшибкамиРасширеннаяПодсказка" id="11"/>
 				</InputField>
 				<InputField name="ТребуетВнимания" id="12">
 					<DataPath>ТребуетВнимания</DataPath>
+					<ReadOnly>true</ReadOnly>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Требует внимания</v8:content>
 						</v8:item>
 					</Title>
-					<ReadOnly>true</ReadOnly>
 					<ContextMenu name="ТребуетВниманияКонтекстноеМеню" id="13"/>
 					<ExtendedTooltip name="ТребуетВниманияРасширеннаяПодсказка" id="14"/>
 				</InputField>
@@ -310,6 +160,30 @@
 					<ContextMenu name="СписокОчередиКонтекстноеМеню" id="32"/>
 					<AutoCommandBar name="СписокОчередиКоманднаяПанель" id="33"/>
 					<ExtendedTooltip name="СписокОчередиРасширеннаяПодсказка" id="34"/>
+					<SearchStringAddition name="СписокОчередиСтрокаПоиска" id="53">
+						<AdditionSource>
+							<Item>СписокОчереди</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОчередиСтрокаПоискаКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="СписокОчередиСтрокаПоискаРасширеннаяПодсказка" id="55"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокОчередиСостояниеПросмотра" id="56">
+						<AdditionSource>
+							<Item>СписокОчереди</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОчередиСостояниеПросмотраКонтекстноеМеню" id="57"/>
+						<ExtendedTooltip name="СписокОчередиСостояниеПросмотраРасширеннаяПодсказка" id="58"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокОчередиУправлениеПоиском" id="59">
+						<AdditionSource>
+							<Item>СписокОчереди</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОчередиУправлениеПоискомКонтекстноеМеню" id="60"/>
+						<ExtendedTooltip name="СписокОчередиУправлениеПоискомРасширеннаяПодсказка" id="61"/>
+					</SearchControlAddition>
 					<ChildItems>
 						<CheckBoxField name="СписокОчередиВыбран" id="35">
 							<DataPath>СписокОчереди.Выбран</DataPath>
@@ -353,10 +227,167 @@
 					<v8:content>Детали позиции</v8:content>
 				</v8:item>
 			</Title>
-			<Height>5</Height>
 			<EditMode>EnterOnInput</EditMode>
+			<Height>5</Height>
 			<ContextMenu name="ДеталиПозицииКонтекстноеМеню" id="51"/>
 			<ExtendedTooltip name="ДеталиПозицииРасширеннаяПодсказка" id="52"/>
 		</InputField>
 	</ChildItems>
+	<Attributes>
+		<Attribute name="ВОчереди" id="1">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СОшибками" id="2">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТребуетВнимания" id="3">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоследняяОбработка" id="4">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СледующаяОбработка" id="5">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КассовыйУзел" id="6">
+			<Type>
+				<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПозицияМеню" id="7">
+			<Type>
+				<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьВОчереди" id="8">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьСОшибками" id="9">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьТребуетВнимания" id="10">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокОчереди" id="11">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Выбран" id="1">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПозицияМеню" id="2">
+					<Type>
+						<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КассовыйУзел" id="3">
+					<Type>
+						<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Операция" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаПостановкиВОчередь" id="6">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПопыток" id="7">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СледующаяПопытка" id="8">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТекстОшибки" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДеталиПозиции" id="12">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
 </Form>
