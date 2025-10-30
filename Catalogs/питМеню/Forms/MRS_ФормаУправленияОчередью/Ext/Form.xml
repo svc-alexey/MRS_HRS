@@ -28,12 +28,153 @@
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Attributes>
-		<Attribute name="Объект" id="1">
+		<Attribute name="ВОчереди" id="1">
 			<Type>
-				<v8:Type>cfg:CatalogObject.питМеню</v8:Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+				</v8:NumberQualifiers>
 			</Type>
-			<MainAttribute>true</MainAttribute>
-			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СОшибками" id="2">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТребуетВнимания" id="3">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоследняяОбработка" id="4">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СледующаяОбработка" id="5">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КассовыйУзел" id="6">
+			<Type>
+				<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПозицияМеню" id="7">
+			<Type>
+				<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьВОчереди" id="8">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьСОшибками" id="9">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьТребуетВнимания" id="10">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокОчереди" id="11">
+			<Type>
+				<v8:Type>cfg:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Выбран" id="1">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПозицияМеню" id="2">
+					<Type>
+						<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КассовыйУзел" id="3">
+					<Type>
+						<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Операция" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаПостановкиВОчередь" id="6">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПопыток" id="7">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СледующаяПопытка" id="8">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТекстОшибки" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДеталиПозиции" id="12">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+				</v8:StringQualifiers>
+			</Type>
+			<MultiLine>true</MultiLine>
 		</Attribute>
 	</Attributes>
 </Form>
