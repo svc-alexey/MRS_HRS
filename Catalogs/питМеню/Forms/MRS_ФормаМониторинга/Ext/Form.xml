@@ -145,4 +145,119 @@
 			<MultiLine>true</MultiLine>
 		</Attribute>
 	</Attributes>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтборы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="ПериодС" id="3">
+					<DataPath>ПериодС</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодСКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ПериодСРасширеннаяПодсказка" id="5"/>
+				</InputField>
+				<InputField name="ПериодПо" id="6">
+					<DataPath>ПериодПо</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодПоКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ПериодПоРасширеннаяПодсказка" id="8"/>
+				</InputField>
+				<InputField name="ПозицияМеню" id="9">
+					<DataPath>ПозицияМеню</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПозицияМенюКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ПозицияМенюРасширеннаяПодсказка" id="11"/>
+				</InputField>
+				<CheckBoxField name="ТолькоСОшибками" id="12">
+					<DataPath>ТолькоСОшибками</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТолькоСОшибкамиКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ТолькоСОшибкамиРасширеннаяПодсказка" id="14"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСписок" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История синхронизации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаСписокРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Table name="СписокИстории" id="17">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>СписокИстории</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СписокИсторииКонтекстноеМеню" id="18"/>
+					<AutoCommandBar name="СписокИсторииКоманднаяПанель" id="19"/>
+					<ExtendedTooltip name="СписокИсторииРасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<InputField name="СписокИсторииДатаВремя" id="21">
+							<DataPath>СписокИстории.ДатаВремя</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииДатаВремяКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="СписокИсторииДатаВремяРасширеннаяПодсказка" id="23"/>
+						</InputField>
+						<InputField name="СписокИсторииПозицияМеню" id="24">
+							<DataPath>СписокИстории.ПозицияМеню</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииПозицияМенюКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="СписокИсторииПозицияМенюРасширеннаяПодсказка" id="26"/>
+						</InputField>
+						<InputField name="СписокИсторииОперация" id="27">
+							<DataPath>СписокИстории.Операция</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииОперацияКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="СписокИсторииОперацияРасширеннаяПодсказка" id="29"/>
+						</InputField>
+						<InputField name="СписокИсторииСтатус" id="30">
+							<DataPath>СписокИстории.Статус</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииСтатусКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="СписокИсторииСтатусРасширеннаяПодсказка" id="32"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДеталиЗапроса" id="33">
+			<DataPath>ДеталиЗапроса</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детали запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Height>5</Height>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДеталиЗапросаКонтекстноеМеню" id="34"/>
+			<ExtendedTooltip name="ДеталиЗапросаРасширеннаяПодсказка" id="35"/>
+		</InputField>
+	</ChildItems>
 </Form>

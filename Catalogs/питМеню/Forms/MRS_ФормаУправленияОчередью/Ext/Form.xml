@@ -166,4 +166,197 @@
 			<MultiLine>true</MultiLine>
 		</Attribute>
 	</Attributes>
+	<ChildItems>
+		<UsualGroup name="ГруппаСтатистика" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтатистикаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияСтатистика" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статистика очереди</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияСтатистикаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ДекорацияСтатистикаРасширеннаяПодсказка" id="5"/>
+				</LabelDecoration>
+				<InputField name="ВОчереди" id="6">
+					<DataPath>ВОчереди</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В очереди</v8:content>
+						</v8:item>
+					</Title>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ВОчередиКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ВОчередиРасширеннаяПодсказка" id="8"/>
+				</InputField>
+				<InputField name="СОшибками" id="9">
+					<DataPath>СОшибками</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С ошибками</v8:content>
+						</v8:item>
+					</Title>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="СОшибкамиКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="СОшибкамиРасширеннаяПодсказка" id="11"/>
+				</InputField>
+				<InputField name="ТребуетВнимания" id="12">
+					<DataPath>ТребуетВнимания</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Требует внимания</v8:content>
+						</v8:item>
+					</Title>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ТребуетВниманияКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ТребуетВниманияРасширеннаяПодсказка" id="14"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтборы" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<InputField name="КассовыйУзел" id="17">
+					<DataPath>КассовыйУзел</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кассовый узел</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КассовыйУзелКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="КассовыйУзелРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<CheckBoxField name="ПоказыватьВОчереди" id="20">
+					<DataPath>ПоказыватьВОчереди</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать в очереди</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьВОчередиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ПоказыватьВОчередиРасширеннаяПодсказка" id="22"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПоказыватьСОшибками" id="23">
+					<DataPath>ПоказыватьСОшибками</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать с ошибками</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьСОшибкамиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ПоказыватьСОшибкамиРасширеннаяПодсказка" id="25"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПоказыватьТребуетВнимания" id="26">
+					<DataPath>ПоказыватьТребуетВнимания</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать требует внимания</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьТребуетВниманияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ПоказыватьТребуетВниманияРасширеннаяПодсказка" id="28"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСписок" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очередь выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаСписокРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<Table name="СписокОчереди" id="31">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>СписокОчереди</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СписокОчередиКонтекстноеМеню" id="32"/>
+					<AutoCommandBar name="СписокОчередиКоманднаяПанель" id="33"/>
+					<ExtendedTooltip name="СписокОчередиРасширеннаяПодсказка" id="34"/>
+					<ChildItems>
+						<CheckBoxField name="СписокОчередиВыбран" id="35">
+							<DataPath>СписокОчереди.Выбран</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СписокОчередиВыбранКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="СписокОчередиВыбранРасширеннаяПодсказка" id="37"/>
+						</CheckBoxField>
+						<InputField name="СписокОчередиПозицияМеню" id="38">
+							<DataPath>СписокОчереди.ПозицияМеню</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиПозицияМенюКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="СписокОчередиПозицияМенюРасширеннаяПодсказка" id="40"/>
+						</InputField>
+						<InputField name="СписокОчередиОперация" id="41">
+							<DataPath>СписокОчереди.Операция</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиОперацияКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="СписокОчередиОперацияРасширеннаяПодсказка" id="43"/>
+						</InputField>
+						<InputField name="СписокОчередиСтатус" id="44">
+							<DataPath>СписокОчереди.Статус</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиСтатусКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="СписокОчередиСтатусРасширеннаяПодсказка" id="46"/>
+						</InputField>
+						<InputField name="СписокОчередиКоличествоПопыток" id="47">
+							<DataPath>СписокОчереди.КоличествоПопыток</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиКоличествоПопытокКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="СписокОчередиКоличествоПопытокРасширеннаяПодсказка" id="49"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДеталиПозиции" id="50">
+			<DataPath>ДеталиПозиции</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детали позиции</v8:content>
+				</v8:item>
+			</Title>
+			<Height>5</Height>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДеталиПозицииКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ДеталиПозицииРасширеннаяПодсказка" id="52"/>
+		</InputField>
+	</ChildItems>
 </Form>
