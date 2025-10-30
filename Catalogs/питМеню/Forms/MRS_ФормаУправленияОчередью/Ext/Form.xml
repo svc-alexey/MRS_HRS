@@ -1,116 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>ChangeHistory</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>OpenFromMainServer</ExcludedCommand>
+		<ExcludedCommand>OpenFromStandaloneServer</ExcludedCommand>
+		<ExcludedCommand>Reread</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+		<ExcludedCommand>ShowInList</ExcludedCommand>
+		<ExcludedCommand>Write</ExcludedCommand>
+		<ExcludedCommand>WriteAndClose</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
-	<AutoCommandBar name="" id="-1"/>
-	<ChildItems>
-		<InputField name="Код" id="1">
-			<DataPath>Объект.Code</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
-		</InputField>
-		<InputField name="Наименование" id="4">
-			<DataPath>Объект.Description</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
-			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
-		</InputField>
-		<InputField name="Номенклатура" id="7">
-			<DataPath>Объект.Номенклатура</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="НоменклатураКонтекстноеМеню" id="8"/>
-			<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="9"/>
-		</InputField>
-		<InputField name="Рецептура" id="10">
-			<DataPath>Объект.Рецептура</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="РецептураКонтекстноеМеню" id="11"/>
-			<ExtendedTooltip name="РецептураРасширеннаяПодсказка" id="12"/>
-		</InputField>
-		<InputField name="ЕдиницаИзмерения" id="13">
-			<DataPath>Объект.ЕдиницаИзмерения</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="14"/>
-			<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="15"/>
-		</InputField>
-		<InputField name="НомерВГруппе" id="16">
-			<DataPath>Объект.НомерВГруппе</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="НомерВГруппеКонтекстноеМеню" id="17"/>
-			<ExtendedTooltip name="НомерВГруппеРасширеннаяПодсказка" id="18"/>
-		</InputField>
-		<CheckBoxField name="Выключен" id="19">
-			<DataPath>Объект.Выключен</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<CheckBoxType>Auto</CheckBoxType>
-			<ContextMenu name="ВыключенКонтекстноеМеню" id="20"/>
-			<ExtendedTooltip name="ВыключенРасширеннаяПодсказка" id="21"/>
-		</CheckBoxField>
-		<InputField name="ИмяКартинки" id="22">
-			<DataPath>Объект.ИмяКартинки</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ИмяКартинкиКонтекстноеМеню" id="23"/>
-			<ExtendedTooltip name="ИмяКартинкиРасширеннаяПодсказка" id="24"/>
-		</InputField>
-		<InputField name="ЦветФонаКнопок" id="25">
-			<DataPath>Объект.ЦветФонаКнопок</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ЦветФонаКнопокКонтекстноеМеню" id="26"/>
-			<ExtendedTooltip name="ЦветФонаКнопокРасширеннаяПодсказка" id="27"/>
-		</InputField>
-		<Table name="ДополнительныеРеквизиты" id="28">
-			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>Объект.ДополнительныеРеквизиты</DataPath>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="ДополнительныеРеквизитыКонтекстноеМеню" id="29"/>
-			<AutoCommandBar name="ДополнительныеРеквизитыКоманднаяПанель" id="30"/>
-			<ExtendedTooltip name="ДополнительныеРеквизитыРасширеннаяПодсказка" id="31"/>
-			<SearchStringAddition name="ДополнительныеРеквизитыСтрокаПоиска" id="32">
-				<AdditionSource>
-					<Item>ДополнительныеРеквизиты</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ДополнительныеРеквизитыСтрокаПоискаКонтекстноеМеню" id="33"/>
-				<ExtendedTooltip name="ДополнительныеРеквизитыСтрокаПоискаРасширеннаяПодсказка" id="34"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="ДополнительныеРеквизитыСостояниеПросмотра" id="35">
-				<AdditionSource>
-					<Item>ДополнительныеРеквизиты</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ДополнительныеРеквизитыСостояниеПросмотраКонтекстноеМеню" id="36"/>
-				<ExtendedTooltip name="ДополнительныеРеквизитыСостояниеПросмотраРасширеннаяПодсказка" id="37"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="ДополнительныеРеквизитыУправлениеПоиском" id="38">
-				<AdditionSource>
-					<Item>ДополнительныеРеквизиты</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="ДополнительныеРеквизитыУправлениеПоискомКонтекстноеМеню" id="39"/>
-				<ExtendedTooltip name="ДополнительныеРеквизитыУправлениеПоискомРасширеннаяПодсказка" id="40"/>
-			</SearchControlAddition>
-			<ChildItems>
-				<LabelField name="ДополнительныеРеквизитыНомерСтроки" id="41">
-					<DataPath>Объект.ДополнительныеРеквизиты.LineNumber</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ДополнительныеРеквизитыНомерСтрокиКонтекстноеМеню" id="42"/>
-					<ExtendedTooltip name="ДополнительныеРеквизитыНомерСтрокиРасширеннаяПодсказка" id="43"/>
-				</LabelField>
-			</ChildItems>
-		</Table>
-	</ChildItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
