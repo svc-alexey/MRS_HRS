@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаСтатистика" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статистика</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтатистикаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияСтатистика" id="3">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статистика очереди</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияСтатистикаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ДекорацияСтатистикаРасширеннаяПодсказка" id="5"/>
+				</LabelDecoration>
+				<InputField name="ВОчереди" id="6">
+					<DataPath>ВОчереди</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В очереди</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВОчередиКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ВОчередиРасширеннаяПодсказка" id="8"/>
+				</InputField>
+				<InputField name="СОшибками" id="9">
+					<DataPath>СОшибками</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С ошибками</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СОшибкамиКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="СОшибкамиРасширеннаяПодсказка" id="11"/>
+				</InputField>
+				<InputField name="ТребуетВнимания" id="12">
+					<DataPath>ТребуетВнимания</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Требует внимания</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ТребуетВниманияКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ТребуетВниманияРасширеннаяПодсказка" id="14"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтборы" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<InputField name="КассовыйУзел" id="17">
+					<DataPath>КассовыйУзел</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кассовый узел</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КассовыйУзелКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="КассовыйУзелРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<CheckBoxField name="ПоказыватьВОчереди" id="20">
+					<DataPath>ПоказыватьВОчереди</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать в очереди</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьВОчередиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ПоказыватьВОчередиРасширеннаяПодсказка" id="22"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПоказыватьСОшибками" id="23">
+					<DataPath>ПоказыватьСОшибками</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать с ошибками</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьСОшибкамиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ПоказыватьСОшибкамиРасширеннаяПодсказка" id="25"/>
+				</CheckBoxField>
+				<CheckBoxField name="ПоказыватьТребуетВнимания" id="26">
+					<DataPath>ПоказыватьТребуетВнимания</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать требует внимания</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПоказыватьТребуетВниманияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ПоказыватьТребуетВниманияРасширеннаяПодсказка" id="28"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСписок" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очередь выгрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаСписокРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<Table name="СписокОчереди" id="31">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>СписокОчереди</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СписокОчередиКонтекстноеМеню" id="32"/>
+					<AutoCommandBar name="СписокОчередиКоманднаяПанель" id="33"/>
+					<ExtendedTooltip name="СписокОчередиРасширеннаяПодсказка" id="34"/>
+					<SearchStringAddition name="СписокОчередиСтрокаПоиска" id="53">
+						<AdditionSource>
+							<Item>СписокОчереди</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОчередиСтрокаПоискаКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="СписокОчередиСтрокаПоискаРасширеннаяПодсказка" id="55"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокОчередиСостояниеПросмотра" id="56">
+						<AdditionSource>
+							<Item>СписокОчереди</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОчередиСостояниеПросмотраКонтекстноеМеню" id="57"/>
+						<ExtendedTooltip name="СписокОчередиСостояниеПросмотраРасширеннаяПодсказка" id="58"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокОчередиУправлениеПоиском" id="59">
+						<AdditionSource>
+							<Item>СписокОчереди</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокОчередиУправлениеПоискомКонтекстноеМеню" id="60"/>
+						<ExtendedTooltip name="СписокОчередиУправлениеПоискомРасширеннаяПодсказка" id="61"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<CheckBoxField name="СписокОчередиВыбран" id="35">
+							<DataPath>СписокОчереди.Выбран</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СписокОчередиВыбранКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="СписокОчередиВыбранРасширеннаяПодсказка" id="37"/>
+						</CheckBoxField>
+						<InputField name="СписокОчередиПозицияМеню" id="38">
+							<DataPath>СписокОчереди.ПозицияМеню</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиПозицияМенюКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="СписокОчередиПозицияМенюРасширеннаяПодсказка" id="40"/>
+						</InputField>
+						<InputField name="СписокОчередиОперация" id="41">
+							<DataPath>СписокОчереди.Операция</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиОперацияКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="СписокОчередиОперацияРасширеннаяПодсказка" id="43"/>
+						</InputField>
+						<InputField name="СписокОчередиСтатус" id="44">
+							<DataPath>СписокОчереди.Статус</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиСтатусКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="СписокОчередиСтатусРасширеннаяПодсказка" id="46"/>
+						</InputField>
+						<InputField name="СписокОчередиКоличествоПопыток" id="47">
+							<DataPath>СписокОчереди.КоличествоПопыток</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокОчередиКоличествоПопытокКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="СписокОчередиКоличествоПопытокРасширеннаяПодсказка" id="49"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДеталиПозиции" id="50">
+			<DataPath>ДеталиПозиции</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детали позиции</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<Height>5</Height>
+			<ContextMenu name="ДеталиПозицииКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ДеталиПозицииРасширеннаяПодсказка" id="52"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ВОчереди" id="1">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СОшибками" id="2">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТребуетВнимания" id="3">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоследняяОбработка" id="4">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СледующаяОбработка" id="5">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КассовыйУзел" id="6">
+			<Type>
+				<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборПозицияМеню" id="7">
+			<Type>
+				<v8:Type>cfg:CatalogRef.питМеню1</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьВОчереди" id="8">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьСОшибками" id="9">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьТребуетВнимания" id="10">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокОчереди" id="11">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Выбран" id="1">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПозицияМеню" id="2">
+					<Type>
+						<v8:Type>cfg:CatalogRef.питМеню1</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КассовыйУзел" id="3">
+					<Type>
+						<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Операция" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаПостановкиВОчередь" id="6">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоПопыток" id="7">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СледующаяПопытка" id="8">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТекстОшибки" id="9">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Fixed</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДеталиПозиции" id="12">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

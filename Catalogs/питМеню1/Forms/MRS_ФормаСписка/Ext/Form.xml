@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Меню (mrs)</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<GroupList>Дерево</GroupList>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="NewWriteProcessing">ОбработкаЗаписиНового</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаБыстрыеОтборы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстрые отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстрые отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаБыстрыеОтборыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<CheckBoxField name="ОтборВидПрайсЛистаИспользование" id="3">
+					<DataPath>ОтборВладелецИспользование</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид меню</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОтборВидПрайсЛистаИспользованиеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ОтборВидПрайсЛистаИспользованиеРасширеннаяПодсказка" id="5"/>
+				</CheckBoxField>
+				<InputField name="ОтборВидПрайсЛиста" id="6">
+					<DataPath>ОтборВладелец</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ОтборВидПрайсЛистаКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ОтборВидПрайсЛистаРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="OnChange">ОтборВидПрайсЛистаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаДополнительныеОтборы" id="33">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа дополнительные отборы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные отборы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДополнительныеОтборыРасширеннаяПодсказка" id="34"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ДеревоИСписок" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево и список</v8:content>
+				</v8:item>
+			</Title>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ДеревоИСписокРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Table name="Дерево" id="17">
+					<Visible>false</Visible>
+					<CommandBarLocation>None</CommandBarLocation>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<InitialTreeView>ExpandTopLevel</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Дерево</DataPath>
+					<RowPictureDataPath>Дерево.DefaultPicture</RowPictureDataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>true</ShowRoot>
+					<AllowRootChoice>true</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
+					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+					<ContextMenu name="ДеревоКонтекстноеМеню" id="18"/>
+					<AutoCommandBar name="ДеревоКоманднаяПанель" id="19"/>
+					<ExtendedTooltip name="ДеревоРасширеннаяПодсказка" id="20"/>
+					<SearchStringAddition name="ДеревоСтрокаПоиска" id="21">
+						<AdditionSource>
+							<Item>Дерево</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоСтрокаПоискаКонтекстноеМеню" id="22"/>
+						<ExtendedTooltip name="ДеревоСтрокаПоискаРасширеннаяПодсказка" id="23"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ДеревоСостояниеПросмотра" id="24">
+						<AdditionSource>
+							<Item>Дерево</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоСостояниеПросмотраКонтекстноеМеню" id="25"/>
+						<ExtendedTooltip name="ДеревоСостояниеПросмотраРасширеннаяПодсказка" id="26"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ДеревоУправлениеПоиском" id="27">
+						<AdditionSource>
+							<Item>Дерево</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоУправлениеПоискомКонтекстноеМеню" id="28"/>
+						<ExtendedTooltip name="ДеревоУправлениеПоискомРасширеннаяПодсказка" id="29"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ДеревоНаименование" id="30">
+							<DataPath>Дерево.Description</DataPath>
+							<ContextMenu name="ДеревоНаименованиеКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="ДеревоНаименованиеРасширеннаяПодсказка" id="32"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+				<Table name="Список" id="35">
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Список</DataPath>
+					<RowPictureDataPath>~Список.ПозицияМеню</RowPictureDataPath>
+					<RowsPicture>
+						<xr:Ref>CommonPicture.КоллекцияШаровБЭД</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</RowsPicture>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>false</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
+					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+					<ContextMenu name="СписокКонтекстноеМеню" id="36">
+						<ChildItems>
+							<Button name="СписокКонтекстноеМенюУдалитьМеню" id="84">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УдалитьМеню</CommandName>
+								<ExtendedTooltip name="СписокКонтекстноеМенюУдалитьМенюРасширеннаяПодсказка" id="85"/>
+							</Button>
+						</ChildItems>
+					</ContextMenu>
+					<AutoCommandBar name="СписокКоманднаяПанель" id="37">
+						<ChildItems>
+							<Button name="СписокСоздать" id="90">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.Создать</CommandName>
+								<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+								<ExtendedTooltip name="СписокСоздатьРасширеннаяПодсказка" id="91"/>
+							</Button>
+							<Button name="СписокСоздатьГруппу" id="92">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьГруппу</CommandName>
+								<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+								<ExtendedTooltip name="СписокСоздатьГруппуРасширеннаяПодсказка" id="93"/>
+							</Button>
+							<Button name="ФормаУдалитьМеню" id="11">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УдалитьМеню</CommandName>
+								<ExtendedTooltip name="ФормаУдалитьМенюРасширеннаяПодсказка" id="12"/>
+							</Button>
+							<Button name="ФормаФормаМониторинга" id="86">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ФормаМониторинга</CommandName>
+								<ExtendedTooltip name="ФормаФормаМониторингаРасширеннаяПодсказка" id="87"/>
+							</Button>
+							<Button name="ФормаУправлениеОчередью" id="88">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УправлениеОчередью</CommandName>
+								<ExtendedTooltip name="ФормаУправлениеОчередьюРасширеннаяПодсказка" id="89"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="38"/>
+					<SearchStringAddition name="СписокСтрокаПоиска" id="39">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="40"/>
+						<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="41"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокСостояниеПросмотра" id="42">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="43"/>
+						<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="44"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокУправлениеПоиском" id="45">
+						<AdditionSource>
+							<Item>Список</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="46"/>
+						<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="47"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">СписокВыбор</Event>
+						<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="Наименование" id="48">
+							<DataPath>~Список.Наименование</DataPath>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="49"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="50"/>
+						</LabelField>
+						<LabelField name="Номенклатура" id="57">
+							<DataPath>~Список.Номенклатура</DataPath>
+							<ContextMenu name="НоменклатураКонтекстноеМеню" id="58"/>
+							<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="59"/>
+						</LabelField>
+						<LabelField name="Код" id="51">
+							<DataPath>~Список.Код</DataPath>
+							<ContextMenu name="КодКонтекстноеМеню" id="52"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="53"/>
+						</LabelField>
+						<LabelField name="MRS_КодSimphony" id="78">
+							<DataPath>~Список.MRS_КодSimphony</DataPath>
+							<ContextMenu name="MRS_КодSimphonyКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="MRS_КодSimphonyРасширеннаяПодсказка" id="80"/>
+						</LabelField>
+						<LabelField name="Рецептура" id="60">
+							<DataPath>~Список.Рецептура</DataPath>
+							<ContextMenu name="РецептураКонтекстноеМеню" id="61"/>
+							<ExtendedTooltip name="РецептураРасширеннаяПодсказка" id="62"/>
+						</LabelField>
+						<LabelField name="ЕдиницаИзмерения" id="63">
+							<DataPath>~Список.ЕдиницаИзмерения</DataPath>
+							<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="65"/>
+						</LabelField>
+						<LabelField name="НомерВГруппе" id="66">
+							<DataPath>~Список.НомерВГруппе</DataPath>
+							<ContextMenu name="НомерВГруппеКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="НомерВГруппеРасширеннаяПодсказка" id="68"/>
+						</LabelField>
+						<CheckBoxField name="Выключен" id="69">
+							<DataPath>~Список.Выключен</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВыключенКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="ВыключенРасширеннаяПодсказка" id="71"/>
+						</CheckBoxField>
+						<LabelField name="MRS_СтатусСинхронизацииSimphony" id="81">
+							<DataPath>~Список.Статус</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус Синхронизации</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="MRS_СтатусСинхронизацииSimphonyКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="MRS_СтатусСинхронизацииSimphonyРасширеннаяПодсказка" id="83"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	питМеню.Ссылка КАК Ссылка,
+	питМеню.ВерсияДанных КАК ВерсияДанных,
+	питМеню.ПометкаУдаления КАК ПометкаУдаления,
+	питМеню.Владелец КАК Владелец,
+	питМеню.Родитель КАК Родитель,
+	питМеню.ЭтоГруппа КАК ЭтоГруппа,
+	питМеню.Код КАК Код,
+	питМеню.Наименование КАК Наименование,
+	питМеню.Номенклатура КАК Номенклатура,
+	питМеню.Рецептура КАК Рецептура,
+	питМеню.ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	питМеню.НомерВГруппе КАК НомерВГруппе,
+	питМеню.Выключен КАК Выключен,
+	MRS_ОчередьВыгрузкиМенюSimphony.ПозицияМеню КАК ПозицияМеню,
+	MRS_ОчередьВыгрузкиМенюSimphony.КассовыйУзел КАК КассовыйУзел,
+	MRS_ОчередьВыгрузкиМенюSimphony.Операция КАК Операция,
+	MRS_ОчередьВыгрузкиМенюSimphony.Статус КАК Статус,
+	MRS_ОчередьВыгрузкиМенюSimphony.ДатаПостановкиВОчередь КАК ДатаПостановкиВОчередь,
+	MRS_ОчередьВыгрузкиМенюSimphony.КоличествоПопыток КАК КоличествоПопыток,
+	MRS_ОчередьВыгрузкиМенюSimphony.СледующаяПопытка КАК СледующаяПопытка,
+	MRS_ОчередьВыгрузкиМенюSimphony.ТекстОшибки КАК ТекстОшибки,
+	питМеню.MRS_КодSimphony КАК MRS_КодSimphony
+ИЗ
+	Справочник.питМеню КАК питМеню
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.MRS_ОчередьВыгрузкиМенюSimphony КАК MRS_ОчередьВыгрузкиМенюSimphony
+		ПО питМеню.Ссылка = MRS_ОчередьВыгрузкиМенюSimphony.ПозицияМеню
+ГДЕ
+	питМеню.Владелец = &amp;Владелец</QueryText>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Ссылка</dcssch:dataPath>
+					<dcssch:field>Ссылка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЕдиницаИзмерения</dcssch:dataPath>
+					<dcssch:field>ЕдиницаИзмерения</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Наименование</dcssch:dataPath>
+					<dcssch:field>Наименование</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ТекстОшибки</dcssch:dataPath>
+					<dcssch:field>ТекстОшибки</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ЭтоГруппа</dcssch:dataPath>
+					<dcssch:field>ЭтоГруппа</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Выключен</dcssch:dataPath>
+					<dcssch:field>Выключен</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ВерсияДанных</dcssch:dataPath>
+					<dcssch:field>ВерсияДанных</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>СледующаяПопытка</dcssch:dataPath>
+					<dcssch:field>СледующаяПопытка</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
+					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Код</dcssch:dataPath>
+					<dcssch:field>Код</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Родитель</dcssch:dataPath>
+					<dcssch:field>Родитель</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Владелец</dcssch:dataPath>
+					<dcssch:field>Владелец</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Номенклатура</dcssch:dataPath>
+					<dcssch:field>Номенклатура</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Рецептура</dcssch:dataPath>
+					<dcssch:field>Рецептура</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>НомерВГруппе</dcssch:dataPath>
+					<dcssch:field>НомерВГруппе</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ПозицияМеню</dcssch:dataPath>
+					<dcssch:field>ПозицияМеню</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КассовыйУзел</dcssch:dataPath>
+					<dcssch:field>КассовыйУзел</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Операция</dcssch:dataPath>
+					<dcssch:field>Операция</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Статус</dcssch:dataPath>
+					<dcssch:field>Статус</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>ДатаПостановкиВОчередь</dcssch:dataPath>
+					<dcssch:field>ДатаПостановкиВОчередь</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>КоличествоПопыток</dcssch:dataPath>
+					<dcssch:field>КоличествоПопыток</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>MRS_КодSimphony</dcssch:dataPath>
+					<dcssch:field>MRS_КодSimphony</dcssch:field>
+				</Field>
+				<Parameter>
+					<dcssch:name>Владелец</dcssch:name>
+					<dcssch:title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Владелец</v8:content>
+						</v8:item>
+					</dcssch:title>
+					<dcssch:valueType>
+						<v8:Type>cfg:CatalogRef.питВидыМеню</v8:Type>
+					</dcssch:valueType>
+					<dcssch:value xsi:nil="true"/>
+					<dcssch:useRestriction>true</dcssch:useRestriction>
+				</Parameter>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОтборВладелец" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор владелец</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.питВидыМеню</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ОтборВладелецИспользование" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор владелец использование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Дерево" id="4">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.питМеню1</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="УдалитьМеню" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить позицию меню</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить позицию меню</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьМеню</Action>
+		</Command>
+		<Command name="ОтображатьДерево" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать дерево</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать дерево</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтображатьДерево</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УправлениеОчередью" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление очередью</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление очередью</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УправлениеОчередью</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ФормаМониторинга" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма мониторинга</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма мониторинга</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ФормаМониторинга</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="Создать" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Создать</Action>
+		</Command>
+		<Command name="СоздатьГруппу" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать группу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать группу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьГруппу</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>0:55122f06-7d48-40f8-a1c8-d29cea3d9560</Command>
+				<Type>Added</Type>
+				<Attribute>~Items.Список.CurrentData.ПозицияМеню</Attribute>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+		<CommandBar>
+			<Item>
+				<Command>0</Command>
+				<Type>Added</Type>
+				<Attribute>~Items.Список.CurrentData.Ссылка</Attribute>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

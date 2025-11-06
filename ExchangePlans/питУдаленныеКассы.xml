@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<ExchangePlan uuid="bc07d6b1-563e-4e1f-ac7c-9c394e938048">
+		<InternalInfo>
+			<xr:ThisNode>59c5e995-a662-435b-97c8-ac9b0b286caa</xr:ThisNode>
+			<xr:GeneratedType name="ExchangePlanObject.питУдаленныеКассы" category="Object">
+				<xr:TypeId>25a9f102-1af5-4e01-9258-2fcd4a343a42</xr:TypeId>
+				<xr:ValueId>a4c509e6-b657-450b-aeed-8affa9d72054</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanRef.питУдаленныеКассы" category="Ref">
+				<xr:TypeId>9207cffb-d215-4ef2-8431-232c2b3baecd</xr:TypeId>
+				<xr:ValueId>98964b82-e51d-4714-9036-c6f57dd42b39</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanSelection.питУдаленныеКассы" category="Selection">
+				<xr:TypeId>83652450-c351-4c4d-ba7f-5df6b0c68b76</xr:TypeId>
+				<xr:ValueId>163e546f-cc73-4633-9d75-afb8b7a840c8</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanList.питУдаленныеКассы" category="List">
+				<xr:TypeId>50d41d78-f136-4bba-af15-30fe87d5b0ad</xr:TypeId>
+				<xr:ValueId>c5f1cae7-090b-4e37-b8bc-8e8b39a45fa2</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ExchangePlanManager.питУдаленныеКассы" category="Manager">
+				<xr:TypeId>f0aac93b-640f-4dd0-82d1-939b2988cbbb</xr:TypeId>
+				<xr:ValueId>0e78d24e-af74-4d84-935f-324c9c1876ae</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>питУдаленныеКассы</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>6cc425d4-31b3-4ec2-9555-853f574f9f32</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</ExchangePlan>
+</MetaDataObject>
