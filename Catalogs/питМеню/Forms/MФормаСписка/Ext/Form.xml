@@ -274,7 +274,6 @@
 					<ShowRoot>true</ShowRoot>
 					<AllowRootChoice>true</AllowRootChoice>
 					<UpdateOnDataChange>DontUse</UpdateOnDataChange>
-					<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
 					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 					<ContextMenu name="ДеревоКонтекстноеМеню" id="3"/>
 					<AutoCommandBar name="ДеревоКоманднаяПанель" id="4">
@@ -734,12 +733,11 @@
 							<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 						</Period>
 						<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
-						<RestoreCurrentRow>false</RestoreCurrentRow>
+						<RestoreCurrentRow>true</RestoreCurrentRow>
 						<TopLevelParent xsi:nil="true"/>
 						<ShowRoot>true</ShowRoot>
 						<AllowRootChoice>true</AllowRootChoice>
-						<UpdateOnDataChange>Auto</UpdateOnDataChange>
-						<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
+						<UpdateOnDataChange>DontUse</UpdateOnDataChange>
 						<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 						<ContextMenu name="ДеревоКонтекстноеМеню" id="3"/>
 						<AutoCommandBar name="ДеревоКоманднаяПанель" id="4">
