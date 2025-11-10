@@ -159,29 +159,6 @@
 					<CommandName>0</CommandName>
 					<ExtendedTooltip name="ФормаУдалитьМенюExtendedTooltip" id="60"/>
 				</Button>
-				<Button name="ФормаУменьшитьНомер" id="45">
-					<Type>CommandBarButton</Type>
-					<CommandName>0</CommandName>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Сдвинуть позицию меню вверх</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаУменьшитьНомерExtendedTooltip" id="61"/>
-				</Button>
-				<Button name="ФормаУвеличитьНомер" id="44">
-					<Type>CommandBarButton</Type>
-					<CommandName>0</CommandName>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Сдвинуть позицию меню вниз
-</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаУвеличитьНомерExtendedTooltip" id="62"/>
-				</Button>
 				<Popup name="Обработка" id="22">
 					<Title>
 						<v8:item>
@@ -222,10 +199,38 @@
 									<CommandName>0</CommandName>
 									<ExtendedTooltip name="ФормаВыгрузитьExtendedTooltip" id="68"/>
 								</Button>
+								<Button name="ФормаУстановитьЦены" id="146">
+									<Type>CommandBarButton</Type>
+									<CommandName>0</CommandName>
+									<ExtendedTooltip name="ФормаУстановитьЦеныРасширеннаяПодсказка" id="147"/>
+								</Button>
 							</ChildItems>
 						</ButtonGroup>
 					</ChildItems>
 				</Popup>
+				<Button name="ФормаУменьшитьНомер" id="45">
+					<Type>CommandBarButton</Type>
+					<CommandName>0</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сдвинуть позицию меню вверх</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаУменьшитьНомерExtendedTooltip" id="61"/>
+				</Button>
+				<Button name="ФормаУвеличитьНомер" id="44">
+					<Type>CommandBarButton</Type>
+					<CommandName>0</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сдвинуть позицию меню вниз
+</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ФормаУвеличитьНомерExtendedTooltip" id="62"/>
+				</Button>
 				<Button name="ФормаПодбор" id="25">
 					<Type>CommandBarButton</Type>
 					<CommandName>0</CommandName>
@@ -607,29 +612,6 @@
 						<CommandName>0</CommandName>
 						<ExtendedTooltip name="ФормаУдалитьМенюExtendedTooltip" id="60"/>
 					</Button>
-					<Button name="ФормаУменьшитьНомер" id="45">
-						<Type>CommandBarButton</Type>
-						<CommandName>0</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Сдвинуть позицию меню вверх</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="ФормаУменьшитьНомерExtendedTooltip" id="61"/>
-					</Button>
-					<Button name="ФормаУвеличитьНомер" id="44">
-						<Type>CommandBarButton</Type>
-						<CommandName>0</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Сдвинуть позицию меню вниз
-</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="ФормаУвеличитьНомерExtendedTooltip" id="62"/>
-					</Button>
 					<Popup name="Обработка" id="22">
 						<Title>
 							<v8:item>
@@ -670,10 +652,38 @@
 										<CommandName>0</CommandName>
 										<ExtendedTooltip name="ФормаВыгрузитьExtendedTooltip" id="68"/>
 									</Button>
+									<Button name="ФормаУстановитьЦены" id="146">
+										<Type>CommandBarButton</Type>
+										<CommandName>0</CommandName>
+										<ExtendedTooltip name="ФормаУстановитьЦеныРасширеннаяПодсказка" id="147"/>
+									</Button>
 								</ChildItems>
 							</ButtonGroup>
 						</ChildItems>
 					</Popup>
+					<Button name="ФормаУменьшитьНомер" id="45">
+						<Type>CommandBarButton</Type>
+						<CommandName>0</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сдвинуть позицию меню вверх</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаУменьшитьНомерExtendedTooltip" id="61"/>
+					</Button>
+					<Button name="ФормаУвеличитьНомер" id="44">
+						<Type>CommandBarButton</Type>
+						<CommandName>0</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сдвинуть позицию меню вниз
+</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаУвеличитьНомерExtendedTooltip" id="62"/>
+					</Button>
 					<Button name="ФормаПодбор" id="25">
 						<Type>CommandBarButton</Type>
 						<CommandName>0</CommandName>
