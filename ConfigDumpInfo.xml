@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.19">
 	<ConfigVersions>
+		<Metadata name="Catalog.ВидыЦен" id="fa022457-b40d-443c-b7f4-c03f1a909cc9" configVersion="2032b9552021b293bcbfbd48f23935f40a5ce503"/>
+		<Metadata name="Catalog.ГруппыАналитическогоУчетаНоменклатуры" id="d151a7d7-c805-47e9-94c1-e14b79fa5b2c" configVersion="fd18f0426b42da3892b62222ea60c0752c43f70c">
+			<Metadata name="Catalog.ГруппыАналитическогоУчетаНоменклатуры.Attribute.MRS_КодFamilyGroup" id="12d56f8e-201b-4b80-8368-ffedffee5532"/>
+			<Metadata name="Catalog.ГруппыАналитическогоУчетаНоменклатуры.Attribute.MRS_КодMajorGroup" id="595d4d4d-2a63-4717-b467-62c0613000ce"/>
+		</Metadata>
 		<Metadata name="Catalog.Номенклатура" id="e0225bf6-700f-4c98-99cd-bfb783d19fee" configVersion="b4893be2e8b7435b4505ebea27acbc7a518f81c6"/>
 		<Metadata name="Catalog.Пользователи" id="dceb4cc3-7a92-4601-ab21-3f76f75ece93" configVersion="188fe9d7e1e2c6fb600d01a67d030d96cc15b6af"/>
 		<Metadata name="Catalog.УпаковкиЕдиницыИзмерения" id="98253123-e0f9-48e0-a476-7903797adbe5" configVersion="a8d3c089f5a3456bdfdf5e56f4fceee4b3309584"/>
@@ -28,7 +33,7 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер.Module" id="36e35c70-8def-455a-9ac3-778b72daad93.0" configVersion="320b6809cbdd8a447d4669f544822b670ff20d2f"/>
 		<Metadata name="CommonPicture.КоллекцияШаровБЭД" id="90a4c058-27c8-4683-b50e-1b9fd8c59109" configVersion="f16a48225ef795b3ab234a369bbd1946ff20d680"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="fd9702a69a6d26df02474d84a903d9e57f9308b6"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="5e1c9de84791d91bbe783344a0e5695bb9e24a59"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="Document.питРецептура" id="a74b949f-acdf-4bbc-89d3-ac6dc62b0b75" configVersion="e49af1a29a1b13246e54e03274d4dd2403ec0f10"/>
 		<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony" id="206ce2c7-d0a7-47f4-8552-bd997f1f2c1b" configVersion="2fa3301d4cadb910bde165e3a99f43470a26daeb">
@@ -59,6 +64,10 @@
 			<Metadata name="InformationRegister.MRS_ОчередьВыгрузкиМенюSimphony.Resource.ДатаПостановкиВОчередь" id="8b274b39-3f66-412c-a464-aff54b3f5596"/>
 			<Metadata name="InformationRegister.MRS_ОчередьВыгрузкиМенюSimphony.Resource.ТекстОшибки" id="cd8e9521-0fcf-4f01-a371-0539dd6f97e7"/>
 			<Metadata name="InformationRegister.MRS_ОчередьВыгрузкиМенюSimphony.Resource.КоличествоПопыток" id="d48ac13b-85eb-4783-a3f5-4b52520e851c"/>
+		</Metadata>
+		<Metadata name="InformationRegister.ЦеныНоменклатуры" id="9d79f0dd-220e-4497-8cf8-e800686a7898" configVersion="d1c0d7dfe3835cdc0fdba4735266b2de2b472c32">
+			<Metadata name="InformationRegister.ЦеныНоменклатуры.Dimension.ВидЦены" id="77d5e76a-c193-4162-a0ba-f310044671da"/>
+			<Metadata name="InformationRegister.ЦеныНоменклатуры.Dimension.Номенклатура" id="9024b366-c399-4c1a-9d77-7b700df0103d"/>
 		</Metadata>
 		<Metadata name="Language.Русский" id="7d235f6d-b3aa-433a-861b-052eda053295" configVersion="a7a5299d22077799a039dd828830d57023f3d5c1"/>
 		<Metadata name="Role.MRS_ОсновнаяРоль" id="949a1fb0-a481-4fb2-92dc-5abf46a68578" configVersion="aabc329c9caacc938a8238713c034ab0dad477fc"/>

@@ -78,10 +78,13 @@
 			<Catalog>УпаковкиЕдиницыИзмерения</Catalog>
 			<Catalog>питВидыМеню</Catalog>
 			<Catalog>питМеню</Catalog>
+			<Catalog>ВидыЦен</Catalog>
+			<Catalog>ГруппыАналитическогоУчетаНоменклатуры</Catalog>
 			<Document>питРецептура</Document>
 			<Enum>MRS_СтатусыСинхронизацииSimphony</Enum>
 			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
+			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
