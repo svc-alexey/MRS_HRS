@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<InformationRegister uuid="acd7c2f1-9a70-485b-97f8-2cb457fc4cea">
+		<InternalInfo>
+			<xr:GeneratedType name="InformationRegisterRecord.MRS_ОчередьВыгрузкиМенюSimphony" category="Record">
+				<xr:TypeId>9513102a-6650-4931-861b-ab2e134b68ad</xr:TypeId>
+				<xr:ValueId>228fa99f-1a51-419a-a85b-74d00e71a631</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterManager.MRS_ОчередьВыгрузкиМенюSimphony" category="Manager">
+				<xr:TypeId>50a6785f-b832-4f5f-8d22-c3eaf52dc4ca</xr:TypeId>
+				<xr:ValueId>10453f99-fb68-4441-bb24-ff1e457af95b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterSelection.MRS_ОчередьВыгрузкиМенюSimphony" category="Selection">
+				<xr:TypeId>f81ba6e4-e12e-4cdf-8bee-b23cec963a15</xr:TypeId>
+				<xr:ValueId>07291258-c31a-4cf4-8e1d-922d98dfa33a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterList.MRS_ОчередьВыгрузкиМенюSimphony" category="List">
+				<xr:TypeId>c4563bf3-9830-4d86-b7c4-f9d1b4406778</xr:TypeId>
+				<xr:ValueId>08807549-f614-40c6-a033-58b700f7ab11</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordSet.MRS_ОчередьВыгрузкиМенюSimphony" category="RecordSet">
+				<xr:TypeId>dbc67de0-2682-4a4a-bbd5-cf18b4125f66</xr:TypeId>
+				<xr:ValueId>e9ffdae7-ba1e-4bf6-ab5a-82e7545851be</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordKey.MRS_ОчередьВыгрузкиМенюSimphony" category="RecordKey">
+				<xr:TypeId>d360de42-318f-4aaa-8ae5-02b315155c29</xr:TypeId>
+				<xr:ValueId>2c02c67a-da22-4723-a8e7-b33dfda7a46f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordManager.MRS_ОчередьВыгрузкиМенюSimphony" category="RecordManager">
+				<xr:TypeId>0c687e2e-ffd1-4d39-920e-15f75c177127</xr:TypeId>
+				<xr:ValueId>e3361696-0965-46cb-a514-0d9d81face96</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>MRS_ОчередьВыгрузкиМенюSimphony</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>6e3ce4a2-8e6f-4f0b-b85d-da4e5bb3b208</ExtendedConfigurationObject>
+			<InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+			<WriteMode>Independent</WriteMode>
+		</Properties>
+		<ChildObjects>
+			<Resource uuid="3253b440-099f-4354-bfff-14ebda7f40b8">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Операция</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>b32b853b-1d29-402d-8a75-297526f4ebf2</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="330a5f85-4463-4306-add8-d85c2a8a6f7d">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Статус</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>a960bc69-6e9c-40db-9eb3-90efdc8614c2</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.MRS_СтатусыСинхронизацииSimphony</v8:Type>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="8b274b39-3f66-412c-a464-aff54b3f5596">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаПостановкиВОчередь</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>eba899eb-76b5-4607-9762-be52ce29d125</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="d48ac13b-85eb-4783-a3f5-4b52520e851c">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КоличествоПопыток</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>bf8fe858-aabd-4a86-85e2-ec8c0106bfdb</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="873c3c32-cd26-461d-bc5c-c3c18bca2a6f">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СледующаяПопытка</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>287b04f3-34e2-4275-93e6-3e719e8fe0c4</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="cd8e9521-0fcf-4f01-a371-0539dd6f97e7">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ТекстОшибки</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>4ea0caf1-5194-44ee-a287-e5b5c5b0f7bc</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Dimension uuid="2b4a4887-7c83-4c34-81bb-bd0e2627e2e4">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ПозицияМеню</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>a43d4e41-1707-4a20-a33d-9326faa3ecfd</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="61a10b02-0b73-4822-a5f0-0306158d4225">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КассовыйУзел</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>f3f2290f-2b6a-4621-ac47-86b615782f54</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</InformationRegister>
+</MetaDataObject>

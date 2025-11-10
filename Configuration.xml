@@ -68,16 +68,20 @@
 			<CommonPicture>КоллекцияШаровБЭД</CommonPicture>
 			<CommonPicture>питДерево</CommonPicture>
 			<Role>MRS_ОсновнаяРоль</Role>
+			<CommonModule>MRS_ИнтеграцияSimphonyСервер</CommonModule>
+			<CommonModule>MRS_ИнтеграцияSimphonyКлиентСервер</CommonModule>
+			<CommonModule>MRS_ИнтеграцияSimphonyКлиент</CommonModule>
 			<ExchangePlan>питУдаленныеКассы</ExchangePlan>
+			<Constant>MRS_URLСервисаSimphony</Constant>
 			<Catalog>Пользователи</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>УпаковкиЕдиницыИзмерения</Catalog>
 			<Catalog>питВидыМеню</Catalog>
-			<Catalog>питМеню1</Catalog>
+			<Catalog>питМеню</Catalog>
 			<Document>питРецептура</Document>
 			<Enum>MRS_СтатусыСинхронизацииSimphony</Enum>
-			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony1</InformationRegister>
-			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony1</InformationRegister>
+			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
+			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

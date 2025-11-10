@@ -21,6 +21,52 @@
 			<Comment/>
 			<ExtendedConfigurationObject>303d9b0c-83c0-4e28-b058-a42f572907e7</ExtendedConfigurationObject>
 		</Properties>
-		<ChildObjects/>
+		<ChildObjects>
+			<EnumValue uuid="6fd65f82-af86-4f59-a249-f47f6cb5c927">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НеВыгружено</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>97d14fa5-6e3b-4b96-b3fe-3d29fde23d6a</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="56ecf66e-3ba6-4c9a-af15-6e11f5e386fc">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВОчереди</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>882f488e-575e-421e-9285-c75c7a44c232</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="0e685e1b-e1fb-4a86-890a-f107f6a35170">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Выгружено</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>8583498f-1544-49d7-9d03-6f8db8fe6bfd</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="19ee9fd6-2ec2-47a4-a0f3-eaebb8c458a3">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Ошибка</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>c3d8d582-5c93-49a1-9dbc-53b41956c7fa</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="dee824cc-73b2-4171-a2d9-e22f077c9796">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ТребуетВнимания</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>305fc1c8-7e3b-49cf-aee0-0a46159dba7e</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
 	</Enum>
 </MetaDataObject>

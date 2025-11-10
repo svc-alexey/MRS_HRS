@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>OpenFromMainServer</ExcludedCommand>
+		<ExcludedCommand>OpenFromStandaloneServer</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтборы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="ПериодС" id="3">
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодСКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ПериодСРасширеннаяПодсказка" id="5"/>
+				</InputField>
+				<InputField name="ПериодПо" id="6">
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПериодПоКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ПериодПоРасширеннаяПодсказка" id="8"/>
+				</InputField>
+				<InputField name="ПозицияМеню" id="9">
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПозицияМенюКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ПозицияМенюРасширеннаяПодсказка" id="11"/>
+				</InputField>
+				<CheckBoxField name="ТолькоСОшибками" id="12">
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТолькоСОшибкамиКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ТолькоСОшибкамиРасширеннаяПодсказка" id="14"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСписок" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История синхронизации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаСписокРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Table name="СписокИстории" id="17">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СписокИсторииКонтекстноеМеню" id="18"/>
+					<AutoCommandBar name="СписокИсторииКоманднаяПанель" id="19"/>
+					<ExtendedTooltip name="СписокИсторииРасширеннаяПодсказка" id="20"/>
+					<SearchStringAddition name="СписокИсторииСтрокаПоиска" id="36">
+						<AdditionSource>
+							<Item>СписокИстории</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокИсторииСтрокаПоискаКонтекстноеМеню" id="37"/>
+						<ExtendedTooltip name="СписокИсторииСтрокаПоискаРасширеннаяПодсказка" id="38"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокИсторииСостояниеПросмотра" id="39">
+						<AdditionSource>
+							<Item>СписокИстории</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокИсторииСостояниеПросмотраКонтекстноеМеню" id="40"/>
+						<ExtendedTooltip name="СписокИсторииСостояниеПросмотраРасширеннаяПодсказка" id="41"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокИсторииУправлениеПоиском" id="42">
+						<AdditionSource>
+							<Item>СписокИстории</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокИсторииУправлениеПоискомКонтекстноеМеню" id="43"/>
+						<ExtendedTooltip name="СписокИсторииУправлениеПоискомРасширеннаяПодсказка" id="44"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="СписокИсторииДатаВремя" id="21">
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииДатаВремяКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="СписокИсторииДатаВремяРасширеннаяПодсказка" id="23"/>
+						</InputField>
+						<InputField name="СписокИсторииПозицияМеню" id="24">
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииПозицияМенюКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="СписокИсторииПозицияМенюРасширеннаяПодсказка" id="26"/>
+						</InputField>
+						<InputField name="СписокИсторииОперация" id="27">
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииОперацияКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="СписокИсторииОперацияРасширеннаяПодсказка" id="29"/>
+						</InputField>
+						<InputField name="СписокИсторииСтатус" id="30">
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СписокИсторииСтатусКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="СписокИсторииСтатусРасширеннаяПодсказка" id="32"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДеталиЗапроса" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детали запроса</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<Height>5</Height>
+			<ContextMenu name="ДеталиЗапросаКонтекстноеМеню" id="34"/>
+			<ExtendedTooltip name="ДеталиЗапросаРасширеннаяПодсказка" id="35"/>
+		</InputField>
+	</ChildItems>
+	<Attributes/>
+	<BaseForm version="2.19">
+		<CommandSet>
+			<ExcludedCommand>Abort</ExcludedCommand>
+			<ExcludedCommand>Cancel</ExcludedCommand>
+			<ExcludedCommand>Close</ExcludedCommand>
+			<ExcludedCommand>CustomizeForm</ExcludedCommand>
+			<ExcludedCommand>Help</ExcludedCommand>
+			<ExcludedCommand>Ignore</ExcludedCommand>
+			<ExcludedCommand>No</ExcludedCommand>
+			<ExcludedCommand>OK</ExcludedCommand>
+			<ExcludedCommand>OpenFromMainServer</ExcludedCommand>
+			<ExcludedCommand>OpenFromStandaloneServer</ExcludedCommand>
+			<ExcludedCommand>RestoreValues</ExcludedCommand>
+			<ExcludedCommand>Retry</ExcludedCommand>
+			<ExcludedCommand>SaveValues</ExcludedCommand>
+			<ExcludedCommand>Yes</ExcludedCommand>
+		</CommandSet>
+		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+		<ChildItems>
+			<UsualGroup name="ГруппаОтборы" id="1">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отборы</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отборы</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Group>Vertical</Group>
+				<Representation>None</Representation>
+				<ShowTitle>false</ShowTitle>
+				<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="2"/>
+				<ChildItems>
+					<InputField name="ПериодС" id="3">
+						<EditMode>EnterOnInput</EditMode>
+						<ContextMenu name="ПериодСКонтекстноеМеню" id="4"/>
+						<ExtendedTooltip name="ПериодСРасширеннаяПодсказка" id="5"/>
+					</InputField>
+					<InputField name="ПериодПо" id="6">
+						<EditMode>EnterOnInput</EditMode>
+						<ContextMenu name="ПериодПоКонтекстноеМеню" id="7"/>
+						<ExtendedTooltip name="ПериодПоРасширеннаяПодсказка" id="8"/>
+					</InputField>
+					<InputField name="ПозицияМеню" id="9">
+						<EditMode>EnterOnInput</EditMode>
+						<ContextMenu name="ПозицияМенюКонтекстноеМеню" id="10"/>
+						<ExtendedTooltip name="ПозицияМенюРасширеннаяПодсказка" id="11"/>
+					</InputField>
+					<CheckBoxField name="ТолькоСОшибками" id="12">
+						<CheckBoxType>Auto</CheckBoxType>
+						<ContextMenu name="ТолькоСОшибкамиКонтекстноеМеню" id="13"/>
+						<ExtendedTooltip name="ТолькоСОшибкамиРасширеннаяПодсказка" id="14"/>
+					</CheckBoxField>
+				</ChildItems>
+			</UsualGroup>
+			<UsualGroup name="ГруппаСписок" id="15">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>История синхронизации</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Group>Vertical</Group>
+				<Representation>None</Representation>
+				<ExtendedTooltip name="ГруппаСписокРасширеннаяПодсказка" id="16"/>
+				<ChildItems>
+					<Table name="СписокИстории" id="17">
+						<Representation>List</Representation>
+						<AutoInsertNewRow>true</AutoInsertNewRow>
+						<EnableStartDrag>true</EnableStartDrag>
+						<EnableDrag>true</EnableDrag>
+						<RowFilter xsi:nil="true"/>
+						<ContextMenu name="СписокИсторииКонтекстноеМеню" id="18"/>
+						<AutoCommandBar name="СписокИсторииКоманднаяПанель" id="19"/>
+						<ExtendedTooltip name="СписокИсторииРасширеннаяПодсказка" id="20"/>
+						<SearchStringAddition name="СписокИсторииСтрокаПоиска" id="36">
+							<AdditionSource>
+								<Item>СписокИстории</Item>
+								<Type>SearchStringRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="СписокИсторииСтрокаПоискаКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="СписокИсторииСтрокаПоискаРасширеннаяПодсказка" id="38"/>
+						</SearchStringAddition>
+						<ViewStatusAddition name="СписокИсторииСостояниеПросмотра" id="39">
+							<AdditionSource>
+								<Item>СписокИстории</Item>
+								<Type>ViewStatusRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="СписокИсторииСостояниеПросмотраКонтекстноеМеню" id="40"/>
+							<ExtendedTooltip name="СписокИсторииСостояниеПросмотраРасширеннаяПодсказка" id="41"/>
+						</ViewStatusAddition>
+						<SearchControlAddition name="СписокИсторииУправлениеПоиском" id="42">
+							<AdditionSource>
+								<Item>СписокИстории</Item>
+								<Type>SearchControl</Type>
+							</AdditionSource>
+							<ContextMenu name="СписокИсторииУправлениеПоискомКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="СписокИсторииУправлениеПоискомРасширеннаяПодсказка" id="44"/>
+						</SearchControlAddition>
+						<ChildItems>
+							<InputField name="СписокИсторииДатаВремя" id="21">
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="СписокИсторииДатаВремяКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="СписокИсторииДатаВремяРасширеннаяПодсказка" id="23"/>
+							</InputField>
+							<InputField name="СписокИсторииПозицияМеню" id="24">
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="СписокИсторииПозицияМенюКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="СписокИсторииПозицияМенюРасширеннаяПодсказка" id="26"/>
+							</InputField>
+							<InputField name="СписокИсторииОперация" id="27">
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="СписокИсторииОперацияКонтекстноеМеню" id="28"/>
+								<ExtendedTooltip name="СписокИсторииОперацияРасширеннаяПодсказка" id="29"/>
+							</InputField>
+							<InputField name="СписокИсторииСтатус" id="30">
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="СписокИсторииСтатусКонтекстноеМеню" id="31"/>
+								<ExtendedTooltip name="СписокИсторииСтатусРасширеннаяПодсказка" id="32"/>
+							</InputField>
+						</ChildItems>
+					</Table>
+				</ChildItems>
+			</UsualGroup>
+			<InputField name="ДеталиЗапроса" id="33">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Детали запроса</v8:content>
+					</v8:item>
+				</Title>
+				<EditMode>EnterOnInput</EditMode>
+				<Height>5</Height>
+				<ContextMenu name="ДеталиЗапросаКонтекстноеМеню" id="34"/>
+				<ExtendedTooltip name="ДеталиЗапросаРасширеннаяПодсказка" id="35"/>
+			</InputField>
+		</ChildItems>
+		<Attributes/>
+	</BaseForm>
+</Form>
