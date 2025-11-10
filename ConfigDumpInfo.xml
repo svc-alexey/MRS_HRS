@@ -33,8 +33,15 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер.Module" id="36e35c70-8def-455a-9ac3-778b72daad93.0" configVersion="320b6809cbdd8a447d4669f544822b670ff20d2f"/>
 		<Metadata name="CommonPicture.КоллекцияШаровБЭД" id="90a4c058-27c8-4683-b50e-1b9fd8c59109" configVersion="f16a48225ef795b3ab234a369bbd1946ff20d680"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="5e1c9de84791d91bbe783344a0e5695bb9e24a59"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="9593c6a99c3a7a21e23b464fb65399340e3eb8a0"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
+		<Metadata name="Document.УстановкаЦенНоменклатуры" id="32c8bf7f-4b43-4ec7-90d3-0551a8100735" configVersion="c15c9c329f0b454ccc464164d4bb9991024d7f3f">
+			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Ответственный" id="09a6e63d-6cf2-4e9d-a9dc-530ad143d937"/>
+			<Metadata name="Document.УстановкаЦенНоменклатуры.TabularSection.Товары" id="168a0c5c-c227-4f19-a2d9-39e3d5952792"/>
+			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Согласован" id="483e6fc9-b2ba-4267-b475-1e6522c7c5d8"/>
+			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Комментарий" id="4a99da74-3aec-49ea-b177-ccb9cb0f90f7"/>
+			<Metadata name="Document.УстановкаЦенНоменклатуры.TabularSection.ВидыЦен" id="c752dc11-d77c-41be-b4d0-f8707b403a08"/>
+		</Metadata>
 		<Metadata name="Document.питРецептура" id="a74b949f-acdf-4bbc-89d3-ac6dc62b0b75" configVersion="e49af1a29a1b13246e54e03274d4dd2403ec0f10"/>
 		<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony" id="206ce2c7-d0a7-47f4-8552-bd997f1f2c1b" configVersion="2fa3301d4cadb910bde165e3a99f43470a26daeb">
 			<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony.EnumValue.Выгружено" id="0e685e1b-e1fb-4a86-890a-f107f6a35170"/>

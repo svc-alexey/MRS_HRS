@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Document uuid="32c8bf7f-4b43-4ec7-90d3-0551a8100735">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentObject.УстановкаЦенНоменклатуры" category="Object">
+				<xr:TypeId>c77be98a-8a32-4cf0-a3ca-97027c3a84f1</xr:TypeId>
+				<xr:ValueId>1f543fe8-fa43-4106-99a1-949cc59b9d60</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentRef.УстановкаЦенНоменклатуры" category="Ref">
+				<xr:TypeId>32726348-ac4f-4fc8-bf39-d75553ecf595</xr:TypeId>
+				<xr:ValueId>f98d50d0-3b06-4bd6-bee4-a69a3171b03d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentSelection.УстановкаЦенНоменклатуры" category="Selection">
+				<xr:TypeId>1c03fd63-4f15-4a3e-9515-ac598b403753</xr:TypeId>
+				<xr:ValueId>7bd15703-209c-40a6-9941-2ac834b60950</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentList.УстановкаЦенНоменклатуры" category="List">
+				<xr:TypeId>d2794c29-97bd-4ffe-8450-7f693dc24638</xr:TypeId>
+				<xr:ValueId>bf92197b-4884-428e-8f18-e21c73ec54e5</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentManager.УстановкаЦенНоменклатуры" category="Manager">
+				<xr:TypeId>cffe5dce-d4f2-4fb3-a8ac-1a1d0e4670d2</xr:TypeId>
+				<xr:ValueId>559318e1-6c7c-45ed-8dc5-1ba7e1b80135</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>УстановкаЦенНоменклатуры</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>d69e99a6-b6b4-4e1c-95d1-d7997206773c</ExtendedConfigurationObject>
+			<RegisterRecords/>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="09a6e63d-6cf2-4e9d-a9dc-530ad143d937">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Ответственный</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>3cfdff54-98f7-4897-848a-a4653ad1322f</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="4a99da74-3aec-49ea-b177-ccb9cb0f90f7">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Комментарий</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>42874f22-405a-45a3-8bec-cd2b4e99965a</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="483e6fc9-b2ba-4267-b475-1e6522c7c5d8">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Согласован</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>88f7890e-bbc2-44ac-a623-6b1825a17288</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<TabularSection uuid="168a0c5c-c227-4f19-a2d9-39e3d5952792">
+				<InternalInfo>
+					<xr:GeneratedType name="DocumentTabularSection.УстановкаЦенНоменклатуры.Товары" category="TabularSection">
+						<xr:TypeId>58524dc5-d5e2-406c-922d-14fe99eff89d</xr:TypeId>
+						<xr:ValueId>5a0fec9a-9f6b-4d8d-86cc-b2392fd8bcdb</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="DocumentTabularSectionRow.УстановкаЦенНоменклатуры.Товары" category="TabularSectionRow">
+						<xr:TypeId>d8a9bc5f-d895-4bb5-a4af-547ebf92236c</xr:TypeId>
+						<xr:ValueId>ce146ebf-3ef6-4ea1-8d82-a599ecde9918</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Товары</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>fa358103-b0d9-4936-b18c-99a353b041d9</ExtendedConfigurationObject>
+				</Properties>
+				<ChildObjects/>
+			</TabularSection>
+			<TabularSection uuid="c752dc11-d77c-41be-b4d0-f8707b403a08">
+				<InternalInfo>
+					<xr:GeneratedType name="DocumentTabularSection.УстановкаЦенНоменклатуры.ВидыЦен" category="TabularSection">
+						<xr:TypeId>1e1745f2-d52d-4a2a-b638-c9d996b36dc1</xr:TypeId>
+						<xr:ValueId>b8cb9c3a-172e-44a7-acbc-beaf36d5928e</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="DocumentTabularSectionRow.УстановкаЦенНоменклатуры.ВидыЦен" category="TabularSectionRow">
+						<xr:TypeId>d9a40039-7786-4fe9-96a0-ccaa96e64416</xr:TypeId>
+						<xr:ValueId>4ca63b8b-17c3-44b3-b581-6db2525a50b8</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВидыЦен</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>8b658189-61c4-4c05-9528-ba03c43a6384</ExtendedConfigurationObject>
+				</Properties>
+				<ChildObjects/>
+			</TabularSection>
+		</ChildObjects>
+	</Document>
+</MetaDataObject>

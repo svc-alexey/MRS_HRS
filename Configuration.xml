@@ -81,6 +81,7 @@
 			<Catalog>ВидыЦен</Catalog>
 			<Catalog>ГруппыАналитическогоУчетаНоменклатуры</Catalog>
 			<Document>питРецептура</Document>
+			<Document>УстановкаЦенНоменклатуры</Document>
 			<Enum>MRS_СтатусыСинхронизацииSimphony</Enum>
 			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
