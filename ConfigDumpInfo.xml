@@ -10,7 +10,7 @@
 		<Metadata name="Catalog.Пользователи" id="dceb4cc3-7a92-4601-ab21-3f76f75ece93" configVersion="188fe9d7e1e2c6fb600d01a67d030d96cc15b6af"/>
 		<Metadata name="Catalog.УпаковкиЕдиницыИзмерения" id="98253123-e0f9-48e0-a476-7903797adbe5" configVersion="a8d3c089f5a3456bdfdf5e56f4fceee4b3309584"/>
 		<Metadata name="Catalog.питВидыМеню" id="95850253-d0ae-46dd-a8a9-0d916255bbf1" configVersion="a296e5988aeff57c62001036d3779186471789e3"/>
-		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="46f9eb503a9bc91414858fdf3e2bb5145bed07c3">
+		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="d0af6c97b4a20b9f887b9f7db183c32e22abbe1c">
 			<Metadata name="Catalog.питМеню.Attribute.Выключен" id="785c3502-6195-46d4-b7df-bce5e3b4871a"/>
 			<Metadata name="Catalog.питМеню.Attribute.Номенклатура" id="8c0e4d69-fd37-4d4f-b8f1-0177bfe2f544"/>
 			<Metadata name="Catalog.питМеню.Attribute.ЕдиницаИзмерения" id="8fbaaac4-899a-4aac-8721-ab9e163f0e59"/>
@@ -22,9 +22,11 @@
 		<Metadata name="Catalog.питМеню.Form.MRS_ФормаУправленияОчередью" id="8abf3e12-1bea-41e3-afa6-9dbc5ec5ecd2" configVersion="c43eebbd6f816763bbb4aceb07fea37315b7d0a6"/>
 		<Metadata name="Catalog.питМеню.Form.MRS_ФормаУправленияОчередью.Form" id="8abf3e12-1bea-41e3-afa6-9dbc5ec5ecd2.0" configVersion="b62c12838487b7c80fde17ad1c4011b345cf3316"/>
 		<Metadata name="Catalog.питМеню.Form.MФормаСписка" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59" configVersion="d3220cc3f8e1c169d659e228c4dda633b3dd86b7"/>
-		<Metadata name="Catalog.питМеню.Form.MФормаСписка.Form" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59.0" configVersion="a181a8d6fb9924dbcd6439a54b8f31a31ce1f8a1"/>
+		<Metadata name="Catalog.питМеню.Form.MФормаСписка.Form" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59.0" configVersion="d657be1212b5918d0c9b9aae5bdc5ea9b6b5b34f"/>
 		<Metadata name="Catalog.питМеню.Form.МФормаЭлемента" id="13129379-3dea-4a51-838b-3d618d5687f8" configVersion="339d53490aea88b07620fc3f4472d9422b1ff603"/>
 		<Metadata name="Catalog.питМеню.Form.МФормаЭлемента.Form" id="13129379-3dea-4a51-838b-3d618d5687f8.0" configVersion="a97a9f6f263f0a53316453f7e930ea49c007d1b9"/>
+		<Metadata name="Catalog.питМеню.ManagerModule" id="416ae5ca-a48c-40e1-ac63-245365cd668d.3" configVersion="78750d97b5cb7c740eb8094ac51b0783a85470f1"/>
+		<Metadata name="Catalog.питМеню.ObjectModule" id="416ae5ca-a48c-40e1-ac63-245365cd668d.0" configVersion="0569db1359be09f3af9fab66ffff1e9634eab5e1"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиент" id="1c452ff3-a170-48bf-a241-ec86ab266f42" configVersion="3ae015b6e8ab0f1be480275c767aaa0671a67dd0"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиент.Module" id="1c452ff3-a170-48bf-a241-ec86ab266f42.0" configVersion="fb5bf9ef482c22cdbc9a7b410463ded1105c9a48"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиентСервер" id="ac5c8607-83f2-4870-af38-910d4cbb3066" configVersion="d09c7289c318b8af631cc860de6106667436b2d8"/>

@@ -204,6 +204,16 @@
 									<CommandName>0</CommandName>
 									<ExtendedTooltip name="ФормаУстановитьЦеныРасширеннаяПодсказка" id="147"/>
 								</Button>
+								<Button name="ФормаПоставитьВОчередьВыгрузки" id="148">
+									<Type>CommandBarButton</Type>
+									<CommandName>0</CommandName>
+									<ExtendedTooltip name="ФормаПоставитьВОчередьВыгрузкиРасширеннаяПодсказка" id="149"/>
+								</Button>
+								<Button name="ФормаВыгрузитьМеню" id="150">
+									<Type>CommandBarButton</Type>
+									<CommandName>0</CommandName>
+									<ExtendedTooltip name="ФормаВыгрузитьМенюРасширеннаяПодсказка" id="151"/>
+								</Button>
 							</ChildItems>
 						</ButtonGroup>
 					</ChildItems>
@@ -273,7 +283,8 @@
 					<TopLevelParent xsi:nil="true"/>
 					<ShowRoot>true</ShowRoot>
 					<AllowRootChoice>true</AllowRootChoice>
-					<UpdateOnDataChange>DontUse</UpdateOnDataChange>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
 					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 					<ContextMenu name="ДеревоКонтекстноеМеню" id="3"/>
 					<AutoCommandBar name="ДеревоКоманднаяПанель" id="4">
@@ -450,19 +461,7 @@
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
-	<Attributes>
-		<Attribute>
-			<Name>ТекущийРодительДерева</Name>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Текущий родитель дерева</v8:content>
-				</v8:item>
-			</Title>
-			<Type/>
-			<Saved>false</Saved>
-		</Attribute>
-	</Attributes>
+	<Attributes/>
 	<BaseForm version="2.19">
 		<Title>
 			<v8:item>
@@ -668,6 +667,16 @@
 										<CommandName>0</CommandName>
 										<ExtendedTooltip name="ФормаУстановитьЦеныРасширеннаяПодсказка" id="147"/>
 									</Button>
+									<Button name="ФормаПоставитьВОчередьВыгрузки" id="148">
+										<Type>CommandBarButton</Type>
+										<CommandName>0</CommandName>
+										<ExtendedTooltip name="ФормаПоставитьВОчередьВыгрузкиРасширеннаяПодсказка" id="149"/>
+									</Button>
+									<Button name="ФормаВыгрузитьМеню" id="150">
+										<Type>CommandBarButton</Type>
+										<CommandName>0</CommandName>
+										<ExtendedTooltip name="ФормаВыгрузитьМенюРасширеннаяПодсказка" id="151"/>
+									</Button>
 								</ChildItems>
 							</ButtonGroup>
 						</ChildItems>
@@ -737,7 +746,8 @@
 						<TopLevelParent xsi:nil="true"/>
 						<ShowRoot>true</ShowRoot>
 						<AllowRootChoice>true</AllowRootChoice>
-						<UpdateOnDataChange>DontUse</UpdateOnDataChange>
+						<UpdateOnDataChange>Auto</UpdateOnDataChange>
+						<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
 						<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 						<ContextMenu name="ДеревоКонтекстноеМеню" id="3"/>
 						<AutoCommandBar name="ДеревоКоманднаяПанель" id="4">
