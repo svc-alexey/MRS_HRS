@@ -451,7 +451,34 @@
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
-	<Attributes/>
+	<Attributes>
+		<Attribute>
+			<Name>ФлагИзмененияОтбораДерева</Name>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Флаг изменения отбора дерева</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Saved>false</Saved>
+		</Attribute>
+		<Attribute>
+			<Name>ТекущийРодительДерева</Name>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий родитель дерева</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
+			</Type>
+			<Saved>false</Saved>
+		</Attribute>
+	</Attributes>
 	<BaseForm version="2.19">
 		<Title>
 			<v8:item>
