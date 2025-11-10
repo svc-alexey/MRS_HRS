@@ -269,11 +269,11 @@
 						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
 					</Period>
 					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
-					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<RestoreCurrentRow>true</RestoreCurrentRow>
 					<TopLevelParent xsi:nil="true"/>
 					<ShowRoot>true</ShowRoot>
 					<AllowRootChoice>true</AllowRootChoice>
-					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<UpdateOnDataChange>DontUse</UpdateOnDataChange>
 					<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
 					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 					<ContextMenu name="ДеревоКонтекстноеМеню" id="3"/>
@@ -453,19 +453,6 @@
 	</ChildItems>
 	<Attributes>
 		<Attribute>
-			<Name>ФлагИзмененияОтбораДерева</Name>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Флаг изменения отбора дерева</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
-			</Type>
-			<Saved>false</Saved>
-		</Attribute>
-		<Attribute>
 			<Name>ТекущийРодительДерева</Name>
 			<Title>
 				<v8:item>
@@ -473,9 +460,7 @@
 					<v8:content>Текущий родитель дерева</v8:content>
 				</v8:item>
 			</Title>
-			<Type>
-				<v8:Type>cfg:CatalogRef.питМеню</v8:Type>
-			</Type>
+			<Type/>
 			<Saved>false</Saved>
 		</Attribute>
 	</Attributes>
