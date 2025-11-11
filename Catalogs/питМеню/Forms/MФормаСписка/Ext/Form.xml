@@ -11,7 +11,6 @@
 	<AutoTitle>false</AutoTitle>
 	<CommandBarLocation>None</CommandBarLocation>
 	<VerticalScroll>useIfNecessary</VerticalScroll>
-	<GroupList>Дерево</GroupList>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
 		<UsualGroup name="ГруппаБыстрыеОтборы" id="90">
@@ -194,11 +193,6 @@
 									<CommandName>0</CommandName>
 									<ExtendedTooltip name="ФормаОчиститьExtendedTooltip" id="67"/>
 								</Button>
-								<Button name="ФормаВыгрузить" id="26">
-									<Type>CommandBarButton</Type>
-									<CommandName>0</CommandName>
-									<ExtendedTooltip name="ФормаВыгрузитьExtendedTooltip" id="68"/>
-								</Button>
 								<Button name="ФормаУстановитьЦены" id="146">
 									<Type>CommandBarButton</Type>
 									<CommandName>0</CommandName>
@@ -218,29 +212,6 @@
 						</ButtonGroup>
 					</ChildItems>
 				</Popup>
-				<Button name="ФормаУменьшитьНомер" id="45">
-					<Type>CommandBarButton</Type>
-					<CommandName>0</CommandName>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Сдвинуть позицию меню вверх</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаУменьшитьНомерExtendedTooltip" id="61"/>
-				</Button>
-				<Button name="ФормаУвеличитьНомер" id="44">
-					<Type>CommandBarButton</Type>
-					<CommandName>0</CommandName>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Сдвинуть позицию меню вниз
-</v8:content>
-						</v8:item>
-					</Title>
-					<ExtendedTooltip name="ФормаУвеличитьНомерExtendedTooltip" id="62"/>
-				</Button>
 				<Button name="ФормаПодбор" id="25">
 					<Type>CommandBarButton</Type>
 					<CommandName>0</CommandName>
@@ -284,7 +255,6 @@
 					<ShowRoot>true</ShowRoot>
 					<AllowRootChoice>true</AllowRootChoice>
 					<UpdateOnDataChange>Auto</UpdateOnDataChange>
-					<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
 					<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 					<ContextMenu name="ДеревоКонтекстноеМеню" id="3"/>
 					<AutoCommandBar name="ДеревоКоманднаяПанель" id="4">
@@ -474,7 +444,6 @@
 		<AutoTitle>false</AutoTitle>
 		<CommandBarLocation>None</CommandBarLocation>
 		<VerticalScroll>useIfNecessary</VerticalScroll>
-		<GroupList>Дерево</GroupList>
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 		<ChildItems>
 			<UsualGroup name="ГруппаБыстрыеОтборы" id="90">
@@ -657,11 +626,6 @@
 										<CommandName>0</CommandName>
 										<ExtendedTooltip name="ФормаОчиститьExtendedTooltip" id="67"/>
 									</Button>
-									<Button name="ФормаВыгрузить" id="26">
-										<Type>CommandBarButton</Type>
-										<CommandName>0</CommandName>
-										<ExtendedTooltip name="ФормаВыгрузитьExtendedTooltip" id="68"/>
-									</Button>
 									<Button name="ФормаУстановитьЦены" id="146">
 										<Type>CommandBarButton</Type>
 										<CommandName>0</CommandName>
@@ -681,29 +645,6 @@
 							</ButtonGroup>
 						</ChildItems>
 					</Popup>
-					<Button name="ФормаУменьшитьНомер" id="45">
-						<Type>CommandBarButton</Type>
-						<CommandName>0</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Сдвинуть позицию меню вверх</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="ФормаУменьшитьНомерExtendedTooltip" id="61"/>
-					</Button>
-					<Button name="ФормаУвеличитьНомер" id="44">
-						<Type>CommandBarButton</Type>
-						<CommandName>0</CommandName>
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Сдвинуть позицию меню вниз
-</v8:content>
-							</v8:item>
-						</Title>
-						<ExtendedTooltip name="ФормаУвеличитьНомерExtendedTooltip" id="62"/>
-					</Button>
 					<Button name="ФормаПодбор" id="25">
 						<Type>CommandBarButton</Type>
 						<CommandName>0</CommandName>
@@ -734,6 +675,7 @@
 						<SearchStringLocation>None</SearchStringLocation>
 						<ViewStatusLocation>None</ViewStatusLocation>
 						<SearchControlLocation>None</SearchControlLocation>
+						<CurrentRowUse>SelectionPresentation</CurrentRowUse>
 						<AutoRefresh>false</AutoRefresh>
 						<AutoRefreshPeriod>60</AutoRefreshPeriod>
 						<Period>
@@ -747,7 +689,6 @@
 						<ShowRoot>true</ShowRoot>
 						<AllowRootChoice>true</AllowRootChoice>
 						<UpdateOnDataChange>Auto</UpdateOnDataChange>
-						<UserSettingsGroup>ГруппаДополнительныеОтборы</UserSettingsGroup>
 						<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
 						<ContextMenu name="ДеревоКонтекстноеМеню" id="3"/>
 						<AutoCommandBar name="ДеревоКоманднаяПанель" id="4">
