@@ -426,6 +426,10 @@
 							<ContextMenu name="СтатусКонтекстноеМеню" id="134"/>
 							<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="135"/>
 						</LabelField>
+						<LabelField name="Цена" id="152">
+							<ContextMenu name="ЦенаКонтекстноеМеню" id="153"/>
+							<ExtendedTooltip name="ЦенаРасширеннаяПодсказка" id="154"/>
+						</LabelField>
 					</ChildItems>
 				</Table>
 			</ChildItems>
@@ -859,6 +863,10 @@
 							<LabelField name="Статус" id="133">
 								<ContextMenu name="СтатусКонтекстноеМеню" id="134"/>
 								<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="135"/>
+							</LabelField>
+							<LabelField name="Цена" id="152">
+								<ContextMenu name="ЦенаКонтекстноеМеню" id="153"/>
+								<ExtendedTooltip name="ЦенаРасширеннаяПодсказка" id="154"/>
 							</LabelField>
 						</ChildItems>
 					</Table>
