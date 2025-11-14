@@ -10,23 +10,21 @@
 		<Metadata name="Catalog.Пользователи" id="dceb4cc3-7a92-4601-ab21-3f76f75ece93" configVersion="188fe9d7e1e2c6fb600d01a67d030d96cc15b6af"/>
 		<Metadata name="Catalog.УпаковкиЕдиницыИзмерения" id="98253123-e0f9-48e0-a476-7903797adbe5" configVersion="a8d3c089f5a3456bdfdf5e56f4fceee4b3309584"/>
 		<Metadata name="Catalog.питВидыМеню" id="95850253-d0ae-46dd-a8a9-0d916255bbf1" configVersion="a296e5988aeff57c62001036d3779186471789e3"/>
-		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="d0af6c97b4a20b9f887b9f7db183c32e22abbe1c">
+		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="19b8247b6325d6029430819b8464b5fc750c5bc3">
 			<Metadata name="Catalog.питМеню.Attribute.Выключен" id="785c3502-6195-46d4-b7df-bce5e3b4871a"/>
 			<Metadata name="Catalog.питМеню.Attribute.Номенклатура" id="8c0e4d69-fd37-4d4f-b8f1-0177bfe2f544"/>
 			<Metadata name="Catalog.питМеню.Attribute.ЕдиницаИзмерения" id="8fbaaac4-899a-4aac-8721-ab9e163f0e59"/>
 			<Metadata name="Catalog.питМеню.Attribute.MRS_КодSimphony" id="baf4185e-79ae-4e5a-bcb8-833f92d3cd51"/>
 			<Metadata name="Catalog.питМеню.Attribute.Рецептура" id="cbd11a71-f45a-420b-a601-50861e7a87e2"/>
 		</Metadata>
-		<Metadata name="Catalog.питМеню.Form.MRS_ФормаМониторинга" id="824bfdb0-84f9-4ce4-a5ac-bf12b7264f28" configVersion="ce189cdbe6c8339430e0f696ea9896f03b8f337f"/>
-		<Metadata name="Catalog.питМеню.Form.MRS_ФормаМониторинга.Form" id="824bfdb0-84f9-4ce4-a5ac-bf12b7264f28.0" configVersion="23230ea9eabe5ead241dad160f7b70124a741132"/>
-		<Metadata name="Catalog.питМеню.Form.MRS_ФормаУправленияОчередью" id="8abf3e12-1bea-41e3-afa6-9dbc5ec5ecd2" configVersion="c43eebbd6f816763bbb4aceb07fea37315b7d0a6"/>
-		<Metadata name="Catalog.питМеню.Form.MRS_ФормаУправленияОчередью.Form" id="8abf3e12-1bea-41e3-afa6-9dbc5ec5ecd2.0" configVersion="b62c12838487b7c80fde17ad1c4011b345cf3316"/>
 		<Metadata name="Catalog.питМеню.Form.MФормаСписка" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59" configVersion="d3220cc3f8e1c169d659e228c4dda633b3dd86b7"/>
 		<Metadata name="Catalog.питМеню.Form.MФормаСписка.Form" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59.0" configVersion="6507db384e88bb15bbc412404b4489ad21f410dd"/>
 		<Metadata name="Catalog.питМеню.Form.МФормаЭлемента" id="13129379-3dea-4a51-838b-3d618d5687f8" configVersion="339d53490aea88b07620fc3f4472d9422b1ff603"/>
 		<Metadata name="Catalog.питМеню.Form.МФормаЭлемента.Form" id="13129379-3dea-4a51-838b-3d618d5687f8.0" configVersion="a97a9f6f263f0a53316453f7e930ea49c007d1b9"/>
 		<Metadata name="Catalog.питМеню.ManagerModule" id="416ae5ca-a48c-40e1-ac63-245365cd668d.3" configVersion="e2adb5928ff53b8001f05b53a9983e0b6a07eb9c"/>
 		<Metadata name="Catalog.питМеню.ObjectModule" id="416ae5ca-a48c-40e1-ac63-245365cd668d.0" configVersion="fd952a40669242a7a9bf8d138ce0b6c8ce965048"/>
+		<Metadata name="CommonModule.MRS_HTTPИнтеграция" id="cd1bcbe0-83db-4024-b799-339d97002427" configVersion="b9f625b760e13716ae4413693dc5b92a0f54040e"/>
+		<Metadata name="CommonModule.MRS_HTTPИнтеграция.Module" id="cd1bcbe0-83db-4024-b799-339d97002427.0" configVersion="aa50eacb784289ca85d6a1deaa433cb8aaa9c8b6"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиент" id="1c452ff3-a170-48bf-a241-ec86ab266f42" configVersion="3ae015b6e8ab0f1be480275c767aaa0671a67dd0"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиент.Module" id="1c452ff3-a170-48bf-a241-ec86ab266f42.0" configVersion="fb5bf9ef482c22cdbc9a7b410463ded1105c9a48"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиентСервер" id="ac5c8607-83f2-4870-af38-910d4cbb3066" configVersion="70fe9bff40d04392f7818298336e47b2532b2f51"/>
@@ -35,7 +33,7 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер.Module" id="36e35c70-8def-455a-9ac3-778b72daad93.0" configVersion="200b64bef46cc5b7a660801ba41607b2b1a95057"/>
 		<Metadata name="CommonPicture.КоллекцияШаровБЭД" id="90a4c058-27c8-4683-b50e-1b9fd8c59109" configVersion="f16a48225ef795b3ab234a369bbd1946ff20d680"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="9593c6a99c3a7a21e23b464fb65399340e3eb8a0"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="f2e9ca1e613ddfc6c4b1b3f303524c4c451a4496"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="Document.УстановкаЦенНоменклатуры" id="32c8bf7f-4b43-4ec7-90d3-0551a8100735" configVersion="c15c9c329f0b454ccc464164d4bb9991024d7f3f">
 			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Ответственный" id="09a6e63d-6cf2-4e9d-a9dc-530ad143d937"/>

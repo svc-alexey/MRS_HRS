@@ -71,6 +71,7 @@
 			<CommonModule>MRS_ИнтеграцияSimphonyСервер</CommonModule>
 			<CommonModule>MRS_ИнтеграцияSimphonyКлиентСервер</CommonModule>
 			<CommonModule>MRS_ИнтеграцияSimphonyКлиент</CommonModule>
+			<CommonModule>MRS_HTTPИнтеграция</CommonModule>
 			<ExchangePlan>питУдаленныеКассы</ExchangePlan>
 			<Constant>MRS_URLСервисаSimphony</Constant>
 			<Catalog>Пользователи</Catalog>

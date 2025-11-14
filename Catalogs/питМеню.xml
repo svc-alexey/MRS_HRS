@@ -97,8 +97,6 @@
 			</Attribute>
 			<Form>MФормаСписка</Form>
 			<Form>МФормаЭлемента</Form>
-			<Form>MRS_ФормаМониторинга</Form>
-			<Form>MRS_ФормаУправленияОчередью</Form>
 		</ChildObjects>
 	</Catalog>
 </MetaDataObject>
