@@ -67,11 +67,21 @@
 			<Language>Русский</Language>
 			<CommonPicture>КоллекцияШаровБЭД</CommonPicture>
 			<CommonPicture>питДерево</CommonPicture>
+			<CommonPicture>ПодобратьТовары</CommonPicture>
+			<CommonPicture>ЗаполнитьПоШаблону</CommonPicture>
+			<CommonPicture>ВидыЦенТолькоПросмотр</CommonPicture>
+			<CommonPicture>УстановитьЦены</CommonPicture>
+			<CommonPicture>Номенклатура</CommonPicture>
+			<CommonPicture>ЗаполнитьФорму</CommonPicture>
+			<CommonPicture>Отчеты</CommonPicture>
 			<Role>MRS_ОсновнаяРоль</Role>
 			<CommonModule>MRS_ИнтеграцияSimphonyСервер</CommonModule>
 			<CommonModule>MRS_ИнтеграцияSimphonyКлиентСервер</CommonModule>
 			<CommonModule>MRS_ИнтеграцияSimphonyКлиент</CommonModule>
 			<CommonModule>MRS_HTTPИнтеграция</CommonModule>
+			<CommonModule>MRS_ИнтеграцияЕЛМАСервер</CommonModule>
+			<CommonModule>MRS_ИнтеграцияЕЛМАКлиент</CommonModule>
+			<CommonModule>MRS_ИнтеграцияЕЛМАКлиентСервер</CommonModule>
 			<ExchangePlan>питУдаленныеКассы</ExchangePlan>
 			<Constant>MRS_URLСервисаSimphony</Constant>
 			<Catalog>Пользователи</Catalog>
@@ -84,9 +94,13 @@
 			<Document>питРецептура</Document>
 			<Document>УстановкаЦенНоменклатуры</Document>
 			<Enum>MRS_СтатусыСинхронизацииSimphony</Enum>
+			<Enum>СтатусыУстановокЦенНоменклатуры</Enum>
+			<Enum>MRS_СтатусыСинхронизацииELMA</Enum>
+			<Enum>ВариантыРасчетаЦенНаборов</Enum>
 			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
+			<InformationRegister>MRS_ПроцессыELMA</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

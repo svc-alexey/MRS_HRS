@@ -31,24 +31,55 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиентСервер.Module" id="ac5c8607-83f2-4870-af38-910d4cbb3066.0" configVersion="a59d22ed479190e7a5714507712cbd647f05602d"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер" id="36e35c70-8def-455a-9ac3-778b72daad93" configVersion="21ebe5c60865b73e878daddec34b616e1061a4e1"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер.Module" id="36e35c70-8def-455a-9ac3-778b72daad93.0" configVersion="200b64bef46cc5b7a660801ba41607b2b1a95057"/>
+		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиент" id="45597a8c-7723-40ed-9cb7-07cf8528c1dc" configVersion="2ec3401151d57f510a2ca1509ff637c2f9c247c0"/>
+		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиентСервер" id="17429aec-8109-4c27-8282-bd00592865a8" configVersion="4ed3a477843f19669869c5361ef790ec7075261a"/>
+		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7" configVersion="6ea937f652af8177d394f260e9cd195cc83786f4"/>
+		<Metadata name="CommonPicture.ВидыЦенТолькоПросмотр" id="88630cb3-e5d6-4f3d-928b-a19b6ddcf863" configVersion="5e17cd02351a4532a8cd50d484332ee636045d1b"/>
+		<Metadata name="CommonPicture.ЗаполнитьПоШаблону" id="015c8443-005d-4074-9a4d-9610dffdaa0b" configVersion="7dfdb31b1238a1e9c05a9c701916b5b1d334f0db"/>
+		<Metadata name="CommonPicture.ЗаполнитьФорму" id="2f49283a-9e4d-4926-8cdc-ecd57ffba502" configVersion="341e693cb701ab0efc63b0d2476f599187752a91"/>
 		<Metadata name="CommonPicture.КоллекцияШаровБЭД" id="90a4c058-27c8-4683-b50e-1b9fd8c59109" configVersion="f16a48225ef795b3ab234a369bbd1946ff20d680"/>
+		<Metadata name="CommonPicture.Номенклатура" id="0069ac59-464d-44eb-a08e-7ddd593b2096" configVersion="a65963c554b1f88d08960c17dfb65a9f4875fa91"/>
+		<Metadata name="CommonPicture.Отчеты" id="494230f1-3cea-4485-849a-88941352ab0f" configVersion="1d71091df3785e964508e632d5028a0b2425f7dd"/>
+		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
+		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="f2e9ca1e613ddfc6c4b1b3f303524c4c451a4496"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="896a3af8479940f418290e53225f1b0e482b7456"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
-		<Metadata name="Document.УстановкаЦенНоменклатуры" id="32c8bf7f-4b43-4ec7-90d3-0551a8100735" configVersion="c15c9c329f0b454ccc464164d4bb9991024d7f3f">
+		<Metadata name="Document.УстановкаЦенНоменклатуры" id="32c8bf7f-4b43-4ec7-90d3-0551a8100735" configVersion="da1e369058a0dd6a7af90233d25f264d76088fb1">
 			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Ответственный" id="09a6e63d-6cf2-4e9d-a9dc-530ad143d937"/>
 			<Metadata name="Document.УстановкаЦенНоменклатуры.TabularSection.Товары" id="168a0c5c-c227-4f19-a2d9-39e3d5952792"/>
 			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Согласован" id="483e6fc9-b2ba-4267-b475-1e6522c7c5d8"/>
 			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Комментарий" id="4a99da74-3aec-49ea-b177-ccb9cb0f90f7"/>
 			<Metadata name="Document.УстановкаЦенНоменклатуры.TabularSection.ВидыЦен" id="c752dc11-d77c-41be-b4d0-f8707b403a08"/>
+			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Статус" id="ebbccb08-1015-4f6b-913f-15e1ab059c8d"/>
 		</Metadata>
+		<Metadata name="Document.УстановкаЦенНоменклатуры.Form.ФормаДокумента" id="e9fdccdf-6684-408f-9317-6d26a36e0caf" configVersion="d30f50deb3e1d9e888c1dd04ea4c0e70bfcb4471"/>
+		<Metadata name="Document.УстановкаЦенНоменклатуры.Form.ФормаДокумента.Form" id="e9fdccdf-6684-408f-9317-6d26a36e0caf.0" configVersion="89c17c976ae6d5337bb9b7455dd9414d70fb4661"/>
 		<Metadata name="Document.питРецептура" id="a74b949f-acdf-4bbc-89d3-ac6dc62b0b75" configVersion="e49af1a29a1b13246e54e03274d4dd2403ec0f10"/>
+		<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA" id="67f4f80a-a406-468b-bad5-39d5a4cf3d95" configVersion="8cedc5b0d9b039e095f03a20a8c32500e76cb3f7">
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.Подписан" id="00eb77c2-71f6-4049-8f2a-453d4f981da9"/>
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.Согласован" id="5e46885e-c3d5-4f93-aa8d-4f554b3003f9"/>
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.Ошибка" id="845bd26c-dc23-443a-9610-880044d8af28"/>
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.ТребуетВнимания" id="b6b3d95c-49bd-4f79-b124-bf65dba8d71c"/>
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.НаСогласовании" id="c31ee998-b759-4e19-8b78-fd5f512ebd27"/>
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.ВОчереди" id="cc1f269d-6090-44c5-8c46-7440e8c8c8d8"/>
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.Отклонен" id="d024933f-4b10-4c11-9034-bc72f2c5eed1"/>
+			<Metadata name="Enum.MRS_СтатусыСинхронизацииELMA.EnumValue.Отменен" id="f678eb48-6394-4d56-82e1-f3b0c8d0db53"/>
+		</Metadata>
 		<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony" id="206ce2c7-d0a7-47f4-8552-bd997f1f2c1b" configVersion="2fa3301d4cadb910bde165e3a99f43470a26daeb">
 			<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony.EnumValue.Выгружено" id="0e685e1b-e1fb-4a86-890a-f107f6a35170"/>
 			<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony.EnumValue.Ошибка" id="19ee9fd6-2ec2-47a4-a0f3-eaebb8c458a3"/>
 			<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony.EnumValue.ВОчереди" id="56ecf66e-3ba6-4c9a-af15-6e11f5e386fc"/>
 			<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony.EnumValue.НеВыгружено" id="6fd65f82-af86-4f59-a249-f47f6cb5c927"/>
 			<Metadata name="Enum.MRS_СтатусыСинхронизацииSimphony.EnumValue.ТребуетВнимания" id="dee824cc-73b2-4171-a2d9-e22f077c9796"/>
+		</Metadata>
+		<Metadata name="Enum.ВариантыРасчетаЦенНаборов" id="475abc64-39fa-464e-9aec-615b6f32c7fe" configVersion="e01f37596811b79e84e231e4a6b049fd34954367">
+			<Metadata name="Enum.ВариантыРасчетаЦенНаборов.EnumValue.ЦенаЗадаетсяЗаНаборРаспределяетсяПоЦенам" id="17d897b0-9f21-4c1c-9ad3-de75d56475f1"/>
+			<Metadata name="Enum.ВариантыРасчетаЦенНаборов.EnumValue.ЦенаЗадаетсяЗаНаборРаспределяетсяПоДолям" id="a01da7c5-4dd3-46ff-a0f0-d106923c2dcf"/>
+		</Metadata>
+		<Metadata name="Enum.СтатусыУстановокЦенНоменклатуры" id="7a27ec84-4ca0-47a2-be9f-4784ad0f2cf6" configVersion="f6ed9152f74354b8e03cbd9a6877711c4c87cad4">
+			<Metadata name="Enum.СтатусыУстановокЦенНоменклатуры.EnumValue.НеСогласован" id="55e96b93-cff2-4106-b34d-3eeb510dad9c"/>
+			<Metadata name="Enum.СтатусыУстановокЦенНоменклатуры.EnumValue.Согласован" id="b645f0d7-2158-4ce0-a377-fb473aa80952"/>
 		</Metadata>
 		<Metadata name="ExchangePlan.питУдаленныеКассы" id="bc07d6b1-563e-4e1f-ac7c-9c394e938048" configVersion="2bd7986910b279f43796be327dfe205f5c8445c1"/>
 		<Metadata name="InformationRegister.MRS_ИсторияСинхронизацииМенюSimphony" id="4df357d2-8518-4505-bdd8-848bfb95dba4" configVersion="535bdc13eb54f1ce9e3742f7524f322b3e03a4b8">
@@ -71,6 +102,17 @@
 			<Metadata name="InformationRegister.MRS_ОчередьВыгрузкиМенюSimphony.Resource.ДатаПостановкиВОчередь" id="8b274b39-3f66-412c-a464-aff54b3f5596"/>
 			<Metadata name="InformationRegister.MRS_ОчередьВыгрузкиМенюSimphony.Resource.ТекстОшибки" id="cd8e9521-0fcf-4f01-a371-0539dd6f97e7"/>
 			<Metadata name="InformationRegister.MRS_ОчередьВыгрузкиМенюSimphony.Resource.КоличествоПопыток" id="d48ac13b-85eb-4783-a3f5-4b52520e851c"/>
+		</Metadata>
+		<Metadata name="InformationRegister.MRS_ПроцессыELMA" id="5fa55479-e3cc-4012-aa67-678ccebb2b1b" configVersion="c896d8b7cce2c538295347885a697bca03561692">
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.ТекстОшибки" id="03a25e79-a5b7-473a-893d-52d640c4f428"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.ДатаПоследнегоОпроса" id="07b87562-207d-4a3d-aae8-ce4af44e9200"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.УИДЕЛМА" id="254d3744-bcbb-4b2b-bf58-b04fac9518cd"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.Статус" id="8d3bff6c-e7df-4ea1-b2bf-60429e1d8752"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Dimension.УстановкаЦен" id="8eb2d535-6161-417a-9f70-01d839fb0f6a"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.КоличествоПопыток" id="b8c20c2e-2806-46ad-b2d9-d457b65e0eec"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.КомментарийЕЛМА" id="c35be74d-0f5c-45c7-a682-55527f4ffd34"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.ДатаПоследнейПопытки" id="c932f956-7389-4804-89af-2125a6c81905"/>
+			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.ДатаОтправки" id="fa51e945-223c-4d56-919b-39f367f800f7"/>
 		</Metadata>
 		<Metadata name="InformationRegister.ЦеныНоменклатуры" id="9d79f0dd-220e-4497-8cf8-e800686a7898" configVersion="d1c0d7dfe3835cdc0fdba4735266b2de2b472c32">
 			<Metadata name="InformationRegister.ЦеныНоменклатуры.Dimension.ВидЦены" id="77d5e76a-c193-4162-a0ba-f310044671da"/>

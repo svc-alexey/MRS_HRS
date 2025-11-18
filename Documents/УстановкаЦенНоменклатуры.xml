@@ -71,6 +71,19 @@
 					</Type>
 				</Properties>
 			</Attribute>
+			<Attribute uuid="ebbccb08-1015-4f6b-913f-15e1ab059c8d">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Статус</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>37af9893-517f-4c26-b4d6-13e6c82a96ec</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.СтатусыУстановокЦенНоменклатуры</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Form>ФормаДокумента</Form>
 			<TabularSection uuid="168a0c5c-c227-4f19-a2d9-39e3d5952792">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.УстановкаЦенНоменклатуры.Товары" category="TabularSection">
