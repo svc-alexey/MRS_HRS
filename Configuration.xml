@@ -84,6 +84,7 @@
 			<CommonModule>MRS_ИнтеграцияЕЛМАКлиентСервер</CommonModule>
 			<ExchangePlan>питУдаленныеКассы</ExchangePlan>
 			<Constant>MRS_URLСервисаSimphony</Constant>
+			<CommonForm>MRS_ФормаПараметровПриказаЕЛМА</CommonForm>
 			<Catalog>Пользователи</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>УпаковкиЕдиницыИзмерения</Catalog>
