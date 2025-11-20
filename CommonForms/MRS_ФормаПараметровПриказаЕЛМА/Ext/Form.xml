@@ -2,10 +2,15 @@
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
-		<InputField name="ОтветсвенныйЗаИсполнение" id="1">
+		<InputField name="ДатаНачалаДействия" id="26">
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ОтветсвенныйЗаИсполнениеКонтекстноеМеню" id="2"/>
-			<ExtendedTooltip name="ОтветсвенныйЗаИсполнениеРасширеннаяПодсказка" id="3"/>
+			<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+		</InputField>
+		<InputField name="ОтветственныйЗаИсполнение" id="29">
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="33"/>
 		</InputField>
 		<Table name="СписокКОзнакомлению" id="4">
 			<Representation>List</Representation>
@@ -87,10 +92,15 @@
 	<BaseForm version="2.19">
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 		<ChildItems>
-			<InputField name="ОтветсвенныйЗаИсполнение" id="1">
+			<InputField name="ДатаНачалаДействия" id="26">
 				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-				<ContextMenu name="ОтветсвенныйЗаИсполнениеКонтекстноеМеню" id="2"/>
-				<ExtendedTooltip name="ОтветсвенныйЗаИсполнениеРасширеннаяПодсказка" id="3"/>
+				<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+			</InputField>
+			<InputField name="ОтветственныйЗаИсполнение" id="1">
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="2"/>
+				<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="3"/>
 			</InputField>
 			<Table name="СписокКОзнакомлению" id="4">
 				<Representation>List</Representation>
