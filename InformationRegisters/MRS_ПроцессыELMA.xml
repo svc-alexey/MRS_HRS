@@ -162,6 +162,38 @@
 					</Type>
 				</Properties>
 			</Resource>
+			<Resource uuid="77de8f81-d22f-4df8-8bf6-b77608683e8d">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Запрос</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>fc603da2-1a15-4343-9403-fe43d38cc701</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="e1ad8559-1255-484b-8303-5b6e8cebb275">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Ответ</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>a74b776a-6888-4a0f-8158-8adb17549625</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
 			<Dimension uuid="8eb2d535-6161-417a-9f70-01d839fb0f6a">
 				<InternalInfo/>
 				<Properties>

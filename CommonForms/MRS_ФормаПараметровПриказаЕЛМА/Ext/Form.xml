@@ -12,6 +12,18 @@
 			<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="32"/>
 			<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="33"/>
 		</InputField>
+		<InputField name="ДокументСсылка" id="34">
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДокументСсылкаКонтекстноеМеню" id="30"/>
+			<ExtendedTooltip name="ДокументСсылкаРасширеннаяПодсказка" id="31"/>
+		</InputField>
 		<Table name="СписокКОзнакомлению" id="4">
 			<Representation>List</Representation>
 			<TitleLocation>Top</TitleLocation>
@@ -101,6 +113,18 @@
 				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 				<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="2"/>
 				<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="3"/>
+			</InputField>
+			<InputField name="ДокументСсылка" id="29">
+				<ReadOnly>true</ReadOnly>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="ДокументСсылкаКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="ДокументСсылкаРасширеннаяПодсказка" id="31"/>
 			</InputField>
 			<Table name="СписокКОзнакомлению" id="4">
 				<Representation>List</Representation>
