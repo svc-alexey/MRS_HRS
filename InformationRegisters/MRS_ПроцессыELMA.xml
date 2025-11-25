@@ -83,21 +83,6 @@
 					</Type>
 				</Properties>
 			</Resource>
-			<Resource uuid="07b87562-207d-4a3d-aae8-ce4af44e9200">
-				<InternalInfo/>
-				<Properties>
-					<ObjectBelonging>Adopted</ObjectBelonging>
-					<Name>ДатаПоследнегоОпроса</Name>
-					<Comment/>
-					<ExtendedConfigurationObject>7761e732-f7aa-43a8-a73e-238ef25f8d87</ExtendedConfigurationObject>
-					<Type>
-						<v8:Type>xs:dateTime</v8:Type>
-						<v8:DateQualifiers>
-							<v8:DateFractions>Date</v8:DateFractions>
-						</v8:DateQualifiers>
-					</Type>
-				</Properties>
-			</Resource>
 			<Resource uuid="c35be74d-0f5c-45c7-a682-55527f4ffd34">
 				<InternalInfo/>
 				<Properties>
@@ -147,21 +132,6 @@
 					</Type>
 				</Properties>
 			</Resource>
-			<Resource uuid="c932f956-7389-4804-89af-2125a6c81905">
-				<InternalInfo/>
-				<Properties>
-					<ObjectBelonging>Adopted</ObjectBelonging>
-					<Name>ДатаПоследнейПопытки</Name>
-					<Comment/>
-					<ExtendedConfigurationObject>ec177d0f-bbb3-421d-91b0-eb8aa3ff207a</ExtendedConfigurationObject>
-					<Type>
-						<v8:Type>xs:dateTime</v8:Type>
-						<v8:DateQualifiers>
-							<v8:DateFractions>Date</v8:DateFractions>
-						</v8:DateQualifiers>
-					</Type>
-				</Properties>
-			</Resource>
 			<Resource uuid="77de8f81-d22f-4df8-8bf6-b77608683e8d">
 				<InternalInfo/>
 				<Properties>
@@ -194,15 +164,77 @@
 					</Type>
 				</Properties>
 			</Resource>
-			<Dimension uuid="8eb2d535-6161-417a-9f70-01d839fb0f6a">
+			<Resource uuid="f2f2ccf1-e1db-48af-be84-afa5031b7db4">
 				<InternalInfo/>
 				<Properties>
 					<ObjectBelonging>Adopted</ObjectBelonging>
-					<Name>УстановкаЦен</Name>
+					<Name>Документ1С</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>907c852e-fff4-40ab-b2ff-b150b0a335ff</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:DocumentRef.УстановкаЦенНоменклатуры</v8:Type>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="106e482c-1531-42b9-9d21-2b676eff85b0">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>URLProcess</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>ec51e939-6c33-4ed0-b141-5b55f3f05751</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="948a9956-c63f-47ee-92f3-42da8c15ec9d">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаПоследнейПопытки</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>21be89a3-274a-4329-a8ea-d63c726953ed</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="f826b7bc-1757-4099-b2d6-c075c401b117">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаПоследнегоОбновления</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>f1ce10f6-2366-4fab-9341-72f0a2872a64</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Dimension uuid="20da228b-f17d-498b-9a2c-6150f4223c86">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>UidДокумента1С</Name>
 					<Comment/>
 					<ExtendedConfigurationObject>8528e565-d96c-4c89-a32a-1a12f37937a9</ExtendedConfigurationObject>
 					<Type>
-						<v8:Type>cfg:DocumentRef.УстановкаЦенНоменклатуры</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Properties>
 			</Dimension>
