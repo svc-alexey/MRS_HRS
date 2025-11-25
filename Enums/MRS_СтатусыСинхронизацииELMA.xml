@@ -22,25 +22,25 @@
 			<ExtendedConfigurationObject>9cfd9d14-d433-45af-a651-0430971b56e9</ExtendedConfigurationObject>
 		</Properties>
 		<ChildObjects>
-		<EnumValue uuid="cc1f269d-6090-44c5-8c46-7440e8c8c8d8">
-			<InternalInfo/>
-			<Properties>
-				<ObjectBelonging>Adopted</ObjectBelonging>
-				<Name>ВОчереди</Name>
-				<Comment/>
-				<ExtendedConfigurationObject>a54b4747-9e4d-403e-8c6e-e6653631a68f</ExtendedConfigurationObject>
-			</Properties>
-		</EnumValue>
-		<EnumValue uuid="aef74b22-901f-4d57-9a8e-f5c5dd8892a1">
-			<InternalInfo/>
-			<Properties>
-				<ObjectBelonging>Adopted</ObjectBelonging>
-				<Name>Отправлен</Name>
-				<Comment/>
-				<ExtendedConfigurationObject>bcd8e451-3a72-4e9b-aa45-8d5c7e892f3a</ExtendedConfigurationObject>
-			</Properties>
-		</EnumValue>
-		<EnumValue uuid="c31ee998-b759-4e19-8b78-fd5f512ebd27">
+			<EnumValue uuid="cc1f269d-6090-44c5-8c46-7440e8c8c8d8">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВОчереди</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>a54b4747-9e4d-403e-8c6e-e6653631a68f</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="aef74b22-901f-4d57-9a8e-f5c5dd8892a1">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Отправлен</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>bcd8e451-3a72-4e9b-aa45-8d5c7e892f3a</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="c31ee998-b759-4e19-8b78-fd5f512ebd27">
 				<InternalInfo/>
 				<Properties>
 					<ObjectBelonging>Adopted</ObjectBelonging>

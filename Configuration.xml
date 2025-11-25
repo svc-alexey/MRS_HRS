@@ -82,6 +82,7 @@
 			<CommonModule>MRS_ИнтеграцияЕЛМАСервер</CommonModule>
 			<CommonModule>MRS_ИнтеграцияЕЛМАКлиент</CommonModule>
 			<CommonModule>MRS_ИнтеграцияЕЛМАКлиентСервер</CommonModule>
+			<CommonModule>MRS_МенеджерОбменаMicros</CommonModule>
 			<ExchangePlan>питУдаленныеКассы</ExchangePlan>
 			<HTTPService>ПЛ_HTTP_ОбменELMA</HTTPService>
 			<Constant>MRS_URLСервисаSimphony</Constant>
