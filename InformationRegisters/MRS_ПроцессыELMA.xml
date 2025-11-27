@@ -99,23 +99,6 @@
 					</Type>
 				</Properties>
 			</Resource>
-			<Resource uuid="b8c20c2e-2806-46ad-b2d9-d457b65e0eec">
-				<InternalInfo/>
-				<Properties>
-					<ObjectBelonging>Adopted</ObjectBelonging>
-					<Name>КоличествоПопыток</Name>
-					<Comment/>
-					<ExtendedConfigurationObject>182bb681-48ab-4572-b8a3-548bc0bcdfa5</ExtendedConfigurationObject>
-					<Type>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>3</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-							<v8:AllowedSign>Any</v8:AllowedSign>
-						</v8:NumberQualifiers>
-					</Type>
-				</Properties>
-			</Resource>
 			<Resource uuid="03a25e79-a5b7-473a-893d-52d640c4f428">
 				<InternalInfo/>
 				<Properties>
@@ -143,22 +126,6 @@
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
 							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
-					</Type>
-				</Properties>
-			</Resource>
-			<Resource uuid="e1ad8559-1255-484b-8303-5b6e8cebb275">
-				<InternalInfo/>
-				<Properties>
-					<ObjectBelonging>Adopted</ObjectBelonging>
-					<Name>Ответ</Name>
-					<Comment/>
-					<ExtendedConfigurationObject>a74b776a-6888-4a0f-8158-8adb17549625</ExtendedConfigurationObject>
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>10</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>

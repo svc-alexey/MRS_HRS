@@ -30,6 +30,57 @@
 			<Comment/>
 			<ExtendedConfigurationObject>6cc425d4-31b3-4ec2-9555-853f574f9f32</ExtendedConfigurationObject>
 		</Properties>
-		<ChildObjects/>
+		<ChildObjects>
+			<TabularSection uuid="ec717546-a6d5-41f7-b4fa-1fc749c1c7af">
+				<InternalInfo>
+					<xr:GeneratedType name="ExchangePlanTabularSection.питУдаленныеКассы.MRS_КостПродаж" category="TabularSection">
+						<xr:TypeId>f29310e5-8480-496a-8796-0184890fdfa2</xr:TypeId>
+						<xr:ValueId>a6cb48d1-49de-43f2-958a-ba5e6a8229ec</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="ExchangePlanTabularSectionRow.питУдаленныеКассы.MRS_КостПродаж" category="TabularSectionRow">
+						<xr:TypeId>a3c4e60f-a03e-487e-95d8-b5f071d48a2d</xr:TypeId>
+						<xr:ValueId>f3ff98a3-2485-40ca-a168-c9cc4b549260</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>MRS_КостПродаж</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>6db80023-f72f-4671-b5c7-7980cc53de43</ExtendedConfigurationObject>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="b3e025e8-5e32-4387-880c-1ea7f81e275d">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>ГФУ_МЖ</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>86a68280-555c-4944-bcf2-6d2bb57dfe1b</ExtendedConfigurationObject>
+							<Type>
+								<v8:Type>cfg:CatalogRef.ГруппыАналитическогоУчетаНоменклатуры</v8:Type>
+							</Type>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="93af99d3-b41c-40af-800e-ee1266926eae">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>ПроцентНаценки</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>f39504f9-4821-419f-8afc-1c32b6e59fd4</ExtendedConfigurationObject>
+							<Type>
+								<v8:Type>xs:decimal</v8:Type>
+								<v8:NumberQualifiers>
+									<v8:Digits>3</v8:Digits>
+									<v8:FractionDigits>0</v8:FractionDigits>
+									<v8:AllowedSign>Any</v8:AllowedSign>
+								</v8:NumberQualifiers>
+							</Type>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+			<Form>ФормаУзла</Form>
+		</ChildObjects>
 	</ExchangePlan>
 </MetaDataObject>

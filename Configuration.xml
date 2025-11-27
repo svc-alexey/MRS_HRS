@@ -65,6 +65,8 @@
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
+			<StyleItem>ТекстИнформационнойНадписи</StyleItem>
+			<StyleItem>ЦветМикротекста</StyleItem>
 			<CommonPicture>КоллекцияШаровБЭД</CommonPicture>
 			<CommonPicture>питДерево</CommonPicture>
 			<CommonPicture>ПодобратьТовары</CommonPicture>
