@@ -50,8 +50,14 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="6073a0c7e8146f819d3ec7aa4c2e9af60955214e"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="19f72d0eba2ad6501bf5a697e1a661ddc0252ac6"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
+		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20" id="0764f807-2883-473c-b71e-38cc516696e4" configVersion="bbd2f6777077ad2e76bc9d51cb21b4d23b46199f"/>
+		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Form.Форма" id="f48325ca-d4bc-4ef7-b61a-fd0d866932d7" configVersion="43be7ac1b96e3c854970a63eca232f4adf854b0c"/>
+		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Form.Форма.Form" id="f48325ca-d4bc-4ef7-b61a-fd0d866932d7.0" configVersion="ac18eadd783d303f189c92c49706712ffe78afac"/>
+		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.ObjectModule" id="0764f807-2883-473c-b71e-38cc516696e4.0" configVersion="3a6d52a6adfcc3feb1b973c49a7b36ead00ebd82"/>
+		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Template.Макет" id="324f37e4-0ef7-4cf2-bea6-e924a7170c61" configVersion="1ad75eed55866c810bc3df727bdee5b7c2ee67aa"/>
+		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Template.Макет.Template" id="324f37e4-0ef7-4cf2-bea6-e924a7170c61.0" configVersion="2da8173417b63dae6fac06cd289e1be82834d2b3"/>
 		<Metadata name="Document.УстановкаЦенНоменклатуры" id="32c8bf7f-4b43-4ec7-90d3-0551a8100735" configVersion="01d720e6523bd2e9b114e95e69c7e03bdbb80dbb">
 			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Ответственный" id="09a6e63d-6cf2-4e9d-a9dc-530ad143d937"/>
 			<Metadata name="Document.УстановкаЦенНоменклатуры.TabularSection.Товары" id="168a0c5c-c227-4f19-a2d9-39e3d5952792"/>

@@ -102,6 +102,7 @@
 			<Enum>СтатусыУстановокЦенНоменклатуры</Enum>
 			<Enum>MRS_СтатусыСинхронизацииELMA</Enum>
 			<Enum>ВариантыРасчетаЦенНаборов</Enum>
+			<DataProcessor>MRS_ТрудовойДоговорВыборПодписанта20</DataProcessor>
 			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
