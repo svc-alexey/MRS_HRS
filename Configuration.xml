@@ -76,6 +76,7 @@
 			<CommonPicture>Номенклатура</CommonPicture>
 			<CommonPicture>ЗаполнитьФорму</CommonPicture>
 			<CommonPicture>Отчеты</CommonPicture>
+			<CommonPicture>ВводимыеСимволыВидны</CommonPicture>
 			<Role>MRS_ОсновнаяРоль</Role>
 			<CommonModule>MRS_ИнтеграцияSimphonyСервер</CommonModule>
 			<CommonModule>MRS_ИнтеграцияSimphonyКлиентСервер</CommonModule>

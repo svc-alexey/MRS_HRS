@@ -10,7 +10,7 @@
 		<Metadata name="Catalog.Пользователи" id="dceb4cc3-7a92-4601-ab21-3f76f75ece93" configVersion="188fe9d7e1e2c6fb600d01a67d030d96cc15b6af"/>
 		<Metadata name="Catalog.УпаковкиЕдиницыИзмерения" id="98253123-e0f9-48e0-a476-7903797adbe5" configVersion="a8d3c089f5a3456bdfdf5e56f4fceee4b3309584"/>
 		<Metadata name="Catalog.питВидыМеню" id="95850253-d0ae-46dd-a8a9-0d916255bbf1" configVersion="a296e5988aeff57c62001036d3779186471789e3"/>
-		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="1ab6201f9a052a9f4911ac963f3799276630d4fe">
+		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="9977bb7b549f62d870ea3f6d0b51d98050b28775">
 			<Metadata name="Catalog.питМеню.Attribute.Выключен" id="785c3502-6195-46d4-b7df-bce5e3b4871a"/>
 			<Metadata name="Catalog.питМеню.Attribute.Номенклатура" id="8c0e4d69-fd37-4d4f-b8f1-0177bfe2f544"/>
 			<Metadata name="Catalog.питМеню.Attribute.ЕдиницаИзмерения" id="8fbaaac4-899a-4aac-8721-ab9e163f0e59"/>
@@ -18,7 +18,7 @@
 			<Metadata name="Catalog.питМеню.Attribute.Рецептура" id="cbd11a71-f45a-420b-a601-50861e7a87e2"/>
 		</Metadata>
 		<Metadata name="Catalog.питМеню.Form.MФормаСписка" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59" configVersion="d3220cc3f8e1c169d659e228c4dda633b3dd86b7"/>
-		<Metadata name="Catalog.питМеню.Form.MФормаСписка.Form" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59.0" configVersion="49937fca9855915014ba72c9ccd105ba5f02173b"/>
+		<Metadata name="Catalog.питМеню.Form.MФормаСписка.Form" id="ecdfab1d-5c0e-418c-81c5-09bc94ea2a59.0" configVersion="a864fc58e466652a7fbe62c4140f2eacda3a4107"/>
 		<Metadata name="Catalog.питМеню.Form.МФормаЭлемента" id="13129379-3dea-4a51-838b-3d618d5687f8" configVersion="339d53490aea88b07620fc3f4472d9422b1ff603"/>
 		<Metadata name="Catalog.питМеню.Form.МФормаЭлемента.Form" id="13129379-3dea-4a51-838b-3d618d5687f8.0" configVersion="47e3a9b6c39baea8fd440161ae68f0cc68ace943"/>
 		<Metadata name="Catalog.питМеню.ManagerModule" id="416ae5ca-a48c-40e1-ac63-245365cd668d.3" configVersion="c3de427b506a34d8886c4345c9a8ca6f8eea29b0"/>
@@ -41,6 +41,7 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер.Module" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7.0" configVersion="811cddc08140fb695172bfbda087a88f657ffca2"/>
 		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros" id="18a70a99-5cb4-4ac4-8d0b-3a129bc5066c" configVersion="f3cc2a1ee719a37e83dc927ca99a043869e50b67"/>
 		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros.Module" id="18a70a99-5cb4-4ac4-8d0b-3a129bc5066c.0" configVersion="f1108ef4315c3cb71c161a3eb5219613f0752e86"/>
+		<Metadata name="CommonPicture.ВводимыеСимволыВидны" id="33e67d26-7a41-46d6-9dae-eb99448032a1" configVersion="e525b2d84e3321ef90105e8f907d6d3e99c977d1"/>
 		<Metadata name="CommonPicture.ВидыЦенТолькоПросмотр" id="88630cb3-e5d6-4f3d-928b-a19b6ddcf863" configVersion="5e17cd02351a4532a8cd50d484332ee636045d1b"/>
 		<Metadata name="CommonPicture.ЗаполнитьПоШаблону" id="015c8443-005d-4074-9a4d-9610dffdaa0b" configVersion="7dfdb31b1238a1e9c05a9c701916b5b1d334f0db"/>
 		<Metadata name="CommonPicture.ЗаполнитьФорму" id="2f49283a-9e4d-4926-8cdc-ecd57ffba502" configVersion="341e693cb701ab0efc63b0d2476f599187752a91"/>
@@ -50,7 +51,7 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="19f72d0eba2ad6501bf5a697e1a661ddc0252ac6"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="22496cbd6f262cf8fbd9d34e84c91f8d08d0cae4"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20" id="0764f807-2883-473c-b71e-38cc516696e4" configVersion="bbd2f6777077ad2e76bc9d51cb21b4d23b46199f"/>
 		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Form.Форма" id="f48325ca-d4bc-4ef7-b61a-fd0d866932d7" configVersion="43be7ac1b96e3c854970a63eca232f4adf854b0c"/>

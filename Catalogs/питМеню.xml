@@ -37,14 +37,6 @@
 					<Name>MRS_КодSimphony</Name>
 					<Comment/>
 					<ExtendedConfigurationObject>4bc5d4ad-7784-4b23-8038-43b0c21eef8d</ExtendedConfigurationObject>
-					<Type>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>10</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
-						</v8:NumberQualifiers>
-					</Type>
 				</Properties>
 			</Attribute>
 			<Attribute uuid="8c0e4d69-fd37-4d4f-b8f1-0177bfe2f544">
