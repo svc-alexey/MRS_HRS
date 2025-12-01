@@ -364,6 +364,17 @@
 						<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="129"/>
 					</SearchControlAddition>
 					<ChildItems>
+						<LabelField name="Выключен" id="155">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доступна</v8:content>
+								</v8:item>
+							</Title>
+							<Width>6</Width>
+							<ContextMenu name="ВыключенКонтекстноеМеню" id="156"/>
+							<ExtendedTooltip name="ВыключенРасширеннаяПодсказка" id="157"/>
+						</LabelField>
 						<LabelField name="Наименование" id="10">
 							<DefaultItem>true</DefaultItem>
 							<Title>
@@ -802,6 +813,17 @@
 							<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="129"/>
 						</SearchControlAddition>
 						<ChildItems>
+							<LabelField name="Выключен" id="155">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Доступна</v8:content>
+									</v8:item>
+								</Title>
+								<Width>6</Width>
+								<ContextMenu name="ВыключенКонтекстноеМеню" id="156"/>
+								<ExtendedTooltip name="ВыключенРасширеннаяПодсказка" id="157"/>
+							</LabelField>
 							<LabelField name="Наименование" id="10">
 								<DefaultItem>true</DefaultItem>
 								<Title>
