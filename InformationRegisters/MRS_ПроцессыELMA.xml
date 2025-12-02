@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<InformationRegister uuid="5fa55479-e3cc-4012-aa67-678ccebb2b1b">
+		<InternalInfo>
+			<xr:GeneratedType name="InformationRegisterRecord.MRS_ПроцессыELMA" category="Record">
+				<xr:TypeId>2c4da768-6b67-4c83-bdf5-e1e2dd85a86d</xr:TypeId>
+				<xr:ValueId>149f5b3b-e77d-4886-8030-9d27165919e2</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterManager.MRS_ПроцессыELMA" category="Manager">
+				<xr:TypeId>b599bb66-32f1-43f1-949b-bab3d9fbdc59</xr:TypeId>
+				<xr:ValueId>07c6b95d-046a-46a5-9c89-59f551783fdd</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterSelection.MRS_ПроцессыELMA" category="Selection">
+				<xr:TypeId>31d6d5de-d154-4877-90fb-f834c078569e</xr:TypeId>
+				<xr:ValueId>c28aeb6b-c092-4109-89f3-1aa5aece979f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterList.MRS_ПроцессыELMA" category="List">
+				<xr:TypeId>e3fd6b4d-79fc-4fef-ada7-16fde258af7a</xr:TypeId>
+				<xr:ValueId>d876e10f-f308-443a-b487-8a642e763dbb</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordSet.MRS_ПроцессыELMA" category="RecordSet">
+				<xr:TypeId>a1d3047d-1964-4d25-8b3d-8912271d5f1f</xr:TypeId>
+				<xr:ValueId>b2e51c7b-bb28-4468-8b0b-ffd5c0ae4a9d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordKey.MRS_ПроцессыELMA" category="RecordKey">
+				<xr:TypeId>1628e84b-d41b-4c56-b97b-6333fdbcd0b6</xr:TypeId>
+				<xr:ValueId>17187371-9fd3-4fb8-b707-f26edaaded3c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordManager.MRS_ПроцессыELMA" category="RecordManager">
+				<xr:TypeId>b3e2394f-c330-4bb1-88b1-6c2c2c6c2861</xr:TypeId>
+				<xr:ValueId>dfe90c08-9f25-4c46-947f-228328532d08</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>MRS_ПроцессыELMA</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>ecdfeb6b-9fd2-4176-bc5d-6374ef42c850</ExtendedConfigurationObject>
+			<InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+			<WriteMode>Independent</WriteMode>
+		</Properties>
+		<ChildObjects>
+			<Resource uuid="254d3744-bcbb-4b2b-bf58-b04fac9518cd">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>УИДЕЛМА</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>7eba45e0-065d-495f-8af5-f60c2791221e</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="8d3bff6c-e7df-4ea1-b2bf-60429e1d8752">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Статус</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>cbd13844-3f62-4126-acba-708e2488ecd8</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.MRS_СтатусыСинхронизацииELMA</v8:Type>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="fa51e945-223c-4d56-919b-39f367f800f7">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаОтправки</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>9dcbd26a-8fb6-4af3-9ff8-2251911edf1f</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="c35be74d-0f5c-45c7-a682-55527f4ffd34">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КомментарийЕЛМА</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>883bd782-173a-4aaf-b95e-70a3c7124c53</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="03a25e79-a5b7-473a-893d-52d640c4f428">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ТекстОшибки</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>a2332a1f-c4a3-418b-b982-3b9ed2e991d4</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="77de8f81-d22f-4df8-8bf6-b77608683e8d">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Запрос</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>fc603da2-1a15-4343-9403-fe43d38cc701</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="f2f2ccf1-e1db-48af-be84-afa5031b7db4">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Документ1С</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>907c852e-fff4-40ab-b2ff-b150b0a335ff</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:DocumentRef.УстановкаЦенНоменклатуры</v8:Type>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="106e482c-1531-42b9-9d21-2b676eff85b0">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>URLProcess</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>ec51e939-6c33-4ed0-b141-5b55f3f05751</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="948a9956-c63f-47ee-92f3-42da8c15ec9d">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаПоследнейПопытки</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>21be89a3-274a-4329-a8ea-d63c726953ed</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="f826b7bc-1757-4099-b2d6-c075c401b117">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаПоследнегоОбновления</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>f1ce10f6-2366-4fab-9341-72f0a2872a64</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Dimension uuid="20da228b-f17d-498b-9a2c-6150f4223c86">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>UidДокумента1С</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>8528e565-d96c-4c89-a32a-1a12f37937a9</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</InformationRegister>
+</MetaDataObject>

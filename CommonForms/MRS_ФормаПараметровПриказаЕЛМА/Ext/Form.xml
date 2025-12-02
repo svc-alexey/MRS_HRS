@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="ДатаНачалаДействия" id="26">
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+		</InputField>
+		<InputField name="ОтветственныйЗаИсполнение" id="29">
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="33"/>
+		</InputField>
+		<InputField name="ДокументСсылка" id="34">
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДокументСсылкаКонтекстноеМеню" id="30"/>
+			<ExtendedTooltip name="ДокументСсылкаРасширеннаяПодсказка" id="31"/>
+		</InputField>
+		<Table name="СписокКОзнакомлению" id="4">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список к ознакомлению</v8:content>
+				</v8:item>
+			</Title>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СписокКОзнакомлениюКонтекстноеМеню" id="5"/>
+			<AutoCommandBar name="СписокКОзнакомлениюКоманднаяПанель" id="6"/>
+			<ExtendedTooltip name="СписокКОзнакомлениюРасширеннаяПодсказка" id="7"/>
+			<SearchStringAddition name="СписокКОзнакомлениюСтрокаПоиска" id="8">
+				<AdditionSource>
+					<Item>СписокКОзнакомлению</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокКОзнакомлениюСтрокаПоискаКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СписокКОзнакомлениюСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокКОзнакомлениюСостояниеПросмотра" id="11">
+				<AdditionSource>
+					<Item>СписокКОзнакомлению</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокКОзнакомлениюСостояниеПросмотраКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СписокКОзнакомлениюСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокКОзнакомлениюУправлениеПоиском" id="14">
+				<AdditionSource>
+					<Item>СписокКОзнакомлению</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокКОзнакомлениюУправлениеПоискомКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СписокКОзнакомлениюУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="СписокКОзнакомлениюФизическоеЛицо" id="17">
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="СписокКОзнакомлениюФизическоеЛицоКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СписокКОзнакомлениюФизическоеЛицоРасширеннаяПодсказка" id="19"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="Кнопки" id="24">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<ExtendedTooltip name="КнопкиРасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<Button name="ФормаОк" id="20">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>0</CommandName>
+					<ExtendedTooltip name="ФормаОкРасширеннаяПодсказка" id="21"/>
+				</Button>
+				<Button name="Отмена" id="22">
+					<Type>UsualButton</Type>
+					<CommandName>0</CommandName>
+					<TextColor>style:ButtonBackColor</TextColor>
+					<BackColor>style:SpecialTextColor</BackColor>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="23"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes/>
+	<BaseForm version="2.19">
+		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+		<ChildItems>
+			<InputField name="ДатаНачалаДействия" id="26">
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+			</InputField>
+			<InputField name="ОтветственныйЗаИсполнение" id="1">
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="2"/>
+				<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="3"/>
+			</InputField>
+			<InputField name="ДокументСсылка" id="29">
+				<ReadOnly>true</ReadOnly>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="ДокументСсылкаКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="ДокументСсылкаРасширеннаяПодсказка" id="31"/>
+			</InputField>
+			<Table name="СписокКОзнакомлению" id="4">
+				<Representation>List</Representation>
+				<TitleLocation>Top</TitleLocation>
+				<AutoInsertNewRow>true</AutoInsertNewRow>
+				<EnableStartDrag>true</EnableStartDrag>
+				<EnableDrag>true</EnableDrag>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список к ознакомлению</v8:content>
+					</v8:item>
+				</Title>
+				<RowFilter xsi:nil="true"/>
+				<ContextMenu name="СписокКОзнакомлениюКонтекстноеМеню" id="5"/>
+				<AutoCommandBar name="СписокКОзнакомлениюКоманднаяПанель" id="6"/>
+				<ExtendedTooltip name="СписокКОзнакомлениюРасширеннаяПодсказка" id="7"/>
+				<SearchStringAddition name="СписокКОзнакомлениюСтрокаПоиска" id="8">
+					<AdditionSource>
+						<Item>СписокКОзнакомлению</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<ContextMenu name="СписокКОзнакомлениюСтрокаПоискаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="СписокКОзнакомлениюСтрокаПоискаРасширеннаяПодсказка" id="10"/>
+				</SearchStringAddition>
+				<ViewStatusAddition name="СписокКОзнакомлениюСостояниеПросмотра" id="11">
+					<AdditionSource>
+						<Item>СписокКОзнакомлению</Item>
+						<Type>ViewStatusRepresentation</Type>
+					</AdditionSource>
+					<ContextMenu name="СписокКОзнакомлениюСостояниеПросмотраКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="СписокКОзнакомлениюСостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+				</ViewStatusAddition>
+				<SearchControlAddition name="СписокКОзнакомлениюУправлениеПоиском" id="14">
+					<AdditionSource>
+						<Item>СписокКОзнакомлению</Item>
+						<Type>SearchControl</Type>
+					</AdditionSource>
+					<ContextMenu name="СписокКОзнакомлениюУправлениеПоискомКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СписокКОзнакомлениюУправлениеПоискомРасширеннаяПодсказка" id="16"/>
+				</SearchControlAddition>
+				<ChildItems>
+					<InputField name="СписокКОзнакомлениюФизическоеЛицо" id="17">
+						<EditMode>EnterOnInput</EditMode>
+						<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+						<ContextMenu name="СписокКОзнакомлениюФизическоеЛицоКонтекстноеМеню" id="18"/>
+						<ExtendedTooltip name="СписокКОзнакомлениюФизическоеЛицоРасширеннаяПодсказка" id="19"/>
+					</InputField>
+				</ChildItems>
+			</Table>
+			<UsualGroup name="Кнопки" id="24">
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Кнопки</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Group>AlwaysHorizontal</Group>
+				<ExtendedTooltip name="КнопкиРасширеннаяПодсказка" id="25"/>
+				<ChildItems>
+					<Button name="ФормаОк" id="20">
+						<Type>UsualButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<CommandName>0</CommandName>
+						<ExtendedTooltip name="ФормаОкРасширеннаяПодсказка" id="21"/>
+					</Button>
+					<Button name="Отмена" id="22">
+						<Type>UsualButton</Type>
+						<CommandName>0</CommandName>
+						<TextColor>style:ButtonBackColor</TextColor>
+						<BackColor>style:SpecialTextColor</BackColor>
+						<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+						<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="23"/>
+					</Button>
+				</ChildItems>
+			</UsualGroup>
+		</ChildItems>
+		<Attributes/>
+	</BaseForm>
+</Form>

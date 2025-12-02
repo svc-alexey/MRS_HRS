@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Catalog uuid="95850253-d0ae-46dd-a8a9-0d916255bbf1">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.питВидыМеню" category="Object">
+				<xr:TypeId>f11ff285-112e-4e06-b7a8-cc01d5ae151c</xr:TypeId>
+				<xr:ValueId>3f48e73b-bc12-4ad4-aa66-2097698a8ab6</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.питВидыМеню" category="Ref">
+				<xr:TypeId>ae559de4-1fe7-4cf5-b6ae-656da98f3e9e</xr:TypeId>
+				<xr:ValueId>e0e3cc7a-b8f5-446e-800e-62e70dced121</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.питВидыМеню" category="Selection">
+				<xr:TypeId>021d24b0-924a-424d-9741-1e2f3ef35d77</xr:TypeId>
+				<xr:ValueId>1f1da496-d03a-4ea0-8591-6eccc51d238b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.питВидыМеню" category="List">
+				<xr:TypeId>a94206ca-8543-416c-a211-d250abf93f9a</xr:TypeId>
+				<xr:ValueId>9f5dec72-20a4-46f4-8056-d86bc0904428</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.питВидыМеню" category="Manager">
+				<xr:TypeId>137e4fea-b16d-495e-b167-6f60788fa155</xr:TypeId>
+				<xr:ValueId>7d2bc706-05e8-48b9-bd37-41a74e92e586</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>питВидыМеню</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>48972019-e89c-465e-ab19-67f1bd9f5a36</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>

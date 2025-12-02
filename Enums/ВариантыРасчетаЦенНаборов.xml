@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<Enum uuid="475abc64-39fa-464e-9aec-615b6f32c7fe">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ВариантыРасчетаЦенНаборов" category="Ref">
+				<xr:TypeId>53f2b369-4a95-4315-88bd-08bd8217db9a</xr:TypeId>
+				<xr:ValueId>3994bd5a-f1e4-467a-ad56-ed15471049ce</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ВариантыРасчетаЦенНаборов" category="Manager">
+				<xr:TypeId>eba2d7fa-8d77-4155-bedd-42ffaa01a023</xr:TypeId>
+				<xr:ValueId>911c48f5-7cb8-423a-af95-9d36718de809</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ВариантыРасчетаЦенНаборов" category="List">
+				<xr:TypeId>17bce17d-f1d6-4808-ada7-f23bc7aa7c29</xr:TypeId>
+				<xr:ValueId>2a6b200a-9746-4400-99a2-0097feee3592</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ВариантыРасчетаЦенНаборов</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>a9f357e7-d8a1-41d9-8e8c-998aba7763d9</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="17d897b0-9f21-4c1c-9ad3-de75d56475f1">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ЦенаЗадаетсяЗаНаборРаспределяетсяПоЦенам</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>3397ef23-61b6-4d41-9c81-5d406f66703f</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a01da7c5-4dd3-46ff-a0f0-d106923c2dcf">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ЦенаЗадаетсяЗаНаборРаспределяетсяПоДолям</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>299a1f71-e30b-4908-8487-03a62b1c6d26</ExtendedConfigurationObject>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>
