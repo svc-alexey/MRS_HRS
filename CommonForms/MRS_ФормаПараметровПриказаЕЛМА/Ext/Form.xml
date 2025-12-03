@@ -2,17 +2,20 @@
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
-		<InputField name="ДатаНачалаДействия" id="26">
+		<InputField name="Организация" id="40">
+			<Enabled>false</Enabled>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
-			<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="42"/>
 		</InputField>
-		<InputField name="ОтветственныйЗаИсполнение" id="29">
+		<InputField name="Склад" id="43">
+			<Enabled>false</Enabled>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="32"/>
-			<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="33"/>
+			<ContextMenu name="СкладКонтекстноеМеню" id="44"/>
+			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="45"/>
 		</InputField>
 		<InputField name="ДокументСсылка" id="34">
+			<Visible>false</Visible>
 			<ReadOnly>true</ReadOnly>
 			<Title>
 				<v8:item>
@@ -24,6 +27,38 @@
 			<ContextMenu name="ДокументСсылкаКонтекстноеМеню" id="30"/>
 			<ExtendedTooltip name="ДокументСсылкаРасширеннаяПодсказка" id="31"/>
 		</InputField>
+		<InputField name="ДатаНачалаДействия" id="26">
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+		</InputField>
+		<InputField name="ОтветственныйЗаИсполнение" id="29">
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="33"/>
+		</InputField>
+		<UsualGroup name="ТекстПриказа" id="38">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст приказа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<ExtendedTooltip name="ТекстПриказаРасширеннаяПодсказка" id="39"/>
+			<ChildItems>
+				<TextDocumentField name="Тема" id="46">
+					<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<ContextMenu name="ТемаКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ТемаРасширеннаяПодсказка" id="50"/>
+				</TextDocumentField>
+				<TextDocumentField name="Цель" id="35">
+					<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<ContextMenu name="ЦельКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ЦельРасширеннаяПодсказка" id="37"/>
+				</TextDocumentField>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="СписокКОзнакомлению" id="4">
 			<Representation>List</Representation>
 			<TitleLocation>Top</TitleLocation>
@@ -36,6 +71,7 @@
 					<v8:content>Список к ознакомлению</v8:content>
 				</v8:item>
 			</Title>
+			<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="СписокКОзнакомлениюКонтекстноеМеню" id="5"/>
 			<AutoCommandBar name="СписокКОзнакомлениюКоманднаяПанель" id="6"/>
@@ -104,17 +140,20 @@
 	<BaseForm version="2.19">
 		<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 		<ChildItems>
-			<InputField name="ДатаНачалаДействия" id="26">
+			<InputField name="Организация" id="40">
+				<Enabled>false</Enabled>
 				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-				<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
-				<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+				<ContextMenu name="ОрганизацияКонтекстноеМеню" id="41"/>
+				<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="42"/>
 			</InputField>
-			<InputField name="ОтветственныйЗаИсполнение" id="1">
+			<InputField name="Склад" id="43">
+				<Enabled>false</Enabled>
 				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-				<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="2"/>
-				<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="3"/>
+				<ContextMenu name="СкладКонтекстноеМеню" id="44"/>
+				<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="45"/>
 			</InputField>
 			<InputField name="ДокументСсылка" id="29">
+				<Visible>false</Visible>
 				<ReadOnly>true</ReadOnly>
 				<Title>
 					<v8:item>
@@ -126,6 +165,38 @@
 				<ContextMenu name="ДокументСсылкаКонтекстноеМеню" id="30"/>
 				<ExtendedTooltip name="ДокументСсылкаРасширеннаяПодсказка" id="31"/>
 			</InputField>
+			<InputField name="ДатаНачалаДействия" id="26">
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="28"/>
+			</InputField>
+			<InputField name="ОтветственныйЗаИсполнение" id="1">
+				<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+				<ContextMenu name="ОтветственныйЗаИсполнениеКонтекстноеМеню" id="2"/>
+				<ExtendedTooltip name="ОтветственныйЗаИсполнениеРасширеннаяПодсказка" id="3"/>
+			</InputField>
+			<UsualGroup name="ТекстПриказа" id="38">
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Текст приказа</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Group>AlwaysHorizontal</Group>
+				<ExtendedTooltip name="ТекстПриказаРасширеннаяПодсказка" id="39"/>
+				<ChildItems>
+					<TextDocumentField name="Тема" id="32">
+						<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+						<ContextMenu name="ТемаКонтекстноеМеню" id="33"/>
+						<ExtendedTooltip name="ТемаРасширеннаяПодсказка" id="34"/>
+					</TextDocumentField>
+					<TextDocumentField name="Цель" id="35">
+						<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+						<ContextMenu name="ЦельКонтекстноеМеню" id="36"/>
+						<ExtendedTooltip name="ЦельРасширеннаяПодсказка" id="37"/>
+					</TextDocumentField>
+				</ChildItems>
+			</UsualGroup>
 			<Table name="СписокКОзнакомлению" id="4">
 				<Representation>List</Representation>
 				<TitleLocation>Top</TitleLocation>
@@ -138,6 +209,7 @@
 						<v8:content>Список к ознакомлению</v8:content>
 					</v8:item>
 				</Title>
+				<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
 				<RowFilter xsi:nil="true"/>
 				<ContextMenu name="СписокКОзнакомлениюКонтекстноеМеню" id="5"/>
 				<AutoCommandBar name="СписокКОзнакомлениюКоманднаяПанель" id="6"/>
