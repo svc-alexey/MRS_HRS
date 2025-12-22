@@ -37,7 +37,7 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиентСервер.Module" id="6428914c-a2fa-4fbd-89f3-9024fdddf933.0" configVersion="1769287252873f1d2a1cbeb7535968a70e60c033"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7" configVersion="faa00a4c7cde967e8dcfdc52b90cff25877d2dd6"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер.Module" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7.0" configVersion="09bf8fd1784653615b1fd55e0ade046e24979ef1"/>
-		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация" id="ed7460ab-7c78-46d0-b3d0-539470ace977" configVersion="69e5976e70284376e24534a3c556190620b86cc3"/>
+		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация" id="ed7460ab-7c78-46d0-b3d0-539470ace977" configVersion="3392ba321a00122bdc45aee525958946baf8344b"/>
 		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация.Module" id="ed7460ab-7c78-46d0-b3d0-539470ace977.0" configVersion="e9a1bbc34a0a5ae6c08bcd49ac134f1a85748bcd"/>
 		<Metadata name="CommonModule.ПЛ_Формы" id="ee831b8f-d135-475a-8eae-ed06c4ba937e" configVersion="64c6489e716a4585d0cdc6f758e2879b5372e804"/>
 		<Metadata name="CommonModule.ПЛ_Формы.Module" id="ee831b8f-d135-475a-8eae-ed06c4ba937e.0" configVersion="48a176fc50372b7f940b3d0be33a076def3a62b5"/>
@@ -51,14 +51,17 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="12b921ea593989231ded613867c48914f0c045b9"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="f41e0d175208894acf88cceb032bbeec8f9faba1"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
-		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20" id="0764f807-2883-473c-b71e-38cc516696e4" configVersion="bbd2f6777077ad2e76bc9d51cb21b4d23b46199f"/>
-		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Form.Форма" id="f48325ca-d4bc-4ef7-b61a-fd0d866932d7" configVersion="43be7ac1b96e3c854970a63eca232f4adf854b0c"/>
-		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Form.Форма.Form" id="f48325ca-d4bc-4ef7-b61a-fd0d866932d7.0" configVersion="3961f689df52ded484e46c02f003272c81efbdba"/>
-		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.ObjectModule" id="0764f807-2883-473c-b71e-38cc516696e4.0" configVersion="68b68dcc52c71b8353845c5dadbc87d71dfa2df2"/>
-		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Template.Макет" id="324f37e4-0ef7-4cf2-bea6-e924a7170c61" configVersion="1ad75eed55866c810bc3df727bdee5b7c2ee67aa"/>
-		<Metadata name="DataProcessor.MRS_ТрудовойДоговорВыборПодписанта20.Template.Макет.Template" id="324f37e4-0ef7-4cf2-bea6-e924a7170c61.0" configVersion="2da8173417b63dae6fac06cd289e1be82834d2b3"/>
+		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL" id="ebfa8e7a-29ad-4ddf-a506-9355f2e16177" configVersion="01711a1a6b108fe8599ae240d90ae471a3e992ea">
+			<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Attribute.ПериодРегистрации" id="5bc6a596-4b0f-49f1-a487-82c126301496"/>
+			<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Attribute.Адрес" id="67f3c042-d30b-4a8c-b5af-1eaf0c62a7a7"/>
+			<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Attribute.КаталогСохранения" id="ae457e65-4ca1-4455-960c-86150b2aa9ae"/>
+			<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Attribute.Организация" id="f85f11b8-4cb2-4ac3-ab8d-3001b36ae0e4"/>
+		</Metadata>
+		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Form.Форма" id="3f3d072f-6a13-466f-8c56-cf2edf6f3833" configVersion="8abdf885cfb4068d5a2a9abde31affb8c6bdb9c7"/>
+		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Form.Форма.Form" id="3f3d072f-6a13-466f-8c56-cf2edf6f3833.0" configVersion="484f08ede8c3797eec2d27f0aab509f6e33f7e3c"/>
+		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.ObjectModule" id="ebfa8e7a-29ad-4ddf-a506-9355f2e16177.0" configVersion="440760f97e8e1128bcbf8a2bf2ec3928f58b648b"/>
 		<Metadata name="Document.ПеремещениеТоваров" id="fb70e6ca-453b-42af-80af-80dc90f81498" configVersion="882b23bbb0fe008f6b67927247d700fae2034c11"/>
 		<Metadata name="Document.ПеремещениеТоваров.ObjectModule" id="fb70e6ca-453b-42af-80af-80dc90f81498.0" configVersion="9817e7229718f7cd2bd98d2c14ad184986334ec9"/>
 		<Metadata name="Document.УстановкаЦенНоменклатуры" id="32c8bf7f-4b43-4ec7-90d3-0551a8100735" configVersion="01d720e6523bd2e9b114e95e69c7e03bdbb80dbb">

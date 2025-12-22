@@ -8,7 +8,6 @@
 			<Comment/>
 			<ExtendedConfigurationObject>7d9becff-3e50-499c-97ec-8279edc1f6c6</ExtendedConfigurationObject>
 			<Global>false</Global>
-			<ClientManagedApplication>true</ClientManagedApplication>
 			<Server>true</Server>
 			<ExternalConnection>true</ExternalConnection>
 			<ClientOrdinaryApplication>false</ClientOrdinaryApplication>
