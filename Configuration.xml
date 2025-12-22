@@ -109,6 +109,7 @@
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>MRS_ПроцессыELMA</InformationRegister>
+			<InformationRegister>MRS_СоответствиеСтаройНовойНоменклатуры</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

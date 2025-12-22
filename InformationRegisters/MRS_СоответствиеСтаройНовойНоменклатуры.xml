@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
+	<InformationRegister uuid="4357454e-f657-4d28-9493-00d7a3a6abc3">
+		<InternalInfo>
+			<xr:GeneratedType name="InformationRegisterRecord.MRS_СоответствиеСтаройНовойНоменклатуры" category="Record">
+				<xr:TypeId>6c887bba-8fd8-41a6-af16-43703a3cb45c</xr:TypeId>
+				<xr:ValueId>cb99ebbb-e185-4429-b3d5-ab5dbeb08c74</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterManager.MRS_СоответствиеСтаройНовойНоменклатуры" category="Manager">
+				<xr:TypeId>cacb5eb8-64cf-4c3a-ba6d-c0425d002830</xr:TypeId>
+				<xr:ValueId>d50f8724-f478-4c75-a60a-870243c5026f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterSelection.MRS_СоответствиеСтаройНовойНоменклатуры" category="Selection">
+				<xr:TypeId>f759ebfa-6eda-4be2-a9c9-7f509647dc26</xr:TypeId>
+				<xr:ValueId>7d970336-45d9-46c5-8051-99fe6e24c4f1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterList.MRS_СоответствиеСтаройНовойНоменклатуры" category="List">
+				<xr:TypeId>ff5a0211-305d-4c7f-a546-19f244eadd5c</xr:TypeId>
+				<xr:ValueId>6cb4038d-c9d4-433a-b21c-494092a46865</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordSet.MRS_СоответствиеСтаройНовойНоменклатуры" category="RecordSet">
+				<xr:TypeId>5e4e52c9-40b0-4bdd-8c34-0d748c9f174f</xr:TypeId>
+				<xr:ValueId>9f139189-fe5c-4abd-abd7-849fc8aea23a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordKey.MRS_СоответствиеСтаройНовойНоменклатуры" category="RecordKey">
+				<xr:TypeId>938e7b68-eb84-4492-9b5d-2ee3ba2e3744</xr:TypeId>
+				<xr:ValueId>00059d3f-8db8-46ce-8f0c-97782d975013</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordManager.MRS_СоответствиеСтаройНовойНоменклатуры" category="RecordManager">
+				<xr:TypeId>1fc8e9e1-086f-4641-9ae0-e2189b82dc18</xr:TypeId>
+				<xr:ValueId>1a4b416f-3326-4f7b-a4d8-495cf73e2979</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>MRS_СоответствиеСтаройНовойНоменклатуры</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>c2e0a425-ed91-4b94-9186-4c2cacda980b</ExtendedConfigurationObject>
+			<InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+			<WriteMode>Independent</WriteMode>
+		</Properties>
+		<ChildObjects>
+			<Dimension uuid="80f569be-94eb-4803-a460-58c9df4fef8a">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СтараяНоменклатура</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>4650c20d-8714-4f86-8b8d-2162fbc8aca9</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="ba4a454c-2f1a-4393-baf2-f416067fc046">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>НоваяНоменклатура</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>2305cbba-e01f-4010-8064-1fe2be50d804</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="4803833f-a880-41ec-a1bb-2576a0407ffc">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВскрытаяНоменклатура</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>9c5f7e36-dcd6-4d66-b41d-ff8d6020516b</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</InformationRegister>
+</MetaDataObject>

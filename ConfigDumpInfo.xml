@@ -51,7 +51,7 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="f41e0d175208894acf88cceb032bbeec8f9faba1"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="ea8e1cf6a35469aad31242b99008cb11685e10e0"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL" id="ebfa8e7a-29ad-4ddf-a506-9355f2e16177" configVersion="01711a1a6b108fe8599ae240d90ae471a3e992ea">
 			<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Attribute.ПериодРегистрации" id="5bc6a596-4b0f-49f1-a487-82c126301496"/>
@@ -145,6 +145,11 @@
 			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.Документ1С" id="f2f2ccf1-e1db-48af-be84-afa5031b7db4"/>
 			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.ДатаПоследнегоОбновления" id="f826b7bc-1757-4099-b2d6-c075c401b117"/>
 			<Metadata name="InformationRegister.MRS_ПроцессыELMA.Resource.ДатаОтправки" id="fa51e945-223c-4d56-919b-39f367f800f7"/>
+		</Metadata>
+		<Metadata name="InformationRegister.MRS_СоответствиеСтаройНовойНоменклатуры" id="4357454e-f657-4d28-9493-00d7a3a6abc3" configVersion="2436e71a73859fa6bc1b8abf56a6e781cc9ceb13">
+			<Metadata name="InformationRegister.MRS_СоответствиеСтаройНовойНоменклатуры.Dimension.ВскрытаяНоменклатура" id="4803833f-a880-41ec-a1bb-2576a0407ffc"/>
+			<Metadata name="InformationRegister.MRS_СоответствиеСтаройНовойНоменклатуры.Dimension.СтараяНоменклатура" id="80f569be-94eb-4803-a460-58c9df4fef8a"/>
+			<Metadata name="InformationRegister.MRS_СоответствиеСтаройНовойНоменклатуры.Dimension.НоваяНоменклатура" id="ba4a454c-2f1a-4393-baf2-f416067fc046"/>
 		</Metadata>
 		<Metadata name="InformationRegister.ЦеныНоменклатуры" id="9d79f0dd-220e-4497-8cf8-e800686a7898" configVersion="66776da63128a3489a113610666d7ce54a50e934">
 			<Metadata name="InformationRegister.ЦеныНоменклатуры.Dimension.ВидЦены" id="77d5e76a-c193-4162-a0ba-f310044671da"/>
