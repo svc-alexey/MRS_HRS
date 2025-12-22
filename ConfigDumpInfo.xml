@@ -8,6 +8,7 @@
 		</Metadata>
 		<Metadata name="Catalog.Номенклатура" id="e0225bf6-700f-4c98-99cd-bfb783d19fee" configVersion="b4893be2e8b7435b4505ebea27acbc7a518f81c6"/>
 		<Metadata name="Catalog.Пользователи" id="dceb4cc3-7a92-4601-ab21-3f76f75ece93" configVersion="188fe9d7e1e2c6fb600d01a67d030d96cc15b6af"/>
+		<Metadata name="Catalog.СерииНоменклатуры" id="dae45aa5-ee1d-4690-8b77-ac0f249da629" configVersion="392b18b72f51fe0933d1164c9b6dcf4108d513e9"/>
 		<Metadata name="Catalog.УпаковкиЕдиницыИзмерения" id="98253123-e0f9-48e0-a476-7903797adbe5" configVersion="a8d3c089f5a3456bdfdf5e56f4fceee4b3309584"/>
 		<Metadata name="Catalog.питВидыМеню" id="95850253-d0ae-46dd-a8a9-0d916255bbf1" configVersion="a296e5988aeff57c62001036d3779186471789e3"/>
 		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="2f80b05067fc01973906fc91bc969f2523e28576">
@@ -53,7 +54,7 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="76336a31e4285b8464a6b19920a1e5399f33de29"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="cc038c8568729b0084b0fe9f23d8505babf6e9fe"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="DataProcessor.MRS_СозданиеНоменклатурныхЗамен" id="e9aceb69-5ad1-429d-8b19-06ee32c59a4c" configVersion="c4c7e7e06c5b671e1cdd02aeff94201c3e0dc87f">
 			<Metadata name="DataProcessor.MRS_СозданиеНоменклатурныхЗамен.Attribute.КаталогСохранения" id="7d9f87ba-5ad2-4a4e-8e3d-a6f29511476f"/>
@@ -73,6 +74,23 @@
 		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.ObjectModule" id="ebfa8e7a-29ad-4ddf-a506-9355f2e16177.0" configVersion="440760f97e8e1128bcbf8a2bf2ec3928f58b648b"/>
 		<Metadata name="Document.ПеремещениеТоваров" id="fb70e6ca-453b-42af-80af-80dc90f81498" configVersion="882b23bbb0fe008f6b67927247d700fae2034c11"/>
 		<Metadata name="Document.ПеремещениеТоваров.ObjectModule" id="fb70e6ca-453b-42af-80af-80dc90f81498.0" configVersion="9817e7229718f7cd2bd98d2c14ad184986334ec9"/>
+		<Metadata name="Document.СборкаТоваров" id="f0745a43-d68a-4d9d-bdcb-5abcd1f4d2ac" configVersion="4c215dabb60eb3d3e58e1806af6a9176d8dfb3cf">
+			<Metadata name="Document.СборкаТоваров.TabularSection.Товары" id="134dcc08-fa14-41dc-b7cc-b71c0f9dbc52"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Серии.Attribute.Номенклатура" id="165370c2-487e-4f81-920c-9b694fd4b45c"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.MRS_ДополнительныеАкцизныеМарки" id="2f00f752-43c0-466a-ab5b-d557c3281015"/>
+			<Metadata name="Document.СборкаТоваров.Attribute.Номенклатура" id="3a3e34cd-6508-4d66-a41d-0cceaa4ed147"/>
+			<Metadata name="Document.СборкаТоваров.Attribute.Упаковка" id="4c513a9d-fb3c-461d-b701-4917cb264c13"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.Номенклатура" id="52172099-ad28-408e-b581-fb133418df0b"/>
+			<Metadata name="Document.СборкаТоваров.Attribute.СтатусУказанияСерий" id="625c65fb-6183-4eb2-b0fd-debe04cd02af"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.MRS_ДополнительныеАкцизныеМарки.Attribute.АцизнаяМарка" id="69ed34c1-f7c4-42bf-9df1-9bcbc5ec0e4d"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.СтатусУказанияСерий" id="7d0051bc-af8f-41a0-b03c-59fb0045bc1c"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.Упаковка" id="80db914e-7703-42ce-999f-2d2ee3cae2a8"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.КоличествоУпаковок" id="9f2f95ad-a3b4-4580-9be9-fdd3a8b1247d"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Серии.Attribute.Количество" id="b4c34c8e-f331-4ec1-a2d5-f653b0dc4f01"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Серии.Attribute.Серия" id="b97da3b7-e999-45c2-91e4-051b996f5191"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.Количество" id="bdaa07af-2021-4da1-b71f-de3016997310"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Серии" id="ca294b5e-91e3-4ab1-998a-949d2803f73f"/>
+		</Metadata>
 		<Metadata name="Document.УстановкаЦенНоменклатуры" id="32c8bf7f-4b43-4ec7-90d3-0551a8100735" configVersion="01d720e6523bd2e9b114e95e69c7e03bdbb80dbb">
 			<Metadata name="Document.УстановкаЦенНоменклатуры.Attribute.Ответственный" id="09a6e63d-6cf2-4e9d-a9dc-530ad143d937"/>
 			<Metadata name="Document.УстановкаЦенНоменклатуры.TabularSection.Товары" id="168a0c5c-c227-4f19-a2d9-39e3d5952792"/>

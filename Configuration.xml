@@ -98,9 +98,11 @@
 			<Catalog>питМеню</Catalog>
 			<Catalog>ВидыЦен</Catalog>
 			<Catalog>ГруппыАналитическогоУчетаНоменклатуры</Catalog>
+			<Catalog>СерииНоменклатуры</Catalog>
 			<Document>питРецептура</Document>
 			<Document>УстановкаЦенНоменклатуры</Document>
 			<Document>ПеремещениеТоваров</Document>
+			<Document>СборкаТоваров</Document>
 			<Enum>MRS_СтатусыСинхронизацииSimphony</Enum>
 			<Enum>СтатусыУстановокЦенНоменклатуры</Enum>
 			<Enum>MRS_СтатусыСинхронизацииELMA</Enum>
