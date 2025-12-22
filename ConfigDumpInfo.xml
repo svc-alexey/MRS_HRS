@@ -74,13 +74,14 @@
 		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.ObjectModule" id="ebfa8e7a-29ad-4ddf-a506-9355f2e16177.0" configVersion="440760f97e8e1128bcbf8a2bf2ec3928f58b648b"/>
 		<Metadata name="Document.ПеремещениеТоваров" id="fb70e6ca-453b-42af-80af-80dc90f81498" configVersion="882b23bbb0fe008f6b67927247d700fae2034c11"/>
 		<Metadata name="Document.ПеремещениеТоваров.ObjectModule" id="fb70e6ca-453b-42af-80af-80dc90f81498.0" configVersion="9817e7229718f7cd2bd98d2c14ad184986334ec9"/>
-		<Metadata name="Document.СборкаТоваров" id="f0745a43-d68a-4d9d-bdcb-5abcd1f4d2ac" configVersion="4c215dabb60eb3d3e58e1806af6a9176d8dfb3cf">
+		<Metadata name="Document.СборкаТоваров" id="f0745a43-d68a-4d9d-bdcb-5abcd1f4d2ac" configVersion="85016e626810aa69ce51a5cbddcf02202d72cce8">
 			<Metadata name="Document.СборкаТоваров.TabularSection.Товары" id="134dcc08-fa14-41dc-b7cc-b71c0f9dbc52"/>
 			<Metadata name="Document.СборкаТоваров.TabularSection.Серии.Attribute.Номенклатура" id="165370c2-487e-4f81-920c-9b694fd4b45c"/>
 			<Metadata name="Document.СборкаТоваров.TabularSection.MRS_ДополнительныеАкцизныеМарки" id="2f00f752-43c0-466a-ab5b-d557c3281015"/>
 			<Metadata name="Document.СборкаТоваров.Attribute.Номенклатура" id="3a3e34cd-6508-4d66-a41d-0cceaa4ed147"/>
 			<Metadata name="Document.СборкаТоваров.Attribute.Упаковка" id="4c513a9d-fb3c-461d-b701-4917cb264c13"/>
 			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.Номенклатура" id="52172099-ad28-408e-b581-fb133418df0b"/>
+			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.Серия" id="596b40a4-7d5c-4e6e-b116-5a6d3ec8a968"/>
 			<Metadata name="Document.СборкаТоваров.Attribute.СтатусУказанияСерий" id="625c65fb-6183-4eb2-b0fd-debe04cd02af"/>
 			<Metadata name="Document.СборкаТоваров.TabularSection.MRS_ДополнительныеАкцизныеМарки.Attribute.АцизнаяМарка" id="69ed34c1-f7c4-42bf-9df1-9bcbc5ec0e4d"/>
 			<Metadata name="Document.СборкаТоваров.TabularSection.Товары.Attribute.СтатусУказанияСерий" id="7d0051bc-af8f-41a0-b03c-59fb0045bc1c"/>

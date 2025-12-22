@@ -165,6 +165,18 @@
 							</Type>
 						</Properties>
 					</Attribute>
+					<Attribute uuid="596b40a4-7d5c-4e6e-b116-5a6d3ec8a968">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>Серия</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>131bcf48-82b5-4e46-a42a-d7ef41bc417a</ExtendedConfigurationObject>
+							<Type>
+								<v8:Type>cfg:CatalogRef.СерииНоменклатуры</v8:Type>
+							</Type>
+						</Properties>
+					</Attribute>
 				</ChildObjects>
 			</TabularSection>
 			<TabularSection uuid="2f00f752-43c0-466a-ab5b-d557c3281015">
