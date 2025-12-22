@@ -105,6 +105,7 @@
 			<Enum>MRS_СтатусыСинхронизацииELMA</Enum>
 			<Enum>ВариантыРасчетаЦенНаборов</Enum>
 			<DataProcessor>MRS_СоздатьНоменклатуруПоEXCEL</DataProcessor>
+			<DataProcessor>MRS_СозданиеНоменклатурныхЗамен</DataProcessor>
 			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
