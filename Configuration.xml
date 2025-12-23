@@ -109,6 +109,7 @@
 			<Enum>ВариантыРасчетаЦенНаборов</Enum>
 			<DataProcessor>MRS_СоздатьНоменклатуруПоEXCEL</DataProcessor>
 			<DataProcessor>MRS_СозданиеНоменклатурныхЗамен</DataProcessor>
+			<DataProcessor>MRS_ЗаменыАлкоРецептур</DataProcessor>
 			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>

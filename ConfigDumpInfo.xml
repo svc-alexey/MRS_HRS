@@ -54,8 +54,17 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="cc038c8568729b0084b0fe9f23d8505babf6e9fe"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="edf079449ab455f018e7310bbc4a76e54a1d977d"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
+		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур" id="4ec06e92-fc5e-4ef7-9eff-be1be603a168" configVersion="e18ad89d58af9c7b18c4dea95b66b9429aa5177a">
+			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.КаталогСохранения" id="3934dcd5-987f-47cb-a0cc-1c77ac264d4d"/>
+			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.Организация" id="845623a6-8f2d-431c-9bc3-d8ca6ca7e1ce"/>
+			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.Адрес" id="e66ad719-3c52-4be3-8a0f-279285a08511"/>
+			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.ПериодРегистрации" id="ec9bba3d-156b-4718-85d3-a3e880af2580"/>
+		</Metadata>
+		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Form.Форма" id="c677903c-84ca-424a-a4a5-343bb9fb948f" configVersion="ae079163963d9524ed12fbd7f191c145622fdef3"/>
+		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Form.Форма.Form" id="c677903c-84ca-424a-a4a5-343bb9fb948f.0" configVersion="024de01be10ce3b212590e416421d405c2aad130"/>
+		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.ObjectModule" id="4ec06e92-fc5e-4ef7-9eff-be1be603a168.0" configVersion="0420b3882c53df0574fe4a650ebdd99389bfa779"/>
 		<Metadata name="DataProcessor.MRS_СозданиеНоменклатурныхЗамен" id="e9aceb69-5ad1-429d-8b19-06ee32c59a4c" configVersion="c4c7e7e06c5b671e1cdd02aeff94201c3e0dc87f">
 			<Metadata name="DataProcessor.MRS_СозданиеНоменклатурныхЗамен.Attribute.КаталогСохранения" id="7d9f87ba-5ad2-4a4e-8e3d-a6f29511476f"/>
 			<Metadata name="DataProcessor.MRS_СозданиеНоменклатурныхЗамен.Attribute.Адрес" id="aca8dc41-6e13-427e-a8c3-7ab912bb2d2c"/>
