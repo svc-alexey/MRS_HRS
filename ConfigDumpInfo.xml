@@ -38,6 +38,8 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиентСервер.Module" id="6428914c-a2fa-4fbd-89f3-9024fdddf933.0" configVersion="1769287252873f1d2a1cbeb7535968a70e60c033"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7" configVersion="faa00a4c7cde967e8dcfdc52b90cff25877d2dd6"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер.Module" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7.0" configVersion="09bf8fd1784653615b1fd55e0ade046e24979ef1"/>
+		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros" id="5f00323d-cf6e-4b18-9211-abb9330f55af" configVersion="230834581474095fd5b4aa78f08e0da99ab18662"/>
+		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros.Module" id="5f00323d-cf6e-4b18-9211-abb9330f55af.0" configVersion="af68ee6e640b107576cbe21501f4714d2cf8089b"/>
 		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация" id="ed7460ab-7c78-46d0-b3d0-539470ace977" configVersion="3392ba321a00122bdc45aee525958946baf8344b"/>
 		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация.Module" id="ed7460ab-7c78-46d0-b3d0-539470ace977.0" configVersion="e9a1bbc34a0a5ae6c08bcd49ac134f1a85748bcd"/>
 		<Metadata name="CommonModule.MRS_Сервер" id="ea08e4a3-3198-4def-80e4-44a131ad3d93" configVersion="448955b45d21d4d02e56b53c5237178b76e09b2b"/>
@@ -54,7 +56,7 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="edf079449ab455f018e7310bbc4a76e54a1d977d"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="5d85d3203b49a7355e17f8b9b9309806c5442f12"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур" id="4ec06e92-fc5e-4ef7-9eff-be1be603a168" configVersion="e18ad89d58af9c7b18c4dea95b66b9429aa5177a">
 			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.КаталогСохранения" id="3934dcd5-987f-47cb-a0cc-1c77ac264d4d"/>
