@@ -245,5 +245,14 @@
 				</ChildObjects>
 			</TabularSection>
 		</ChildObjects>
+		<Templates>
+			<Template>
+				<Properties>
+					<Name>СхемаУсловий</Name>
+					<Comment/>
+					<TemplateType>DataCompositionSchema</TemplateType>
+				</Properties>
+			</Template>
+		</Templates>
 	</Catalog>
 </MetaDataObject>
