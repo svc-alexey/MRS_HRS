@@ -245,16 +245,5 @@
 				</ChildObjects>
 			</TabularSection>
 		</ChildObjects>
-		<PredefinedData>
-			<xr:Item>
-				<xr:Name>ПоУмолчанию</xr:Name>
-				<xr:Synonym>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>По умолчанию</v8:content>
-					</v8:item>
-				</xr:Synonym>
-			</xr:Item>
-		</PredefinedData>
 	</Catalog>
 </MetaDataObject>
