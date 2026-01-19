@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Catalog uuid="6615b938-c0a5-44cb-8193-4da61a1aea5f">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.MRS_КлассыМеню" category="Object">
+				<xr:TypeId>6977c71b-ad02-423f-b9d9-eee128968333</xr:TypeId>
+				<xr:ValueId>3e47e7e6-95ae-4c53-94de-d172ba9dd7b7</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.MRS_КлассыМеню" category="Ref">
+				<xr:TypeId>bdeb763a-f8ed-4f0d-b09e-e590b217eda1</xr:TypeId>
+				<xr:ValueId>3203dad2-dd69-4e7c-9d07-534daae4f552</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.MRS_КлассыМеню" category="Selection">
+				<xr:TypeId>821354b5-dfbc-4729-badd-c87575b26992</xr:TypeId>
+				<xr:ValueId>90ab0462-2a83-4dbe-ae32-253e6f4b574f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.MRS_КлассыМеню" category="List">
+				<xr:TypeId>04083d37-a2e6-427e-b151-33077b01bab8</xr:TypeId>
+				<xr:ValueId>cb26437e-346b-4b7a-a653-925ae5187a91</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.MRS_КлассыМеню" category="Manager">
+				<xr:TypeId>cc4fecc7-9481-42cb-a731-fe63c14b3d3a</xr:TypeId>
+				<xr:ValueId>1c59599e-6200-4029-bd12-5526e9dc57af</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>MRS_КлассыМеню</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>b9ed7d28-3211-48fe-9f70-acbfc4ba5248</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="de3dd22e-37bd-426d-800c-a49c2f32da23">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КодКлассаСимфони</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>acf53875-a9a2-4d29-bead-bd5989481abc</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>5</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="771070e2-a95c-4eb5-b4ca-0fb174398c9e">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Описание</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>4652854c-7052-49c6-ab20-0374a12d7124</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<TabularSection uuid="64e40bac-aefe-4dde-8dfe-8a75263316fb">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.MRS_КлассыМеню.Условия" category="TabularSection">
+						<xr:TypeId>a91c51f2-730b-45a3-ada7-d0fc6c725e4f</xr:TypeId>
+						<xr:ValueId>80fa0066-73c2-4556-8adf-9ebc7815889e</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.MRS_КлассыМеню.Условия" category="TabularSectionRow">
+						<xr:TypeId>6e7a99af-cb7b-40a2-bc55-2390cfd5b20c</xr:TypeId>
+						<xr:ValueId>da4e2b80-9757-481b-b795-c1d593b0a323</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Условия</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>123a6b6a-f19a-4029-a0bd-f321a786bf19</ExtendedConfigurationObject>
+				</Properties>
+				<ChildObjects/>
+			</TabularSection>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>
