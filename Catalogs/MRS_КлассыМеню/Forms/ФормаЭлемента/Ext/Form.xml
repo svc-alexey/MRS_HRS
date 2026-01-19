@@ -37,30 +37,22 @@
 			<ContextMenu name="ОписаниеКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="12"/>
 		</InputField>
-		<Table name="Условия" id="13">
-			<Representation>List</Representation>
-			<DataPath>Объект.Условия</DataPath>
-			<ContextMenu name="УсловияКонтекстноеМеню" id="14"/>
-			<AutoCommandBar name="УсловияКоманднаяПанель" id="15"/>
-			<ExtendedTooltip name="УсловияРасширеннаяПодсказка" id="16"/>
+		<Page name="ГруппаУсловия" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ГруппаУсловияРасширеннаяПодсказка" id="27"/>
 			<ChildItems>
-				<InputField name="УсловияВидУсловия" id="17">
-					<DataPath>Объект.Условия.ВидУсловия</DataPath>
-					<ContextMenu name="УсловияВидУсловияКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="УсловияВидУсловияРасширеннаяПодсказка" id="19"/>
-				</InputField>
-				<InputField name="УсловияОператор" id="20">
-					<DataPath>Объект.Условия.Оператор</DataPath>
-					<ContextMenu name="УсловияОператорКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="УсловияОператорРасширеннаяПодсказка" id="22"/>
-				</InputField>
-				<InputField name="УсловияЗначение" id="23">
-					<DataPath>Объект.Условия.Значение</DataPath>
-					<ContextMenu name="УсловияЗначениеКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="УсловияЗначениеРасширеннаяПодсказка" id="25"/>
-				</InputField>
+				<DataCompositionSchemaDataSource name="НастройкиКомпоновки" id="28">
+					<DataPath>КомпоновщикНастроек.Settings</DataPath>
+					<ContextMenu name="НастройкиКомпоновкиКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="НастройкиКомпоновкиРасширеннаяПодсказка" id="30"/>
+				</DataCompositionSchemaDataSource>
 			</ChildItems>
-		</Table>
+		</Page>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -68,6 +60,11 @@
 				<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogObject.MRS_КлассыМеню</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КомпоновщикНастроек" id="2">
+			<Type>
+				<v8:Type>cfg:DataCompositionSettingsComposer</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands/>
