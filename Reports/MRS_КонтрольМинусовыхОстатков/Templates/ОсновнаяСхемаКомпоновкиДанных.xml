@@ -1,18 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Form uuid="da42fa98-40db-453f-b642-9a553cae8c79">
-		<InternalInfo>
-			<xr:PropertyState>
-				<xr:Property>Form</xr:Property>
-				<xr:State>Extended</xr:State>
-			</xr:PropertyState>
-		</InternalInfo>
+	<Template uuid="6235200b-34f0-419e-9cc5-ae986b74ad79">
 		<Properties>
-			<ObjectBelonging>Adopted</ObjectBelonging>
-			<Name>ФормаЭлемента</Name>
+			<Name>ОсновнаяСхемаКомпоновкиДанных</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная схема компоновки данных</v8:content>
+				</v8:item>
+			</Synonym>
 			<Comment/>
-			<ExtendedConfigurationObject>8f892952-13eb-4625-bb40-36a31cc6a70a</ExtendedConfigurationObject>
-			<FormType>Managed</FormType>
+			<TemplateType>DataCompositionSchema</TemplateType>
 		</Properties>
-	</Form>
+	</Template>
 </MetaDataObject>

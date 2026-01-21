@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Catalog uuid="6615b938-c0a5-44cb-8193-4da61a1aea5f">
+	<Catalog uuid="5cad118c-2b6a-4e5d-90c7-09a1c4c99a27">
 		<InternalInfo>
 			<xr:GeneratedType name="CatalogObject.MRS_КлассыМеню" category="Object">
-				<xr:TypeId>6977c71b-ad02-423f-b9d9-eee128968333</xr:TypeId>
-				<xr:ValueId>3e47e7e6-95ae-4c53-94de-d172ba9dd7b7</xr:ValueId>
+				<xr:TypeId>6e8e1465-abb2-4c94-ac0d-565900d27fae</xr:TypeId>
+				<xr:ValueId>22bedcfe-e8c3-41b3-b9b1-afa01f82c5be</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogRef.MRS_КлассыМеню" category="Ref">
-				<xr:TypeId>bdeb763a-f8ed-4f0d-b09e-e590b217eda1</xr:TypeId>
-				<xr:ValueId>3203dad2-dd69-4e7c-9d07-534daae4f552</xr:ValueId>
+				<xr:TypeId>4d01cbf6-76d3-4b27-8d48-22f20ea4c9ef</xr:TypeId>
+				<xr:ValueId>bb0c198f-1ccd-4e15-b495-a946707dadc6</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogSelection.MRS_КлассыМеню" category="Selection">
-				<xr:TypeId>821354b5-dfbc-4729-badd-c87575b26992</xr:TypeId>
-				<xr:ValueId>90ab0462-2a83-4dbe-ae32-253e6f4b574f</xr:ValueId>
+				<xr:TypeId>e836cc2a-79e7-4fe5-84d9-151aa174fd26</xr:TypeId>
+				<xr:ValueId>2e82149d-be12-409a-a6ea-ba219786178f</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogList.MRS_КлассыМеню" category="List">
-				<xr:TypeId>04083d37-a2e6-427e-b151-33077b01bab8</xr:TypeId>
-				<xr:ValueId>cb26437e-346b-4b7a-a653-925ae5187a91</xr:ValueId>
+				<xr:TypeId>fa040682-9476-4510-8af2-3428e81c22a9</xr:TypeId>
+				<xr:ValueId>22da2475-3c17-479a-9133-353cc53c7641</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogManager.MRS_КлассыМеню" category="Manager">
-				<xr:TypeId>cc4fecc7-9481-42cb-a731-fe63c14b3d3a</xr:TypeId>
-				<xr:ValueId>1c59599e-6200-4029-bd12-5526e9dc57af</xr:ValueId>
+				<xr:TypeId>dc9446d7-190f-49df-a2a9-be1b43088e6c</xr:TypeId>
+				<xr:ValueId>d4405f87-6936-4e0d-b413-1ba15235ce30</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -28,9 +28,13 @@
 			<Name>MRS_КлассыМеню</Name>
 			<Comment/>
 			<ExtendedConfigurationObject>b9ed7d28-3211-48fe-9f70-acbfc4ba5248</ExtendedConfigurationObject>
+			<CodeLength>9</CodeLength>
+			<DescriptionLength>25</DescriptionLength>
+			<CodeType>String</CodeType>
+			<CodeAllowedLength>Variable</CodeAllowedLength>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="de3dd22e-37bd-426d-800c-a49c2f32da23">
+			<Attribute uuid="787d12b9-d0ba-4e29-8d2c-7fc7e979e2ae">
 				<InternalInfo/>
 				<Properties>
 					<ObjectBelonging>Adopted</ObjectBelonging>
@@ -47,7 +51,24 @@
 					</Type>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="771070e2-a95c-4eb5-b4ca-0fb174398c9e">
+			<Attribute uuid="031e78eb-34c6-4080-8357-fdf6edef06c8">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ПриоритетПрименения</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>363f3a85-178e-4b11-82f8-02cdaf7f7e81</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="9a3f0769-8196-4179-b0cc-d910678c130c">
 				<InternalInfo/>
 				<Properties>
 					<ObjectBelonging>Adopted</ObjectBelonging>
@@ -63,53 +84,15 @@
 					</Type>
 				</Properties>
 			</Attribute>
-			<Attribute uuid="a1b2c3d4-e5f6-7890-abcd-ef1234567890">
-				<InternalInfo/>
-				<Properties>
-					<ObjectBelonging>Own</ObjectBelonging>
-					<Name>ПриоритетПрименения</Name>
-					<Comment>Порядок проверки классов (меньше = выше приоритет)</Comment>
-					<Type>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>5</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
-						</v8:NumberQualifiers>
-					</Type>
-					<PasswordMode>false</PasswordMode>
-					<Format/>
-					<EditFormat/>
-					<ToolTip/>
-					<MarkNegatives>false</MarkNegatives>
-					<Mask/>
-					<MultiLine>false</MultiLine>
-					<ExtendedEdit>false</ExtendedEdit>
-					<MinValue xsi:nil="true"/>
-					<MaxValue xsi:nil="true"/>
-					<FillChecking>DontCheck</FillChecking>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ChoiceParameterLinks/>
-					<ChoiceParameters/>
-					<QuickChoice>Auto</QuickChoice>
-					<CreateOnInput>Auto</CreateOnInput>
-					<ChoiceForm/>
-					<LinkByType/>
-					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-					<Indexing>DontIndex</Indexing>
-					<FullTextSearch>Use</FullTextSearch>
-					<DataHistory>DontUse</DataHistory>
-				</Properties>
-			</Attribute>
-			<TabularSection uuid="64e40bac-aefe-4dde-8dfe-8a75263316fb">
+			<TabularSection uuid="e4068f18-0c40-4255-bd73-32d0391b9fa4">
 				<InternalInfo>
 					<xr:GeneratedType name="CatalogTabularSection.MRS_КлассыМеню.Условия" category="TabularSection">
-						<xr:TypeId>a91c51f2-730b-45a3-ada7-d0fc6c725e4f</xr:TypeId>
-						<xr:ValueId>80fa0066-73c2-4556-8adf-9ebc7815889e</xr:ValueId>
+						<xr:TypeId>4e83887e-3704-4b11-aa54-9eb4f3ac2026</xr:TypeId>
+						<xr:ValueId>539dd08c-fd59-473d-b429-6b21780f387d</xr:ValueId>
 					</xr:GeneratedType>
 					<xr:GeneratedType name="CatalogTabularSectionRow.MRS_КлассыМеню.Условия" category="TabularSectionRow">
-						<xr:TypeId>6e7a99af-cb7b-40a2-bc55-2390cfd5b20c</xr:TypeId>
-						<xr:ValueId>da4e2b80-9757-481b-b795-c1d593b0a323</xr:ValueId>
+						<xr:TypeId>278d64b8-7ae6-487f-a98a-fa21b40d2361</xr:TypeId>
+						<xr:ValueId>3909de77-b14c-4f01-be9d-aef460ac6054</xr:ValueId>
 					</xr:GeneratedType>
 				</InternalInfo>
 				<Properties>
@@ -119,12 +102,25 @@
 					<ExtendedConfigurationObject>123a6b6a-f19a-4029-a0bd-f321a786bf19</ExtendedConfigurationObject>
 				</Properties>
 				<ChildObjects>
-					<Attribute uuid="11223344-5566-7788-99aa-bbccddeeff01">
+					<Attribute uuid="3bbc2ba2-4aa0-4883-baa0-acbdaf15f61e">
 						<InternalInfo/>
 						<Properties>
-							<ObjectBelonging>Own</ObjectBelonging>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>Значение</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>bdcac6bd-c169-4f60-8af0-b283f3cfd463</ExtendedConfigurationObject>
+							<Type>
+								<v8:TypeSet>cfg:AnyIBRef</v8:TypeSet>
+							</Type>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="005b8417-63e4-4e54-927a-09262ee63aa9">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
 							<Name>ВидУсловия</Name>
-							<Comment>Путь к полю компоновки</Comment>
+							<Comment/>
+							<ExtendedConfigurationObject>95c4731e-5255-4349-b55f-855b5b8a0e95</ExtendedConfigurationObject>
 							<Type>
 								<v8:Type>xs:string</v8:Type>
 								<v8:StringQualifiers>
@@ -132,127 +128,27 @@
 									<v8:AllowedLength>Variable</v8:AllowedLength>
 								</v8:StringQualifiers>
 							</Type>
-							<PasswordMode>false</PasswordMode>
-							<Format/>
-							<EditFormat/>
-							<ToolTip/>
-							<MarkNegatives>false</MarkNegatives>
-							<Mask/>
-							<MultiLine>false</MultiLine>
-							<ExtendedEdit>false</ExtendedEdit>
-							<MinValue xsi:nil="true"/>
-							<MaxValue xsi:nil="true"/>
-							<FillValue xsi:type="xs:string"/>
-							<FillChecking>DontCheck</FillChecking>
-							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-							<ChoiceParameterLinks/>
-							<ChoiceParameters/>
-							<QuickChoice>Auto</QuickChoice>
-							<CreateOnInput>Auto</CreateOnInput>
-							<ChoiceForm/>
-							<LinkByType/>
-							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-							<Indexing>DontIndex</Indexing>
-							<FullTextSearch>Use</FullTextSearch>
-							<DataHistory>DontUse</DataHistory>
 						</Properties>
 					</Attribute>
-					<Attribute uuid="11223344-5566-7788-99aa-bbccddeeff02">
+					<Attribute uuid="a63b5f39-e3fb-4527-8ee5-26abe965c6a2">
 						<InternalInfo/>
 						<Properties>
-							<ObjectBelonging>Own</ObjectBelonging>
+							<ObjectBelonging>Adopted</ObjectBelonging>
 							<Name>Оператор</Name>
-							<Comment>Оператор сравнения</Comment>
+							<Comment/>
+							<ExtendedConfigurationObject>f7a24f0f-3dc8-4213-96c1-604aab282b4d</ExtendedConfigurationObject>
 							<Type>
 								<v8:Type>xs:string</v8:Type>
 								<v8:StringQualifiers>
-									<v8:Length>50</v8:Length>
+									<v8:Length>20</v8:Length>
 									<v8:AllowedLength>Variable</v8:AllowedLength>
 								</v8:StringQualifiers>
 							</Type>
-							<PasswordMode>false</PasswordMode>
-							<Format/>
-							<EditFormat/>
-							<ToolTip/>
-							<MarkNegatives>false</MarkNegatives>
-							<Mask/>
-							<MultiLine>false</MultiLine>
-							<ExtendedEdit>false</ExtendedEdit>
-							<MinValue xsi:nil="true"/>
-							<MaxValue xsi:nil="true"/>
-							<FillValue xsi:type="xs:string"/>
-							<FillChecking>DontCheck</FillChecking>
-							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-							<ChoiceParameterLinks/>
-							<ChoiceParameters/>
-							<QuickChoice>Auto</QuickChoice>
-							<CreateOnInput>Auto</CreateOnInput>
-							<ChoiceForm/>
-							<LinkByType/>
-							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-							<Indexing>DontIndex</Indexing>
-							<FullTextSearch>Use</FullTextSearch>
-							<DataHistory>DontUse</DataHistory>
-						</Properties>
-					</Attribute>
-					<Attribute uuid="11223344-5566-7788-99aa-bbccddeeff03">
-						<InternalInfo/>
-						<Properties>
-							<ObjectBelonging>Own</ObjectBelonging>
-							<Name>Значение</Name>
-							<Comment>Универсальное поле для хранения значения условия</Comment>
-							<Type>
-								<v8:Type>xs:string</v8:Type>
-								<v8:StringQualifiers>
-									<v8:Length>150</v8:Length>
-									<v8:AllowedLength>Variable</v8:AllowedLength>
-								</v8:StringQualifiers>
-								<v8:Type>xs:decimal</v8:Type>
-								<v8:NumberQualifiers>
-									<v8:Digits>15</v8:Digits>
-									<v8:FractionDigits>2</v8:FractionDigits>
-									<v8:AllowedSign>Any</v8:AllowedSign>
-								</v8:NumberQualifiers>
-								<v8:Type>xs:boolean</v8:Type>
-								<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Номенклатура</v8:Type>
-								<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.УпаковкиЕдиницыИзмерения</v8:Type>
-								<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.ГруппыАналитическогоУчетаНоменклатуры</v8:Type>
-							</Type>
-							<PasswordMode>false</PasswordMode>
-							<Format/>
-							<EditFormat/>
-							<ToolTip/>
-							<MarkNegatives>false</MarkNegatives>
-							<Mask/>
-							<MultiLine>false</MultiLine>
-							<ExtendedEdit>false</ExtendedEdit>
-							<MinValue xsi:nil="true"/>
-							<MaxValue xsi:nil="true"/>
-							<FillChecking>DontCheck</FillChecking>
-							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-							<ChoiceParameterLinks/>
-							<ChoiceParameters/>
-							<QuickChoice>Auto</QuickChoice>
-							<CreateOnInput>Auto</CreateOnInput>
-							<ChoiceForm/>
-							<LinkByType/>
-							<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
-							<Indexing>DontIndex</Indexing>
-							<FullTextSearch>Use</FullTextSearch>
-							<DataHistory>DontUse</DataHistory>
 						</Properties>
 					</Attribute>
 				</ChildObjects>
 			</TabularSection>
+			<Form>ФормаЭлемента</Form>
 		</ChildObjects>
-		<Templates>
-			<Template>
-				<Properties>
-					<Name>СхемаУсловий</Name>
-					<Comment/>
-					<TemplateType>DataCompositionSchema</TemplateType>
-				</Properties>
-			</Template>
-		</Templates>
 	</Catalog>
 </MetaDataObject>
