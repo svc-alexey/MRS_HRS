@@ -96,6 +96,7 @@
 			<CommonModule>ПЛ_Формы</CommonModule>
 			<CommonModule>MRS_Сервер</CommonModule>
 			<CommonModule>MRS_МенеджерОбменаMicros</CommonModule>
+			<CommonModule>питПроизводство</CommonModule>
 			<ExchangePlan>питУдаленныеКассы</ExchangePlan>
 			<HTTPService>ПЛ_HTTP_ОбменELMA</HTTPService>
 			<Constant>MRS_URLСервисаSimphony</Constant>
