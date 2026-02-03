@@ -43,8 +43,8 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиент.Module" id="1c452ff3-a170-48bf-a241-ec86ab266f42.0" configVersion="f5b3abc65ed7c4f1574cbe7a8e15e03371b0df73"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиентСервер" id="ac5c8607-83f2-4870-af38-910d4cbb3066" configVersion="650a5c414005560228b62c6e99e26cf4e272ade9"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyКлиентСервер.Module" id="ac5c8607-83f2-4870-af38-910d4cbb3066.0" configVersion="e3674f96a1133beece65ee2d9b6fa0d65c30a47a"/>
-		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер" id="36e35c70-8def-455a-9ac3-778b72daad93" configVersion="7b30d07e6c15ebb76828912693cad0c86b98c967"/>
-		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер.Module" id="36e35c70-8def-455a-9ac3-778b72daad93.0" configVersion="242a96285bd0ff5cfffd9dc47d59d019d54d274a"/>
+		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер" id="36e35c70-8def-455a-9ac3-778b72daad93" configVersion="27ff39691799d8cdf5165fc2358dd5620f76c26f"/>
+		<Metadata name="CommonModule.MRS_ИнтеграцияSimphonyСервер.Module" id="36e35c70-8def-455a-9ac3-778b72daad93.0" configVersion="2675412bfc1592ae0c4996e699140390691f2755"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиент" id="45597a8c-7723-40ed-9cb7-07cf8528c1dc" configVersion="343675e0e3fb653b8aa4eb4038bdc75d7de10789"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиент.Module" id="45597a8c-7723-40ed-9cb7-07cf8528c1dc.0" configVersion="493982a181c101f62f85edd615c0055daf31d612"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиентСервер" id="6428914c-a2fa-4fbd-89f3-9024fdddf933" configVersion="be8db45a686ed6148a071b58b2f72e3ae72704c7"/>
@@ -52,7 +52,7 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7" configVersion="faa00a4c7cde967e8dcfdc52b90cff25877d2dd6"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер.Module" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7.0" configVersion="79f06e1a0fa9c5cdfaabc220be01dad83d931a6e"/>
 		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros" id="5f00323d-cf6e-4b18-9211-abb9330f55af" configVersion="65194140c9baf679b049cc73d4a2a672fa3367e2"/>
-		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros.Module" id="5f00323d-cf6e-4b18-9211-abb9330f55af.0" configVersion="f890c7c780219ac1e11698c556b5227adb4e6e1d"/>
+		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros.Module" id="5f00323d-cf6e-4b18-9211-abb9330f55af.0" configVersion="0e062efc3080a7641f205cd8f916f803f1dbe03f"/>
 		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация" id="ed7460ab-7c78-46d0-b3d0-539470ace977" configVersion="26a02c4b648d982aa676ae2896b465424021877e"/>
 		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация.Module" id="ed7460ab-7c78-46d0-b3d0-539470ace977.0" configVersion="767c907ae9b4ddc05b1a1f1d65001dd664ada133"/>
 		<Metadata name="CommonModule.MRS_Сервер" id="ea08e4a3-3198-4def-80e4-44a131ad3d93" configVersion="1465da8c5a06cee5d2b7d84aea6f4a29c7f58d8a"/>
@@ -71,7 +71,7 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="ad70f668a11330cfec1dd525c07057717486b815"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="acfe27ae30445aa955aed7613b124c262f330d6f"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур" id="4ec06e92-fc5e-4ef7-9eff-be1be603a168" configVersion="e18ad89d58af9c7b18c4dea95b66b9429aa5177a">
 			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.КаталогСохранения" id="3934dcd5-987f-47cb-a0cc-1c77ac264d4d"/>
@@ -214,6 +214,13 @@
 		<Metadata name="Report.MRS_КонтрольМинусовыхОстатков.ObjectModule" id="34925ca8-5cde-42dc-a2c1-ddcaea745747.0" configVersion="59ed60927fc1e0e8ec4fe28dd3e172dbfddc347e"/>
 		<Metadata name="Report.MRS_КонтрольМинусовыхОстатков.Template.ОсновнаяСхемаКомпоновкиДанных" id="6235200b-34f0-419e-9cc5-ae986b74ad79" configVersion="d90278383dd872599f0f64d29554ffda7a59dcec"/>
 		<Metadata name="Report.MRS_КонтрольМинусовыхОстатков.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="6235200b-34f0-419e-9cc5-ae986b74ad79.0" configVersion="a2000dd95431f7d1a37e179a724a5f050b9cb89b"/>
+		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО" id="614cc049-34ba-48a9-a0ff-b31f81a13639" configVersion="a437e6e8610fe5cf3e45d4e4bfc061277adad16c"/>
+		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.Form.ФормаОтчета" id="efd985fa-593b-4c52-8718-c83080ade8c4" configVersion="f2b894840a5f098c6e4d582f6c66f0943346b513"/>
+		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.Form.ФормаОтчета.Form" id="efd985fa-593b-4c52-8718-c83080ade8c4.0" configVersion="a010b352178141d1abb7db87f04ab48e8b9e7db7"/>
+		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.Form.ФормаОтчета.Help" id="efd985fa-593b-4c52-8718-c83080ade8c4.1" configVersion="5af89c33081e19040217b48c3d267914396c4b3c"/>
+		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.ObjectModule" id="614cc049-34ba-48a9-a0ff-b31f81a13639.0" configVersion="e7321a785f42691c141cbcb7e51c77c276a18a81"/>
+		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.Template.ОсновнаяСхемаКомпоновкиДанных" id="f84fc55b-d597-4f39-a17a-86dd70f547f1" configVersion="dd27db4c136c9d6d5b486b357d0424ece6fa4c43"/>
+		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f84fc55b-d597-4f39-a17a-86dd70f547f1.0" configVersion="943efb6b8f603550ac2714deae570df7834e4c5c"/>
 		<Metadata name="Role.MRS_ОсновнаяРоль" id="949a1fb0-a481-4fb2-92dc-5abf46a68578" configVersion="84d3991923f73b2ca7cdecf30bf16b31188db7ab"/>
 		<Metadata name="StyleItem.ТекстИнформационнойНадписи" id="f0ccabcd-8b41-443d-86be-9794113f2e91" configVersion="1e452331b6c1e50833b4a5c1a7b93263298ddb91"/>
 		<Metadata name="StyleItem.ЦветМикротекста" id="b4f3700b-507f-496f-a577-fadd63cb744a" configVersion="a7c6dafaa38561f12c34e8e975eaf3e90bce44e8"/>

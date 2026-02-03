@@ -119,6 +119,7 @@
 			<Enum>MRS_СтатусыСинхронизацииELMA</Enum>
 			<Enum>ВариантыРасчетаЦенНаборов</Enum>
 			<Report>MRS_КонтрольМинусовыхОстатков</Report>
+			<Report>MRS_СебестоимостьРецептурДМИО</Report>
 			<DataProcessor>MRS_СоздатьНоменклатуруПоEXCEL</DataProcessor>
 			<DataProcessor>MRS_СозданиеНоменклатурныхЗамен</DataProcessor>
 			<DataProcessor>MRS_ЗаменыАлкоРецептур</DataProcessor>
