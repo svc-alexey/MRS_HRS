@@ -20,6 +20,7 @@
 	</AutoCommandBar>
 	<ChildItems>
 		<InputField name="Владелец" id="62">
+			<Visible>false</Visible>
 			<ContextMenu name="ВладелецКонтекстноеМеню" id="63"/>
 			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="64"/>
 		</InputField>
@@ -67,6 +68,7 @@
 				</InputField>
 				<InputField name="MRS_КодSimphony" id="70">
 					<Enabled>false</Enabled>
+					<ReadOnly>true</ReadOnly>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="MRS_КодSimphonyКонтекстноеМеню" id="71"/>
 					<ExtendedTooltip name="MRS_КодSimphonyРасширеннаяПодсказка" id="72"/>
@@ -125,6 +127,17 @@
 							<TextEdit>false</TextEdit>
 							<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="14"/>
 							<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="52"/>
+						</InputField>
+						<InputField name="СтавкаНДС" id="73">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ставка НДС</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="СтавкаНДСКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="СтавкаНДСРасширеннаяПодсказка" id="75"/>
 						</InputField>
 						<UsualGroup name="ГруппаНомерЗапретПечати" id="38">
 							<Title>
@@ -319,6 +332,7 @@
 		</AutoCommandBar>
 		<ChildItems>
 			<InputField name="Владелец" id="62">
+				<Visible>false</Visible>
 				<ContextMenu name="ВладелецКонтекстноеМеню" id="63"/>
 				<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="64"/>
 			</InputField>
@@ -366,6 +380,7 @@
 					</InputField>
 					<InputField name="MRS_КодSimphony" id="70">
 						<Enabled>false</Enabled>
+						<ReadOnly>true</ReadOnly>
 						<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 						<ContextMenu name="MRS_КодSimphonyКонтекстноеМеню" id="71"/>
 						<ExtendedTooltip name="MRS_КодSimphonyРасширеннаяПодсказка" id="72"/>
@@ -424,6 +439,17 @@
 								<TextEdit>false</TextEdit>
 								<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="14"/>
 								<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="52"/>
+							</InputField>
+							<InputField name="СтавкаНДС" id="73">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Ставка НДС</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+								<ContextMenu name="СтавкаНДСКонтекстноеМеню" id="74"/>
+								<ExtendedTooltip name="СтавкаНДСРасширеннаяПодсказка" id="75"/>
 							</InputField>
 							<UsualGroup name="ГруппаНомерЗапретПечати" id="38">
 								<Title>

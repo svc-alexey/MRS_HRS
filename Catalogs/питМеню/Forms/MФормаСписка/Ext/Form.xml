@@ -262,11 +262,6 @@
 						</ButtonGroup>
 					</ChildItems>
 				</Popup>
-				<Button name="ФормаПодбор" id="25">
-					<Type>CommandBarButton</Type>
-					<CommandName>0</CommandName>
-					<ExtendedTooltip name="ФормаПодборExtendedTooltip" id="77"/>
-				</Button>
 			</ChildItems>
 		</CommandBar>
 		<UsualGroup name="ДеревоИСписок" id="1">
@@ -756,11 +751,6 @@
 							</ButtonGroup>
 						</ChildItems>
 					</Popup>
-					<Button name="ФормаПодбор" id="25">
-						<Type>CommandBarButton</Type>
-						<CommandName>0</CommandName>
-						<ExtendedTooltip name="ФормаПодборExtendedTooltip" id="77"/>
-					</Button>
 				</ChildItems>
 			</CommandBar>
 			<UsualGroup name="ДеревоИСписок" id="1">
