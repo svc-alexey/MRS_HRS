@@ -1,0 +1,3641 @@
+openapi: 3.0.3
+info:
+  title: HRS Simphony items synchronise
+  version: 1.0.0
+  description: API для создания элементов меню с отслеживанием статуса синхронизации.
+  contact:
+    name: Артем Брюховецкий
+    url: https://shawen.dev
+    email: artem.bryuhovetskiy@mriyaresort.com
+
+tags:
+  - name: Health
+    description: Проверка состояния сервиса
+  - name: Menu Items
+    description: Операции с элементами меню
+  - name: Reference Data
+    description: Справочные данные
+  - name: RVC
+    description: Revenue Center операции
+  - name: Admin
+    description: Административные операции (требуется авторизация)
+  - name: Tables
+    description: Операции с классами столов
+  - name: Checks
+    description: Операции с кассовыми чеками
+  - name: EGAIS
+    description: EGAIS Proxy - проксирование запросов к EGAIS Sync сервисам
+
+paths:
+  # ===========================================================================
+  # Health
+  # ===========================================================================
+  /health:
+    get:
+      summary: Проверка состояния сервиса
+      operationId: healthCheck
+      tags:
+        - Health
+      responses:
+        '200':
+          description: Сервис работает нормально
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+
+  # ===========================================================================
+  # Menu Items
+  # ===========================================================================
+  /menu-item:
+    put:
+      summary: Создать элемент меню
+      operationId: createMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MenuItemRequest'
+      responses:
+        '200':
+          description: Элемент меню успешно создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    patch:
+      summary: Обновить элемент меню
+      operationId: updateMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMenuItemRequest'
+      responses:
+        '200':
+          description: Элемент меню успешно обновлен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /menu-items:
+    put:
+      summary: Создать множество элементов меню
+      operationId: createMenuItemsBulk
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkMenuItemRequest'
+      responses:
+        '200':
+          description: Элементы меню успешно созданы
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkMenuItemResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    patch:
+      summary: Обновить множество элементов меню
+      operationId: updateMenuItemsBulk
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkUpdateMenuItemRequest'
+      responses:
+        '200':
+          description: Элементы меню успешно обновлены
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkMenuItemResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /menu-item/{stringNumberId}:
+    delete:
+      summary: Удалить позицию меню
+      operationId: deleteMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: path
+          name: stringNumberId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Уникальный номер позиции для удаления
+        - in: query
+          name: hierStrucId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: ID аутлета (hierStrucId)
+      responses:
+        '200':
+          description: Позиция меню успешно удалена
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - success
+                  - message
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Menu item deleted successfully"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /menu-item/{stringNumberId}/master-data:
+    get:
+      summary: Получить мастер-запись элемента меню по stringNumberId
+      operationId: getMenuItemMasterData
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: path
+          name: stringNumberId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Уникальный номер позиции (идентификатор) для получения мастер-записи
+      responses:
+        '200':
+          description: Мастер-запись элемента меню успешно получена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemMasterDataResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /menu-item/{stringNumberId}/reprice:
+    patch:
+      summary: Обновить цену элемента меню
+      operationId: repriceMenuItem
+      tags:
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: path
+          name: stringNumberId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Уникальный номер позиции (идентификатор) для обновления цены
+        - in: query
+          name: hierStrucId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: ID аутлета для обновления цены
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepriceRequest'
+      responses:
+        '200':
+          description: Цена элемента меню успешно обновлена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepriceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  # ===========================================================================
+  # Reference Data
+  # ===========================================================================
+  /referencedata/rvc-hierarchy:
+    get:
+      summary: Получить иерархическую структуру RVC подразделений
+      operationId: getRvcHierarchy
+      tags:
+        - RVC
+        - Reference Data
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Успешное получение иерархической структуры RVC
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RvcHierarchyResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /referencedata/major-groups:
+    get:
+      summary: Получить справочник основных групп (Major Groups)
+      operationId: getMajorGroups
+      tags:
+        - Reference Data
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Успешное получение справочника основных групп
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MajorGroupResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /referencedata/family-groups:
+    get:
+      summary: Получить справочник семейных групп (Family Groups)
+      operationId: getFamilyGroups
+      tags:
+        - Reference Data
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Успешное получение справочника семейных групп
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FamilyGroupResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /referencedata/report-groups:
+    get:
+      summary: Получить справочник отчетных групп (Report Groups)
+      operationId: getReportGroups
+      tags:
+        - Reference Data
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Успешное получение справочника отчетных групп
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportGroupResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /referencedata/screenlookups:
+    get:
+      summary: Получить справочник экранных справочников (Screen Lookups)
+      operationId: getScreenLookups
+      tags:
+        - Reference Data
+        - RVC
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - name: hierstrucid
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Фильтр по аутлету, если не задан - выводятся все
+      responses:
+        '200':
+          description: Успешное получение справочника экранных справочников
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScreenLookupResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  # ===========================================================================
+  # RVC Menu Items
+  # ===========================================================================
+  /rvc/menu-items:
+    get:
+      summary: Получить иерархическую структуру меню с позициями
+      operationId: getRvcMenuItems
+      tags:
+        - RVC
+        - Menu Items
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - name: hierunitid
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID аутлета (hierStrucId)
+      responses:
+        '200':
+          description: Успешное получение меню с позициями
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RvcMenuItemsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  # ===========================================================================
+  # Tables
+  # ===========================================================================
+  /tables/tablesclass:
+    get:
+      summary: Получить список классов столов
+      operationId: getTablesClass
+      tags:
+        - Tables
+        - Reference Data
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: query
+          name: hierStrucId
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+          description: ID аутлета (hierStrucId) для фильтрации. Если не задан, возвращаются все классы столов
+      responses:
+        '200':
+          description: Успешное получение списка классов столов
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableClassResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /tables/list:
+    get:
+      summary: Получить список столов
+      operationId: getDiningTableList
+      tags:
+        - Tables
+        - Reference Data
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: query
+          name: hierStrucId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: ID аутлета (hierStrucId) для фильтрации столов. Обязательный параметр
+      responses:
+        '200':
+          description: Успешное получение списка столов
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiningTableListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  # ===========================================================================
+  # Checks
+  # ===========================================================================
+  /checks/check:
+    get:
+      summary: Получить данные по кассовому чеку
+      operationId: getCheckDetails
+      tags:
+        - Checks
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: query
+          name: checkNumber
+          required: true
+          schema:
+            type: string
+          description: Номер кассового чека для поиска
+          example: "479331"
+      responses:
+        '200':
+          description: Успешное получение данных по чеку
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckDetailsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /checks/check-details:
+    get:
+      summary: Получить детализацию чеков по периоду
+      operationId: getCheckDetailsByPeriod
+      tags:
+        - Checks
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+        - in: query
+          name: rvcId
+          required: true
+          schema:
+            type: integer
+          description: ID Revenue Center
+          example: 1
+        - in: query
+          name: date
+          required: true
+          schema:
+            type: string
+            format: date
+          description: Дата для получения детализации (формат YYYY-MM-DD)
+          example: "2025-07-14"
+      responses:
+        '200':
+          description: Успешное получение детализации чеков
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckDetailsByPeriodResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  # ===========================================================================
+  # Admin
+  # ===========================================================================
+  /admin/cache/stats:
+    get:
+      summary: Получить статистику по кэшам системы
+      operationId: getCacheStats
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Детальная статистика получена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheStatsResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/stats/reset:
+    delete:
+      summary: Сбросить статистику кэша
+      operationId: resetCacheStats
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Статистика кэша успешно сброшена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache:
+    delete:
+      summary: Очистить все кэши
+      operationId: clearAllCaches
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Кэши успешно очищены
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/menu-items:
+    delete:
+      summary: Очистить кэш элементов меню
+      operationId: clearMenuItemsCache
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Кэш элементов меню успешно очищен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/major-groups:
+    delete:
+      summary: Очистить кэш основных групп
+      operationId: clearMajorGroupsCache
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Кэш основных групп успешно очищен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/family-groups:
+    delete:
+      summary: Очистить кэш семейных групп
+      operationId: clearFamilyGroupsCache
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Кэш семейных групп успешно очищен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/report-groups:
+    delete:
+      summary: Очистить кэш отчетных групп
+      operationId: clearReportGroupsCache
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Кэш отчетных групп успешно очищен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/rvc-hierarchy:
+    delete:
+      summary: Очистить кэш RVC иерархии
+      operationId: clearRvcHierarchyCache
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Кэш RVC иерархии успешно очищен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/screen-lookups:
+    delete:
+      summary: Очистить кэш экранных справочников
+      operationId: clearScreenLookupsCache
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Кэш экранных справочников успешно очищен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /admin/cache/config:
+    post:
+      summary: Обновить конфигурацию кэша
+      operationId: updateCacheConfig
+      tags:
+        - Admin
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CacheConfigRequest'
+      responses:
+        '200':
+          description: Конфигурация кэша успешно обновлена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CacheOperationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Ошибка авторизации
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  # ===========================================================================
+  # EGAIS Proxy - MenuItems
+  # ===========================================================================
+  /rvc/{rvcId}/egais/menuitems:
+    get:
+      tags:
+        - EGAIS
+      summary: Получить все позиции меню RVC
+      description: |
+        Проксирует запрос к EGAIS Sync сервису для получения списка всех позиций меню
+        с их ЕГАИС-атрибутами, штрихкодами и количеством марок
+      operationId: getEgaisMenuItems
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EgaisMenuItemResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+        '503':
+          description: EGAIS сервис недоступен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/menuitems/{objnum}:
+    get:
+      tags:
+        - EGAIS
+      summary: Получить позицию меню по objnum
+      description: Проксирует запрос для получения детальной информации о позиции меню
+      operationId: getEgaisMenuItemByObjnum
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/ObjnumPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisMenuItemResponse'
+        '404':
+          description: Позиция не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/menuitems/egais:
+    put:
+      tags:
+        - EGAIS
+      summary: Обновить ЕГАИС-данные позиции меню
+      description: |
+        Проксирует запрос для обновления ЕГАИС-атрибутов позиции меню:
+        - volume — объём
+        - unit — единица измерения
+        - marktype — тип маркировки
+        - groupid — ID группы
+        - cocktid — ID коктейля
+      operationId: updateEgaisMenuItem
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMenuItemEgaisDto'
+      responses:
+        '200':
+          description: Данные успешно обновлены
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '400':
+          description: Некорректные данные запроса
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '404':
+          description: Позиция не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/menuitems/egais/batch:
+    put:
+      tags:
+        - EGAIS
+      summary: Пакетное обновление ЕГАИС-данных
+      description: Проксирует запрос для обновления ЕГАИС-атрибутов нескольких позиций меню
+      operationId: updateEgaisMenuItemBatch
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/UpdateMenuItemEgaisDto'
+      responses:
+        '200':
+          description: Результаты пакетной обработки
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisBatchApiResponse'
+        '400':
+          description: Список позиций пуст или некорректен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  # ===========================================================================
+  # EGAIS Proxy - Barcodes
+  # ===========================================================================
+  /rvc/{rvcId}/egais/barcodes/{objnum}:
+    get:
+      tags:
+        - EGAIS
+      summary: Получить штрихкоды позиции меню
+      description: Проксирует запрос для получения списка штрихкодов позиции
+      operationId: getEgaisBarcodesByObjnum
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/ObjnumPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Список штрихкодов
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '404':
+          description: Позиция не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/barcodes:
+    post:
+      tags:
+        - EGAIS
+      summary: Добавить штрихкод
+      description: Проксирует запрос для добавления нового штрихкода
+      operationId: addEgaisBarcode
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddBarcodeDto'
+      responses:
+        '201':
+          description: Штрихкод успешно добавлен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '400':
+          description: Некорректные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '404':
+          description: Позиция меню не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '409':
+          description: Штрихкод уже существует
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/barcodes/batch:
+    post:
+      tags:
+        - EGAIS
+      summary: Пакетное добавление штрихкодов
+      description: Проксирует запрос для добавления нескольких штрихкодов
+      operationId: addEgaisBarcodesBatch
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/AddBarcodeDto'
+      responses:
+        '200':
+          description: Результаты пакетной обработки
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisBatchApiResponse'
+        '400':
+          description: Список штрихкодов пуст
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/barcodes/{objnum}/{barcode}:
+    delete:
+      tags:
+        - EGAIS
+      summary: Удалить штрихкод
+      description: Проксирует запрос для удаления штрихкода позиции меню
+      operationId: deleteEgaisBarcode
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/ObjnumPath'
+        - $ref: '#/components/parameters/BarcodePath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Штрихкод успешно удалён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '404':
+          description: Штрихкод не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  # ===========================================================================
+  # EGAIS Proxy - Marks
+  # ===========================================================================
+  /rvc/{rvcId}/egais/marks/byobjnum/{objnum}:
+    get:
+      tags:
+        - EGAIS
+      summary: Получить марки для позиции меню
+      description: Проксирует запрос для получения списка марок ЕГАИС позиции
+      operationId: getEgaisMarksByObjnum
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/ObjnumPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Список марок
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EgaisMark'
+        '404':
+          description: Позиция не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/marks/{code}:
+    get:
+      tags:
+        - EGAIS
+      summary: Получить марку по коду
+      description: Проксирует запрос для получения информации о марке ЕГАИС
+      operationId: getEgaisMarkByCode
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/MarkCodePath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Информация о марке
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisMark'
+        '404':
+          description: Марка не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+    head:
+      tags:
+        - EGAIS
+      summary: Проверить существование марки
+      description: Проксирует запрос для проверки существования марки без возврата данных
+      operationId: checkEgaisMarkExists
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/MarkCodePath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Марка существует
+        '404':
+          description: Марка не найдена
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+
+    delete:
+      tags:
+        - EGAIS
+      summary: Удалить марку
+      description: Проксирует запрос для удаления марки ЕГАИС
+      operationId: deleteEgaisMark
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/MarkCodePath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: Марка успешно удалена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '404':
+          description: Марка не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/marks:
+    post:
+      tags:
+        - EGAIS
+      summary: Добавить марку ЕГАИС
+      description: Проксирует запрос для регистрации новой акцизной марки ЕГАИС
+      operationId: addEgaisMark
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddMarkDto'
+      responses:
+        '201':
+          description: Марка успешно добавлена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '400':
+          description: Некорректные данные
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '404':
+          description: Позиция меню не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '409':
+          description: Марка с таким кодом уже существует
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  /rvc/{rvcId}/egais/marks/batch:
+    post:
+      tags:
+        - EGAIS
+      summary: Пакетное добавление марок
+      description: Проксирует запрос для добавления нескольких марок ЕГАИС
+      operationId: addEgaisMarksBatch
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/AddMarkDto'
+      responses:
+        '200':
+          description: Результаты пакетной обработки
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisBatchApiResponse'
+        '400':
+          description: Список марок пуст
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisApiResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+  # ===========================================================================
+  # EGAIS Proxy - Health
+  # ===========================================================================
+  /rvc/{rvcId}/egais/health:
+    get:
+      tags:
+        - EGAIS
+      summary: Проверка работоспособности EGAIS сервиса
+      description: Проксирует запрос для проверки статуса целевого EGAIS Sync сервиса
+      operationId: getEgaisHealth
+      parameters:
+        - $ref: '#/components/parameters/RvcIdPath'
+        - $ref: '#/components/parameters/XCorrelationId'
+        - $ref: '#/components/parameters/XRequestId'
+      responses:
+        '200':
+          description: EGAIS сервис работает
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EgaisHealthResponse'
+        '502':
+          description: Ошибка при обращении к EGAIS сервису
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+        '503':
+          description: EGAIS сервис недоступен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonFault'
+
+# =============================================================================
+# Components
+# =============================================================================
+components:
+  # ===========================================================================
+  # Schemas
+  # ===========================================================================
+  schemas:
+
+    # -------------------------------------------------------------------------
+    # Common
+    # -------------------------------------------------------------------------
+    CommonFault:
+      description: Стандартная структура ошибки
+      type: object
+      required:
+        - code
+        - message
+        - service
+        - operation
+        - product
+      properties:
+        code:
+          description: Код ошибки
+          type: integer
+          example: 10000
+        message:
+          description: Описание ошибки
+          type: string
+          example: Invalid input parameters
+        service:
+          description: Сервис, в котором произошла ошибка
+          type: string
+          example: hrs-simphony-sync
+        operation:
+          description: Операция, в которой произошла ошибка
+          type: string
+          example: CreateMenuItem
+        product:
+          description: Продукт, в котором произошла ошибка
+          type: string
+          example: HRS
+        cause:
+          description: Дополнительная информация о причине ошибки
+          type: object
+          nullable: true
+
+    HealthStatus:
+      description: Информация о состоянии сервиса
+      type: object
+      required:
+        - status
+        - uptime_sec
+      properties:
+        status:
+          description: Общий статус сервиса
+          type: string
+          enum:
+            - healthy
+          example: healthy
+        uptime_sec:
+          description: Время работы сервиса в секундах
+          type: integer
+          format: int64
+          minimum: 0
+          example: 416
+        database:
+          $ref: '#/components/schemas/DatabaseStatus'
+        menu_service:
+          $ref: '#/components/schemas/MenuServiceStatus'
+        cache:
+          $ref: '#/components/schemas/CacheStats'
+        cache_summary:
+          $ref: '#/components/schemas/CacheSummary'
+
+    DatabaseStatus:
+      description: Состояние подключения к базе данных
+      type: object
+      required:
+        - connected
+        - status
+      properties:
+        connected:
+          description: Статус подключения к БД
+          type: boolean
+          example: true
+        status:
+          description: Детальный статус БД
+          type: string
+          enum:
+            - healthy
+            - degraded
+            - not_initialized
+            - check_failed
+            - initialization_check_failed
+          example: healthy
+        total_connections:
+          description: Общее количество соединений в пуле
+          type: integer
+          minimum: 0
+          example: 2
+        active_connections:
+          description: Количество активных соединений
+          type: integer
+          minimum: 0
+          example: 0
+        available_connections:
+          description: Количество доступных соединений
+          type: integer
+          minimum: 0
+          example: 2
+        last_error:
+          description: Последняя ошибка подключения (если есть)
+          type: string
+          example: Connection timeout
+
+    MenuServiceStatus:
+      description: Состояние сервиса меню
+      type: object
+      required:
+        - initialized
+        - status
+      properties:
+        initialized:
+          description: Флаг инициализации сервиса
+          type: boolean
+          example: true
+        status:
+          description: Детальный статус сервиса меню
+          type: string
+          enum:
+            - operational
+            - not_ready
+            - unavailable
+            - check_failed
+          example: operational
+        cache_items:
+          description: Количество элементов в кэше (опционально)
+          type: integer
+          minimum: 0
+          example: 0
+        major_groups:
+          description: Количество используемых major groups (опционально)
+          type: integer
+          minimum: 0
+          example: 0
+
+    CacheStats:
+      description: Детальная статистика кэша
+      type: object
+      required:
+        - enabled
+      properties:
+        enabled:
+          description: Включен ли кэш
+          type: boolean
+          example: true
+        caches:
+          description: Список всех кэшей с их статистикой
+          type: array
+          items:
+            $ref: '#/components/schemas/CacheInfo'
+        overall_hit_rate:
+          description: Общий hit rate всех кэшей (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.0
+        total_hits:
+          description: Общее количество попаданий во все кэши
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        total_misses:
+          description: Общее количество промахов во все кэши
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        total_evictions:
+          description: Общее количество вытеснений из всех кэшей
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        total_cache_size:
+          description: Общий размер всех кэшей (количество элементов)
+          type: integer
+          minimum: 0
+          example: 0
+        max_cache_size:
+          description: Максимальный общий размер всех кэшей
+          type: integer
+          minimum: 0
+          example: 1500
+        cache_utilization:
+          description: Использование кэша (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.0
+        uptime_seconds:
+          description: Время работы кэша в секундах
+          type: integer
+          format: int64
+          minimum: 0
+          example: 416
+        message:
+          description: Сообщение при отключённом кэше
+          type: string
+          example: Cache is disabled
+        status:
+          description: Статус при ошибке получения статистики
+          type: string
+          example: error
+        error:
+          description: Описание ошибки
+          type: string
+          example: Cache manager not available
+
+    CacheInfo:
+      description: Информация об отдельном кэше
+      type: object
+      required:
+        - name
+        - current_size
+        - max_size
+        - hits
+        - misses
+        - evictions
+        - insertions
+        - updates
+        - hit_rate
+        - total_requests
+        - utilization
+      properties:
+        name:
+          description: Имя кэша
+          type: string
+          enum:
+            - menu_items
+            - major_groups
+            - family_groups
+            - report_groups
+            - rvc_hierarchy
+            - screen_lookups
+            - screen_lookups_by_hier
+          example: menu_items
+        current_size:
+          description: Текущее количество элементов в кэше
+          type: integer
+          minimum: 0
+          example: 0
+        max_size:
+          description: Максимальный размер кэша
+          type: integer
+          minimum: 0
+          example: 1000
+        hits:
+          description: Количество попаданий в кэш
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        misses:
+          description: Количество промахов кэша
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        evictions:
+          description: Количество вытеснений из кэша
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        insertions:
+          description: Количество вставок в кэш
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        updates:
+          description: Количество обновлений в кэше
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        hit_rate:
+          description: Hit rate данного кэша (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.0
+        total_requests:
+          description: Общее количество запросов к кэшу
+          type: integer
+          format: int64
+          minimum: 0
+          example: 0
+        utilization:
+          description: Использование кэша (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.0
+
+    CacheSummary:
+      description: Краткая сводка по кэшу для быстрого просмотра
+      type: object
+      required:
+        - enabled
+      properties:
+        enabled:
+          description: Включен ли кэш
+          type: boolean
+          example: true
+        hit_rate:
+          description: Общий hit rate (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.0
+        total_size:
+          description: Общий размер кэша (количество элементов)
+          type: integer
+          minimum: 0
+          example: 0
+        utilization:
+          description: Использование кэша (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.0
+        status:
+          description: Статус кэша (появляется при ошибках)
+          type: string
+          enum:
+            - not_initialized
+            - statistics_unavailable
+            - error
+            - unknown_error
+            - critical_error
+          example: not_initialized
+
+    CacheStatus:
+      description: Детальная статистика кэша для health check
+      type: object
+      properties:
+        enabled:
+          description: Статус включения кэширования
+          type: boolean
+          example: true
+        cache_utilization:
+          description: Общий процент использования кэша
+          type: number
+          format: double
+          example: 0.0
+        max_cache_size:
+          description: Максимальный размер всех кэшей
+          type: integer
+          example: 1500
+        total_cache_size:
+          description: Текущий общий размер кэшей
+          type: integer
+          example: 0
+        overall_hit_rate:
+          description: Общий процент попаданий в кэш
+          type: number
+          format: double
+          example: 0.0
+        total_hits:
+          description: Общее количество попаданий
+          type: integer
+          example: 0
+        total_misses:
+          description: Общее количество промахов
+          type: integer
+          example: 0
+        total_evictions:
+          description: Общее количество вытеснений
+          type: integer
+          example: 0
+        uptime_seconds:
+          description: Время работы кэша в секундах
+          type: integer
+          example: 67
+        caches:
+          description: Детальная статистика по каждому кэшу
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                example: menu_items
+              current_size:
+                type: integer
+                example: 0
+              max_size:
+                type: integer
+                example: 1000
+              hits:
+                type: integer
+                example: 0
+              misses:
+                type: integer
+                example: 0
+              evictions:
+                type: integer
+                example: 0
+              insertions:
+                type: integer
+                example: 0
+              updates:
+                type: integer
+                example: 0
+              hit_rate:
+                type: number
+                format: double
+                example: 0.0
+              total_requests:
+                type: integer
+                example: 0
+              utilization:
+                type: number
+                format: double
+                example: 0.0
+
+    # -------------------------------------------------------------------------
+    # Menu Items (восстановлено из контекста проекта)
+    # -------------------------------------------------------------------------
+    MenuItemRequest:
+      description: Запрос на создание элемента меню
+      type: object
+      required:
+        - name
+        - stringNumberId
+        - majGrpObjNum
+        - famGrpObjNum
+        - isVisible
+        - hierStrucId
+        - menuItemClass
+        - price
+      properties:
+        name:
+          description: Наименование позиции меню
+          type: string
+          maxLength: 255
+          example: "Пицца Маргарита"
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          minimum: 1
+          example: 20103287
+        majGrpObjNum:
+          description: >
+            Значение справочника основной группы:
+            1000000-1999999 FOOD,
+            2000000-2999999 ALC BEVERAGE,
+            3000000-3999999 N/ALC BEVERAGE,
+            4000000+ OTHER
+          type: integer
+          minimum: 1
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          minimum: 1
+          example: 100
+        isVisible:
+          description: Видимость позиции (1 - видимая, 0 - скрытая)
+          type: integer
+          enum: [0, 1]
+          example: 1
+        hierStrucId:
+          description: ID аутлета (иерархической структуры)
+          type: integer
+          minimum: 1
+          example: 2
+        menuItemClass:
+          description: Категория меню (идентификатор класса)
+          type: integer
+          minimum: 1
+          example: 2001
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 350.0
+
+    MenuItemResponse:
+      description: Ответ при создании/обновлении элемента меню
+      type: object
+      required:
+        - success
+        - data
+      properties:
+        success:
+          description: Статус успешного выполнения операции
+          type: boolean
+          example: true
+        data:
+          description: Данные созданного/обновлённого элемента меню
+          type: object
+          properties:
+            name:
+              description: Наименование позиции меню
+              type: string
+              example: "Пицца Маргарита"
+            stringNumberId:
+              description: Уникальный номер позиции
+              type: integer
+              example: 20103287
+            majGrpObjNum:
+              description: Значение справочника основной группы
+              type: integer
+              example: 1000001
+            famGrpObjNum:
+              description: Значение справочника семейной группы
+              type: integer
+              example: 100
+            isVisible:
+              description: Видимость позиции
+              type: integer
+              enum: [0, 1]
+              example: 1
+            hierStrucId:
+              description: ID аутлета
+              type: integer
+              example: 2
+            menuItemClass:
+              description: Категория меню
+              type: integer
+              example: 2001
+            price:
+              description: Цена позиции
+              type: number
+              format: double
+              example: 350.0
+            created:
+              description: Дата и время создания
+              type: string
+              format: date-time
+              example: "2024-03-15T10:30:00Z"
+
+    UpdateMenuItemRequest:
+      description: Запрос на обновление элемента меню
+      type: object
+      required:
+        - stringNumberId
+        - hierStrucId
+      properties:
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          minimum: 1
+          example: 20103287
+        hierStrucId:
+          description: ID аутлета
+          type: integer
+          minimum: 1
+          example: 2
+        name:
+          description: Наименование позиции меню
+          type: string
+          maxLength: 255
+          example: "Пицца Маргарита обновлённая"
+        majGrpObjNum:
+          description: Значение справочника основной группы
+          type: integer
+          minimum: 1
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          minimum: 1
+          example: 100
+        isVisible:
+          description: Видимость позиции (1 - видимая, 0 - скрытая)
+          type: integer
+          enum: [0, 1]
+          example: 1
+        menuItemClass:
+          description: Категория меню
+          type: integer
+          minimum: 1
+          example: 2001
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 400.0
+
+    PartialMenuItemRequest:
+      description: Частичный запрос для создания элемента меню (для bulk-операций)
+      type: object
+      required:
+        - name
+        - stringNumberId
+        - majGrpObjNum
+        - famGrpObjNum
+        - isVisible
+        - menuItemClass
+        - price
+      properties:
+        name:
+          description: Наименование позиции меню
+          type: string
+          maxLength: 255
+          example: "Пицца Маргарита"
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          minimum: 1
+          example: 20103287
+        majGrpObjNum:
+          description: Значение справочника основной группы
+          type: integer
+          minimum: 1
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          minimum: 1
+          example: 100
+        isVisible:
+          description: Видимость позиции (1 - видимая, 0 - скрытая)
+          type: integer
+          enum: [0, 1]
+          example: 1
+        menuItemClass:
+          description: Категория меню
+          type: integer
+          minimum: 1
+          example: 2001
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 350.0
+
+    PartialUpdateMenuItemRequest:
+      description: Частичный запрос для обновления элемента меню (для bulk-операций)
+      type: object
+      required:
+        - stringNumberId
+      properties:
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          minimum: 1
+          example: 20103287
+        name:
+          description: Наименование позиции меню
+          type: string
+          maxLength: 255
+          example: "Пицца Маргарита обновлённая"
+        majGrpObjNum:
+          description: Значение справочника основной группы
+          type: integer
+          minimum: 1
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          minimum: 1
+          example: 100
+        isVisible:
+          description: Видимость позиции (1 - видимая, 0 - скрытая)
+          type: integer
+          enum: [0, 1]
+          example: 1
+        menuItemClass:
+          description: Категория меню
+          type: integer
+          minimum: 1
+          example: 2001
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 400.0
+
+    BulkMenuItemRequest:
+      description: Запрос на массовое создание элементов меню
+      type: object
+      required:
+        - hierStrucId
+        - items
+      properties:
+        hierStrucId:
+          description: ID аутлета
+          type: integer
+          minimum: 1
+          example: 2
+        items:
+          description: Массив элементов меню для создания
+          type: array
+          items:
+            $ref: '#/components/schemas/PartialMenuItemRequest'
+
+    BulkMenuItemResponse:
+      description: Ответ при массовом создании/обновлении элементов меню
+      type: object
+      required:
+        - success
+        - total
+        - created
+        - errors
+      properties:
+        success:
+          description: Статус выполнения операции
+          type: boolean
+          example: true
+        total:
+          description: Общее количество обработанных элементов
+          type: integer
+          minimum: 0
+          example: 5
+        created:
+          description: Количество успешно созданных/обновлённых элементов
+          type: integer
+          minimum: 0
+          example: 5
+        errors:
+          description: Массив ошибок при обработке
+          type: array
+          items:
+            type: object
+            properties:
+              stringNumberId:
+                description: ID позиции с ошибкой
+                type: integer
+                example: 20103287
+              message:
+                description: Описание ошибки
+                type: string
+                example: "Duplicate entry"
+
+    BulkUpdateMenuItemRequest:
+      description: Запрос на массовое обновление элементов меню
+      type: object
+      required:
+        - hierStrucId
+        - items
+      properties:
+        hierStrucId:
+          description: ID аутлета
+          type: integer
+          minimum: 1
+          example: 2
+        items:
+          description: Массив элементов меню для обновления
+          type: array
+          items:
+            $ref: '#/components/schemas/PartialUpdateMenuItemRequest'
+
+    MenuItemMasterDataResponse:
+      description: Ответ с мастер-записью элемента меню
+      type: object
+      required:
+        - success
+        - data
+      properties:
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+        data:
+          description: Мастер-данные элемента меню
+          type: object
+          properties:
+            stringNumberId:
+              description: Уникальный номер позиции
+              type: integer
+              example: 20103287
+            name:
+              description: Наименование позиции меню
+              type: string
+              example: "Пицца Маргарита"
+            majGrpObjNum:
+              description: Значение справочника основной группы
+              type: integer
+              example: 1000001
+            famGrpObjNum:
+              description: Значение справочника семейной группы
+              type: integer
+              example: 100
+            isVisible:
+              description: Видимость позиции
+              type: integer
+              enum: [0, 1]
+              example: 1
+            created:
+              description: Дата и время создания
+              type: string
+              format: date-time
+              example: "2024-03-15T10:30:00Z"
+
+    RepriceRequest:
+      description: Запрос на обновление цены элемента меню
+      type: object
+      required:
+        - price
+      properties:
+        price:
+          description: Новая цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 450.0
+
+    RepriceResponse:
+      description: Ответ при обновлении цены элемента меню
+      type: object
+      required:
+        - success
+        - data
+      properties:
+        success:
+          description: Статус успешного выполнения операции
+          type: boolean
+          example: true
+        data:
+          description: Данные обновлённого элемента
+          type: object
+          properties:
+            stringNumberId:
+              description: Уникальный номер позиции
+              type: integer
+              example: 20103287
+            price:
+              description: Обновлённая цена
+              type: number
+              format: double
+              example: 450.0
+            hierStrucId:
+              description: ID аутлета
+              type: integer
+              example: 2
+
+    # -------------------------------------------------------------------------
+    # Reference Data
+    # -------------------------------------------------------------------------
+    RvcHierarchyResponse:
+      description: Ответ с древовидной иерархической структурой RVC подразделений
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив корневых элементов иерархии RVC (дочерние элементы находятся в свойстве children каждого элемента)
+          type: array
+          items:
+            $ref: '#/components/schemas/RvcHierarchyUnit'
+        total_count:
+          description: Общее количество элементов в иерархии (включая все уровни вложенности)
+          type: integer
+          minimum: 0
+          example: 150
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    RvcHierarchyUnit:
+      description: Элемент иерархии RVC с возможной вложенностью
+      required:
+        - hierunitid
+        - name
+        - level
+      type: object
+      properties:
+        hierunitid:
+          description: Уникальный идентификатор элемента иерархии
+          type: integer
+          example: 1
+        name:
+          description: Название элемента иерархии (аутлета/подразделения)
+          type: string
+          maxLength: 255
+          example: "Main Restaurant"
+        level:
+          description: Уровень вложенности в иерархии (0 - корневой)
+          type: integer
+          minimum: 0
+          example: 0
+        rvc_id:
+          description: Внешний ID Revenue Center
+          type: string
+          nullable: true
+          example: "1"
+        parent_id:
+          description: ID родительского элемента (null для корневых)
+          type: integer
+          nullable: true
+          example: null
+        children:
+          description: Дочерние элементы иерархии
+          type: array
+          items:
+            $ref: '#/components/schemas/RvcHierarchyUnit'
+
+    MajorGroupResponse:
+      description: Ответ со справочником основных групп
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника основных групп
+          type: array
+          items:
+            $ref: '#/components/schemas/MajorGroup'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 45
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    MajorGroup:
+      description: Элемент справочника основных групп
+      required:
+        - object_number
+        - name
+      type: object
+      properties:
+        object_number:
+          description: Уникальный номер объекта основной группы
+          type: integer
+          example: 1000001
+        name:
+          description: Наименование основной группы
+          type: string
+          nullable: true
+          example: "Горячие блюда"
+
+    FamilyGroupResponse:
+      description: Ответ со справочником семейных групп
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника семейных групп
+          type: array
+          items:
+            $ref: '#/components/schemas/FamilyGroup'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 45
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    FamilyGroup:
+      description: Элемент справочника семейных групп
+      required:
+        - object_number
+        - name
+      type: object
+      properties:
+        object_number:
+          description: Уникальный номер объекта семейной группы
+          type: integer
+          example: 100
+        name:
+          description: Наименование семейной группы
+          type: string
+          nullable: true
+          example: "Пиццы"
+
+    ReportGroupResponse:
+      description: Ответ со справочником отчетных групп
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника отчетных групп
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportGroup'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 45
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    ReportGroup:
+      description: Элемент справочника отчетных групп
+      required:
+        - object_number
+        - name
+      type: object
+      properties:
+        object_number:
+          description: Уникальный номер объекта отчетной группы
+          type: integer
+          example: 200
+        name:
+          description: Наименование отчетной группы
+          type: string
+          nullable: true
+          example: "Напитки"
+
+    ScreenLookupResponse:
+      description: Ответ со справочником экранных справочников
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника экранных справочников
+          type: array
+          items:
+            $ref: '#/components/schemas/ScreenLookup'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 45
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    ScreenLookup:
+      description: Элемент справочника экранных справочников
+      required:
+        - screen_number
+        - hier_struc_id
+        - name
+      type: object
+      properties:
+        screen_number:
+          description: Номер экрана (SCREENNUMBER)
+          type: integer
+          example: 1
+        hier_struc_id:
+          description: ID иерархической структуры/аутлета (HIERSTRUCID)
+          type: integer
+          example: 1
+        name:
+          description: Наименование экранного справочника
+          type: string
+          nullable: true
+          maxLength: 255
+          example: "Основное меню"
+
+    # -------------------------------------------------------------------------
+    # RVC
+    # -------------------------------------------------------------------------
+    RvcMenuItemsResponse:
+      description: Ответ с иерархической структурой меню с позициями
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив RVC подразделений с меню
+          type: array
+          items:
+            $ref: '#/components/schemas/RvcMenuData'
+        total_count:
+          description: Общее количество RVC подразделений
+          type: integer
+          minimum: 0
+          example: 1
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    RvcMenuData:
+      description: Данные RVC подразделения с меню
+      required:
+        - hierunitid
+        - menu_item_classes
+      type: object
+      properties:
+        hierunitid:
+          description: ID иерархической структуры (аутлета)
+          type: integer
+          example: 2
+        rvc_id:
+          description: Внешний ID RVC
+          type: string
+          example: "1"
+        rvc_name:
+          description: Название RVC подразделения
+          type: string
+          example: "Mriya"
+        menu_item_classes:
+          description: Массив классов меню с позициями
+          type: array
+          items:
+            $ref: '#/components/schemas/MenuItemClass'
+
+    MenuItemClass:
+      description: Класс меню с позициями
+      required:
+        - menu_item_class
+        - items
+      type: object
+      properties:
+        menu_item_class:
+          description: Идентификатор класса меню
+          type: integer
+          example: 2001
+        items:
+          description: Массив позиций меню
+          type: array
+          items:
+            $ref: '#/components/schemas/RvcMenuItem'
+
+    RvcMenuItem:
+      description: Позиция меню в RVC контексте
+      required:
+        - stringNumberId
+        - name
+        - majGrpObjNum
+        - famGrpObjNum
+        - price
+        - fileNum
+        - created
+      type: object
+      properties:
+        stringNumberId:
+          description: Уникальный номер позиции (идентификатор)
+          type: integer
+          minimum: 1
+          example: 20103287
+        name:
+          description: Наименование позиции меню
+          type: string
+          maxLength: 255
+          example: "Пицца Маргарита"
+        majGrpObjNum:
+          description: Значение справочника основной группы
+          type: integer
+          minimum: 1
+          example: 1000001
+        famGrpObjNum:
+          description: Значение справочника семейной группы
+          type: integer
+          minimum: 1
+          example: 100
+        price:
+          description: Цена позиции
+          type: number
+          format: double
+          minimum: 0
+          example: 350.0
+        fileNum:
+          description: Номер файла
+          type: integer
+          example: 0
+        created:
+          description: Дата и время создания
+          type: string
+          format: date-time
+          example: "2024-03-15T10:30:00Z"
+
+    # -------------------------------------------------------------------------
+    # Tables
+    # -------------------------------------------------------------------------
+    TableClass:
+      description: Элемент справочника классов столов
+      required:
+        - object_number
+        - hier_struc_id
+        - name
+      type: object
+      properties:
+        object_number:
+          description: Уникальный номер объекта класса стола (OBJECTNUMBER)
+          type: integer
+          example: 1
+        hier_struc_id:
+          description: ID иерархической структуры/аутлета (HIERSTRUCID)
+          type: integer
+          example: 1
+        name:
+          description: Наименование класса стола (STRINGTEXT)
+          type: string
+          nullable: true
+          example: "VIP столы"
+
+    TableClassResponse:
+      description: Ответ со справочником классов столов
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов справочника классов столов
+          type: array
+          items:
+            $ref: '#/components/schemas/TableClass'
+        total_count:
+          description: Общее количество элементов в справочнике
+          type: integer
+          minimum: 0
+          example: 10
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    DiningTableItem:
+      description: Элемент справочника столов
+      required:
+        - dining_table_id
+        - object_number
+        - name_id
+        - name
+      type: object
+      properties:
+        dining_table_id:
+          description: Уникальный идентификатор записи стола (DININGTABLEID)
+          type: integer
+          example: 887
+        object_number:
+          description: Номер стола (OBJECTNUMBER)
+          type: integer
+          example: 844
+        dining_table_class_num:
+          description: Номер класса стола (DININGTABLECLASSNUM)
+          type: integer
+          nullable: true
+          example: 1
+        name_id:
+          description: ID названия стола в STRING_TABLE (NAMEID)
+          type: integer
+          example: 24863
+        name:
+          description: Название стола (STRINGTEXT из STRING_TABLE)
+          type: string
+          example: "Стол 844"
+
+    DiningTableListResponse:
+      description: Ответ со списком столов
+      required:
+        - data
+        - total_count
+        - success
+      type: object
+      properties:
+        data:
+          description: Массив элементов столов
+          type: array
+          items:
+            $ref: '#/components/schemas/DiningTableItem'
+        total_count:
+          description: Общее количество столов
+          type: integer
+          minimum: 0
+          example: 5
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    # -------------------------------------------------------------------------
+    # Checks
+    # -------------------------------------------------------------------------
+    CheckDetailsResponse:
+      description: Ответ с данными по кассовому чеку
+      required:
+        - data
+        - success
+      type: object
+      properties:
+        data:
+          description: Данные чека со вложенным массивом позиций
+          $ref: '#/components/schemas/CheckData'
+        success:
+          description: Статус успешного выполнения запроса
+          type: boolean
+          example: true
+
+    CheckData:
+      description: Данные кассового чека с позициями
+      required:
+        - checkStatus
+        - subtotal
+        - tax
+        - taxByCheck
+        - lastWorkstationId
+        - items
+      type: object
+      properties:
+        checkStatus:
+          description: Статус чека (chks.Status)
+          type: integer
+          example: 2
+        subtotal:
+          description: Промежуточная сумма чека (chks.SUBTOTAL)
+          type: number
+          format: double
+          example: 1500.0
+        tax:
+          description: Налог чека (chks.TAX)
+          type: number
+          format: double
+          example: 150.0
+        taxByCheck:
+          description: Налог по чеку (chks.TAXBYCHECK)
+          type: number
+          format: double
+          example: 150.0
+        lastWorkstationId:
+          description: ID последней рабочей станции (chks.LASTWORKSTATIONID)
+          type: integer
+          example: 101
+        employeeName:
+          description: Имя сотрудника (emp.CHECKNAME)
+          type: string
+          maxLength: 200
+          example: Иванов И.И.
+        items:
+          description: Массив позиций чека
+          type: array
+          items:
+            $ref: '#/components/schemas/CheckDetailItem'
+
+    CheckDetailItem:
+      description: Позиция кассового чека
+      required:
+        - objectNumber
+        - detailStatus
+        - salesCount
+        - total
+        - taxForGivenTotal
+      type: object
+      properties:
+        objectNumber:
+          description: Номер объекта - позиции меню (chksdetails.OBJECTNUMBER)
+          type: integer
+          minimum: 1
+          example: 1001234
+        detailStatus:
+          description: Статус детали чека (chksdetails.STATUS)
+          type: integer
+          example: 1
+        salesCount:
+          description: Количество продаж (chksdetails.SALESCOUNT)
+          type: integer
+          example: 2
+        total:
+          description: Сумма позиции (chksdetails.TOTAL)
+          type: number
+          format: double
+          example: 300.0
+        taxForGivenTotal:
+          description: Налог для суммы позиции (chksdetails.TAXFORGIVENTOTAL)
+          type: number
+          format: double
+          example: 30.0
+        name:
+          description: Наименование позиции (stringnum.NAME)
+          type: string
+          maxLength: 255
+          example: Пицца Маргарита
+        menuItemClass:
+          description: Класс меню (chksdetails.MENUID)
+          type: integer
+          example: 2001
+        majGrpObjNum:
+          description: Основная группа (chksdetails.MAJGROBJNUM)
+          type: integer
+          example: 1000001
+        famGrpObjNum:
+          description: Семейная группа (chksdetails.FAMGROBJNUM)
+          type: integer
+          example: 100
+
+    CheckDetailsByPeriodResponse:
+      description: Response with check details grouped by cashier number
+      required:
+        - data
+        - success
+        - count
+      type: object
+      properties:
+        data:
+          description: Check details grouped by cashier
+          type: array
+          items:
+            $ref: '#/components/schemas/CashierCheckGroup'
+        count:
+          description: Total number of records across all groups
+          type: integer
+          example: 150
+        success:
+          description: Operation success status
+          type: boolean
+          example: true
+
+    CashierCheckGroup:
+      description: Check details for a specific cashier
+      required:
+        - cashierNumber
+        - items
+      type: object
+      properties:
+        cashierNumber:
+          description: Cashier identification number
+          type: integer
+          example: 12345
+        items:
+          description: Array of check detail rows for this cashier
+          type: array
+          items:
+            $ref: '#/components/schemas/CheckDetailRowDTO'
+
+    CheckDetailRowDTO:
+      description: Строка детализации кассового чека
+      required:
+        - rvcId
+        - rvcName
+        - cashierNumber
+        - checkNumber
+        - checkId
+        - checkOpenDate
+        - checkCloseDate
+        - productCode
+        - productName
+        - productCount
+        - price
+        - sum
+        - sumWithoutDiscount
+        - discountSum
+        - total
+        - stringDiscount
+        - codeOfTaxRate
+        - taxRateString
+        - numberOfPayType
+        - employerName
+        - positionNumber
+      type: object
+      properties:
+        rvcId:
+          description: ID Revenue Center (rc_num)
+          type: integer
+          example: 1
+        rvcName:
+          description: Название Revenue Center (rc_name)
+          type: string
+          maxLength: 200
+          example: Основной зал
+        cashierNumber:
+          description: Номер кассы (ws_num)
+          type: integer
+          example: 101
+        checkNumber:
+          description: Номер чека (checknumber)
+          type: integer
+          example: 479331
+        checkId:
+          description: ID чека (checkid)
+          type: integer
+          example: 123456
+        checkOpenDate:
+          description: Дата и время открытия чека (checkopenday)
+          type: string
+          example: 14-07-2025 10:30:00
+        checkCloseDate:
+          description: Дата и время закрытия чека (checkcloseday)
+          type: string
+          example: 14-07-2025 10:45:00
+        productCode:
+          description: Код товара (item_code)
+          type: string
+          maxLength: 50
+          example: '1001234'
+        productName:
+          description: Название товара (item_name)
+          type: string
+          maxLength: 500
+          example: Кофе Американо
+        productCount:
+          description: Количество товара (qty)
+          type: number
+          format: double
+          example: 2.0
+        price:
+          description: Цена за единицу (price)
+          type: number
+          format: double
+          example: 175.0
+        sum:
+          description: Сумма позиции (amount)
+          type: number
+          format: double
+          example: 350.0
+        sumWithoutDiscount:
+          description: Общая сумма чека без учета скидок (total_sales_per_check)
+          type: number
+          format: double
+          example: 1500.0
+        discountSum:
+          description: Сумма скидки на чек (discount_check_amount)
+          type: number
+          format: double
+          example: 150.0
+        total:
+          description: Итоговая сумма чека со скидкой (check_total_with_discount)
+          type: number
+          format: double
+          example: 1350.0
+        stringDiscount:
+          description: Скидка на строку (line_discount_amount)
+          type: number
+          format: double
+          example: 35.0
+        codeOfTaxRate:
+          description: Код налоговой ставки (tax_id)
+          type: integer
+          example: 1
+        taxRateString:
+          description: Название налоговой ставки (tax_name)
+          type: string
+          maxLength: 200
+          example: НДС 20%
+        nameOfDiscount:
+          description: Название скидки (discount_name), nullable
+          type: string
+          maxLength: 200
+          example: Скидка постоянного клиента
+        numberOfPayType:
+          description: Номер типа оплаты (tendernum)
+          type: integer
+          example: 1
+        employerName:
+          description: Имя сотрудника (checkname)
+          type: string
+          maxLength: 200
+          example: Иванов И.И.
+        positionNumber:
+          description: Номер позиции в чеке (detailindex)
+          type: integer
+          example: 1
+        numberOfDiscountString:
+          description: Номер строки со скидкой (discount_idx), nullable
+          type: integer
+          example: 5
+
+    # -------------------------------------------------------------------------
+    # Admin
+    # -------------------------------------------------------------------------
+    CacheStatsResponse:
+      description: Детальная статистика по всем кэшам системы
+      type: object
+      required:
+        - enabled
+        - total_size
+        - total_max_size
+        - total_hits
+        - total_misses
+        - total_evictions
+        - total_insertions
+        - total_updates
+        - total_requests
+        - hit_rate
+        - utilization
+        - caches
+      properties:
+        enabled:
+          description: Статус включения кэширования
+          type: boolean
+          example: true
+        total_size:
+          description: Общее количество элементов во всех кэшах
+          type: integer
+          minimum: 0
+          example: 450
+        total_max_size:
+          description: Максимальная емкость всех кэшей
+          type: integer
+          minimum: 0
+          example: 1500
+        total_hits:
+          description: Общее количество попаданий
+          type: integer
+          format: int64
+          minimum: 0
+          example: 1250
+        total_misses:
+          description: Общее количество промахов
+          type: integer
+          format: int64
+          minimum: 0
+          example: 180
+        total_evictions:
+          description: Общее количество вытеснений
+          type: integer
+          format: int64
+          minimum: 0
+          example: 25
+        total_insertions:
+          description: Общее количество вставок
+          type: integer
+          format: int64
+          minimum: 0
+          example: 475
+        total_updates:
+          description: Общее количество обновлений
+          type: integer
+          format: int64
+          minimum: 0
+          example: 120
+        total_requests:
+          description: Общее количество запросов
+          type: integer
+          format: int64
+          minimum: 0
+          example: 1430
+        hit_rate:
+          description: Общий процент попаданий (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.874
+        utilization:
+          description: Использование кэша (0.0 - 1.0)
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+          example: 0.3
+        uptime_seconds:
+          description: Время работы кэш-менеджера в секундах
+          type: integer
+          format: int64
+          minimum: 0
+          example: 3600
+        caches:
+          description: Детальная информация по каждому кэшу
+          type: array
+          items:
+            $ref: '#/components/schemas/CacheInfo'
+
+    CacheOperationResponse:
+      description: Ответ при операциях с кэшем
+      required:
+        - success
+        - message
+        - cache_type
+        - timestamp
+      type: object
+      properties:
+        success:
+          description: Статус успешности операции
+          type: boolean
+          example: true
+        message:
+          description: Сообщение о результате операции
+          type: string
+          example: "Cache cleared successfully"
+        cache_type:
+          description: Тип кэша
+          type: string
+          example: "all"
+        timestamp:
+          description: Время выполнения операции
+          type: string
+          format: date-time
+          example: "2025-10-16T15:30:00Z"
+
+    CacheConfigRequest:
+      description: Запрос на обновление конфигурации кэша
+      type: object
+      properties:
+        enable_cache:
+          description: Включить/выключить кэширование
+          type: boolean
+          example: true
+        menu_items_cache_size:
+          description: Размер кэша элементов меню
+          type: integer
+          minimum: 0
+          example: 1000
+        major_groups_cache_size:
+          description: Размер кэша основных групп
+          type: integer
+          minimum: 0
+          example: 100
+        family_groups_cache_size:
+          description: Размер кэша семейных групп
+          type: integer
+          minimum: 0
+          example: 100
+        report_groups_cache_size:
+          description: Размер кэша отчетных групп
+          type: integer
+          minimum: 0
+          example: 100
+        rvc_hierarchy_cache_size:
+          description: Размер кэша RVC иерархии
+          type: integer
+          minimum: 0
+          example: 100
+        screen_lookups_cache_size:
+          description: Размер кэша экранных справочников
+          type: integer
+          minimum: 0
+          example: 100
+        ttl_seconds:
+          description: Время жизни записей в кэше (в секундах)
+          type: integer
+          minimum: 0
+          example: 3600
+
+    # -------------------------------------------------------------------------
+    # EGAIS
+    # -------------------------------------------------------------------------
+    EgaisApiResponse:
+      type: object
+      description: Стандартный ответ EGAIS API
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          description: Признак успешности операции
+        message:
+          type: string
+          nullable: true
+          description: Сообщение о результате операции
+        data:
+          nullable: true
+          description: Дополнительные данные (опционально)
+
+    EgaisBatchApiResponse:
+      type: object
+      description: Ответ пакетной операции EGAIS
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+          description: "Формат: 'Обработано: N, успешно: M, ошибок: K'"
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              objnum:
+                type: integer
+              code:
+                type: string
+              barcode:
+                type: string
+              success:
+                type: boolean
+              error:
+                type: string
+                nullable: true
+
+    EgaisMenuItemResponse:
+      type: object
+      description: Информация о позиции меню с ЕГАИС-атрибутами
+      properties:
+        objnum:
+          type: integer
+          format: int32
+          description: Уникальный идентификатор позиции
+        name:
+          type: string
+          nullable: true
+          description: Наименование позиции
+        volume:
+          type: number
+          format: decimal
+          nullable: true
+          description: Объём
+        unit:
+          type: string
+          nullable: true
+          description: Единица измерения
+        marktype:
+          type: integer
+          nullable: true
+          description: Тип маркировки
+        groupid:
+          type: integer
+          nullable: true
+          description: ID группы
+        cocktid:
+          type: integer
+          nullable: true
+          description: ID коктейля
+        barcodes:
+          type: array
+          items:
+            type: string
+          description: Список штрихкодов
+        marksCount:
+          type: integer
+          description: Количество марок
+
+    EgaisMark:
+      type: object
+      description: Марка ЕГАИС
+      properties:
+        store:
+          type: string
+          nullable: true
+          description: Идентификатор склада
+        objnum:
+          type: integer
+          format: int32
+          description: ID позиции меню
+        name:
+          type: string
+          nullable: true
+          description: Наименование
+        ean:
+          type: string
+          nullable: true
+          description: Штрихкод EAN
+        code:
+          type: string
+          description: Уникальный код марки
+        info:
+          type: string
+          nullable: true
+          description: Дополнительная информация
+        groupid:
+          type: integer
+          nullable: true
+          description: ID группы
+        tare:
+          type: number
+          format: decimal
+          nullable: true
+          description: Тара
+        volume:
+          type: number
+          format: decimal
+          nullable: true
+          description: Объём
+        remainder:
+          type: number
+          format: decimal
+          nullable: true
+          description: Остаток
+        state:
+          type: integer
+          nullable: true
+          description: Состояние марки
+        fsrarid:
+          type: string
+          nullable: true
+          description: Код ФСРАР
+        keeptime:
+          type: integer
+          nullable: true
+          description: Срок хранения (дней)
+        proddate:
+          type: string
+          format: date
+          nullable: true
+          description: Дата производства
+        expdate:
+          type: string
+          format: date
+          nullable: true
+          description: Срок годности
+        opendate:
+          type: string
+          format: date
+          nullable: true
+          description: Дата вскрытия
+        solddate:
+          type: string
+          format: date
+          nullable: true
+          description: Дата продажи
+        soldstore:
+          type: string
+          nullable: true
+          description: Склад продажи
+        con2tap:
+          type: integer
+          nullable: true
+          description: Подключение к кранам
+
+    EgaisHealthResponse:
+      type: object
+      description: Статус работоспособности EGAIS сервиса
+      properties:
+        status:
+          type: string
+          example: "Healthy"
+        timestamp:
+          type: string
+          format: date-time
+          example: "2024-01-15T10:30:00Z"
+        rvcId:
+          type: integer
+          description: ID RVC для которого проверялся статус
+
+    UpdateMenuItemEgaisDto:
+      type: object
+      description: DTO для обновления ЕГАИС-данных позиции меню
+      required:
+        - objnum
+      properties:
+        objnum:
+          type: integer
+          format: int32
+          description: ID позиции меню
+        volume:
+          type: number
+          format: decimal
+          nullable: true
+          description: Объём
+          example: 0.5
+        unit:
+          type: string
+          nullable: true
+          description: Единица измерения
+          example: "л"
+        marktype:
+          type: integer
+          nullable: true
+          description: Тип маркировки
+          example: 1
+        groupid:
+          type: integer
+          nullable: true
+          description: ID группы
+        cocktid:
+          type: integer
+          nullable: true
+          description: ID коктейля
+
+    AddBarcodeDto:
+      type: object
+      description: DTO для добавления штрихкода
+      required:
+        - objnum
+        - barcode
+      properties:
+        objnum:
+          type: integer
+          format: int32
+          description: ID позиции меню
+        barcode:
+          type: string
+          maxLength: 100
+          description: Штрихкод
+          example: "4600000000001"
+
+    AddMarkDto:
+      type: object
+      description: DTO для добавления марки ЕГАИС
+      required:
+        - objnum
+        - code
+      properties:
+        store:
+          type: string
+          nullable: true
+          description: Идентификатор склада
+        objnum:
+          type: integer
+          format: int32
+          description: ID позиции меню
+        name:
+          type: string
+          nullable: true
+          description: Наименование
+        ean:
+          type: string
+          nullable: true
+          description: Штрихкод EAN
+        code:
+          type: string
+          maxLength: 150
+          description: Уникальный код марки ЕГАИС
+        info:
+          type: string
+          nullable: true
+          description: Дополнительная информация
+        groupid:
+          type: integer
+          nullable: true
+          description: ID группы
+        tare:
+          type: number
+          format: decimal
+          nullable: true
+          description: Тара
+        volume:
+          type: number
+          format: decimal
+          nullable: true
+          description: Объём
+        remainder:
+          type: number
+          format: decimal
+          nullable: true
+          description: Остаток
+        state:
+          type: integer
+          nullable: true
+          description: Состояние марки
+        fsrarid:
+          type: string
+          nullable: true
+          description: Код ФСРАР производителя
+        keeptime:
+          type: integer
+          nullable: true
+          description: Срок хранения (дней)
+        proddate:
+          type: string
+          format: date
+          nullable: true
+          description: Дата производства
+        expdate:
+          type: string
+          format: date
+          nullable: true
+          description: Срок годности
+        opendate:
+          type: string
+          format: date
+          nullable: true
+          description: Дата вскрытия
+        solddate:
+          type: string
+          format: date
+          nullable: true
+          description: Дата продажи
+        soldstore:
+          type: string
+          nullable: true
+          description: Склад продажи
+        con2tap:
+          type: integer
+          nullable: true
+          description: Подключение к кранам
+
+  # ===========================================================================
+  # Responses
+  # ===========================================================================
+  responses:
+    BadRequest:
+      description: Некорректный запрос
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CommonFault'
+
+    NotFound:
+      description: Ресурс не найден
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CommonFault'
+
+    InternalServerError:
+      description: Внутренняя ошибка сервера
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CommonFault'
+
+  # ===========================================================================
+  # Parameters
+  # ===========================================================================
+  parameters:
+    XUserId:
+      in: header
+      name: X-User-Id
+      schema:
+        type: string
+      description: Идентификатор пользователя (опционально)
+
+    XCorrelationId:
+      in: header
+      name: X-Correlation-Id
+      schema:
+        type: string
+        format: uuid
+      required: true
+      description: Уникальный идентификатор транзакции запроса
+
+    XRequestId:
+      in: header
+      name: X-Request-Id
+      schema:
+        type: string
+        format: uuid
+      required: true
+      description: Уникальный идентификатор запроса
+
+    RvcIdPath:
+      name: rvcId
+      in: path
+      required: true
+      description: Идентификатор RVC (Revenue Center) для маршрутизации к целевому EGAIS сервису
+      schema:
+        type: integer
+        format: int32
+      example: 101
+
+    ObjnumPath:
+      name: objnum
+      in: path
+      required: true
+      description: Уникальный идентификатор позиции меню
+      schema:
+        type: integer
+        format: int32
+      example: 12345
+
+    MarkCodePath:
+      name: code
+      in: path
+      required: true
+      description: Уникальный код марки ЕГАИС (URL-encoded)
+      schema:
+        type: string
+        maxLength: 150
+      example: "22N00001ABC123456789..."
+
+    BarcodePath:
+      name: barcode
+      in: path
+      required: true
+      description: Штрихкод для удаления (URL-encoded)
+      schema:
+        type: string
+      example: "4600000000001"
+
+  # ===========================================================================
+  # Security Schemes
+  # ===========================================================================
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        Bearer токен авторизации для административных операций.
+        Пример: `Authorization: Bearer secret123`
