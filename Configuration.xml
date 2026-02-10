@@ -111,14 +111,17 @@
 			<Catalog>ГруппыАналитическогоУчетаНоменклатуры</Catalog>
 			<Catalog>СерииНоменклатуры</Catalog>
 			<Catalog>MRS_КлассыМеню</Catalog>
+			<Catalog>Склады</Catalog>
 			<Document>питРецептура</Document>
 			<Document>УстановкаЦенНоменклатуры</Document>
 			<Document>ПеремещениеТоваров</Document>
 			<Document>СборкаТоваров</Document>
+			<Document>ВнутреннееПотребление</Document>
 			<Enum>MRS_СтатусыСинхронизацииSimphony</Enum>
 			<Enum>СтатусыУстановокЦенНоменклатуры</Enum>
 			<Enum>MRS_СтатусыСинхронизацииELMA</Enum>
 			<Enum>ВариантыРасчетаЦенНаборов</Enum>
+			<Enum>ВидыДвиженияНакопления</Enum>
 			<Report>MRS_КонтрольМинусовыхОстатков</Report>
 			<Report>MRS_СебестоимостьРецептурДМИО</Report>
 			<DataProcessor>MRS_СоздатьНоменклатуруПоEXCEL</DataProcessor>
@@ -129,6 +132,7 @@
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
 			<InformationRegister>MRS_ПроцессыELMA</InformationRegister>
 			<InformationRegister>MRS_СоответствиеСтаройНовойНоменклатуры</InformationRegister>
+			<InformationRegister>MRS_ОчередьСинхронизацииМарокЕГАИС</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

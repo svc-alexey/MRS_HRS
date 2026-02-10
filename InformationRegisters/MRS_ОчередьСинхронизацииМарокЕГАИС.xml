@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<InformationRegister uuid="21475163-441c-4472-848f-982516efa6af">
+		<InternalInfo>
+			<xr:GeneratedType name="InformationRegisterRecord.MRS_ОчередьСинхронизацииМарокЕГАИС" category="Record">
+				<xr:TypeId>bb49d8e2-ce43-41f2-8873-339ee705deea</xr:TypeId>
+				<xr:ValueId>3cfe1038-de5f-4d7f-af4a-122672e92aee</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterManager.MRS_ОчередьСинхронизацииМарокЕГАИС" category="Manager">
+				<xr:TypeId>0831c8b8-c8cd-415a-b0a1-775fb42d7932</xr:TypeId>
+				<xr:ValueId>f1cb9761-c994-4979-bb48-edd3343105af</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterSelection.MRS_ОчередьСинхронизацииМарокЕГАИС" category="Selection">
+				<xr:TypeId>02077093-f781-4bb1-9804-aac12df17ac8</xr:TypeId>
+				<xr:ValueId>8635c2a0-a79d-48ea-919b-9b634bd5b290</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterList.MRS_ОчередьСинхронизацииМарокЕГАИС" category="List">
+				<xr:TypeId>311ad0bc-9d9d-41ad-a4ea-a5b0756f861e</xr:TypeId>
+				<xr:ValueId>c9219678-6805-4be5-be0b-fe69e75aa0e4</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordSet.MRS_ОчередьСинхронизацииМарокЕГАИС" category="RecordSet">
+				<xr:TypeId>75aadea6-c4cc-4bc0-ade8-3c16b866c913</xr:TypeId>
+				<xr:ValueId>6a90a462-cbd8-4bc9-94ae-677030049936</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordKey.MRS_ОчередьСинхронизацииМарокЕГАИС" category="RecordKey">
+				<xr:TypeId>811fe3b2-f84a-408c-b96a-3312fcfe8d88</xr:TypeId>
+				<xr:ValueId>5131ae1b-0c01-4ff2-b496-f9e2b5cc2742</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordManager.MRS_ОчередьСинхронизацииМарокЕГАИС" category="RecordManager">
+				<xr:TypeId>d3439bd4-a9a2-4cd3-997f-2c0c70390951</xr:TypeId>
+				<xr:ValueId>12318ae7-f907-4a5f-a997-fb3dff7fa12d</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>MRS_ОчередьСинхронизацииМарокЕГАИС</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>041f97ee-1a1b-4c11-8cba-f9d97f414182</ExtendedConfigurationObject>
+			<InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+			<WriteMode>Independent</WriteMode>
+		</Properties>
+		<ChildObjects>
+			<Resource uuid="646827a2-2914-4e7a-b4e5-95d35d7a17b4">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Склад</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>3296483c-bbe1-4d99-b755-eef656755d72</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="30a96d07-578d-4555-bbd3-c4f3129c4696">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ВидДвижения</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>dc0d7dca-6565-48e8-a56b-447a2887a859</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыДвиженияНакопления</v8:Type>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="df42c37b-75f5-4255-bba8-f4d05de1b07c">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Статус</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>1e65bd02-4c83-4cbc-afbb-26d3dcea66d1</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.MRS_СтатусыСинхронизацииSimphony</v8:Type>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="1c516b11-8f87-4ad3-9bbc-b30e3d3bb48d">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДатаПостановкиВОчередь</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>e22cff72-5964-4bb1-afc1-431da733ef78</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="ca08f97a-b9fe-49e2-91c5-c05e98a6da1f">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КоличествоПопыток</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>59776259-3e6c-444c-8e1c-64f2b8e6dbcd</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="e32d2a72-0733-4162-90f9-3329ad2ed823">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СледующаяПопытка</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>7cd6ef09-7baf-4903-bf0c-f17dede35e15</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="ed48b3ba-5a86-42a2-b91a-58a787c662c9">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СтрокаОшибки</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>a86dbb6d-43c1-48a8-a64b-7cad192e5d15</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Dimension uuid="845b1b71-7dc1-44a0-969b-7ecbfca9ae3f">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Документ</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>02e6a394-1ba2-4f3e-ab04-07d48598a0b9</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:DocumentRef.ВнутреннееПотребление</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="ea63872c-f817-4b68-9902-d774f788aacf">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КассовыйУзел</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>7c038c39-8b6d-455b-9756-f43c55f5cab8</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:ExchangePlanRef.питУдаленныеКассы</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</InformationRegister>
+</MetaDataObject>
