@@ -74,8 +74,25 @@
 		<Metadata name="CommonPicture.ПодобратьТовары" id="d05b7a49-2f7e-4be4-9c52-fe2f9ef0504a" configVersion="0512ec71d0eddef2c55d37432361b494baaedcd9"/>
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="9ee58e235fdf197f749890e5dec6c6d6366bfbfa"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="6d862d9652053b0b9abc46729e61e4e7d4df488d"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены" id="0fba1212-70a6-45eb-8609-9761afcad74c" configVersion="1e509d8bc3e657be2a92feb96afd511abbbb4ff7">
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.Использовать" id="1ea96a21-02d3-48dd-b64d-d894d969a363"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.НачалоПериода" id="340067d1-a73c-47e0-bbcc-0b12e4515481"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.КодТочкиПродаж" id="3ee00f80-cc7e-4a31-a70b-3a5110c77029"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.КонецПериода" id="42420c48-8a3d-4a51-a51a-cbfd8e751039"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.НомерЧека" id="432575a3-14df-4f35-b730-33751cd7dcda"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.ФронтСистема" id="49d6ff05-c01c-4fe0-90dd-e19cc2a55589"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.ФронтСистема" id="68e9ea70-ba94-480b-a7a7-25f4cf97f662"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.ОтчетСверка" id="8f71930e-57aa-4499-a4c3-04c3053c239c"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.КассаККМ" id="a27635aa-2565-4725-9dbf-51bed1dff2d6"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.НаименованиеТочкиПродаж" id="d68dab18-d31b-43d6-9b3b-33434e3c8c68"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс" id="e012f113-7496-445f-8fee-f64726a50b00"/>
+		</Metadata>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма" id="c9913c53-e71b-4b60-8467-2293640b60aa" configVersion="745ebd067f410a85be312221c29ddd52e9cfa0cb"/>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма.Form" id="c9913c53-e71b-4b60-8467-2293640b60aa.0" configVersion="e108967fc61c0caf5b3f0f40eedb61955418d912"/>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Help" id="0fba1212-70a6-45eb-8609-9761afcad74c.1" configVersion="4aa4c7e05cb72a82498b6190e37a38b1b5f49c88"/>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.ObjectModule" id="0fba1212-70a6-45eb-8609-9761afcad74c.0" configVersion="2eb1f9a910f5c11f4ed7c4b6b46b1ab897434e94"/>
 		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур" id="4ec06e92-fc5e-4ef7-9eff-be1be603a168" configVersion="e18ad89d58af9c7b18c4dea95b66b9429aa5177a">
 			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.КаталогСохранения" id="3934dcd5-987f-47cb-a0cc-1c77ac264d4d"/>
 			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.Организация" id="845623a6-8f2d-431c-9bc3-d8ca6ca7e1ce"/>
@@ -237,6 +254,12 @@
 		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.ObjectModule" id="614cc049-34ba-48a9-a0ff-b31f81a13639.0" configVersion="4e379351f4c6a956ac682fdf5f5a47cced45ccf5"/>
 		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.Template.ОсновнаяСхемаКомпоновкиДанных" id="f84fc55b-d597-4f39-a17a-86dd70f547f1" configVersion="dd27db4c136c9d6d5b486b357d0424ece6fa4c43"/>
 		<Metadata name="Report.MRS_СебестоимостьРецептурДМИО.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="f84fc55b-d597-4f39-a17a-86dd70f547f1.0" configVersion="521efcea4095786d38f2479978960265093071d9"/>
+		<Metadata name="Report.ВедомостьПоТоварамНаСкладах1" id="461d0cd0-7e1b-42ee-af44-fa984e5e4037" configVersion="f175a576e4bcc8918c2994d8559ad7cbe571b910"/>
+		<Metadata name="Report.ВедомостьПоТоварамНаСкладах1.Help" id="461d0cd0-7e1b-42ee-af44-fa984e5e4037.1" configVersion="0fe726bdaacbceeda951579e6597c29ef1b55bca"/>
+		<Metadata name="Report.ВедомостьПоТоварамНаСкладах1.ManagerModule" id="461d0cd0-7e1b-42ee-af44-fa984e5e4037.2" configVersion="6ace001e0f409a8cad4fdf349d83662fed4a81d4"/>
+		<Metadata name="Report.ВедомостьПоТоварамНаСкладах1.ObjectModule" id="461d0cd0-7e1b-42ee-af44-fa984e5e4037.0" configVersion="8c284b645fd9c907557790b06f442a2189c91aa5"/>
+		<Metadata name="Report.ВедомостьПоТоварамНаСкладах1.Template.ОсновнаяСхемаКомпоновкиДанных" id="b2abd47c-cbde-4701-9a05-e624b9df10da" configVersion="cdd108f558573990f54fa51f4521f742064f783e"/>
+		<Metadata name="Report.ВедомостьПоТоварамНаСкладах1.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="b2abd47c-cbde-4701-9a05-e624b9df10da.0" configVersion="1186a9f2fb4df27f9b8aa7d70c584b5e9c4a78ea"/>
 		<Metadata name="Role.MRS_ОсновнаяРоль" id="949a1fb0-a481-4fb2-92dc-5abf46a68578" configVersion="84d3991923f73b2ca7cdecf30bf16b31188db7ab"/>
 		<Metadata name="StyleItem.ТекстИнформационнойНадписи" id="f0ccabcd-8b41-443d-86be-9794113f2e91" configVersion="1e452331b6c1e50833b4a5c1a7b93263298ddb91"/>
 		<Metadata name="StyleItem.ЦветМикротекста" id="b4f3700b-507f-496f-a577-fadd63cb744a" configVersion="a7c6dafaa38561f12c34e8e975eaf3e90bce44e8"/>

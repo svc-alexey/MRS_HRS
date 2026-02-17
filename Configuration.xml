@@ -124,9 +124,11 @@
 			<Enum>ВидыДвиженияНакопления</Enum>
 			<Report>MRS_КонтрольМинусовыхОстатков</Report>
 			<Report>MRS_СебестоимостьРецептурДМИО</Report>
+			<Report>ВедомостьПоТоварамНаСкладах1</Report>
 			<DataProcessor>MRS_СоздатьНоменклатуруПоEXCEL</DataProcessor>
 			<DataProcessor>MRS_СозданиеНоменклатурныхЗамен</DataProcessor>
 			<DataProcessor>MRS_ЗаменыАлкоРецептур</DataProcessor>
+			<DataProcessor>MRS_АРМ_Закрытия_смены</DataProcessor>
 			<InformationRegister>MRS_ОчередьВыгрузкиМенюSimphony</InformationRegister>
 			<InformationRegister>MRS_ИсторияСинхронизацииМенюSimphony</InformationRegister>
 			<InformationRegister>ЦеныНоменклатуры</InformationRegister>
