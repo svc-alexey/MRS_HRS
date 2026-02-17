@@ -75,6 +75,8 @@
 			<Language>Русский</Language>
 			<StyleItem>ТекстИнформационнойНадписи</StyleItem>
 			<StyleItem>ЦветМикротекста</StyleItem>
+			<StyleItem>ИтогиФонГруппы</StyleItem>
+			<StyleItem>ВажнаяНадписьШрифт</StyleItem>
 			<CommonPicture>КоллекцияШаровБЭД</CommonPicture>
 			<CommonPicture>питДерево</CommonPicture>
 			<CommonPicture>ПодобратьТовары</CommonPicture>
@@ -85,6 +87,12 @@
 			<CommonPicture>ЗаполнитьФорму</CommonPicture>
 			<CommonPicture>Отчеты</CommonPicture>
 			<CommonPicture>ВводимыеСимволыВидны</CommonPicture>
+			<CommonPicture>ПовторитьДействие</CommonPicture>
+			<CommonPicture>ВыбратьВариантОтчета</CommonPicture>
+			<CommonPicture>ОтменитьДействие</CommonPicture>
+			<CommonPicture>СохранитьКак</CommonPicture>
+			<CommonPicture>ЭлектронноеПисьмо</CommonPicture>
+			<CommonPicture>Сумма</CommonPicture>
 			<Role>MRS_ОсновнаяРоль</Role>
 			<CommonModule>MRS_ИнтеграцияSimphonyСервер</CommonModule>
 			<CommonModule>MRS_ИнтеграцияSimphonyКлиентСервер</CommonModule>
@@ -102,6 +110,7 @@
 			<HTTPService>ПЛ_HTTP_ОбменELMA</HTTPService>
 			<Constant>MRS_URLСервисаSimphony</Constant>
 			<CommonForm>MRS_ФормаПараметровПриказаЕЛМА</CommonForm>
+			<CommonForm>ФормаОтчета</CommonForm>
 			<Catalog>Пользователи</Catalog>
 			<Catalog>Номенклатура</Catalog>
 			<Catalog>УпаковкиЕдиницыИзмерения</Catalog>
