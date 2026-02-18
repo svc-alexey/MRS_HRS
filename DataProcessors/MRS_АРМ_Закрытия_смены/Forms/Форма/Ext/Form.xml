@@ -71,6 +71,7 @@
 							<v8:content>Выберите точку продаж и связанный склад:</v8:content>
 						</v8:item>
 					</Title>
+					<TitleTextColor>style:AccentColor</TitleTextColor>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -369,7 +370,56 @@
 					</ToolTip>
 					<ExtendedTooltip name="ВыпускиБлюдРасширеннаяПодсказка" id="236"/>
 					<ChildItems>
-						<Table name="СписокВыпуски" id="237">
+						<UsualGroup name="ФильтрВыпусков" id="348">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фильтр выпусков</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фильтр выпусков</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ФильтрВыпусковРасширеннаяПодсказка" id="349"/>
+							<ChildItems>
+								<CheckBoxField name="ВыпускиКОбработке" id="345">
+									<DataPath>ВыпускиКОбработке</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не проведенные выпуски по чекам</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВыпускиКОбработкеКонтекстноеМеню" id="346"/>
+									<ExtendedTooltip name="ВыпускиКОбработкеРасширеннаяПодсказка" id="347"/>
+									<Events>
+										<Event name="OnChange">ВыпускиКОбработкеПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ОткрытыеЦены" id="342">
+									<DataPath>ОткрытыеЦены</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выпуски по открытым ценам к обработке</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОткрытыеЦеныКонтекстноеМеню" id="343"/>
+									<ExtendedTooltip name="ОткрытыеЦеныРасширеннаяПодсказка" id="344"/>
+									<Events>
+										<Event name="OnChange">ОткрытыеЦеныПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="СписокВыпуски" id="284">
 							<UseAlternationRowColor>true</UseAlternationRowColor>
 							<EnableStartDrag>true</EnableStartDrag>
 							<DataPath>СписокВыпуски</DataPath>
@@ -388,80 +438,88 @@
 							<AllowRootChoice>false</AllowRootChoice>
 							<UpdateOnDataChange>Auto</UpdateOnDataChange>
 							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
-							<ContextMenu name="СписокВыпускиКонтекстноеМеню" id="238"/>
-							<AutoCommandBar name="СписокВыпускиКоманднаяПанель" id="239"/>
-							<ExtendedTooltip name="СписокВыпускиРасширеннаяПодсказка" id="240"/>
-							<SearchStringAddition name="СписокВыпускиСтрокаПоиска" id="241">
+							<ContextMenu name="СписокВыпускиКонтекстноеМеню" id="285"/>
+							<AutoCommandBar name="СписокВыпускиКоманднаяПанель" id="286"/>
+							<ExtendedTooltip name="СписокВыпускиРасширеннаяПодсказка" id="287"/>
+							<SearchStringAddition name="СписокВыпускиСтрокаПоиска" id="288">
 								<AdditionSource>
 									<Item>СписокВыпуски</Item>
 									<Type>SearchStringRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="СписокВыпускиСтрокаПоискаКонтекстноеМеню" id="242"/>
-								<ExtendedTooltip name="СписокВыпускиСтрокаПоискаРасширеннаяПодсказка" id="243"/>
+								<ContextMenu name="СписокВыпускиСтрокаПоискаКонтекстноеМеню" id="289"/>
+								<ExtendedTooltip name="СписокВыпускиСтрокаПоискаРасширеннаяПодсказка" id="290"/>
 							</SearchStringAddition>
-							<ViewStatusAddition name="СписокВыпускиСостояниеПросмотра" id="244">
+							<ViewStatusAddition name="СписокВыпускиСостояниеПросмотра" id="291">
 								<AdditionSource>
 									<Item>СписокВыпуски</Item>
 									<Type>ViewStatusRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="СписокВыпускиСостояниеПросмотраКонтекстноеМеню" id="245"/>
-								<ExtendedTooltip name="СписокВыпускиСостояниеПросмотраРасширеннаяПодсказка" id="246"/>
+								<ContextMenu name="СписокВыпускиСостояниеПросмотраКонтекстноеМеню" id="292"/>
+								<ExtendedTooltip name="СписокВыпускиСостояниеПросмотраРасширеннаяПодсказка" id="293"/>
 							</ViewStatusAddition>
-							<SearchControlAddition name="СписокВыпускиУправлениеПоиском" id="247">
+							<SearchControlAddition name="СписокВыпускиУправлениеПоиском" id="294">
 								<AdditionSource>
 									<Item>СписокВыпуски</Item>
 									<Type>SearchControl</Type>
 								</AdditionSource>
-								<ContextMenu name="СписокВыпускиУправлениеПоискомКонтекстноеМеню" id="248"/>
-								<ExtendedTooltip name="СписокВыпускиУправлениеПоискомРасширеннаяПодсказка" id="249"/>
+								<ContextMenu name="СписокВыпускиУправлениеПоискомКонтекстноеМеню" id="295"/>
+								<ExtendedTooltip name="СписокВыпускиУправлениеПоискомРасширеннаяПодсказка" id="296"/>
 							</SearchControlAddition>
 							<ChildItems>
-								<LabelField name="СписокВыпускиДата" id="250">
+								<LabelField name="СписокВыпускиДата" id="297">
 									<DataPath>СписокВыпуски.Дата</DataPath>
-									<ContextMenu name="СписокВыпускиДатаКонтекстноеМеню" id="251"/>
-									<ExtendedTooltip name="СписокВыпускиДатаРасширеннаяПодсказка" id="252"/>
+									<ContextMenu name="СписокВыпускиДатаКонтекстноеМеню" id="298"/>
+									<ExtendedTooltip name="СписокВыпускиДатаРасширеннаяПодсказка" id="299"/>
 								</LabelField>
-								<LabelField name="СписокВыпускиНомер" id="253">
+								<LabelField name="СписокВыпускиНомер" id="303">
 									<DataPath>СписокВыпуски.Номер</DataPath>
-									<ContextMenu name="СписокВыпускиНомерКонтекстноеМеню" id="254"/>
-									<ExtendedTooltip name="СписокВыпускиНомерРасширеннаяПодсказка" id="255"/>
+									<ContextMenu name="СписокВыпускиНомерКонтекстноеМеню" id="304"/>
+									<ExtendedTooltip name="СписокВыпускиНомерРасширеннаяПодсказка" id="305"/>
 								</LabelField>
-								<LabelField name="СписокВыпускиОрганизация" id="256">
+								<LabelField name="СписокВыпускиХозяйственнаяОперация" id="336">
+									<DataPath>СписокВыпуски.ХозяйственнаяОперация</DataPath>
+									<ContextMenu name="СписокВыпускиХозяйственнаяОперацияКонтекстноеМеню" id="337"/>
+									<ExtendedTooltip name="СписокВыпускиХозяйственнаяОперацияРасширеннаяПодсказка" id="338"/>
+								</LabelField>
+								<LabelField name="СписокВыпускиПЛ_ХозяйственнаяОперация" id="315">
+									<DataPath>СписокВыпуски.ПЛ_ХозяйственнаяОперация</DataPath>
+									<ContextMenu name="СписокВыпускиПЛ_ХозяйственнаяОперацияКонтекстноеМеню" id="316"/>
+									<ExtendedTooltip name="СписокВыпускиПЛ_ХозяйственнаяОперацияРасширеннаяПодсказка" id="317"/>
+								</LabelField>
+								<LabelField name="СписокВыпускиОрганизация" id="306">
 									<DataPath>СписокВыпуски.Организация</DataPath>
-									<ContextMenu name="СписокВыпускиОрганизацияКонтекстноеМеню" id="257"/>
-									<ExtendedTooltip name="СписокВыпускиОрганизацияРасширеннаяПодсказка" id="258"/>
+									<ContextMenu name="СписокВыпускиОрганизацияКонтекстноеМеню" id="307"/>
+									<ExtendedTooltip name="СписокВыпускиОрганизацияРасширеннаяПодсказка" id="308"/>
 								</LabelField>
-								<LabelField name="СписокВыпускиПодразделение" id="259">
+								<LabelField name="СписокВыпускиПодразделение" id="318">
 									<DataPath>СписокВыпуски.Подразделение</DataPath>
-									<ContextMenu name="СписокВыпускиПодразделениеКонтекстноеМеню" id="260"/>
-									<ExtendedTooltip name="СписокВыпускиПодразделениеРасширеннаяПодсказка" id="261"/>
+									<ContextMenu name="СписокВыпускиПодразделениеКонтекстноеМеню" id="319"/>
+									<ExtendedTooltip name="СписокВыпускиПодразделениеРасширеннаяПодсказка" id="320"/>
 								</LabelField>
-								<CheckBoxField name="СписокВыпускиПометкаУдаления" id="262">
-									<DataPath>~СписокВыпуски.ПометкаУдаления</DataPath>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="СписокВыпускиПометкаУдаленияКонтекстноеМеню" id="263"/>
-									<ExtendedTooltip name="СписокВыпускиПометкаУдаленияРасширеннаяПодсказка" id="264"/>
-								</CheckBoxField>
-								<CheckBoxField name="СписокВыпускиПроведен" id="265">
-									<DataPath>~СписокВыпуски.Проведен</DataPath>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="СписокВыпускиПроведенКонтекстноеМеню" id="266"/>
-									<ExtendedTooltip name="СписокВыпускиПроведенРасширеннаяПодсказка" id="267"/>
-								</CheckBoxField>
-								<LabelField name="СписокВыпускиСклад" id="268">
+								<LabelField name="СписокВыпускиСклад" id="327">
 									<DataPath>СписокВыпуски.Склад</DataPath>
-									<ContextMenu name="СписокВыпускиСкладКонтекстноеМеню" id="269"/>
-									<ExtendedTooltip name="СписокВыпускиСкладРасширеннаяПодсказка" id="270"/>
+									<ContextMenu name="СписокВыпускиСкладКонтекстноеМеню" id="328"/>
+									<ExtendedTooltip name="СписокВыпускиСкладРасширеннаяПодсказка" id="329"/>
 								</LabelField>
-								<LabelField name="СписокВыпускиСсылка" id="271">
-									<DataPath>СписокВыпуски.Ссылка</DataPath>
-									<ContextMenu name="СписокВыпускиСсылкаКонтекстноеМеню" id="272"/>
-									<ExtendedTooltip name="СписокВыпускиСсылкаРасширеннаяПодсказка" id="273"/>
+								<LabelField name="СписокВыпускиОтветственный" id="309">
+									<DataPath>СписокВыпуски.Ответственный</DataPath>
+									<ContextMenu name="СписокВыпускиОтветственныйКонтекстноеМеню" id="310"/>
+									<ExtendedTooltip name="СписокВыпускиОтветственныйРасширеннаяПодсказка" id="311"/>
 								</LabelField>
-								<LabelField name="СписокВыпускиСтандартнаяКартинка" id="274">
-									<DataPath>~СписокВыпуски.DefaultPicture</DataPath>
-									<ContextMenu name="СписокВыпускиСтандартнаяКартинкаКонтекстноеМеню" id="275"/>
-									<ExtendedTooltip name="СписокВыпускиСтандартнаяКартинкаРасширеннаяПодсказка" id="276"/>
+								<LabelField name="СписокВыпускиПЛ_Номенклатура" id="312">
+									<DataPath>СписокВыпуски.ПЛ_Номенклатура</DataPath>
+									<ContextMenu name="СписокВыпускиПЛ_НоменклатураКонтекстноеМеню" id="313"/>
+									<ExtendedTooltip name="СписокВыпускиПЛ_НоменклатураРасширеннаяПодсказка" id="314"/>
+								</LabelField>
+								<LabelField name="СписокВыпускиСуммаДокумента" id="333">
+									<DataPath>СписокВыпуски.СуммаДокумента</DataPath>
+									<ContextMenu name="СписокВыпускиСуммаДокументаКонтекстноеМеню" id="334"/>
+									<ExtendedTooltip name="СписокВыпускиСуммаДокументаРасширеннаяПодсказка" id="335"/>
+								</LabelField>
+								<LabelField name="СписокВыпускиКомментарий" id="300">
+									<DataPath>СписокВыпуски.Комментарий</DataPath>
+									<ContextMenu name="СписокВыпускиКомментарийКонтекстноеМеню" id="301"/>
+									<ExtendedTooltip name="СписокВыпускиКомментарийРасширеннаяПодсказка" id="302"/>
 								</LabelField>
 							</ChildItems>
 						</Table>
@@ -493,15 +551,39 @@
 							</Title>
 							<ExtendedTooltip name="СформироватьВедомостьРасширеннаяПодсказка" id="283"/>
 						</Button>
-						<SpreadSheetDocumentField name="ВедомостьОтчет" id="279">
-							<DataPath>ВедомостьОтчет</DataPath>
+						<SpreadSheetDocumentField name="ВедомостьОтчет" id="339">
+							<DataPath>Объект.ВедомостьОтчет</DataPath>
 							<TitleLocation>None</TitleLocation>
-							<ContextMenu name="ВедомостьОтчетКонтекстноеМеню" id="280"/>
-							<ExtendedTooltip name="ВедомостьОтчетРасширеннаяПодсказка" id="281"/>
-							<Events>
-								<Event name="AdditionalDetailProcessing">ВедомостьОтчетОбработкаДополнительнойРасшифровки</Event>
-								<Event name="DetailProcessing">ВедомостьОтчетОбработкаРасшифровки</Event>
-							</Events>
+							<ContextMenu name="ВедомостьОтчетКонтекстноеМеню" id="340"/>
+							<ExtendedTooltip name="ВедомостьОтчетРасширеннаяПодсказка" id="341"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
+				<Page name="АнализДанныхВкладка" id="350">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ данных</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ данных вкладка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="АнализДанныхВкладкаРасширеннаяПодсказка" id="351"/>
+					<ChildItems>
+						<Button name="АнализОтрицательных" id="355">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.АнализОтрицательных</CommandName>
+							<ExtendedTooltip name="АнализОтрицательныхРасширеннаяПодсказка" id="356"/>
+						</Button>
+						<SpreadSheetDocumentField name="АнализДанных" id="352">
+							<DataPath>Объект.АнализДанных</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="АнализДанныхКонтекстноеМеню" id="353"/>
+							<ExtendedTooltip name="АнализДанныхРасширеннаяПодсказка" id="354"/>
 						</SpreadSheetDocumentField>
 					</ChildItems>
 				</Page>
@@ -607,11 +689,19 @@
 				<DynamicDataRead>false</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ
 	питВыпускБлюд.Ссылка КАК Ссылка,
+	питВыпускБлюд.ПометкаУдаления КАК ПометкаУдаления,
 	питВыпускБлюд.Номер КАК Номер,
 	питВыпускБлюд.Дата КАК Дата,
+	питВыпускБлюд.Проведен КАК Проведен,
+	питВыпускБлюд.ХозяйственнаяОперация КАК ХозяйственнаяОперация,
 	питВыпускБлюд.Организация КАК Организация,
 	питВыпускБлюд.Подразделение КАК Подразделение,
-	питВыпускБлюд.Склад КАК Склад
+	питВыпускБлюд.Склад КАК Склад,
+	питВыпускБлюд.СуммаДокумента КАК СуммаДокумента,
+	питВыпускБлюд.Ответственный КАК Ответственный,
+	питВыпускБлюд.Комментарий КАК Комментарий,
+	питВыпускБлюд.ПЛ_ХозяйственнаяОперация КАК ПЛ_ХозяйственнаяОперация,
+	питВыпускБлюд.ПЛ_Номенклатура КАК ПЛ_Номенклатура
 ИЗ
 	Документ.питВыпускБлюд КАК питВыпускБлюд</QueryText>
 				<Field xsi:type="dcssch:DataSetFieldField">
@@ -1065,17 +1155,6 @@
 				</ListSettings>
 			</Settings>
 		</Attribute>
-		<Attribute name="ВедомостьОтчет" id="5">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Ведомость отчет</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
-			</Type>
-		</Attribute>
 		<Attribute name="АдресСхемыКомпоновкиДанных" id="6">
 			<Title>
 				<v8:item>
@@ -1104,6 +1183,28 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОткрытыеЦены" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открытые цены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыпускиКОбработке" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выпуски к обработке</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>
@@ -1747,6 +1848,26 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>СформироватьВедомость</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="АнализОтрицательных" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анализ отрицательных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анализ отрицательных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Chart</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>АнализОтрицательных</Action>
 			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>

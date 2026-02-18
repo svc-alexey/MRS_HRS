@@ -82,25 +82,27 @@
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.ЭлектронноеПисьмо" id="1126e77f-5c99-4364-88c1-5063f2149e84" configVersion="bc5d565da097241ddee69d8c63da39cdc36ee665"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="4c13a0f589277ee344dfd64a5f0941145f48f491"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="b17d6897fa737df9cf3ede25c94ca524b76dfe02"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
-		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены" id="0fba1212-70a6-45eb-8609-9761afcad74c" configVersion="1e509d8bc3e657be2a92feb96afd511abbbb4ff7">
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены" id="0fba1212-70a6-45eb-8609-9761afcad74c" configVersion="320bdb7cbc201beb3a18ad8d0cd435ba40a50961">
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.Использовать" id="1ea96a21-02d3-48dd-b64d-d894d969a363"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.НачалоПериода" id="340067d1-a73c-47e0-bbcc-0b12e4515481"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.КодТочкиПродаж" id="3ee00f80-cc7e-4a31-a70b-3a5110c77029"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.КонецПериода" id="42420c48-8a3d-4a51-a51a-cbfd8e751039"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.НомерЧека" id="432575a3-14df-4f35-b730-33751cd7dcda"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.ФронтСистема" id="49d6ff05-c01c-4fe0-90dd-e19cc2a55589"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.ВедомостьОтчет" id="57acdfe5-07b5-4195-a7ca-66d5679e44b8"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.ФронтСистема" id="68e9ea70-ba94-480b-a7a7-25f4cf97f662"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.ОтчетСверка" id="8f71930e-57aa-4499-a4c3-04c3053c239c"/>
+			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Attribute.АнализДанных" id="984decf0-0e85-4b70-b205-a5503563b991"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.КассаККМ" id="a27635aa-2565-4725-9dbf-51bed1dff2d6"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.НаименованиеТочкиПродаж" id="d68dab18-d31b-43d6-9b3b-33434e3c8c68"/>
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс" id="e012f113-7496-445f-8fee-f64726a50b00"/>
 		</Metadata>
 		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма" id="c9913c53-e71b-4b60-8467-2293640b60aa" configVersion="745ebd067f410a85be312221c29ddd52e9cfa0cb"/>
-		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма.Form" id="c9913c53-e71b-4b60-8467-2293640b60aa.0" configVersion="4a0424dbf11118214e7f21b6f2200b3e595cbada"/>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма.Form" id="c9913c53-e71b-4b60-8467-2293640b60aa.0" configVersion="a94c75930fa13777283a3f9d1549bc34e8440aa1"/>
 		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Help" id="0fba1212-70a6-45eb-8609-9761afcad74c.1" configVersion="4aa4c7e05cb72a82498b6190e37a38b1b5f49c88"/>
-		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.ObjectModule" id="0fba1212-70a6-45eb-8609-9761afcad74c.0" configVersion="0862b96cc671cffdf99595e4684d7494579c6bff"/>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.ObjectModule" id="0fba1212-70a6-45eb-8609-9761afcad74c.0" configVersion="a62470ec4d0e725e8e9b54c09e3551981d6d1492"/>
 		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур" id="4ec06e92-fc5e-4ef7-9eff-be1be603a168" configVersion="e18ad89d58af9c7b18c4dea95b66b9429aa5177a">
 			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.КаталогСохранения" id="3934dcd5-987f-47cb-a0cc-1c77ac264d4d"/>
 			<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур.Attribute.Организация" id="845623a6-8f2d-431c-9bc3-d8ca6ca7e1ce"/>
@@ -126,6 +128,16 @@
 		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Form.Форма" id="3f3d072f-6a13-466f-8c56-cf2edf6f3833" configVersion="8abdf885cfb4068d5a2a9abde31affb8c6bdb9c7"/>
 		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.Form.Форма.Form" id="3f3d072f-6a13-466f-8c56-cf2edf6f3833.0" configVersion="10c7a3da8a6fbacb0d34a7ad3d941dde3e254491"/>
 		<Metadata name="DataProcessor.MRS_СоздатьНоменклатуруПоEXCEL.ObjectModule" id="ebfa8e7a-29ad-4ddf-a506-9355f2e16177.0" configVersion="8de1b9fbc20d51b8ba7ca4aaad6db61ce56abcd0"/>
+		<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов" id="43553e22-12cf-4b0a-8088-991ac53c5b8c" configVersion="10215c9c1a40348a95bf4b55c6b180be6ca9a1c9">
+			<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.Attribute.Организация" id="a4bae6e6-e8f3-4b22-99b2-24e89838e41d"/>
+			<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.Attribute.ВидТарифа" id="cccb9259-cb7c-4a99-b2c1-3d3382a3fc5d"/>
+			<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.Attribute.ДатаРегистрацииИзменений" id="e475a68e-3154-43f6-80bf-cbd9958043e3"/>
+		</Metadata>
+		<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.Form.Форма" id="888d105f-a69e-4a13-b726-aa82fe6c9f71" configVersion="65b763a3f11098e213b41c42e3de33c2696d8baa"/>
+		<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.Form.Форма.Form" id="888d105f-a69e-4a13-b726-aa82fe6c9f71.0" configVersion="848467604b26664fa624bd5caa62d3c129e1561e"/>
+		<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.ObjectModule" id="43553e22-12cf-4b0a-8088-991ac53c5b8c.0" configVersion="98e8691dbd192a6643c78f7d1262bdd2f4faf525"/>
+		<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.Template.ШаблонЗагрузкиДанных" id="d15e576a-a3a7-4903-9987-3d908fc33729" configVersion="5edb67cc82ac8079024056822af6c5658d834acb"/>
+		<Metadata name="DataProcessor._ЗагрузкаИнформацииПоДолжностямЛьготныхТарифов.Template.ШаблонЗагрузкиДанных.Template" id="d15e576a-a3a7-4903-9987-3d908fc33729.0" configVersion="0cdfdc1bf23829026eca94ba4a812ad0b52a7f0c"/>
 		<Metadata name="Document.ВнутреннееПотребление" id="74e8d4cf-9cd8-4aa7-a48d-7c2b8e4b2abd" configVersion="2fe0de311441bc4824d957533d53f1d0ca06c686"/>
 		<Metadata name="Document.ПеремещениеТоваров" id="fb70e6ca-453b-42af-80af-80dc90f81498" configVersion="882b23bbb0fe008f6b67927247d700fae2034c11"/>
 		<Metadata name="Document.ПеремещениеТоваров.ObjectModule" id="fb70e6ca-453b-42af-80af-80dc90f81498.0" configVersion="6d9746c6b54c2506ef4b5f3d36159fcae8fc4a1b"/>
