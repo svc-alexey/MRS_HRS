@@ -188,36 +188,6 @@
 						</Table>
 					</ChildItems>
 				</UsualGroup>
-				<UsualGroup name="Кнопки" id="228">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Кнопки</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Кнопки</v8:content>
-						</v8:item>
-					</ToolTip>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="КнопкиРасширеннаяПодсказка" id="229"/>
-					<ChildItems>
-						<Button name="Загрузить" id="56">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.Загрузить</CommandName>
-							<BackColor>style:ImportantColor</BackColor>
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Загрузить чеки</v8:content>
-								</v8:item>
-							</Title>
-							<ExtendedTooltip name="ЗагрузитьРасширеннаяПодсказка" id="57"/>
-						</Button>
-					</ChildItems>
-				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<Pages name="Страницы" id="1">
@@ -331,18 +301,48 @@
 							<ContextMenu name="НомерЧекаКонтекстноеМеню" id="190"/>
 							<ExtendedTooltip name="НомерЧекаРасширеннаяПодсказка" id="191"/>
 						</InputField>
-						<Button name="Сверить" id="140">
-							<Type>UsualButton</Type>
-							<CommandName>Form.Command.Сверить</CommandName>
-							<BackColor>style:ImportantColor</BackColor>
+						<UsualGroup name="Кнопки" id="228">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Сверить чеки</v8:content>
+									<v8:content>Кнопки</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="СверитьРасширеннаяПодсказка" id="141"/>
-						</Button>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кнопки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="КнопкиРасширеннаяПодсказка" id="229"/>
+							<ChildItems>
+								<Button name="Сверить" id="140">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.Сверить</CommandName>
+									<BackColor>style:ImportantColor</BackColor>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сверить чеки</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СверитьРасширеннаяПодсказка" id="141"/>
+								</Button>
+								<Button name="Загрузить" id="56">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.Загрузить</CommandName>
+									<BackColor>style:ImportantColor</BackColor>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Загрузить чеки</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ЗагрузитьРасширеннаяПодсказка" id="57"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
 						<SpreadSheetDocumentField name="ОтчетСверка" id="144">
 							<DataPath>Объект.ОтчетСверка</DataPath>
 							<TitleLocation>None</TitleLocation>
@@ -466,6 +466,17 @@
 								<ExtendedTooltip name="СписокВыпускиУправлениеПоискомРасширеннаяПодсказка" id="296"/>
 							</SearchControlAddition>
 							<ChildItems>
+								<LabelField name="СписокВыпускиКоммент" id="357">
+									<DataPath>СписокВыпуски.Коммент</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибка проведения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокВыпускиКомментКонтекстноеМеню" id="358"/>
+									<ExtendedTooltip name="СписокВыпускиКомментРасширеннаяПодсказка" id="359"/>
+								</LabelField>
 								<LabelField name="СписокВыпускиДата" id="297">
 									<DataPath>СписокВыпуски.Дата</DataPath>
 									<ContextMenu name="СписокВыпускиДатаКонтекстноеМеню" id="298"/>
@@ -556,6 +567,10 @@
 							<TitleLocation>None</TitleLocation>
 							<ContextMenu name="ВедомостьОтчетКонтекстноеМеню" id="340"/>
 							<ExtendedTooltip name="ВедомостьОтчетРасширеннаяПодсказка" id="341"/>
+							<Events>
+								<Event name="AdditionalDetailProcessing">ВедомостьОтчетОбработкаДополнительнойРасшифровки</Event>
+								<Event name="DetailProcessing">ВедомостьОтчетОбработкаРасшифровки</Event>
+							</Events>
 						</SpreadSheetDocumentField>
 					</ChildItems>
 				</Page>
@@ -688,6 +703,23 @@
 				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>false</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ
+	ПЛ_ЛогОбщепит.Док КАК Док,
+	МАКСИМУМ(ПЛ_ЛогОбщепит.ДатаСобытия) КАК ДатаСобытия
+ПОМЕСТИТЬ ВТ_ПоследниеОшибки
+ИЗ
+	РегистрСведений.ПЛ_ЛогОбщепит КАК ПЛ_ЛогОбщепит
+ГДЕ
+	ПЛ_ЛогОбщепит.ВидСобытия = "ОшибкаЗаписи"
+
+СГРУППИРОВАТЬ ПО
+	ПЛ_ЛогОбщепит.Док
+
+ИНДЕКСИРОВАТЬ ПО
+	Док
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	питВыпускБлюд.Ссылка КАК Ссылка,
 	питВыпускБлюд.ПометкаУдаления КАК ПометкаУдаления,
 	питВыпускБлюд.Номер КАК Номер,
@@ -701,9 +733,24 @@
 	питВыпускБлюд.Ответственный КАК Ответственный,
 	питВыпускБлюд.Комментарий КАК Комментарий,
 	питВыпускБлюд.ПЛ_ХозяйственнаяОперация КАК ПЛ_ХозяйственнаяОперация,
-	питВыпускБлюд.ПЛ_Номенклатура КАК ПЛ_Номенклатура
+	питВыпускБлюд.ПЛ_Номенклатура КАК ПЛ_Номенклатура,
+	ВЫБОР
+		КОГДА питВыпускБлюд.Проведен
+			ТОГДА "Проведен"
+		КОГДА НЕ ЛогПоследний.Коммент ЕСТЬ NULL
+			ТОГДА ЛогПоследний.Коммент
+		ИНАЧЕ ""
+	КОНЕЦ КАК Коммент
 ИЗ
-	Документ.питВыпускБлюд КАК питВыпускБлюд</QueryText>
+	Документ.питВыпускБлюд КАК питВыпускБлюд
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПоследниеОшибки КАК ПоследниеОшибки
+		ПО питВыпускБлюд.Ссылка = ПоследниеОшибки.Док
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПЛ_ЛогОбщепит КАК ЛогПоследний
+		ПО (ЛогПоследний.Док = ПоследниеОшибки.Док)
+			И (ЛогПоследний.ДатаСобытия = ПоследниеОшибки.ДатаСобытия)
+			И (ЛогПоследний.ВидСобытия = "ОшибкаЗаписи")
+ГДЕ
+	питВыпускБлюд.ХозяйственнаяОперация = ЗНАЧЕНИЕ(Перечисление.питХозяйственныеОперации.ВыпускПродукцииСРозничнойРеализацией)</QueryText>
 				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>Склад</dcssch:dataPath>
 					<dcssch:field>Склад</dcssch:field>
@@ -1135,6 +1182,10 @@
 				<Field xsi:type="dcssch:DataSetFieldField">
 					<dcssch:dataPath>ПометкаУдаления</dcssch:dataPath>
 					<dcssch:field>ПометкаУдаления</dcssch:field>
+				</Field>
+				<Field xsi:type="dcssch:DataSetFieldField">
+					<dcssch:dataPath>Коммент</dcssch:dataPath>
+					<dcssch:field>Коммент</dcssch:field>
 				</Field>
 				<MainTable>1:bf80ddbc-25af-44f5-829f-5b916b852ccb</MainTable>
 				<ListSettings>
@@ -1611,52 +1662,29 @@
 				</dcsset:appearance>
 			</dcsset:item>
 			<dcsset:item>
-				<dcsset:use>false</dcsset:use>
 				<dcsset:selection>
 					<dcsset:item>
-						<dcsset:field>ТаблицаДокументовАвансПогашение</dcsset:field>
+						<dcsset:field>СписокВыпускиКоммент</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemComparison">
-						<dcsset:left xsi:type="dcscor:Field">ТаблицаДокументов.АвансПогашение</dcsset:left>
-						<dcsset:comparisonType>Equal</dcsset:comparisonType>
-						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СписокВыпуски.Коммент</dcsset:left>
+							<dcsset:comparisonType>Filled</dcsset:comparisonType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СписокВыпуски.Коммент</dcsset:left>
+							<dcsset:comparisonType>NotContains</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">Проведен</dcsset:right>
+						</dcsset:item>
 					</dcsset:item>
 				</dcsset:filter>
 				<dcsset:appearance>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>Видимость</dcscor:parameter>
-						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>Отображать</dcscor:parameter>
-						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
-					</dcscor:item>
-				</dcsset:appearance>
-			</dcsset:item>
-			<dcsset:item>
-				<dcsset:use>false</dcsset:use>
-				<dcsset:selection>
-					<dcsset:item>
-						<dcsset:field>ТаблицаДокументовАвансНачисление</dcsset:field>
-					</dcsset:item>
-				</dcsset:selection>
-				<dcsset:filter>
-					<dcsset:item xsi:type="dcsset:FilterItemComparison">
-						<dcsset:left xsi:type="dcscor:Field">ТаблицаДокументов.АвансНачисление</dcsset:left>
-						<dcsset:comparisonType>Equal</dcsset:comparisonType>
-						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
-					</dcsset:item>
-				</dcsset:filter>
-				<dcsset:appearance>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>Видимость</dcscor:parameter>
-						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>Отображать</dcscor:parameter>
-						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">auto</dcscor:value>
 					</dcscor:item>
 				</dcsset:appearance>
 			</dcsset:item>

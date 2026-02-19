@@ -100,7 +100,7 @@
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс" id="e012f113-7496-445f-8fee-f64726a50b00"/>
 		</Metadata>
 		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма" id="c9913c53-e71b-4b60-8467-2293640b60aa" configVersion="745ebd067f410a85be312221c29ddd52e9cfa0cb"/>
-		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма.Form" id="c9913c53-e71b-4b60-8467-2293640b60aa.0" configVersion="a94c75930fa13777283a3f9d1549bc34e8440aa1"/>
+		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Form.Форма.Form" id="c9913c53-e71b-4b60-8467-2293640b60aa.0" configVersion="bc954206e0c29e3285c420dae492126812b5108e"/>
 		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.Help" id="0fba1212-70a6-45eb-8609-9761afcad74c.1" configVersion="4aa4c7e05cb72a82498b6190e37a38b1b5f49c88"/>
 		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.ObjectModule" id="0fba1212-70a6-45eb-8609-9761afcad74c.0" configVersion="a62470ec4d0e725e8e9b54c09e3551981d6d1492"/>
 		<Metadata name="DataProcessor.MRS_ЗаменыАлкоРецептур" id="4ec06e92-fc5e-4ef7-9eff-be1be603a168" configVersion="e18ad89d58af9c7b18c4dea95b66b9429aa5177a">
