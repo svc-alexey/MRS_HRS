@@ -20,9 +20,12 @@
 			<Metadata name="Catalog.ГруппыАналитическогоУчетаНоменклатуры.Attribute.MRS_КодMajorGroup" id="595d4d4d-2a63-4717-b467-62c0613000ce"/>
 		</Metadata>
 		<Metadata name="Catalog.Номенклатура" id="e0225bf6-700f-4c98-99cd-bfb783d19fee" configVersion="b4893be2e8b7435b4505ebea27acbc7a518f81c6"/>
+		<Metadata name="Catalog.Организации" id="2e0ff77c-acd0-4052-acf9-0daf465a09da" configVersion="6021cc6980c926cf23ca7e4c4ab69bcd9dfe6d99"/>
 		<Metadata name="Catalog.Пользователи" id="dceb4cc3-7a92-4601-ab21-3f76f75ece93" configVersion="188fe9d7e1e2c6fb600d01a67d030d96cc15b6af"/>
 		<Metadata name="Catalog.СерииНоменклатуры" id="dae45aa5-ee1d-4690-8b77-ac0f249da629" configVersion="392b18b72f51fe0933d1164c9b6dcf4108d513e9"/>
 		<Metadata name="Catalog.Склады" id="8885cf56-9689-4bfc-b7ab-1ff482812389" configVersion="482f6cee69ee5dd7853b8b93862faa19466c7e68"/>
+		<Metadata name="Catalog.СтавкиНДС" id="7ab79eb4-a00f-436b-b1f4-e65146ff6667" configVersion="1fbaa089e145748c38ee6df9ccdb1eb423569c48"/>
+		<Metadata name="Catalog.СтруктураПредприятия" id="ef064348-0aa4-48b0-bf42-5aa025ec1d26" configVersion="04d480cb7f4a6a3d3b80cb7f201d816eec5699bb"/>
 		<Metadata name="Catalog.УпаковкиЕдиницыИзмерения" id="98253123-e0f9-48e0-a476-7903797adbe5" configVersion="a8d3c089f5a3456bdfdf5e56f4fceee4b3309584"/>
 		<Metadata name="Catalog.питВидыМеню" id="95850253-d0ae-46dd-a8a9-0d916255bbf1" configVersion="a296e5988aeff57c62001036d3779186471789e3"/>
 		<Metadata name="Catalog.питМеню" id="416ae5ca-a48c-40e1-ac63-245365cd668d" configVersion="dffa4b85083c87c1eef52f8cd22e4b3b02aad07f">
@@ -82,7 +85,7 @@
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.ЭлектронноеПисьмо" id="1126e77f-5c99-4364-88c1-5063f2149e84" configVersion="bc5d565da097241ddee69d8c63da39cdc36ee665"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="b17d6897fa737df9cf3ede25c94ca524b76dfe02"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="264238737d6e9d3615d43f37a371a57d8fb3fb60"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены" id="0fba1212-70a6-45eb-8609-9761afcad74c" configVersion="320bdb7cbc201beb3a18ad8d0cd435ba40a50961">
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.Использовать" id="1ea96a21-02d3-48dd-b64d-d894d969a363"/>
@@ -196,7 +199,11 @@
 			<Metadata name="Enum.СтатусыУстановокЦенНоменклатуры.EnumValue.НеСогласован" id="55e96b93-cff2-4106-b34d-3eeb510dad9c"/>
 			<Metadata name="Enum.СтатусыУстановокЦенНоменклатуры.EnumValue.Согласован" id="b645f0d7-2158-4ce0-a377-fb473aa80952"/>
 		</Metadata>
-		<Metadata name="ExchangePlan.питУдаленныеКассы" id="bc07d6b1-563e-4e1f-ac7c-9c394e938048" configVersion="478b3c31ea4cb5cebfd92def568fc53b74934320">
+		<Metadata name="ExchangePlan.питУдаленныеКассы" id="bc07d6b1-563e-4e1f-ac7c-9c394e938048" configVersion="cca3bd2c8410897cdd5a76348ff8858773a95ed3">
+			<Metadata name="ExchangePlan.питУдаленныеКассы.Attribute.MRS_СтавкаНДС" id="1f16c0cd-5f3a-4702-a6b7-15b8d097255f"/>
+			<Metadata name="ExchangePlan.питУдаленныеКассы.Attribute.Организация" id="29816c09-648c-406b-b701-ae4c6c3e0d6b"/>
+			<Metadata name="ExchangePlan.питУдаленныеКассы.Attribute.Префикс" id="35c185c6-f0cd-4018-87fd-a34d9ac7eed1"/>
+			<Metadata name="ExchangePlan.питУдаленныеКассы.Attribute.Подразделение" id="4fe5660a-ab00-46a1-bc7b-b4e4c182a1a7"/>
 			<Metadata name="ExchangePlan.питУдаленныеКассы.TabularSection.MRS_КостПродаж.Attribute.ПроцентНаценки" id="93af99d3-b41c-40af-800e-ee1266926eae"/>
 			<Metadata name="ExchangePlan.питУдаленныеКассы.TabularSection.MRS_КостПродаж.Attribute.ГФУ_МЖ" id="b3e025e8-5e32-4387-880c-1ea7f81e275d"/>
 			<Metadata name="ExchangePlan.питУдаленныеКассы.TabularSection.MRS_КостПродаж" id="ec717546-a6d5-41f7-b4fa-1fc749c1c7af"/>

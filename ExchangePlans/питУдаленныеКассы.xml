@@ -31,6 +31,58 @@
 			<ExtendedConfigurationObject>6cc425d4-31b3-4ec2-9555-853f574f9f32</ExtendedConfigurationObject>
 		</Properties>
 		<ChildObjects>
+			<Attribute uuid="1f16c0cd-5f3a-4702-a6b7-15b8d097255f">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>MRS_СтавкаНДС</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>298682ba-94e6-4528-8c3a-d54d87dba6e7</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтавкиНДС</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="35c185c6-f0cd-4018-87fd-a34d9ac7eed1">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Префикс</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>7fd56e05-1303-451f-acf6-c9a061107527</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="29816c09-648c-406b-b701-ae4c6c3e0d6b">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Организация</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>1b4e0576-3ca1-469d-ac72-333072ba31fe</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="4fe5660a-ab00-46a1-bc7b-b4e4c182a1a7">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Подразделение</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>542d92aa-ad65-4342-87d3-62442669b8d7</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СтруктураПредприятия</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
 			<TabularSection uuid="ec717546-a6d5-41f7-b4fa-1fc749c1c7af">
 				<InternalInfo>
 					<xr:GeneratedType name="ExchangePlanTabularSection.питУдаленныеКассы.MRS_КостПродаж" category="TabularSection">

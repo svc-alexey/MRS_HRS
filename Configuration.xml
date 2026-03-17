@@ -121,6 +121,9 @@
 			<Catalog>СерииНоменклатуры</Catalog>
 			<Catalog>MRS_КлассыМеню</Catalog>
 			<Catalog>Склады</Catalog>
+			<Catalog>СтавкиНДС</Catalog>
+			<Catalog>Организации</Catalog>
+			<Catalog>СтруктураПредприятия</Catalog>
 			<Document>питРецептура</Document>
 			<Document>УстановкаЦенНоменклатуры</Document>
 			<Document>ПеремещениеТоваров</Document>
