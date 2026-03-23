@@ -106,6 +106,7 @@
 			<CommonModule>MRS_МенеджерОбменаMicros</CommonModule>
 			<CommonModule>питПроизводство</CommonModule>
 			<CommonModule>MRS_ЗагрузкаЕГАИСФронт</CommonModule>
+			<CommonModule>ВерсионированиеОбъектов</CommonModule>
 			<ExchangePlan>питУдаленныеКассы</ExchangePlan>
 			<HTTPService>ПЛ_HTTP_ОбменELMA</HTTPService>
 			<Constant>MRS_URLСервисаSimphony</Constant>

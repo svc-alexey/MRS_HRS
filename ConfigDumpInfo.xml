@@ -57,14 +57,16 @@
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиент.Module" id="45597a8c-7723-40ed-9cb7-07cf8528c1dc.0" configVersion="cf45deb996978c8c7191d666c07bfba4f1f4b952"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиентСервер" id="6428914c-a2fa-4fbd-89f3-9024fdddf933" configVersion="be8db45a686ed6148a071b58b2f72e3ae72704c7"/>
 		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАКлиентСервер.Module" id="6428914c-a2fa-4fbd-89f3-9024fdddf933.0" configVersion="f1cc89df14f3b27cac78ca9721a1c8479aeecb47"/>
-		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7" configVersion="0cef6d886993e15352e953e8bda8a0607e94b808"/>
-		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер.Module" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7.0" configVersion="e299d5fd84895c640283bc360927295c876ea3ac"/>
+		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7" configVersion="faa00a4c7cde967e8dcfdc52b90cff25877d2dd6"/>
+		<Metadata name="CommonModule.MRS_ИнтеграцияЕЛМАСервер.Module" id="3900fff8-3b6a-4ffe-ae1c-f84a4cc5aac7.0" configVersion="567401f16495cf2f3340609c8b5291c484102ab2"/>
 		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros" id="5f00323d-cf6e-4b18-9211-abb9330f55af" configVersion="3926b19543634846faf1641a37a8feb7219bfda9"/>
 		<Metadata name="CommonModule.MRS_МенеджерОбменаMicros.Module" id="5f00323d-cf6e-4b18-9211-abb9330f55af.0" configVersion="462a9a5d6eb7ec23236be5aa3fc0fd0b92225857"/>
 		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация" id="ed7460ab-7c78-46d0-b3d0-539470ace977" configVersion="26a02c4b648d982aa676ae2896b465424021877e"/>
 		<Metadata name="CommonModule.MRS_ПартионныйУчетЛокализация.Module" id="ed7460ab-7c78-46d0-b3d0-539470ace977.0" configVersion="58ded1705765b9a35adf3ef78ee502057720d269"/>
 		<Metadata name="CommonModule.MRS_Сервер" id="ea08e4a3-3198-4def-80e4-44a131ad3d93" configVersion="1465da8c5a06cee5d2b7d84aea6f4a29c7f58d8a"/>
 		<Metadata name="CommonModule.MRS_Сервер.Module" id="ea08e4a3-3198-4def-80e4-44a131ad3d93.0" configVersion="803e59d2fc68010df2eb68da75ccc87b65d55281"/>
+		<Metadata name="CommonModule.ВерсионированиеОбъектов" id="d8fe124f-49ef-490f-941b-c810d201e622" configVersion="7da0b59fb550fdd826b511bd9b4ddac99237f3bd"/>
+		<Metadata name="CommonModule.ВерсионированиеОбъектов.Module" id="d8fe124f-49ef-490f-941b-c810d201e622.0" configVersion="3e192d28a6484e221e595b8562da35c48b680236"/>
 		<Metadata name="CommonModule.ПЛ_Формы" id="ee831b8f-d135-475a-8eae-ed06c4ba937e" configVersion="c21becbfaffcbbc021132d6bc2a26102535a6f27"/>
 		<Metadata name="CommonModule.ПЛ_Формы.Module" id="ee831b8f-d135-475a-8eae-ed06c4ba937e.0" configVersion="c99268d8e1580a13adb54ae00d1a0d8ad608b3bd"/>
 		<Metadata name="CommonModule.питПроизводство" id="fe255ad3-23dc-4868-9738-0f7f81fb74f0" configVersion="e498874c551c31e8136cf9ce18956a91cdf5899d"/>
@@ -85,7 +87,7 @@
 		<Metadata name="CommonPicture.УстановитьЦены" id="26aaa15e-95ae-453d-b866-4f668e52a48d" configVersion="9a37257c0bd0643fe64891f961506eefaa992c1a"/>
 		<Metadata name="CommonPicture.ЭлектронноеПисьмо" id="1126e77f-5c99-4364-88c1-5063f2149e84" configVersion="bc5d565da097241ddee69d8c63da39cdc36ee665"/>
 		<Metadata name="CommonPicture.питДерево" id="a7b3c5ba-a8f1-463d-8da0-aa8835d9cdcc" configVersion="6891c72446396c34c73206feb12f51cc4a516b9a"/>
-		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="264238737d6e9d3615d43f37a371a57d8fb3fb60"/>
+		<Metadata name="Configuration.MRS_HRS" id="7401ded3-e8a7-4d83-857e-999f9f4004de" configVersion="d65ad132e31cd203ed125ba5ba948eccec20214e"/>
 		<Metadata name="Constant.MRS_URLСервисаSimphony" id="39b24eaa-17e3-4414-9895-6682eed892e8" configVersion="02011f2f0f5a3a494263fb9a7a6371a8a9ffe193"/>
 		<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены" id="0fba1212-70a6-45eb-8609-9761afcad74c" configVersion="320bdb7cbc201beb3a18ad8d0cd435ba40a50961">
 			<Metadata name="DataProcessor.MRS_АРМ_Закрытия_смены.TabularSection.ПараметрыКасс.Attribute.Использовать" id="1ea96a21-02d3-48dd-b64d-d894d969a363"/>
