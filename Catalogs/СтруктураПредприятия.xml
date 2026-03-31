@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Catalog uuid="55c4207c-9213-4de3-bec7-a1bb90c8093b">
+	<Catalog uuid="ef064348-0aa4-48b0-bf42-5aa025ec1d26">
 		<InternalInfo>
 			<xr:GeneratedType name="CatalogObject.СтруктураПредприятия" category="Object">
-				<xr:TypeId>e56a1055-760f-4cf2-8ab1-8a91c1090210</xr:TypeId>
-				<xr:ValueId>59779a13-2da8-47ae-be18-10dcbd63d2da</xr:ValueId>
+				<xr:TypeId>4b1f5e6c-30f5-451f-8725-0480f2bd042f</xr:TypeId>
+				<xr:ValueId>100d4f99-45fe-4c8c-8887-4b159256945f</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogRef.СтруктураПредприятия" category="Ref">
-				<xr:TypeId>b63ce00d-6eac-4972-9d9b-bd01fe6c5793</xr:TypeId>
-				<xr:ValueId>611592ee-2352-41e3-a08b-da762c412c75</xr:ValueId>
+				<xr:TypeId>9fcbaca8-c3ec-42f5-a5ef-27adedde1b64</xr:TypeId>
+				<xr:ValueId>d9ad74d0-aef9-4aaa-8fd4-de25484fcb3f</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogSelection.СтруктураПредприятия" category="Selection">
-				<xr:TypeId>6bd96daf-ea91-466b-8dfb-87fd6170e38e</xr:TypeId>
-				<xr:ValueId>c569cf0c-54a7-4bc0-8146-d9ec2fcf27fa</xr:ValueId>
+				<xr:TypeId>566465e7-e67a-446b-9d8a-8e4d70076131</xr:TypeId>
+				<xr:ValueId>dd270ac7-c1e6-42d6-9d99-316c6fe2cdd4</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogList.СтруктураПредприятия" category="List">
-				<xr:TypeId>dcd2ba13-94da-4b52-b4f5-b5f0216314d3</xr:TypeId>
-				<xr:ValueId>289b1248-7758-42fc-825f-97467bb6e7e9</xr:ValueId>
+				<xr:TypeId>de6bb1a5-c5d5-4f9e-836a-b0754291215c</xr:TypeId>
+				<xr:ValueId>d762c84b-763e-4ea8-8f00-caa70cab64ed</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogManager.СтруктураПредприятия" category="Manager">
-				<xr:TypeId>fe3b233f-8816-493e-8e36-bae266c75734</xr:TypeId>
-				<xr:ValueId>d66a6ad8-b190-4b7f-8016-f2b04d99dc95</xr:ValueId>
+				<xr:TypeId>f135815b-8199-4452-abf1-599443ccb631</xr:TypeId>
+				<xr:ValueId>32e05610-706e-4254-84a9-e64895fbe7a7</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
