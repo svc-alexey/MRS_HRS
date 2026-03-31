@@ -1383,15 +1383,15 @@
 Функция СтильHTMLИнтерфейса()
 	
 	Возврат ":root{--bg:#eef1f6;--fg:#1a1d24;--b:#c8ced9;--a:#2563eb;--a2:#1d4ed8;--ok:#15803d;--ok2:#166534;--bad:#b91c1c;--bad2:#991b1b;}"
-		+ "body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;margin:0;padding:14px 16px;background:linear-gradient(165deg,#eef1f6 0%,#e2e8f4 50%,#f4f6fa 100%);color:var(--fg);font-size:13px;line-height:1.4;}"
-		+ ".hdr{margin-bottom:14px;padding:14px 18px;border-radius:12px;background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 55%,#3b82f6 100%);box-shadow:0 8px 24px rgba(37,99,235,.22);}"
-		+ ".title-main{display:flex;align-items:center;gap:10px;margin:0;font-size:22px;font-weight:700;letter-spacing:.02em;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.15);}"
+		+ "body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;margin:0;padding:10px 12px;background:linear-gradient(165deg,#eef1f6 0%,#e2e8f4 50%,#f4f6fa 100%);color:var(--fg);font-size:12.5px;line-height:1.35;}"
+		+ ".hdr{margin-bottom:10px;padding:10px 14px;border-radius:10px;background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 55%,#3b82f6 100%);box-shadow:0 6px 18px rgba(37,99,235,.2);}"
+		+ ".title-main{display:flex;align-items:center;gap:8px;margin:0;font-size:19px;font-weight:700;letter-spacing:.02em;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.15);}"
 		+ ".title-main .svg-ico{width:26px;height:26px;flex-shrink:0;}"
 		+ ".svg-ico{display:inline-block;vertical-align:middle;}"
 		+ ".demo{display:flex;align-items:center;gap:10px;}"
 		+ ".demo .svg-ico{width:20px;height:20px;flex-shrink:0;}"
-		+ ".tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--b);}"
-		+ ".tabs a{color:var(--a);text-decoration:none;padding:8px 14px;border-radius:8px;background:#fff;border:1px solid var(--b);}"
+		+ ".tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid var(--b);}"
+		+ ".tabs a{color:var(--a);text-decoration:none;padding:6px 12px;border-radius:8px;background:#fff;border:1px solid var(--b);font-size:12px;}"
 		+ ".tabs a.act{background:#dbeafe;font-weight:600;color:var(--a2);border-color:#93c5fd;}"
 		+ ".lbl{opacity:.9;font-weight:500;}input[type=text],input[type=password]{max-width:440px;width:100%;padding:8px 10px;border:1px solid var(--b);border-radius:8px;box-sizing:border-box;background:#fff;}"
 		+ ".task-inp-cell{display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:440px;}"
@@ -1403,19 +1403,19 @@
 		+ "a.btn-ok:hover{filter:brightness(1.05);}a.btn-bad{background:linear-gradient(180deg,#ef4444,var(--bad));box-shadow:0 2px 8px rgba(185,28,28,.35);}"
 		+ "a.btn-bad:hover{filter:brightness(1.05);}a.btn-ghost{background:#fff;color:var(--a)!important;border:1px solid var(--b);}"
 		+ "table{width:100%;border-collapse:collapse;background:#fff;margin-top:10px;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);}"
-		+ "th,td{border:1px solid var(--b);padding:8px 10px;text-align:left;}th{background:#e8ecf4;font-weight:600;}tr:nth-child(even){background:#f8fafc;}"
-		+ "h2{font-size:16px;margin:18px 0 10px;color:#0f172a;}"
-		+ "p.hint{opacity:.82;font-size:12px;margin:6px 0;}"
-		+ ".demo{padding:10px 14px;background:linear-gradient(90deg,#fef3c7,#fde68a);border:1px solid #f59e0b;border-radius:10px;margin:12px 0;font-size:13px;font-weight:600;color:#92400e;fill:currentColor;}"
-		+ ".pick-panel{background:#fff;border:1px solid var(--b);border-radius:12px;padding:4px 8px;margin:8px 0 14px;box-shadow:0 2px 8px rgba(0,0,0,.04);}"
-		+ "a.pick-line{display:flex;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px solid #f1f5f9;text-decoration:none;color:inherit;border-radius:6px;}"
+		+ "th,td{border:1px solid var(--b);padding:5px 8px;text-align:left;}th{background:#e8ecf4;font-weight:600;}tr:nth-child(even){background:#f8fafc;}"
+		+ "h2{font-size:15px;margin:12px 0 6px;color:#0f172a;}"
+		+ "p.hint{opacity:.82;font-size:11.5px;margin:4px 0;line-height:1.35;}"
+		+ ".demo{padding:8px 12px;background:linear-gradient(90deg,#fef3c7,#fde68a);border:1px solid #f59e0b;border-radius:8px;margin:8px 0;font-size:12px;font-weight:600;color:#92400e;fill:currentColor;}"
+		+ ".pick-panel{background:#fff;border:1px solid var(--b);border-radius:10px;padding:2px 6px;margin:6px 0 10px;box-shadow:0 1px 6px rgba(0,0,0,.04);}"
+		+ "a.pick-line{display:flex;align-items:center;gap:8px;padding:5px 4px;border-bottom:1px solid #f1f5f9;text-decoration:none;color:inherit;border-radius:6px;}"
 		+ "a.pick-line:last-child{border-bottom:none;}"
 		+ "a.pick-line:hover{background:#f8fafc;}"
 		+ "a.pick-line span.cb-box{flex-shrink:0;display:block;width:18px;height:18px;border:2px solid #64748b;border-radius:4px;background:#fff;}"
 		+ "a.pick-line.on span.cb-box{background:linear-gradient(135deg,#3b82f6,#2563eb);border-color:#1d4ed8;box-shadow:inset 0 0 0 2px #fff;}"
 		+ "a.pick-line .pick-txt{flex:1;min-width:0;}"
-		+ ".cal-2col{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;max-width:720px;margin:10px 0;}"
-		+ ".cal-block{background:#fff;border:1px solid var(--b);border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.04);}"
+		+ ".cal-2col{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;max-width:720px;margin:8px 0;}"
+		+ ".cal-block{background:#fff;border:1px solid var(--b);border-radius:8px;padding:8px 10px;box-shadow:0 1px 4px rgba(0,0,0,.04);}"
 		+ ".cal-block .cal-h{font-weight:600;margin:0 0 6px;font-size:13px;color:#0f172a;}"
 		+ ".cal-wrap{margin:0;}"
 		+ ".cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;gap:8px;}"
@@ -1428,7 +1428,7 @@
 		+ "table.cal-grid td.cal-sel a{background:#dbeafe;font-weight:700;color:var(--a2);}"
 		+ "table.cal-grid td.cal-out{color:#cbd5e1;}"
 		+ "table.cal-grid tbody tr,table.cal-grid tbody tr:nth-child(even){background:transparent;}"
-		+ ".date-inp-grid{display:grid;gap:8px;grid-template-columns:minmax(140px,180px) 1fr;align-items:center;max-width:720px;margin:12px 0 8px;}"
+		+ ".date-inp-grid{display:grid;gap:6px;grid-template-columns:minmax(120px,160px) 1fr;align-items:center;max-width:720px;margin:8px 0 6px;}"
 		+ "input.inp-date{max-width:300px;padding:8px 10px;border:1px solid var(--b);border-radius:8px;box-sizing:border-box;background:#fff;}"
 		+ ".chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px;align-items:center;}"
 		+ ".chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:20px;background:#e0e7ff;border:1px solid #a5b4fc;font-size:12px;}"
@@ -1441,6 +1441,29 @@
 		+ ".org-card .meta{font-size:11px;opacity:.75;}"
 		+ "table.tbl-orgs a.pick-line{border-bottom:none;margin:0;}"
 		+ ".grid{display:grid;gap:10px;grid-template-columns:170px 1fr;align-items:center;max-width:960px;}";
+	
+КонецФункции
+
+// Сохраняет вертикальную прокрутку перед кликом по mrsdz:// и восстанавливает после полной перерисовки HTML (иначе документ «прыгает» наверх).
+&НаСервере
+Функция HTML_СкриптВосстановленияПрокруткиПослеМоста()
+	
+	Возврат "<script type=""text/javascript"">"
+		+ "(function(){"
+		+ "var K='mrsdz_scroll_y';"
+		+ "function gy(){try{return window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;}catch(e){return 0;}}"
+		+ "function sv(){try{sessionStorage.setItem(K,String(gy()));}catch(e){}}"
+		+ "var y=null;"
+		+ "function ld(){try{var v=sessionStorage.getItem(K);if(v!==null){y=parseInt(v,10);sessionStorage.removeItem(K);if(isNaN(y))y=null;}}catch(e){y=null;}}"
+		+ "function ap(){if(y===null)return;try{window.scrollTo(0,y);}catch(e){}}"
+		+ "ld();ap();"
+		+ "function onBridge(e){var t=e.target;while(t&&(!t.tagName||t.tagName.toLowerCase()!='a'))t=t.parentNode;if(!t)return;var u=String(t.getAttribute('href')||'');if(u.indexOf('mrsdz://')===0)sv();}"
+		+ "if(document.addEventListener){document.addEventListener('mousedown',onBridge,true);document.addEventListener('click',onBridge,true);}"
+		+ "function run(){ap();setTimeout(ap,0);setTimeout(ap,50);setTimeout(ap,200);}"
+		+ "if(window.addEventListener){if(document.readyState==='complete')run();else window.addEventListener('load',run);}"
+		+ "else run();"
+		+ "})();"
+		+ "</script>";
 	
 КонецФункции
 
@@ -1532,7 +1555,7 @@
 		HTML = HTML + "<p class=""hint"">Раздел недоступен. Выберите базу или откройте вкладку ""Основная"".</p>";
 	КонецЕсли;
 	
-	HTML = HTML + "</body></html>";
+	HTML = HTML + HTML_СкриптВосстановленияПрокруткиПослеМоста() + "</body></html>";
 	Возврат HTML;
 	
 КонецФункции
