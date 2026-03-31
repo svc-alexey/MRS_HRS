@@ -15,7 +15,15 @@
 &НаКлиенте
 Процедура ПараметрПериодаЗапретаПриИзменении(Элемент)
 	
+	ВыровнятьВидКалендарейПодПоляНаСервере();
 	ОбновитьОтображениеHTML();
+	
+КонецПроцедуры
+
+&НаСервере
+Процедура ВыровнятьВидКалендарейПодПоляНаСервере()
+	
+	HTML_ВыровнятьВидКалендарейПодПоляФормы();
 	
 КонецПроцедуры
 
@@ -30,6 +38,7 @@
 	Если ПустаяСтрока(АктивнаяВкладкаHTML) Тогда
 		АктивнаяВкладкаHTML = "t1";
 	КонецЕсли;
+	HTML_КалендарьИнициализироватьВидыНаСервере();
 	ТекстПоляHTML = СформироватьТекстHTMLНаСервере();
 	
 КонецПроцедуры
@@ -672,19 +681,38 @@
 КонецФункции
 
 &НаКлиенте
-Процедура ПолеHTMLДокументаПриНажатии(Элемент, ДанныеСобытия, СтандартнаяОбработка)
+Функция HTML_ИзвлечьHrefИзСобытияПоляHTML(Знач ДанныеСобытия)
 	
-	Href = "";
-	Если ДанныеСобытия <> Неопределено Тогда
+	Если ДанныеСобытия = Неопределено Тогда
+		Возврат "";
+	КонецЕсли;
+	
+	Рез = "";
+	Попытка
+		Рез = Строка(ДанныеСобытия.Href);
+	Исключение
+	КонецПопытки;
+	Если ПустаяСтрока(Рез) Тогда
 		Попытка
-			Href = ДанныеСобытия.Href;
+			Рез = Строка(ДанныеСобытия.URL);
 		Исключение
-			Href = "";
 		КонецПопытки;
 	КонецЕсли;
+	Возврат СокрЛП(Рез);
+	
+КонецФункции
+
+&НаКлиенте
+Процедура ПолеHTMLДокументаПриНажатии(Элемент, ДанныеСобытия, СтандартнаяОбработка)
+	
+	Href = HTML_ИзвлечьHrefИзСобытияПоляHTML(ДанныеСобытия);
 	
 	Если ПустаяСтрока(Href) Тогда
 		Возврат;
+	КонецЕсли;
+	
+	Если СтрНачинаетсяС(НРег(Href), "mrsdz://") Тогда
+		СтандартнаяОбработка = Ложь;
 	КонецЕсли;
 	
 	Если НЕ СтрНачинаетсяС(НРег(Href), "mrsdz://") Тогда
@@ -701,7 +729,6 @@
 		Возврат;
 	КонецЕсли;
 	
-	СтандартнаяОбработка = Ложь;
 	
 	Команда = РасшифроватьКомандуHTMLИзФрагмента(Фрагмент);
 	Имя = ИмяКомандыИнтерфейса(Команда);
@@ -828,6 +855,57 @@
 			Вкл = Команда.Получить("v") = Истина;
 		КонецЕсли;
 		УстановитьФлажокОрганизацииИзHTMLНаСервере(ИдОрг, Вкл);
+	ИначеЕсли Имя = "calNav" Тогда
+		КодW = HTML_ПолеСтрокаКоманды(Команда, "w");
+		СтрШаг = HTML_ПолеСтрокаКоманды(Команда, "s");
+		Шаг = 0;
+		Попытка
+			Шаг = Число(СтрШаг);
+		Исключение
+			Шаг = 0;
+		КонецПопытки;
+		Если Шаг = 0 Тогда
+			Возврат;
+		КонецЕсли;
+		Если КодW = "o" Тогда
+			ГК = Число(HTML_КалОткрГод);
+			МК = Число(HTML_КалОткрМесяц);
+			Если ГК < 1900 Или МК < 1 Или МК > 12 Тогда
+				ТС = ТекущаяДатаСеанса();
+				ГК = Год(ТС);
+				МК = Месяц(ТС);
+			КонецЕсли;
+			НовВид = ДобавитьМесяц(Дата(ГК, МК, 1), Шаг);
+			HTML_КалОткрГод = Год(НовВид);
+			HTML_КалОткрМесяц = Месяц(НовВид);
+		ИначеЕсли КодW = "c" Тогда
+			ГК = Число(HTML_КалОтклГод);
+			МК = Число(HTML_КалОтклМесяц);
+			Если ГК < 1900 Или МК < 1 Или МК > 12 Тогда
+				ТС = ТекущаяДатаСеанса();
+				ГК = Год(ТС);
+				МК = Месяц(ТС);
+			КонецЕсли;
+			НовВид = ДобавитьМесяц(Дата(ГК, МК, 1), Шаг);
+			HTML_КалОтклГод = Год(НовВид);
+			HTML_КалОтклМесяц = Месяц(НовВид);
+		КонецЕсли;
+	ИначеЕсли Имя = "calPick" Тогда
+		КодW = HTML_ПолеСтрокаКоманды(Команда, "w");
+		СтрДт = HTML_ПолеСтрокаКоманды(Команда, "dt");
+		Д = ДатаИзСтрокиИнтерфейса(СтрДт);
+		Если Д = Дата(1, 1, 1) Тогда
+			Возврат;
+		КонецЕсли;
+		Если КодW = "o" Тогда
+			параметр_ДатаОткрытия = Д;
+			HTML_КалОткрГод = Год(Д);
+			HTML_КалОткрМесяц = Месяц(Д);
+		ИначеЕсли КодW = "c" Тогда
+			параметр_ДатаОтключения = Д;
+			HTML_КалОтклГод = Год(Д);
+			HTML_КалОтклМесяц = Месяц(Д);
+		КонецЕсли;
 	ИначеЕсли Имя = "flipOrg" Тогда
 		ИдОрг = "";
 		Если ТипЗнч(Команда) = Тип("Структура") Тогда
@@ -1208,13 +1286,26 @@
 		+ "h2{font-size:16px;margin:18px 0 10px;color:#0f172a;}"
 		+ "p.hint{opacity:.82;font-size:12px;margin:6px 0;}"
 		+ ".demo{padding:10px 14px;background:linear-gradient(90deg,#fef3c7,#fde68a);border:1px solid #f59e0b;border-radius:10px;margin:12px 0;font-size:13px;font-weight:600;color:#92400e;fill:currentColor;}"
-		+ ".pick-panel{background:#fff;border:1px solid var(--b);border-radius:12px;padding:12px 14px;margin:8px 0 14px;box-shadow:0 2px 8px rgba(0,0,0,.04);}"
-		+ ".pick-row{display:flex;align-items:center;gap:10px;padding:6px 4px;border-bottom:1px solid #f1f5f9;}"
-		+ ".pick-row:last-child{border-bottom:none;}"
-		+ "a.fake-cb{display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:24px;text-decoration:none;margin-right:10px;vertical-align:middle;}"
-		+ "a.fake-cb span.cb-box{display:block;width:18px;height:18px;border:2px solid #64748b;border-radius:4px;background:#fff;}"
-		+ "a.fake-cb.on span.cb-box{background:linear-gradient(135deg,#3b82f6,#2563eb);border-color:#1d4ed8;box-shadow:inset 0 0 0 2px #fff;}"
-		+ ".pick-lbl{flex:1;}"
+		+ ".pick-panel{background:#fff;border:1px solid var(--b);border-radius:12px;padding:4px 8px;margin:8px 0 14px;box-shadow:0 2px 8px rgba(0,0,0,.04);}"
+		+ "a.pick-line{display:flex;align-items:center;gap:10px;padding:8px 6px;border-bottom:1px solid #f1f5f9;text-decoration:none;color:inherit;border-radius:6px;}"
+		+ "a.pick-line:last-child{border-bottom:none;}"
+		+ "a.pick-line:hover{background:#f8fafc;}"
+		+ "a.pick-line span.cb-box{flex-shrink:0;display:block;width:18px;height:18px;border:2px solid #64748b;border-radius:4px;background:#fff;}"
+		+ "a.pick-line.on span.cb-box{background:linear-gradient(135deg,#3b82f6,#2563eb);border-color:#1d4ed8;box-shadow:inset 0 0 0 2px #fff;}"
+		+ "a.pick-line .pick-txt{flex:1;min-width:0;}"
+		+ ".cal-2col{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;max-width:720px;margin:10px 0;}"
+		+ ".cal-block{background:#fff;border:1px solid var(--b);border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.04);}"
+		+ ".cal-block .cal-h{font-weight:600;margin:0 0 6px;font-size:13px;color:#0f172a;}"
+		+ ".cal-wrap{margin:0;}"
+		+ ".cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;gap:8px;}"
+		+ ".cal-nav .cal-cap{font-weight:600;font-size:13px;text-align:center;flex:1;}"
+		+ "a.cal-btn{margin:0;padding:4px 12px;font-size:14px;line-height:1.2;}"
+		+ "table.cal-grid{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px;background:transparent;box-shadow:none;border-radius:0;}"
+		+ "table.cal-grid th,table.cal-grid td{border:none;padding:3px 2px;text-align:center;}"
+		+ "table.cal-grid th{font-size:10px;text-transform:lowercase;opacity:.75;font-weight:600;}"
+		+ "table.cal-grid td a{display:block;padding:5px 2px;text-decoration:none;color:var(--a);border-radius:6px;}"
+		+ "table.cal-grid td.cal-sel a{background:#dbeafe;font-weight:700;color:var(--a2);}"
+		+ "table.cal-grid td.cal-out{color:#cbd5e1;}"
 		+ ".chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px;align-items:center;}"
 		+ ".chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:20px;background:#e0e7ff;border:1px solid #a5b4fc;font-size:12px;}"
 		+ ".chip-act{background:#dbeafe;border-color:#3b82f6;box-shadow:0 0 0 2px rgba(59,130,246,.25);}"
@@ -1224,7 +1315,7 @@
 		+ ".org-card{background:#fff;border:1px solid var(--b);border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.04);}"
 		+ ".org-card .nm{font-weight:600;margin-bottom:4px;}"
 		+ ".org-card .meta{font-size:11px;opacity:.75;}"
-		+ ".tbl-orgs a.fake-cb{margin:0 auto;}"
+		+ "table.tbl-orgs a.pick-line{border-bottom:none;margin:0;}"
 		+ ".grid{display:grid;gap:10px;grid-template-columns:170px 1fr;align-items:center;max-width:960px;}";
 	
 КонецФункции
@@ -1333,9 +1424,9 @@
 	Для Каждого Стр Из БазыДанных Цикл
 		Отм = HTML_ИдВПодбореБаз(Стр.Идентификатор);
 		Метка = HTMLЭкранировать(Стр.Наименование) + " <span style=""opacity:.75"">(" + HTMLЭкранировать(Стр.СтатусБазы) + ")</span>";
-		КлассЛинкБаза = ?(Отм, "fake-cb on", "fake-cb");
+		КлассЛинкБаза = ?(Отм, "pick-line on", "pick-line");
 		СсылкаТогглБаза = HrefКомандыМоста(Новый Структура("c,id", "togglePickBase", Строка(Стр.Идентификатор)));
-		Ч = Ч + "<div class=""pick-row""><a class=""" + КлассЛинкБаза + """ href=""" + СсылкаТогглБаза + """ title=""Отметить / снять""><span class=""cb-box""></span></a><span class=""pick-lbl"">" + Метка + "</span></div>";
+		Ч = Ч + "<a class=""" + КлассЛинкБаза + """ href=""" + СсылкаТогглБаза + """ title=""Отметить / снять""><span class=""cb-box""></span><span class=""pick-txt"">" + Метка + "</span></a>";
 	КонецЦикла;
 	Если БазыДанных.Количество() = 0 Тогда
 		Ч = Ч + "<p class=""hint"">Нет доступных баз в списке.</p>";
@@ -1379,9 +1470,9 @@
 	Для Каждого Стр Из ПользователиИБ Цикл
 		ОтмП = HTML_ИдВПодбореПользователей(Строка(Стр.Идентификатор));
 		МеткаП = HTMLЭкранировать(Стр.name) + " <span style=""opacity:.75"">(" + HTMLЭкранировать(Стр.domainName) + ")</span>";
-		КлассЛинкПольз = ?(ОтмП, "fake-cb on", "fake-cb");
+		КлассЛинкПольз = ?(ОтмП, "pick-line on", "pick-line");
 		СсылкаТогглПольз = HrefКомандыМоста(Новый Структура("c,id", "togglePickUser", Строка(Стр.Идентификатор)));
-		Ч = Ч + "<div class=""pick-row""><a class=""" + КлассЛинкПольз + """ href=""" + СсылкаТогглПольз + """ title=""Отметить / снять""><span class=""cb-box""></span></a><span class=""pick-lbl"">" + МеткаП + "</span></div>";
+		Ч = Ч + "<a class=""" + КлассЛинкПольз + """ href=""" + СсылкаТогглПольз + """ title=""Отметить / снять""><span class=""cb-box""></span><span class=""pick-txt"">" + МеткаП + "</span></a>";
 	КонецЦикла;
 	Ч = Ч + "<p style=""margin-top:12px""><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "applyUsers")) + """>Применить выбор</a>";
 	Ч = Ч + "<a class=""btn btn-ghost"" href=""" + HrefКомандыМоста(Новый Структура("c", "clearUserPick")) + """>Сбросить</a></p>";
@@ -1400,21 +1491,22 @@
 	Ч = Ч + "</div>";
 	
 	Ч = Ч + "<h2>Параметры периода и задачи</h2>";
-	Ч = Ч + "<p class=""hint"">Даты <strong>открытия</strong> и <strong>отключения</strong> задаются в полях формы <em>«Период (календарь 1С)»</em> над этой областью — там доступен типовой календарь платформы.</p>";
-	Ч = Ч + "<p class=""hint"">Текущие значения в форме: <strong>" + HTMLЭкранировать(HTML_ПредставлениеДатыПараметра(параметр_ДатаОткрытия)) + "</strong> — <strong>" + HTMLЭкранировать(HTML_ПредставлениеДатыПараметра(параметр_ДатаОтключения)) + "</strong></p>";
+	Ч = Ч + "<p class=""hint"">Выберите даты в мини-календарях ниже (значения совпадают с полем <em>«Период (календарь 1С)»</em> над областью HTML) или измените период в поле формы.</p>";
+	Ч = Ч + "<div class=""cal-2col""><div class=""cal-block""><p class=""cal-h"">Дата открытия</p>" + HTML_ФрагментМиниКалендаря(Истина) + "</div>";
+	Ч = Ч + "<div class=""cal-block""><p class=""cal-h"">Дата отключения</p>" + HTML_ФрагментМиниКалендаря(Ложь) + "</div></div>";
+	Ч = Ч + "<p class=""hint"">Текущие значения: <strong>" + HTMLЭкранировать(HTML_ПредставлениеДатыПараметра(параметр_ДатаОткрытия)) + "</strong> - <strong>" + HTMLЭкранировать(HTML_ПредставлениеДатыПараметра(параметр_ДатаОтключения)) + "</strong></p>";
 	Ч = Ч + "<div class=""grid""><span class=""lbl"">Номер задачи</span><input class=""inp-task"" type=""text"" value=""" + HTMLЭкранировать(параметр_НомерЗадачи) + """" + АтрибутOnChangeSetField("task") + "/></div>";
 	
 	Ч = Ч + "<h2>Организации (участвуют в добавлении строк)</h2>";
 	Ч = Ч + "<p><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "checkAll")) + """>Выбрать все</a>";
 	Ч = Ч + "<a class=""btn btn2"" href=""" + HrefКомандыМоста(Новый Структура("c", "uncheckAll")) + """>убрать все</a></p>";
-	Ч = Ч + "<table class=""tbl-orgs""><thead><tr><th style=""width:48px""></th><th>Организация</th></tr></thead><tbody>";
+	Ч = Ч + "<table class=""tbl-orgs""><thead><tr><th>Организация (вкл/выкл)</th></tr></thead><tbody>";
 	Для Каждого Стр Из ТаблицаОрганизаций Цикл
 		Предст = ПредставлениеОргВТаблице(Стр);
 		ИдО = Строка(Стр.Идентификатор);
-		КлассЛинкОрг = ?(Стр.Выбор, "fake-cb on", "fake-cb");
+		КлассЛинкОрг = ?(Стр.Выбор, "pick-line on", "pick-line");
 		СсылкаФлипОрг = HrefКомандыМоста(Новый Структура("c,id", "flipOrg", ИдО));
-		Ч = Ч + "<tr><td style=""text-align:center""><a class=""" + КлассЛинкОрг + """ href=""" + СсылкаФлипОрг + """ title=""Вкл/выкл""><span class=""cb-box""></span></a></td>";
-		Ч = Ч + "<td>" + HTMLЭкранировать(Предст) + "</td></tr>";
+		Ч = Ч + "<tr><td><a class=""" + КлассЛинкОрг + """ href=""" + СсылкаФлипОрг + """ title=""Вкл/выкл""><span class=""cb-box""></span><span class=""pick-txt"">" + HTMLЭкранировать(Предст) + "</span></a></td></tr>";
 	КонецЦикла;
 	Ч = Ч + "</tbody></table>";
 	
@@ -1474,7 +1566,7 @@
 Функция HTML_ПредставлениеДатыПараметра(Знач Д)
 	
 	Если НЕ ЗначениеЗаполнено(Д) Или Д = Дата(1, 1, 1) Тогда
-		Возврат "—";
+		Возврат "-";
 	КонецЕсли;
 	Возврат Формат(Д, "ДЛФ=D");
 	
@@ -1487,6 +1579,139 @@
 		Возврат "";
 	КонецЕсли;
 	Возврат Формат(Д, "ДФ=yyyy-MM-dd");
+	
+КонецФункции
+
+&НаСервере
+Процедура HTML_КалендарьИнициализироватьВидыНаСервере()
+	
+	ТС = ТекущаяДатаСеанса();
+	Если HTML_КалОткрГод = 0 Или HTML_КалОткрМесяц = 0 Тогда
+		ДО = параметр_ДатаОткрытия;
+		Если ЗначениеЗаполнено(ДО) И ДО <> Дата(1, 1, 1) Тогда
+			HTML_КалОткрГод = Год(ДО);
+			HTML_КалОткрМесяц = Месяц(ДО);
+		Иначе
+			HTML_КалОткрГод = Год(ТС);
+			HTML_КалОткрМесяц = Месяц(ТС);
+		КонецЕсли;
+	КонецЕсли;
+	
+	Если HTML_КалОтклГод = 0 Или HTML_КалОтклМесяц = 0 Тогда
+		ДК = параметр_ДатаОтключения;
+		Если ЗначениеЗаполнено(ДК) И ДК <> Дата(1, 1, 1) Тогда
+			HTML_КалОтклГод = Год(ДК);
+			HTML_КалОтклМесяц = Месяц(ДК);
+		Иначе
+			HTML_КалОтклГод = Год(ТС);
+			HTML_КалОтклМесяц = Месяц(ТС);
+		КонецЕсли;
+	КонецЕсли;
+	
+КонецПроцедуры
+
+&НаСервере
+Процедура HTML_ВыровнятьВидКалендарейПодПоляФормы()
+	
+	ДО = параметр_ДатаОткрытия;
+	Если ЗначениеЗаполнено(ДО) И ДО <> Дата(1, 1, 1) Тогда
+		HTML_КалОткрГод = Год(ДО);
+		HTML_КалОткрМесяц = Месяц(ДО);
+	КонецЕсли;
+	
+	ДК = параметр_ДатаОтключения;
+	Если ЗначениеЗаполнено(ДК) И ДК <> Дата(1, 1, 1) Тогда
+		HTML_КалОтклГод = Год(ДК);
+		HTML_КалОтклМесяц = Месяц(ДК);
+	КонецЕсли;
+	
+КонецПроцедуры
+
+&НаСервере
+Функция HTML_МодульОстаток(Знач Делимое, Знач Делитель)
+	
+	Если Делитель = 0 Тогда
+		Возврат 0;
+	КонецЕсли;
+	Возврат Делимое - Делитель * Цел(Делимое / Делитель);
+	
+КонецФункции
+
+&НаСервере
+Функция HTML_ФрагментМиниКалендаря(Знач ЭтоДатаОткрытия)
+	
+	Если ЭтоДатаОткрытия Тогда
+		Г = Число(HTML_КалОткрГод);
+		М = Число(HTML_КалОткрМесяц);
+		КодПоля = "o";
+		ТекРек = параметр_ДатаОткрытия;
+	Иначе
+		Г = Число(HTML_КалОтклГод);
+		М = Число(HTML_КалОтклМесяц);
+		КодПоля = "c";
+		ТекРек = параметр_ДатаОтключения;
+	КонецЕсли;
+	
+	Если М < 1 Или М > 12 Или Г < 1900 Или Г > 2100 Тогда
+		ТС = ТекущаяДатаСеанса();
+		Г = Год(ТС);
+		М = Месяц(ТС);
+	КонецЕсли;
+	
+	Под = "";
+	Под = Под + "<div class=""cal-wrap"">";
+	Под = Под + "<div class=""cal-nav"">";
+	СсPrev = HrefКомандыМоста(Новый Структура("c,w,s", "calNav", КодПоля, "-1"));
+	СсNext = HrefКомандыМоста(Новый Структура("c,w,s", "calNav", КодПоля, "1"));
+	Под = Под + "<a href=""" + СсPrev + """ class=""btn cal-btn"">&lt;</a>";
+	Под = Под + "<span class=""cal-cap"">" + HTMLЭкранировать(Формат(Дата(Г, М, 1), "ДФ=MMMM yyyy")) + "</span>";
+	Под = Под + "<a href=""" + СсNext + """ class=""btn cal-btn"">&gt;</a>";
+	Под = Под + "</div>";
+	
+	Под = Под + "<table class=""cal-grid""><thead><tr>";
+	МасДН = СтрРазделить("пн,вт,ср,чт,пт,сб,вс", ",");
+	Для Инд = 0 По 6 Цикл
+		Под = Под + "<th>" + МасДН[Инд] + "</th>";
+	КонецЦикла;
+	Под = Под + "</tr></thead><tbody><tr>";
+	
+	Перв = Дата(Г, М, 1);
+	Пустых = ДеньНедели(Перв) - 1;
+	ПослДень = День(КонецМесяца(Перв));
+	
+	Поз = 0;
+	СчПустых = 0;
+	Пока СчПустых < Пустых Цикл
+		СчПустых = СчПустых + 1;
+		Если Поз > 0 И HTML_МодульОстаток(Поз, 7) = 0 Тогда
+			Под = Под + "</tr><tr>";
+		КонецЕсли;
+		Под = Под + "<td class=""cal-out"">&nbsp;</td>";
+		Поз = Поз + 1;
+	КонецЦикла;
+	
+	Для ДД = 1 По ПослДень Цикл
+		Если Поз > 0 И HTML_МодульОстаток(Поз, 7) = 0 Тогда
+			Под = Под + "</tr><tr>";
+		КонецЕсли;
+		ДЯч = Дата(Г, М, ДД);
+		СтрДт = Формат(ДЯч, "ДФ=yyyy-MM-dd");
+		СсДень = HrefКомандыМоста(Новый Структура("c,w,dt", "calPick", КодПоля, СтрДт));
+		КлассТд = "cal-day";
+		Если ЗначениеЗаполнено(ТекРек) И ТекРек <> Дата(1, 1, 1) И НачалоДня(ТекРек) = НачалоДня(ДЯч) Тогда
+			КлассТд = "cal-day cal-sel";
+		КонецЕсли;
+		Под = Под + "<td class=""" + КлассТд + """><a href=""" + СсДень + """>" + Формат(ДД, "ЧГ=0") + "</a></td>";
+		Поз = Поз + 1;
+	КонецЦикла;
+	
+	Пока HTML_МодульОстаток(Поз, 7) <> 0 Цикл
+		Под = Под + "<td class=""cal-out"">&nbsp;</td>";
+		Поз = Поз + 1;
+	КонецЦикла;
+	
+	Под = Под + "</tr></tbody></table></div>";
+	Возврат Под;
 	
 КонецФункции
 
