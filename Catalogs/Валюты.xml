@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Catalog uuid="7e32b8dd-c6b4-4050-85ab-dfe574926c35">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.Валюты" category="Object">
+				<xr:TypeId>14473744-336b-4eda-b936-fc80e778acec</xr:TypeId>
+				<xr:ValueId>267b097e-f88a-4734-ae95-dd5ef0ed812a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.Валюты" category="Ref">
+				<xr:TypeId>ed372dd7-2436-4624-9bdc-c601e5b16e88</xr:TypeId>
+				<xr:ValueId>f9319bdc-af4e-4a83-9170-6d32543a906d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.Валюты" category="Selection">
+				<xr:TypeId>0bd1d215-9caa-4251-b938-954eb3d1fa9d</xr:TypeId>
+				<xr:ValueId>7fed5bf3-8cfc-4079-a1cd-60f97fc7e453</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.Валюты" category="List">
+				<xr:TypeId>fc063fcc-e0c2-4512-a062-96df62366459</xr:TypeId>
+				<xr:ValueId>a363d8fd-dcea-47ac-a288-c86779b53a46</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.Валюты" category="Manager">
+				<xr:TypeId>1dd144d1-766a-450a-b03c-66f81cddeaf5</xr:TypeId>
+				<xr:ValueId>57e8808d-6f6f-4dcb-a52e-8e3c35b344ce</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>Валюты</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>7aadbb67-f93e-43bb-9f53-f14d2c2a347a</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>

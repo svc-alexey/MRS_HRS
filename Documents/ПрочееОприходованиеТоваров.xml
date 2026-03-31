@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Document uuid="03b1fd5b-eaa6-4f6d-97eb-077f597f8e15">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentObject.ПрочееОприходованиеТоваров" category="Object">
+				<xr:TypeId>0c15b8bd-6602-44d9-a283-90b42c153944</xr:TypeId>
+				<xr:ValueId>a32a161c-600f-4e09-bdd2-717e35be610e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentRef.ПрочееОприходованиеТоваров" category="Ref">
+				<xr:TypeId>d9057211-3bdd-48b7-be98-f144b6197dae</xr:TypeId>
+				<xr:ValueId>9600d202-73d3-4bd8-bad7-9fa3cf30c2cc</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentSelection.ПрочееОприходованиеТоваров" category="Selection">
+				<xr:TypeId>26da98f8-df00-474d-b0f5-3121d70fe364</xr:TypeId>
+				<xr:ValueId>22d71c78-f02d-4a68-a672-9a238ffae469</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentList.ПрочееОприходованиеТоваров" category="List">
+				<xr:TypeId>b53ad8b3-c51b-4c42-a89c-e3a5e694b4c4</xr:TypeId>
+				<xr:ValueId>187aeb4a-89a2-47bf-b38a-43fa23f01151</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DocumentManager.ПрочееОприходованиеТоваров" category="Manager">
+				<xr:TypeId>71746534-5cbc-41bc-a6c3-d3af4782ed7b</xr:TypeId>
+				<xr:ValueId>4873df02-f759-4cbc-b82b-9b9f0e7305e5</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>ObjectModule</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ПрочееОприходованиеТоваров</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>95235683-1cbf-4ee6-889a-15da50701439</ExtendedConfigurationObject>
+			<RegisterRecords>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.алкАкцизПоПриобретеннымЦенностям</xr:Item>
+			</RegisterRecords>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="d29d05d4-66fe-4fb2-af61-bbe4f1ed6101">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Организация</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>c8ca22d4-ac01-464f-93e8-8b0283e53b65</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+			<TabularSection uuid="d8508a0b-1aeb-4c7f-9d62-cf47a63159f0">
+				<InternalInfo>
+					<xr:GeneratedType name="DocumentTabularSection.ПрочееОприходованиеТоваров.Товары" category="TabularSection">
+						<xr:TypeId>ef8c2025-c8ac-4cfb-8da2-d45f55128de2</xr:TypeId>
+						<xr:ValueId>e21581c8-b380-438c-9467-5fb5f079bff3</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="DocumentTabularSectionRow.ПрочееОприходованиеТоваров.Товары" category="TabularSectionRow">
+						<xr:TypeId>98823fee-f163-4dc8-b026-23416c457379</xr:TypeId>
+						<xr:ValueId>e1ef7900-f363-4915-be68-dfc8d73ae6dc</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Товары</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>f171a516-96ed-466a-8749-9fc499a2b72e</ExtendedConfigurationObject>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="751acd1d-8709-4cde-9507-edc506fa4f98">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>Номенклатура</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>442a53dc-444c-4bd5-8d67-93338e5712f3</ExtendedConfigurationObject>
+							<Type>
+								<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+							</Type>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="c4965c3d-f437-422e-a00a-f77270af39a4">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>Количество</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>d246132f-5d94-40d0-a936-89753f91332f</ExtendedConfigurationObject>
+							<Type>
+								<v8:Type>xs:decimal</v8:Type>
+								<v8:NumberQualifiers>
+									<v8:Digits>15</v8:Digits>
+									<v8:FractionDigits>3</v8:FractionDigits>
+									<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+								</v8:NumberQualifiers>
+							</Type>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="59ee2a12-27db-4096-ae0e-46be9a1c4582">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>Серия</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>7b249aa4-ed58-45ee-95bf-eeaade6c6a77</ExtendedConfigurationObject>
+							<Type>
+								<v8:Type>cfg:CatalogRef.СерииНоменклатуры</v8:Type>
+							</Type>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="76886777-36e0-441b-80f3-2d2e36215428">
+						<InternalInfo/>
+						<Properties>
+							<ObjectBelonging>Adopted</ObjectBelonging>
+							<Name>Сумма</Name>
+							<Comment/>
+							<ExtendedConfigurationObject>e533ce79-b8a5-4072-b0da-70fc5003151d</ExtendedConfigurationObject>
+							<Type>
+								<v8:TypeSet>cfg:DefinedType.ДенежнаяСуммаНеотрицательная</v8:TypeSet>
+							</Type>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+		</ChildObjects>
+	</Document>
+</MetaDataObject>

@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<Page name="ГруппаНастройки" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаРецептураКоличество" id="7">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа рецептура количество</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа рецептура количество</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРецептураКоличествоРасширеннаяПодсказка" id="8"/>
+							<ChildItems>
+								<InputField name="Рецептура" id="1">
+									<DataPath>Рецептура</DataPath>
+									<Width>30</Width>
+									<ContextMenu name="РецептураКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="РецептураРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<InputField name="Количество" id="4">
+									<DataPath>Количество</DataPath>
+									<ContextMenu name="КоличествоКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="КоличествоРасширеннаяПодсказка" id="6"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДалее" id="11">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа далее</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа далее</v8:content>
+								</v8:item>
+							</ToolTip>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<Representation>None</Representation>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДалееРасширеннаяПодсказка" id="12"/>
+							<ChildItems>
+								<Button name="Далее" id="9">
+									<Type>UsualButton</Type>
+									<DefaultButton>true</DefaultButton>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.Далее</CommandName>
+									<ExtendedTooltip name="ДалееРасширеннаяПодсказка" id="10"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаИнгредиенты" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ингредиенты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ингредиенты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаИнгредиентыРасширеннаяПодсказка" id="18"/>
+					<ChildItems>
+						<Table name="Ингредиенты" id="43">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<Footer>true</Footer>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Ингредиенты</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ИнгредиентыКонтекстноеМеню" id="44"/>
+							<AutoCommandBar name="ИнгредиентыКоманднаяПанель" id="45">
+								<ChildItems>
+									<Button name="ИнгредиентыЗаполнить" id="65">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Заполнить</CommandName>
+										<BackColor>style:ImportantColor</BackColor>
+										<Font bold="true" kind="AutoFont"/>
+										<ExtendedTooltip name="ИнгредиентыЗаполнитьРасширеннаяПодсказка" id="66"/>
+									</Button>
+									<Button name="ИнгредиентыПереместитьВверх" id="67">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Ингредиенты.StandardCommand.MoveUp</CommandName>
+										<ExtendedTooltip name="ИнгредиентыПереместитьВверхРасширеннаяПодсказка" id="68"/>
+									</Button>
+									<Button name="ИнгредиентыПереместитьВниз" id="69">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Ингредиенты.StandardCommand.MoveDown</CommandName>
+										<ExtendedTooltip name="ИнгредиентыПереместитьВнизРасширеннаяПодсказка" id="70"/>
+									</Button>
+									<Button name="ИнгредиентыИзменитьФорму" id="71">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+										<ExtendedTooltip name="ИнгредиентыИзменитьФормуРасширеннаяПодсказка" id="72"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ИнгредиентыРасширеннаяПодсказка" id="46"/>
+							<SearchStringAddition name="ИнгредиентыСтрокаПоиска" id="47">
+								<AdditionSource>
+									<Item>Ингредиенты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИнгредиентыСтрокаПоискаКонтекстноеМеню" id="48"/>
+								<ExtendedTooltip name="ИнгредиентыСтрокаПоискаРасширеннаяПодсказка" id="49"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ИнгредиентыСостояниеПросмотра" id="50">
+								<AdditionSource>
+									<Item>Ингредиенты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИнгредиентыСостояниеПросмотраКонтекстноеМеню" id="51"/>
+								<ExtendedTooltip name="ИнгредиентыСостояниеПросмотраРасширеннаяПодсказка" id="52"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ИнгредиентыУправлениеПоиском" id="53">
+								<AdditionSource>
+									<Item>Ингредиенты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ИнгредиентыУправлениеПоискомКонтекстноеМеню" id="54"/>
+								<ExtendedTooltip name="ИнгредиентыУправлениеПоискомРасширеннаяПодсказка" id="55"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ИнгредиентыИнгредиент" id="56">
+									<DataPath>Ингредиенты.Ингредиент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ИнгредиентыИнгредиентКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="ИнгредиентыИнгредиентРасширеннаяПодсказка" id="58"/>
+								</InputField>
+								<InputField name="ИнгредиентыИнгредиентЕдиницаИзмерения" id="85">
+									<DataPath>Ингредиенты.Ингредиент.ЕдиницаИзмерения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ИнгредиентыИнгредиентЕдиницаИзмеренияКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="ИнгредиентыИнгредиентЕдиницаИзмеренияРасширеннаяПодсказка" id="87"/>
+								</InputField>
+								<InputField name="ИнгредиентыНорма" id="62">
+									<DataPath>Ингредиенты.Норма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ИнгредиентыНормаКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="ИнгредиентыНормаРасширеннаяПодсказка" id="64"/>
+									<Events>
+										<Event name="OnChange">ИнгредиентыНормаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ИнгредиентыВесНормы" id="82">
+									<DataPath>Ингредиенты.ВесНормы</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>ВесНормыИтого</FooterDataPath>
+									<ContextMenu name="ИнгредиентыВесНормыКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="ИнгредиентыВесНормыРасширеннаяПодсказка" id="84"/>
+								</InputField>
+								<InputField name="ИнгредиентыНормаНаКоличество" id="73">
+									<DataPath>Ингредиенты.НормаНаКоличество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ИнгредиентыНормаНаКоличествоКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="ИнгредиентыНормаНаКоличествоРасширеннаяПодсказка" id="75"/>
+									<Events>
+										<Event name="OnChange">ИнгредиентыНормаНаКоличествоПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ИнгредиентыВесНаКоличество" id="76">
+									<DataPath>Ингредиенты.ВесНаКоличество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<FooterDataPath>ВесНаКоличествоИтого</FooterDataPath>
+									<ContextMenu name="ИнгредиентыВесНаКоличествоКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="ИнгредиентыВесНаКоличествоРасширеннаяПодсказка" id="78"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Button name="Назад" id="41">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.Назад</CommandName>
+							<ExtendedTooltip name="НазадРасширеннаяПодсказка" id="42"/>
+						</Button>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Рецептура" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рецептура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeId>08c8ed18-44a7-4249-925b-bebf0c75e4d5</v8:TypeId>
+			</Type>
+		</Attribute>
+		<Attribute name="Количество" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Ингредиенты" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ингредиенты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ингредиент" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ингредиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Брутто" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Брутто</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Норма" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Норма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Рецептура" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рецептура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeId>08c8ed18-44a7-4249-925b-bebf0c75e4d5</v8:TypeId>
+					</Type>
+				</Column>
+				<Column name="НормаНаКоличество" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Норма на количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВесНаКоличество" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес на количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Числитель" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Числитель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВесНормы" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вес нормы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Номенклатура" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НормаИтого" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Норма итого</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НормаОтличается" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Норма отличается</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НормаНаКоличествоИтого" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Норма на количество итого</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВесНаКоличествоИтого" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес на количество итого</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВесНормыИтого" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вес нормы итого</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИнгредиентыНорма</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Ингредиенты.Брутто</dcsset:left>
+						<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Ингредиенты.Норма</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Далее" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Далее</Action>
+		</Command>
+		<Command name="Заполнить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+		<Command name="Назад" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Назад</Action>
+		</Command>
+	</Commands>
+</Form>

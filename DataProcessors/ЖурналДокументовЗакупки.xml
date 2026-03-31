@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<DataProcessor uuid="6a4f96b9-3ad4-4973-b47d-1b21ff85986c">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.ЖурналДокументовЗакупки" category="Object">
+				<xr:TypeId>112fee15-4bd0-44df-ba4f-c00997bc7109</xr:TypeId>
+				<xr:ValueId>ef615deb-4ef8-4d05-85c4-e3c55af4e45f</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.ЖурналДокументовЗакупки" category="Manager">
+				<xr:TypeId>6309802e-6d32-4ed0-8532-13f54d423636</xr:TypeId>
+				<xr:ValueId>81f665b9-4379-4f56-be31-41a3df097a75</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ЖурналДокументовЗакупки</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>be6c7627-3a81-434a-bccf-007a451c8959</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<Form>СписокДокументов</Form>
+		</ChildObjects>
+	</DataProcessor>
+</MetaDataObject>

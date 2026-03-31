@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Catalog uuid="8885cf56-9689-4bfc-b7ab-1ff482812389">
+	<Catalog uuid="1263b400-ece5-43ef-9387-8b3f49dfb9c6">
 		<InternalInfo>
 			<xr:GeneratedType name="CatalogObject.Склады" category="Object">
-				<xr:TypeId>07347af4-1646-45fd-b70b-c904e8f451d3</xr:TypeId>
-				<xr:ValueId>a11d7454-4c1e-436e-858c-6bcd0dbe482f</xr:ValueId>
+				<xr:TypeId>9fcbcbd2-5c68-435f-aca8-2a040d5b8f55</xr:TypeId>
+				<xr:ValueId>40b15da0-2a19-431e-a889-439e5e866653</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogRef.Склады" category="Ref">
-				<xr:TypeId>65d5ff85-a426-483a-98d0-d1cdd00174d0</xr:TypeId>
-				<xr:ValueId>337f346f-a521-4ed2-ab28-e98fa4d7a925</xr:ValueId>
+				<xr:TypeId>2c859588-834e-443f-b1c9-e3ec5bcd9189</xr:TypeId>
+				<xr:ValueId>0ec0ca9e-e767-45c9-b988-80eb99437515</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogSelection.Склады" category="Selection">
-				<xr:TypeId>c7bcdfdc-7653-40b5-ad8c-14dc16448984</xr:TypeId>
-				<xr:ValueId>a08dbfcb-e5e0-471d-b1f7-ef5e261c2878</xr:ValueId>
+				<xr:TypeId>50fec083-fbec-45ce-ba00-e9007fdb1bcf</xr:TypeId>
+				<xr:ValueId>5a328ad7-19d9-4681-9a28-419735bfaf08</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogList.Склады" category="List">
-				<xr:TypeId>42773f6d-76d7-4f3d-ba48-0d0256837e96</xr:TypeId>
-				<xr:ValueId>d4af90ef-ca21-4a69-b28c-29c31b857650</xr:ValueId>
+				<xr:TypeId>1e4dfacb-41f0-4f87-a533-5f559632eb28</xr:TypeId>
+				<xr:ValueId>3f90f510-8232-4038-bd83-3f5d07a425a5</xr:ValueId>
 			</xr:GeneratedType>
 			<xr:GeneratedType name="CatalogManager.Склады" category="Manager">
-				<xr:TypeId>0058b881-1e9c-4e9d-86fe-b80e02e1ec94</xr:TypeId>
-				<xr:ValueId>90d82231-3388-4933-94fe-5fa6c3c9a85c</xr:ValueId>
+				<xr:TypeId>c2ebc4f0-3a67-4281-bfab-4c5ee6042e5b</xr:TypeId>
+				<xr:ValueId>62703f8f-0726-4232-a255-6991a25d582a</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -29,6 +29,8 @@
 			<Comment/>
 			<ExtendedConfigurationObject>07b3c407-9a3a-4f94-b798-226c96d66840</ExtendedConfigurationObject>
 		</Properties>
-		<ChildObjects/>
+		<ChildObjects>
+			<Form>ФормаЭлемента</Form>
+		</ChildObjects>
 	</Catalog>
 </MetaDataObject>

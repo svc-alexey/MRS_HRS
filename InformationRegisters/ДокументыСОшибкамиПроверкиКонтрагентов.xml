@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<InformationRegister uuid="47118dc4-7dac-4c28-b992-fe1a1447076e">
+		<InternalInfo>
+			<xr:GeneratedType name="InformationRegisterRecord.ДокументыСОшибкамиПроверкиКонтрагентов" category="Record">
+				<xr:TypeId>a1ecc63a-1e05-4ed1-9c7f-67ab6210616d</xr:TypeId>
+				<xr:ValueId>fb1b8256-d724-41be-9718-21c24a3f2426</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterManager.ДокументыСОшибкамиПроверкиКонтрагентов" category="Manager">
+				<xr:TypeId>28bef60e-f53e-44dc-a374-9f9329eb7fa5</xr:TypeId>
+				<xr:ValueId>1c52a3e4-8a62-432d-abc0-fa4144337c8b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterSelection.ДокументыСОшибкамиПроверкиКонтрагентов" category="Selection">
+				<xr:TypeId>ec4bca84-7b49-415d-9325-31580df2acce</xr:TypeId>
+				<xr:ValueId>8e316079-52a1-45ee-be45-61e78e921b1c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterList.ДокументыСОшибкамиПроверкиКонтрагентов" category="List">
+				<xr:TypeId>2cc83d1c-ab7a-4ac7-bd4d-18d2ca5142ea</xr:TypeId>
+				<xr:ValueId>17b89c3b-e501-4620-a247-c6dc2edb43c1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordSet.ДокументыСОшибкамиПроверкиКонтрагентов" category="RecordSet">
+				<xr:TypeId>f42ddfbf-5d56-46af-97d2-a816cd24709e</xr:TypeId>
+				<xr:ValueId>7558fe30-ed76-4529-aa7e-82c2c7326856</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordKey.ДокументыСОшибкамиПроверкиКонтрагентов" category="RecordKey">
+				<xr:TypeId>e74b55ad-0349-40b3-84ec-60db3f6fa118</xr:TypeId>
+				<xr:ValueId>16f9386f-bbf0-4127-814c-1c53e7dad533</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordManager.ДокументыСОшибкамиПроверкиКонтрагентов" category="RecordManager">
+				<xr:TypeId>886d3693-0f76-4069-8c66-60e72578d4e1</xr:TypeId>
+				<xr:ValueId>a4727cb1-4b59-4c7d-9f5a-99bd796b327a</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>ДокументыСОшибкамиПроверкиКонтрагентов</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>b09fc04b-94d8-4dea-bf6c-24370f231274</ExtendedConfigurationObject>
+			<InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+			<WriteMode>Independent</WriteMode>
+		</Properties>
+		<ChildObjects>
+			<Dimension uuid="99f09f21-dd62-422f-8170-f0dba8651e14">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Документ</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>e669a5cd-daf3-4a88-a2c0-380db496a4dd</ExtendedConfigurationObject>
+					<Type>
+						<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+					</Type>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</InformationRegister>
+</MetaDataObject>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Catalog uuid="2d0e601e-a185-4edc-8bb0-4cbe6dc2c8c9">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.КГМ_ТехнологическиеОперацииВиноделия" category="Object">
+				<xr:TypeId>8dc09b63-de18-4e34-aef4-989c0b63cf9c</xr:TypeId>
+				<xr:ValueId>3a9039e4-0b4f-47f8-97d5-d6d682f12af3</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.КГМ_ТехнологическиеОперацииВиноделия" category="Ref">
+				<xr:TypeId>ebac87b8-08f0-4782-9534-828f9dd0bd89</xr:TypeId>
+				<xr:ValueId>2b60263c-df33-433d-8e84-f2a76ac7e634</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.КГМ_ТехнологическиеОперацииВиноделия" category="Selection">
+				<xr:TypeId>f429ac45-d22f-442a-a2bc-573c66a493e1</xr:TypeId>
+				<xr:ValueId>a850c177-33e2-4216-8da7-0c3ce46ada4b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.КГМ_ТехнологическиеОперацииВиноделия" category="List">
+				<xr:TypeId>276bc960-d90d-424e-991a-8af495e299f8</xr:TypeId>
+				<xr:ValueId>51a5dcab-933f-4a97-a5b2-535bc6e6b61e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.КГМ_ТехнологическиеОперацииВиноделия" category="Manager">
+				<xr:TypeId>9cadf701-e251-4bb0-aa12-9bb0281cbb9f</xr:TypeId>
+				<xr:ValueId>6cdafa74-5a37-40a9-bcb4-54b08e1735a5</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>Predefined</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>КГМ_ТехнологическиеОперацииВиноделия</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>0e3d152b-abba-4025-b79e-ec7b1a53e1e2</ExtendedConfigurationObject>
+			<CodeLength>9</CodeLength>
+			<DescriptionLength>50</DescriptionLength>
+			<CodeType>String</CodeType>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>

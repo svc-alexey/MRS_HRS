@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AccumulationRegister uuid="676dcf5a-1f01-447e-814f-d09d4be82089">
+		<InternalInfo>
+			<xr:GeneratedType name="AccumulationRegisterRecord.алкАкцизПоПриобретеннымЦенностям" category="Record">
+				<xr:TypeId>2475bd5e-b96f-49e2-86a4-3f72813f9312</xr:TypeId>
+				<xr:ValueId>58606802-f330-4995-b0b0-e590349661be</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterManager.алкАкцизПоПриобретеннымЦенностям" category="Manager">
+				<xr:TypeId>8ba97e59-0a68-4f94-8e79-e5374f5eca94</xr:TypeId>
+				<xr:ValueId>a1fe2760-a7a5-4859-9983-e1ab697d0da1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterSelection.алкАкцизПоПриобретеннымЦенностям" category="Selection">
+				<xr:TypeId>82f4550f-db43-4f17-874a-4203b1db985b</xr:TypeId>
+				<xr:ValueId>2e4e38ba-0963-48c8-8115-c5d6e262db7b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterList.алкАкцизПоПриобретеннымЦенностям" category="List">
+				<xr:TypeId>d94ef2c4-ab5f-43f8-bc16-e2f9c9fc2df8</xr:TypeId>
+				<xr:ValueId>fcddad0f-cf53-48b3-9c24-03767407a0ca</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordSet.алкАкцизПоПриобретеннымЦенностям" category="RecordSet">
+				<xr:TypeId>eb0a1ea8-0734-4c05-81fd-7ce497e0abc1</xr:TypeId>
+				<xr:ValueId>eac84231-14f4-4d5c-adb4-dfd2101c6319</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="AccumulationRegisterRecordKey.алкАкцизПоПриобретеннымЦенностям" category="RecordKey">
+				<xr:TypeId>04c62bd5-86dc-46f2-8557-e12ece2f5aab</xr:TypeId>
+				<xr:ValueId>1f2435d3-f0d4-46f8-b1e2-259b502eeacb</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:PropertyState>
+				<xr:Property>RecordSetModule</xr:Property>
+				<xr:State>Extended</xr:State>
+			</xr:PropertyState>
+		</InternalInfo>
+		<Properties>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<Name>алкАкцизПоПриобретеннымЦенностям</Name>
+			<Comment/>
+			<ExtendedConfigurationObject>fd2cd40d-0377-41cd-bb73-e395788e2ac7</ExtendedConfigurationObject>
+			<RegisterType>Balance</RegisterType>
+		</Properties>
+		<ChildObjects>
+			<Resource uuid="e3fccd62-5de5-4336-9564-245f7722a3ca">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СуммаАкциза</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>0f1e4752-21a4-4473-9e0a-096392203d0a</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>27</v8:Digits>
+							<v8:FractionDigits>17</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="edb00600-ec38-42eb-ae8d-30b53107d1de">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СуммаПлатежа</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>83bc5837-77f8-4006-918e-602e4802860b</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>27</v8:Digits>
+							<v8:FractionDigits>17</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="f21cf2f0-3323-438a-ba81-4baf0e0db2e0">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Количество</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>dd39317a-4670-406c-8d14-04314cfd4fea</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>27</v8:Digits>
+							<v8:FractionDigits>17</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="81f5ba2e-12a5-41f7-91e8-f42d8c526522">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КоличествоПродукции</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>7bd55abe-adbd-4572-842d-274fda9c7383</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>27</v8:Digits>
+							<v8:FractionDigits>17</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Resource uuid="4e60799e-266b-479c-b96a-ef2255b077b3">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ОбщееКоличествоПродукции</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>e5ea4a26-fe65-4fc9-8152-01ea804790c5</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>27</v8:Digits>
+							<v8:FractionDigits>17</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Properties>
+			</Resource>
+			<Dimension uuid="ecc3e874-51b3-48d5-8b1d-f6ea8c5ed05c">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Организация</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>bdfe9099-dc79-4590-800e-ff483f59264b</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="e7d39bf8-cde1-4c8f-a58e-286e50492ac7">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>ДоговорКонтрагента</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>cd78bcf0-de4e-4204-9eff-d248387112af</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="fc0a0dad-bebe-4114-97c0-bc433bc46589">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Номенклатура</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>fb9fe60b-0070-428f-b443-f7aa4a445f79</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="28f52fd5-9cd6-4055-b34d-2eaccb004057">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Сделка</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>754f6705-2b18-4e49-9cfe-75cfba8fb679</ExtendedConfigurationObject>
+					<Type>
+						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="e1d84307-a481-4537-9733-61c7b47bce32">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СерияНоменклатуры</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>634a2982-9e30-4107-92fb-1460026bbff7</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СерииНоменклатуры</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="15c22b5c-60b9-40d8-b1fc-5d0cc5e2e571">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СостояниеСырья</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>70fab56b-3d63-426e-87fe-040cf8174f91</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.алкСостоянияПодакцизногоСырья</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="fe438161-1815-46fc-8719-e843f102afac">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СтатусАкциза</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>bb2263cd-0fa8-4c47-8760-3f1ca5d1a3d1</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:EnumRef.алкСостоянияОплатыВходящегоАкциза</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="e4826a72-d2b0-4bcf-a857-05a32bcaaf0f">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>Продукция</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>305d9be6-fd4b-48a8-b3e0-e0f3f73b251d</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="9bb5cbf5-fdc6-4976-b1df-82d9f96c5e33">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>СерияПродукции</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>9a9d2960-f63f-441c-95d6-cdce59b6d82f</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.СерииНоменклатуры</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+			<Dimension uuid="ea1dc3be-f670-42ff-bd79-8917b83cdb90">
+				<InternalInfo/>
+				<Properties>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Name>КБК</Name>
+					<Comment/>
+					<ExtendedConfigurationObject>4bca0886-15e3-4708-8bb5-483a7642568b</ExtendedConfigurationObject>
+					<Type>
+						<v8:Type>cfg:CatalogRef.алкКодыБюджетнойКлассификации2005</v8:Type>
+					</Type>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</AccumulationRegister>
+</MetaDataObject>
