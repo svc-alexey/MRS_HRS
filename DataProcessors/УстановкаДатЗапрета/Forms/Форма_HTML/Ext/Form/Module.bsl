@@ -13,9 +13,15 @@
 КонецПроцедуры
 
 &НаКлиенте
-Процедура ПараметрНомерЗадачиHTMLПриИзменении(Элемент)
-	// Номер задачи вводится в поле формы: в тонком клиенте JS location.href=mrsdz из HTML даёт Unsupported protocol.
+Процедура ПослеВводаНомераЗадачиИзHTML(Знач ВведенныйТекст, Знач ДопПараметры = Неопределено) Экспорт
+	
+	Если ВведенныйТекст = Неопределено Тогда
+		Возврат;
+	КонецЕсли;
+	
+	параметр_НомерЗадачи = Строка(ВведенныйТекст);
 	ОбновитьОтображениеHTML();
+	
 КонецПроцедуры
 
 &НаСервере
@@ -745,6 +751,11 @@
 		ВыборВТаблицеОрганизаций(Ложь);
 		ТекстПоляHTML = СформироватьТекстHTMLНаСервере();
 		Возврат;
+	ИначеЕсли Имя = "taskDlg" Тогда
+		// Ввод строки из платформы: из JS (onchange → location.href) mrsdz в тонком клиенте — Unsupported protocol.
+		Оповещение = Новый ОписаниеОповещения("ПослеВводаНомераЗадачиИзHTML", ЭтотОбъект);
+		ПоказатьВводСтроки(Оповещение, параметр_НомерЗадачи, НСтр("ru = 'Номер задачи'"), 500, Ложь);
+		Возврат;
 	КонецЕсли;
 	
 	// Одна серверная процедура: состояние формы и HTML не расходятся между двумя вызовами.
@@ -1383,7 +1394,9 @@
 		+ ".tabs a{color:var(--a);text-decoration:none;padding:8px 14px;border-radius:8px;background:#fff;border:1px solid var(--b);}"
 		+ ".tabs a.act{background:#dbeafe;font-weight:600;color:var(--a2);border-color:#93c5fd;}"
 		+ ".lbl{opacity:.9;font-weight:500;}input[type=text],input[type=password]{max-width:440px;width:100%;padding:8px 10px;border:1px solid var(--b);border-radius:8px;box-sizing:border-box;background:#fff;}"
-		+ "input.inp-task{max-width:220px;padding:4px 8px;font-size:13px;border-radius:6px;border:1px solid var(--b);}"
+		+ ".task-inline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px 14px;margin:12px 0;max-width:720px;background:#fff;border:1px solid var(--b);border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.04);}"
+		+ ".task-inline .task-val{font-weight:600;color:#0f172a;word-break:break-all;}"
+		+ ".task-inline .task-empty{font-weight:500;opacity:.55;}"
 		+ "a.btn{display:inline-block;margin:4px 8px 4px 0;padding:9px 16px;background:var(--a);color:#fff!important;text-decoration:none;border-radius:8px;font-size:12px;font-weight:600;border:none;}"
 		+ "a.btn2{background:#64748b;}a.btn-ok{background:linear-gradient(180deg,#22c55e,var(--ok));box-shadow:0 2px 8px rgba(21,128,61,.35);}"
 		+ "a.btn-ok:hover{filter:brightness(1.05);}a.btn-bad{background:linear-gradient(180deg,#ef4444,var(--bad));box-shadow:0 2px 8px rgba(185,28,28,.35);}"
@@ -1609,13 +1622,20 @@
 	Ч = Ч + "</div>";
 	
 	Ч = Ч + "<h2>Параметры периода и задачи</h2>";
-	Ч = Ч + "<p class=""hint"">Укажите день в календаре или введите дату в полях под календарём (формат <strong>гггг-мм-дд</strong>).</p>";
+	Ч = Ч + "<p class=""hint"">Выберите день в мини-календаре — даты подставятся в блок ниже.</p>";
 	Ч = Ч + "<div class=""cal-2col""><div class=""cal-block""><p class=""cal-h"">Дата открытия</p>" + HTML_ФрагментМиниКалендаря(Истина) + "</div>";
 	Ч = Ч + "<div class=""cal-block""><p class=""cal-h"">Дата отключения</p>" + HTML_ФрагментМиниКалендаря(Ложь) + "</div></div>";
-	Ч = Ч + "<p class=""hint"">Текущие даты (только просмотр; задать — календарём выше).</p>";
+	Ч = Ч + "<p class=""hint"">Текущие даты (только просмотр; изменить — календарём выше).</p>";
 	Ч = Ч + "<div class=""date-inp-grid""><span class=""lbl"">Открытие</span><input class=""inp-date"" type=""text"" readonly=""readonly"" tabindex=""-1"" value=""" + HTMLЭкранировать(ДатаВСтрокуHTML(параметр_ДатаОткрытия)) + """/>";
 	Ч = Ч + "<span class=""lbl"">Отключение</span><input class=""inp-date"" type=""text"" readonly=""readonly"" tabindex=""-1"" value=""" + HTMLЭкранировать(ДатаВСтрокуHTML(параметр_ДатаОтключения)) + """/></div>";
-	Ч = Ч + "<p class=""hint"">Номер задачи — в поле над областью HTML.</p>";
+	СсылкаЗадача = HrefКомандыМоста(Новый Структура("c", "taskDlg"));
+	Если ПустаяСтрока(параметр_НомерЗадачи) Тогда
+		Ч = Ч + "<div class=""task-inline""><span class=""lbl"">Номер задачи</span><span class=""task-val task-empty"">не задан</span>";
+	Иначе
+		Ч = Ч + "<div class=""task-inline""><span class=""lbl"">Номер задачи</span><span class=""task-val"">" + HTMLЭкранировать(параметр_НомерЗадачи) + "</span>";
+	КонецЕсли;
+	Ч = Ч + "<a class=""btn btn-ghost"" href=""" + СсылкаЗадача + """>Указать…</a></div>";
+	Ч = Ч + "<p class=""hint"">Номер задачи вводится в диалоге 1С по ссылке «Указать…» (из скрипта HTML переход на <code>mrsdz://</code> в тонком клиенте недоступен).</p>";
 	
 	Ч = Ч + "<h2>Организации (участвуют в добавлении строк)</h2>";
 	Ч = Ч + "<p><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "checkAll")) + """>Выбрать все</a>";

@@ -34,37 +34,6 @@
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ГруппаНомерЗадачиНадHTML" id="9030">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Параметры ввода</v8:content>
-				</v8:item>
-			</Title>
-			<Group>AlwaysHorizontal</Group>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаНомерЗадачиНадHTMLРасширеннаяПодсказка" id="9032"/>
-			<ChildItems>
-				<InputField name="параметр_НомерЗадачиПолеФормы" id="9031">
-					<DataPath>параметр_НомерЗадачи</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Номер задачи</v8:content>
-						</v8:item>
-					</Title>
-					<Width>18</Width>
-					<HorizontalStretch>false</HorizontalStretch>
-					<ContextMenu name="параметр_НомерЗадачиПолеФормыКонтекстноеМеню" id="9033"/>
-					<ExtendedTooltip name="параметр_НомерЗадачиПолеФормыРасширеннаяПодсказка" id="9034"/>
-					<Events>
-						<Event name="OnChange">ПараметрНомерЗадачиHTMLПриИзменении</Event>
-					</Events>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
 		<HTMLDocumentField name="ПолеHTMLДокумента" id="9000">
 			<DataPath>ТекстПоляHTML</DataPath>
 			<TitleLocation>None</TitleLocation>
