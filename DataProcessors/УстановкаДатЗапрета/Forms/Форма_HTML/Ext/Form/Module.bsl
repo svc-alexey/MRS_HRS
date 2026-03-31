@@ -12,6 +12,13 @@
 	ОбновитьОтображениеHTML();
 КонецПроцедуры
 
+&НаКлиенте
+Процедура ПараметрПериодаЗапретаПриИзменении(Элемент)
+	
+	ОбновитьОтображениеHTML();
+	
+КонецПроцедуры
+
 &НаСервере
 Процедура ПриСозданииНаСервере(Отказ, СтандартнаяОбработка)
 	
@@ -756,9 +763,9 @@
 			ИдБазы = Строка(Команда.Получить("id"));
 		КонецЕсли;
 		ВыполнитьВыборБазыНаСервере(ИдБазы, Истина);
-	ИначеЕсли Имя = "pickBase" Тогда
+	ИначеЕсли Имя = "togglePickBase" Тогда
 		Ид = HTML_ПолеСтрокаКоманды(Команда, "id");
-		Вкл = HTML_ПолеБулевоКоманды(Команда, "v");
+		Вкл = НЕ HTML_ИдВПодбореБаз(Ид);
 		HTML_ПодборБазПереключить(Ид, Вкл);
 	ИначеЕсли Имя = "removePickBase" Тогда
 		Ид = HTML_ПолеСтрокаКоманды(Команда, "id");
@@ -773,9 +780,9 @@
 		Если НЕ ПустаяСтрока(Ид) Тогда
 			ВыполнитьВыборБазыНаСервере(Ид, Ложь);
 		КонецЕсли;
-	ИначеЕсли Имя = "pickUser" Тогда
+	ИначеЕсли Имя = "togglePickUser" Тогда
 		Ид = HTML_ПолеСтрокаКоманды(Команда, "id");
-		Вкл = HTML_ПолеБулевоКоманды(Команда, "v");
+		Вкл = НЕ HTML_ИдВПодбореПользователей(Ид);
 		HTML_ПодборПользователейПереключить(Ид, Вкл);
 	ИначеЕсли Имя = "removePickUser" Тогда
 		Ид = HTML_ПолеСтрокаКоманды(Команда, "id");
@@ -1182,13 +1189,16 @@
 	Возврат ":root{--bg:#eef1f6;--fg:#1a1d24;--b:#c8ced9;--a:#2563eb;--a2:#1d4ed8;--ok:#15803d;--ok2:#166534;--bad:#b91c1c;--bad2:#991b1b;}"
 		+ "body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;margin:0;padding:14px 16px;background:linear-gradient(165deg,#eef1f6 0%,#e2e8f4 50%,#f4f6fa 100%);color:var(--fg);font-size:13px;line-height:1.4;}"
 		+ ".hdr{margin-bottom:14px;padding:14px 18px;border-radius:12px;background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 55%,#3b82f6 100%);box-shadow:0 8px 24px rgba(37,99,235,.22);}"
-		+ ".title-main{margin:0;font-size:22px;font-weight:700;letter-spacing:.02em;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.15);}"
+		+ ".title-main{display:flex;align-items:center;gap:10px;margin:0;font-size:22px;font-weight:700;letter-spacing:.02em;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.15);}"
+		+ ".title-main .svg-ico{width:26px;height:26px;flex-shrink:0;}"
+		+ ".svg-ico{display:inline-block;vertical-align:middle;}"
+		+ ".demo{display:flex;align-items:center;gap:10px;}"
+		+ ".demo .svg-ico{width:20px;height:20px;flex-shrink:0;}"
 		+ ".tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--b);}"
 		+ ".tabs a{color:var(--a);text-decoration:none;padding:8px 14px;border-radius:8px;background:#fff;border:1px solid var(--b);}"
 		+ ".tabs a.act{background:#dbeafe;font-weight:600;color:var(--a2);border-color:#93c5fd;}"
 		+ ".lbl{opacity:.9;font-weight:500;}input[type=text],input[type=password]{max-width:440px;width:100%;padding:8px 10px;border:1px solid var(--b);border-radius:8px;box-sizing:border-box;background:#fff;}"
-		+ "input.inp-date{max-width:280px;min-height:42px;padding:8px 12px;font-size:15px;border-radius:10px;border:1px solid #94a3b8;cursor:pointer;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06);}"
-		+ "input.inp-date:focus{outline:2px solid #93c5fd;outline-offset:1px;}"
+		+ "input.inp-task{max-width:220px;padding:4px 8px;font-size:13px;border-radius:6px;border:1px solid var(--b);}"
 		+ "a.btn{display:inline-block;margin:4px 8px 4px 0;padding:9px 16px;background:var(--a);color:#fff!important;text-decoration:none;border-radius:8px;font-size:12px;font-weight:600;border:none;}"
 		+ "a.btn2{background:#64748b;}a.btn-ok{background:linear-gradient(180deg,#22c55e,var(--ok));box-shadow:0 2px 8px rgba(21,128,61,.35);}"
 		+ "a.btn-ok:hover{filter:brightness(1.05);}a.btn-bad{background:linear-gradient(180deg,#ef4444,var(--bad));box-shadow:0 2px 8px rgba(185,28,28,.35);}"
@@ -1197,12 +1207,14 @@
 		+ "th,td{border:1px solid var(--b);padding:8px 10px;text-align:left;}th{background:#e8ecf4;font-weight:600;}tr:nth-child(even){background:#f8fafc;}"
 		+ "h2{font-size:16px;margin:18px 0 10px;color:#0f172a;}"
 		+ "p.hint{opacity:.82;font-size:12px;margin:6px 0;}"
-		+ ".demo{padding:10px 14px;background:linear-gradient(90deg,#fef3c7,#fde68a);border:1px solid #f59e0b;border-radius:10px;margin:12px 0;font-size:13px;font-weight:600;color:#92400e;}"
+		+ ".demo{padding:10px 14px;background:linear-gradient(90deg,#fef3c7,#fde68a);border:1px solid #f59e0b;border-radius:10px;margin:12px 0;font-size:13px;font-weight:600;color:#92400e;fill:currentColor;}"
 		+ ".pick-panel{background:#fff;border:1px solid var(--b);border-radius:12px;padding:12px 14px;margin:8px 0 14px;box-shadow:0 2px 8px rgba(0,0,0,.04);}"
 		+ ".pick-row{display:flex;align-items:center;gap:10px;padding:6px 4px;border-bottom:1px solid #f1f5f9;}"
 		+ ".pick-row:last-child{border-bottom:none;}"
-		+ ".pick-row input[type=checkbox]{width:18px;height:18px;cursor:pointer;accent-color:var(--a);}"
-		+ ".pick-row label{flex:1;cursor:pointer;}"
+		+ "a.fake-cb{display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:24px;text-decoration:none;margin-right:10px;vertical-align:middle;}"
+		+ "a.fake-cb span.cb-box{display:block;width:18px;height:18px;border:2px solid #64748b;border-radius:4px;background:#fff;}"
+		+ "a.fake-cb.on span.cb-box{background:linear-gradient(135deg,#3b82f6,#2563eb);border-color:#1d4ed8;box-shadow:inset 0 0 0 2px #fff;}"
+		+ ".pick-lbl{flex:1;}"
 		+ ".chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px;align-items:center;}"
 		+ ".chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:20px;background:#e0e7ff;border:1px solid #a5b4fc;font-size:12px;}"
 		+ ".chip-act{background:#dbeafe;border-color:#3b82f6;box-shadow:0 0 0 2px rgba(59,130,246,.25);}"
@@ -1212,7 +1224,7 @@
 		+ ".org-card{background:#fff;border:1px solid var(--b);border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.04);}"
 		+ ".org-card .nm{font-weight:600;margin-bottom:4px;}"
 		+ ".org-card .meta{font-size:11px;opacity:.75;}"
-		+ ".tbl-orgs input[type=checkbox]{width:20px;height:20px;cursor:pointer;accent-color:var(--ok);}"
+		+ ".tbl-orgs a.fake-cb{margin:0 auto;}"
 		+ ".grid{display:grid;gap:10px;grid-template-columns:170px 1fr;align-items:center;max-width:960px;}";
 	
 КонецФункции
@@ -1229,32 +1241,6 @@
 Функция АтрибутOnChangeПарольHTTP()
 	
 	Возврат " onchange=""if(!this.value)return;var o={c:'setField',n:'password',v:this.value};var j=JSON.stringify(o);var u=unescape(encodeURIComponent(j));var b='';for(var i=0;i<u.length;i++)b+=String.fromCharCode(u.charCodeAt(i)&255);var x=btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');location.href='mrsdz://x#'+x;""";
-	
-КонецФункции
-
-&НаСервере
-Функция HTML_ИдДляJsВОдиночныхКавычках(Знач Ид)
-	
-	Р = Строка(Ид);
-	Р = СтрЗаменить(Р, "\", "\\");
-	Р = СтрЗаменить(Р, "'", "\'");
-	Возврат Р;
-	
-КонецФункции
-
-&НаСервере
-Функция АтрибутOnChangePick(Знач ИмяКоманды, Знач ИдЗнач)
-	
-	И = HTML_ИдДляJsВОдиночныхКавычках(ИдЗнач);
-	Возврат " onchange=""var o={c:'" + ИмяКоманды + "',id:'" + И + "',v:this.checked};var j=JSON.stringify(o);var u=unescape(encodeURIComponent(j));var b='';for(var i=0;i<u.length;i++)b+=String.fromCharCode(u.charCodeAt(i)&255);var x=btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');location.href='mrsdz://x#'+x;""";
-	
-КонецФункции
-
-&НаСервере
-Функция АтрибутOnChangeToggleOrg(Знач ИдОрг)
-	
-	И = HTML_ИдДляJsВОдиночныхКавычках(ИдОрг);
-	Возврат " onchange=""var o={c:'toggleOrg',id:'" + И + "',v:this.checked};var j=JSON.stringify(o);var u=unescape(encodeURIComponent(j));var b='';for(var i=0;i<u.length;i++)b+=String.fromCharCode(u.charCodeAt(i)&255);var x=btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');location.href='mrsdz://x#'+x;""";
 	
 КонецФункции
 
@@ -1276,6 +1262,21 @@
 КонецФункции
 
 &НаСервере
+Функция HTML_IconCalendarSVG()
+	
+	// Векторная иконка вместо эмодзи (в поле HTML 1С эмодзи часто не рисуются).
+	Возврат "<svg class=""svg-ico"" viewBox=""0 0 24 24"" xmlns=""http://www.w3.org/2000/svg"" focusable=""false"" aria-hidden=""true""><path fill=""currentColor"" d=""M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM7 11h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z""/></svg>";
+	
+КонецФункции
+
+&НаСервере
+Функция HTML_IconBellSVG()
+	
+	Возврат "<svg class=""svg-ico"" viewBox=""0 0 24 24"" xmlns=""http://www.w3.org/2000/svg"" focusable=""false"" aria-hidden=""true""><path fill=""currentColor"" d=""M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z""/></svg>";
+	
+КонецФункции
+
+&НаСервере
 Функция СобратьПолныйHTMLДокументНаСервере()
 	
 	БазаПодключена = ЗначениеЗаполнено(ВыбраннаяБаза);
@@ -1285,9 +1286,9 @@
 	КонецЕсли;
 	
 	HTML = "<!DOCTYPE html><html><head><meta charset=""utf-8""/><style>" + СтильHTMLИнтерфейса() + "</style></head><body>";
-	HTML = HTML + "<header class=""hdr""><h1 class=""title-main"">📅 Установка дат запрета</h1></header>";
+	HTML = HTML + "<header class=""hdr""><h1 class=""title-main"">" + HTML_IconCalendarSVG() + "<span>Установка дат запрета</span></h1></header>";
 	Если РежимДемоДанныхHTML() Тогда
-		HTML = HTML + "<div class=""demo"">🔔 Обработка использует Демо-данные!</div>";
+		HTML = HTML + "<div class=""demo"">" + HTML_IconBellSVG() + "<span>Обработка использует Демо-данные!</span></div>";
 	КонецЕсли;
 	
 	HTML = HTML + "<div class=""tabs"">";
@@ -1332,7 +1333,9 @@
 	Для Каждого Стр Из БазыДанных Цикл
 		Отм = HTML_ИдВПодбореБаз(Стр.Идентификатор);
 		Метка = HTMLЭкранировать(Стр.Наименование) + " <span style=""opacity:.75"">(" + HTMLЭкранировать(Стр.СтатусБазы) + ")</span>";
-		Ч = Ч + "<div class=""pick-row""><input type=""checkbox""" + ?(Отм, " checked=""checked""", "") + АтрибутOnChangePick("pickBase", Стр.Идентификатор) + "/><label>" + Метка + "</label></div>";
+		КлассЛинкБаза = ?(Отм, "fake-cb on", "fake-cb");
+		СсылкаТогглБаза = HrefКомандыМоста(Новый Структура("c,id", "togglePickBase", Строка(Стр.Идентификатор)));
+		Ч = Ч + "<div class=""pick-row""><a class=""" + КлассЛинкБаза + """ href=""" + СсылкаТогглБаза + """ title=""Отметить / снять""><span class=""cb-box""></span></a><span class=""pick-lbl"">" + Метка + "</span></div>";
 	КонецЦикла;
 	Если БазыДанных.Количество() = 0 Тогда
 		Ч = Ч + "<p class=""hint"">Нет доступных баз в списке.</p>";
@@ -1376,7 +1379,9 @@
 	Для Каждого Стр Из ПользователиИБ Цикл
 		ОтмП = HTML_ИдВПодбореПользователей(Строка(Стр.Идентификатор));
 		МеткаП = HTMLЭкранировать(Стр.name) + " <span style=""opacity:.75"">(" + HTMLЭкранировать(Стр.domainName) + ")</span>";
-		Ч = Ч + "<div class=""pick-row""><input type=""checkbox""" + ?(ОтмП, " checked=""checked""", "") + АтрибутOnChangePick("pickUser", Строка(Стр.Идентификатор)) + "/><label>" + МеткаП + "</label></div>";
+		КлассЛинкПольз = ?(ОтмП, "fake-cb on", "fake-cb");
+		СсылкаТогглПольз = HrefКомандыМоста(Новый Структура("c,id", "togglePickUser", Строка(Стр.Идентификатор)));
+		Ч = Ч + "<div class=""pick-row""><a class=""" + КлассЛинкПольз + """ href=""" + СсылкаТогглПольз + """ title=""Отметить / снять""><span class=""cb-box""></span></a><span class=""pick-lbl"">" + МеткаП + "</span></div>";
 	КонецЦикла;
 	Ч = Ч + "<p style=""margin-top:12px""><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "applyUsers")) + """>Применить выбор</a>";
 	Ч = Ч + "<a class=""btn btn-ghost"" href=""" + HrefКомандыМоста(Новый Структура("c", "clearUserPick")) + """>Сбросить</a></p>";
@@ -1394,11 +1399,10 @@
 	КонецЦикла;
 	Ч = Ч + "</div>";
 	
-	Ч = Ч + "<h2>Параметры периода и задачи</h2><div class=""grid"">";
-	Ч = Ч + "<span class=""lbl"">Дата открытия</span><input class=""inp-date"" type=""date"" title=""Календарь: выберите дату"" value=""" + HTMLЭкранировать(ДатаВСтрокуHTML(параметр_ДатаОткрытия)) + """" + АтрибутOnChangeSetField("dOpen") + "/>";
-	Ч = Ч + "<span class=""lbl"">Дата отключения</span><input class=""inp-date"" type=""date"" title=""Календарь: выберите дату"" value=""" + HTMLЭкранировать(ДатаВСтрокуHTML(параметр_ДатаОтключения)) + """" + АтрибутOnChangeSetField("dClose") + "/>";
-	Ч = Ч + "<span class=""lbl"">Номер задачи</span><input type=""text"" value=""" + HTMLЭкранировать(параметр_НомерЗадачи) + """" + АтрибутOnChangeSetField("task") + "/>";
-	Ч = Ч + "</div>";
+	Ч = Ч + "<h2>Параметры периода и задачи</h2>";
+	Ч = Ч + "<p class=""hint"">Даты <strong>открытия</strong> и <strong>отключения</strong> задаются в полях формы <em>«Период (календарь 1С)»</em> над этой областью — там доступен типовой календарь платформы.</p>";
+	Ч = Ч + "<p class=""hint"">Текущие значения в форме: <strong>" + HTMLЭкранировать(HTML_ПредставлениеДатыПараметра(параметр_ДатаОткрытия)) + "</strong> — <strong>" + HTMLЭкранировать(HTML_ПредставлениеДатыПараметра(параметр_ДатаОтключения)) + "</strong></p>";
+	Ч = Ч + "<div class=""grid""><span class=""lbl"">Номер задачи</span><input class=""inp-task"" type=""text"" value=""" + HTMLЭкранировать(параметр_НомерЗадачи) + """" + АтрибутOnChangeSetField("task") + "/></div>";
 	
 	Ч = Ч + "<h2>Организации (участвуют в добавлении строк)</h2>";
 	Ч = Ч + "<p><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "checkAll")) + """>Выбрать все</a>";
@@ -1407,7 +1411,9 @@
 	Для Каждого Стр Из ТаблицаОрганизаций Цикл
 		Предст = ПредставлениеОргВТаблице(Стр);
 		ИдО = Строка(Стр.Идентификатор);
-		Ч = Ч + "<tr><td><input type=""checkbox""" + ?(Стр.Выбор, " checked=""checked""", "") + АтрибутOnChangeToggleOrg(ИдО) + "/></td>";
+		КлассЛинкОрг = ?(Стр.Выбор, "fake-cb on", "fake-cb");
+		СсылкаФлипОрг = HrefКомандыМоста(Новый Структура("c,id", "flipOrg", ИдО));
+		Ч = Ч + "<tr><td style=""text-align:center""><a class=""" + КлассЛинкОрг + """ href=""" + СсылкаФлипОрг + """ title=""Вкл/выкл""><span class=""cb-box""></span></a></td>";
 		Ч = Ч + "<td>" + HTMLЭкранировать(Предст) + "</td></tr>";
 	КонецЦикла;
 	Ч = Ч + "</tbody></table>";
@@ -1461,6 +1467,16 @@
 	Ч = Ч + "<span class=""lbl"">Пароль</span><input type=""password"" placeholder=""изменить"" autocomplete=""off""" + АтрибутOnChangeПарольHTTP() + "/>";
 	Ч = Ч + "</div><p class=""hint"">Пароль меняется только при вводе нового значения.</p>";
 	Возврат Ч;
+	
+КонецФункции
+
+&НаСервере
+Функция HTML_ПредставлениеДатыПараметра(Знач Д)
+	
+	Если НЕ ЗначениеЗаполнено(Д) Или Д = Дата(1, 1, 1) Тогда
+		Возврат "—";
+	КонецЕсли;
+	Возврат Формат(Д, "ДЛФ=D");
 	
 КонецФункции
 
