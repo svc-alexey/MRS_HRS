@@ -34,59 +34,6 @@
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ГруппаДатыПериодаФормы" id="9020">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Период (календарь 1С)</v8:content>
-				</v8:item>
-			</Title>
-			<Group>AlwaysHorizontal</Group>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДатыПериодаФормыРасширеннаяПодсказка" id="9024"/>
-			<ChildItems>
-				<InputField name="параметр_ДатаОткрытияПолеФормы" id="9021">
-					<DataPath>параметр_ДатаОткрытия</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Открытие</v8:content>
-						</v8:item>
-					</Title>
-					<Width>10</Width>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<MaxWidth>12</MaxWidth>
-					<HorizontalStretch>false</HorizontalStretch>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="параметр_ДатаОткрытияПолеФормыКонтекстноеМеню" id="9025"/>
-					<ExtendedTooltip name="параметр_ДатаОткрытияПолеФормыРасширеннаяПодсказка" id="9026"/>
-					<Events>
-						<Event name="OnChange">ПараметрПериодаЗапретаПриИзменении</Event>
-					</Events>
-				</InputField>
-				<InputField name="параметр_ДатаОтключенияПолеФормы" id="9022">
-					<DataPath>параметр_ДатаОтключения</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Отключение</v8:content>
-						</v8:item>
-					</Title>
-					<Width>10</Width>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<MaxWidth>12</MaxWidth>
-					<HorizontalStretch>false</HorizontalStretch>
-					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-					<ContextMenu name="параметр_ДатаОтключенияПолеФормыКонтекстноеМеню" id="9027"/>
-					<ExtendedTooltip name="параметр_ДатаОтключенияПолеФормыРасширеннаяПодсказка" id="9028"/>
-					<Events>
-						<Event name="OnChange">ПараметрПериодаЗапретаПриИзменении</Event>
-					</Events>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
 		<HTMLDocumentField name="ПолеHTMLДокумента" id="9000">
 			<DataPath>ТекстПоляHTML</DataPath>
 			<TitleLocation>None</TitleLocation>
