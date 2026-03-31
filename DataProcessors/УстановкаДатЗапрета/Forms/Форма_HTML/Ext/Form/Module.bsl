@@ -17,6 +17,9 @@
 	
 	РасширеннаяФункциональность = РольДоступна("ПолныеПрава");
 	ЗаполнениеСпискаБаз();
+	Если ПустаяСтрока(АктивнаяВкладкаHTML) Тогда
+		АктивнаяВкладкаHTML = "t1";
+	КонецЕсли;
 	ТекстПоляHTML = СформироватьТекстHTMLНаСервере();
 	
 КонецПроцедуры
@@ -620,6 +623,37 @@
 			Вкл = Команда.Получить("v") = Истина;
 		КонецЕсли;
 		УстановитьФлажокОрганизацииИзHTMLНаСервере(ИдОрг, Вкл);
+	ИначеЕсли Имя = "tab" Тогда
+		КодВкладки = "";
+		Если ТипЗнч(Команда) = Тип("Структура") Тогда
+			КодВкладки = Строка(Команда.t);
+		Иначе
+			КодВкладки = Строка(Команда.Получить("t"));
+		КонецЕсли;
+		Если КодВкладки = "t1" Или КодВкладки = "t2" Или КодВкладки = "t3" Тогда
+			АктивнаяВкладкаHTML = КодВкладки;
+		КонецЕсли;
+	ИначеЕсли Имя = "setOrgSel" Тогда
+		ИдОрг = ""; Вкл = Ложь;
+		Если ТипЗнч(Команда) = Тип("Структура") Тогда
+			ИдОрг = Строка(Команда.id);
+			Вкл = Команда.v = Истина;
+		Иначе
+			ИдОрг = Строка(Команда.Получить("id"));
+			Вкл = Команда.Получить("v") = Истина;
+		КонецЕсли;
+		УстановитьФлажокОрганизацииИзHTMLНаСервере(ИдОрг, Вкл);
+	ИначеЕсли Имя = "flipOrg" Тогда
+		ИдОрг = "";
+		Если ТипЗнч(Команда) = Тип("Структура") Тогда
+			ИдОрг = Строка(Команда.id);
+		Иначе
+			ИдОрг = Строка(Команда.Получить("id"));
+		КонецЕсли;
+		Найденные = ТаблицаОрганизаций.НайтиСтроки(Новый Структура("Идентификатор", ИдОрг));
+		Если Найденные.Количество() > 0 Тогда
+			Найденные[0].Выбор = НЕ Найденные[0].Выбор;
+		КонецЕсли;
 	КонецЕсли;
 	
 КонецПроцедуры
@@ -710,104 +744,254 @@
 &НаСервере
 Функция СформироватьТекстHTMLНаСервере()
 	
-	Состояние = СобратьСостояниеИнтерфейса();
-	Запись = Новый ЗаписьJSON;
-	Запись.УстановитьСтроку();
-	ЗаписатьJSON(Запись, Состояние);
-	JsonТекст = Запись.Закрыть();
-	
-	ДД = ПолучитьДвоичныеДанныеИзСтроки(JsonТекст, КодировкаТекста.UTF8);
-	B64 = Base64Строка(ДД);
-	
-	Шаблон = ТекстШаблонаHTML();
-	Возврат СтрЗаменить(Шаблон, "@@@B64@@@", B64);
+	Попытка
+		Возврат СобратьПолныйHTMLДокументНаСервере();
+	Исключение
+		ТекстОш = HTMLЭкранировать(ОписаниеОшибки());
+		Возврат "<!DOCTYPE html><html><head><meta charset=""utf-8""/></head><body style=""font-family:Segoe UI,Arial,sans-serif;padding:12px;""><h1>Ошибка разметки</h1><p>"
+			+ ТекстОш + "</p></body></html>";
+	КонецПопытки;
 	
 КонецФункции
 
 &НаСервере
-Функция СобратьСостояниеИнтерфейса()
+Функция HTMLЭкранировать(Знач Текст)
+	
+	Если Текст = Неопределено Тогда
+		Возврат "";
+	КонецЕсли;
+	Стр = Строка(Текст);
+	Стр = СтрЗаменить(Стр, "&", "&amp;");
+	Стр = СтрЗаменить(Стр, "<", "&lt;");
+	Стр = СтрЗаменить(Стр, ">", "&gt;");
+	Стр = СтрЗаменить(Стр, """", "&quot;");
+	Возврат Стр;
+	
+КонецФункции
+
+&НаСервере
+Функция HrefКомандыМоста(Знач КоманднаяСтруктура)
+	
+	Запись = Новый ЗаписьJSON;
+	Запись.УстановитьСтроку();
+	ЗаписатьJSON(Запись, КоманднаяСтруктура);
+	JsonТекст = Запись.Закрыть();
+	ДД = ПолучитьДвоичныеДанныеИзСтроки(JsonТекст, КодировкаТекста.UTF8);
+	B64 = Base64Строка(ДД);
+	B64 = СтрЗаменить(B64, "+", "-");
+	B64 = СтрЗаменить(B64, "/", "_");
+	Пока СтрДлина(B64) > 0 И Прав(B64, 1) = "=" Цикл
+		B64 = Лев(B64, СтрДлина(B64) - 1);
+	КонецЦикла;
+	Возврат "mrsdz://x#" + B64;
+	
+КонецФункции
+
+&НаСервере
+Функция СтильHTMLИнтерфейса()
+	
+	Возврат ":root{--bg:#f1f3f6;--fg:#1b1f27;--b:#c5cad3;--a:#2d5a9e;--a2:#173a6b;}"
+		+ "body{font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:12px;background:var(--bg);color:var(--fg);font-size:13px;line-height:1.35;}"
+		+ ".tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--b);}"
+		+ ".tabs a{color:var(--a);text-decoration:none;padding:6px 12px;border-radius:4px;}"
+		+ ".tabs a.act{background:#d9e2f3;font-weight:600;color:var(--a2);}"
+		+ ".lbl{opacity:.88;}input{max-width:440px;width:100%;padding:6px 8px;border:1px solid var(--b);border-radius:4px;box-sizing:border-box;background:#fff;}"
+		+ "a.btn{display:inline-block;margin:4px 8px 4px 0;padding:7px 14px;background:var(--a);color:#fff!important;text-decoration:none;border-radius:4px;font-size:12px;}"
+		+ "a.btn2{background:#5c6575;}table{width:100%;border-collapse:collapse;background:#fff;margin-top:8px;}"
+		+ "th,td{border:1px solid var(--b);padding:6px 8px;text-align:left;}th{background:#e6e9f0;}tr:nth-child(even){background:#fafbfc;}"
+		+ "h1{font-size:18px;margin:0 0 12px;}h2{font-size:15px;margin:16px 0 8px;}p.hint{opacity:.8;font-size:12px;margin:6px 0;}"
+		+ "ul.lnk{list-style:none;padding:0;margin:4px 0;}ul.lnk li{margin:4px 0;}"
+		+ ".grid{display:grid;gap:8px;grid-template-columns:170px 1fr;align-items:start;max-width:960px;}";
+	
+КонецФункции
+
+&НаСервере
+Функция АтрибутOnChangeSetField(Знач ИмяПоля)
+	
+	П = HTMLЭкранировать(ИмяПоля);
+	Возврат " onchange=""var o={c:'setField',n:'" + П + "',v:this.value};var j=JSON.stringify(o);var u=unescape(encodeURIComponent(j));var b='';for(var i=0;i<u.length;i++)b+=String.fromCharCode(u.charCodeAt(i)&255);var x=btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');location.href='mrsdz://x#'+x;""";
+	
+КонецФункции
+
+&НаСервере
+Функция АтрибутOnChangeПарольHTTP()
+	
+	Возврат " onchange=""if(!this.value)return;var o={c:'setField',n:'password',v:this.value};var j=JSON.stringify(o);var u=unescape(encodeURIComponent(j));var b='';for(var i=0;i<u.length;i++)b+=String.fromCharCode(u.charCodeAt(i)&255);var x=btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');location.href='mrsdz://x#'+x;""";
+	
+КонецФункции
+
+&НаСервере
+Функция ПредставлениеОргВТаблице(Знач Стр)
+	
+	Попытка
+		Если ЗначениеЗаполнено(Стр.Name) Тогда
+			Возврат Стр.Name;
+		КонецЕсли;
+	Исключение
+	КонецПопытки;
+	Попытка
+		Возврат Стр.name;
+	Исключение
+	КонецПопытки;
+	Возврат "";
+	
+КонецФункции
+
+&НаСервере
+Функция СобратьПолныйHTMLДокументНаСервере()
 	
 	БазаПодключена = ЗначениеЗаполнено(ВыбраннаяБаза);
+	Вкладка = АктивнаяВкладкаHTML;
+	Если ПустаяСтрока(Вкладка) Тогда
+		Вкладка = "t1";
+	КонецЕсли;
 	
-	МассивБаз = Новый Массив;
+	HTML = "<!DOCTYPE html><html><head><meta charset=""utf-8""/><style>" + СтильHTMLИнтерфейса() + "</style></head><body>";
+	HTML = HTML + "<h1>Установка дат запрета</h1>";
+	HTML = HTML + "<p class=""hint"">Интерфейс сформирован на сервере (без сценариев в документе). Действия выполняются по ссылкам и полям с подтверждением смены значения.</p>";
+	
+	HTML = HTML + "<div class=""tabs"">";
+	Ссылка = HrefКомандыМоста(Новый Структура("c,t", "tab", "t1"));
+	КлассАкт = ?(Вкладка = "t1", "act", "");
+	HTML = HTML + "<a class=""" + КлассАкт + """ href=""" + Ссылка + """>Основная</a>";
+	Если БазаПодключена Тогда
+		Ссылка = HrefКомандыМоста(Новый Структура("c,t", "tab", "t2"));
+		КлассАкт = ?(Вкладка = "t2", "act", "");
+		HTML = HTML + "<a class=""" + КлассАкт + """ href=""" + Ссылка + """>Даты в базе</a>";
+	КонецЕсли;
+	Если РасширеннаяФункциональность Тогда
+		Ссылка = HrefКомандыМоста(Новый Структура("c,t", "tab", "t3"));
+		КлассАкт = ?(Вкладка = "t3", "act", "");
+		HTML = HTML + "<a class=""" + КлассАкт + """ href=""" + Ссылка + """>Параметры</a>";
+	КонецЕсли;
+	HTML = HTML + "</div>";
+	
+	Если Вкладка = "t1" Тогда
+		HTML = HTML + СформироватьHTMLВкладкаОсновнаяНаСервере(БазаПодключена);
+	ИначеЕсли Вкладка = "t2" И БазаПодключена Тогда
+		HTML = HTML + СформироватьHTMLВкладкаИзБазыНаСервере();
+	ИначеЕсли Вкладка = "t3" И РасширеннаяФункциональность Тогда
+		HTML = HTML + СформироватьHTMLВкладкаПараметрыНаСервере();
+	Иначе
+		HTML = HTML + "<p class=""hint"">Раздел недоступен. Выберите базу или откройте вкладку ""Основная"".</p>";
+	КонецЕсли;
+	
+	HTML = HTML + "</body></html>";
+	Возврат HTML;
+	
+КонецФункции
+
+&НаСервере
+Функция СформироватьHTMLВкладкаОсновнаяНаСервере(Знач БазаПодключена)
+	
+	Ч = "";
+	Ч = Ч + "<h2>База данных</h2>";
+	Ч = Ч + "<p class=""hint"">Выберите информационную базу:</p><ul class=""lnk"">";
+	СсылкаПусто = HrefКомандыМоста(Новый Структура("c,id", "selectBase", ""));
+	Ч = Ч + "<li><a href=""" + СсылкаПусто + """>(не выбрано)</a></li>";
 	Для Каждого Стр Из БазыДанных Цикл
-		Эл = Новый Структура;
-		Эл.Вставить("id", Стр.Идентификатор);
-		Эл.Вставить("title", Стр.Наименование);
-		Эл.Вставить("status", Стр.СтатусБазы);
-		МассивБаз.Добавить(Эл);
+		Ссылка = HrefКомандыМоста(Новый Структура("c,id", "selectBase", Стр.Идентификатор));
+		Метка = HTMLЭкранировать(Стр.Наименование) + " (" + HTMLЭкранировать(Стр.СтатусБазы) + ")";
+		Пометка = ?(Стр.Идентификатор = параметр_БазаДанных, " <strong>*</strong>", "");
+		Ч = Ч + "<li><a href=""" + Ссылка + """>" + Метка + "</a>" + Пометка + "</li>";
 	КонецЦикла;
+	Ч = Ч + "</ul>";
 	
-	МассивПользователей = Новый Массив;
+	Если НЕ БазаПодключена Тогда
+		Ч = Ч + "<p class=""hint"">После выбора базы загрузятся пользователи и организации.</p>";
+		Возврат Ч;
+	КонецЕсли;
+	
+	Ч = Ч + "<h2>Пользователь</h2><ul class=""lnk"">";
+	СсылкаП = HrefКомандыМоста(Новый Структура("c,n,v", "setField", "user", ""));
+	Ч = Ч + "<li><a href=""" + СсылкаП + """>(не выбран)</a></li>";
 	Для Каждого Стр Из ПользователиИБ Цикл
-		Эл = Новый Структура("id,name", Стр.Идентификатор, Стр.name);
-		МассивПользователей.Добавить(Эл);
+		Ссылка = HrefКомандыМоста(Новый Структура("c,n,v", "setField", "user", Строка(Стр.Идентификатор)));
+		Метка = HTMLЭкранировать(Стр.name);
+		Пометка = ?(Строка(Стр.Идентификатор) = параметр_Пользователь, " <strong>*</strong>", "");
+		Ч = Ч + "<li><a href=""" + Ссылка + """>" + Метка + "</a>" + Пометка + "</li>";
 	КонецЦикла;
+	Ч = Ч + "</ul>";
 	
-	МассивОргСписка = Новый Массив;
+	Ч = Ч + "<h2>Организация (для справки)</h2><ul class=""lnk"">";
+	СсылкаО = HrefКомандыМоста(Новый Структура("c,n,v", "setField", "org", ""));
+	Ч = Ч + "<li><a href=""" + СсылкаО + """>(не выбрана)</a></li>";
 	Для Каждого Стр Из ОрганизацииИБ Цикл
-		Эл = Новый Структура("id,name", Стр.Идентификатор, Стр.name);
-		МассивОргСписка.Добавить(Эл);
+		Ссылка = HrefКомандыМоста(Новый Структура("c,n,v", "setField", "org", Строка(Стр.Идентификатор)));
+		Метка = HTMLЭкранировать(Стр.name);
+		Пометка = ?(Строка(Стр.Идентификатор) = параметр_Организация, " <strong>*</strong>", "");
+		Ч = Ч + "<li><a href=""" + Ссылка + """>" + Метка + "</a>" + Пометка + "</li>";
 	КонецЦикла;
+	Ч = Ч + "</ul>";
 	
-	МассивТабОрг = Новый Массив;
+	Ч = Ч + "<h2>Параметры периода и задачи</h2><div class=""grid"">";
+	Ч = Ч + "<span class=""lbl"">Дата открытия</span><input type=""date"" value=""" + HTMLЭкранировать(ДатаВСтрокуHTML(параметр_ДатаОткрытия)) + """" + АтрибутOnChangeSetField("dOpen") + "/>";
+	Ч = Ч + "<span class=""lbl"">Дата отключения</span><input type=""date"" value=""" + HTMLЭкранировать(ДатаВСтрокуHTML(параметр_ДатаОтключения)) + """" + АтрибутOnChangeSetField("dClose") + "/>";
+	Ч = Ч + "<span class=""lbl"">Номер задачи</span><input type=""text"" value=""" + HTMLЭкранировать(параметр_НомерЗадачи) + """" + АтрибутOnChangeSetField("task") + "/>";
+	Ч = Ч + "</div>";
+	
+	Ч = Ч + "<h2>Организации (участвуют в добавлении строк)</h2>";
+	Ч = Ч + "<p><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "checkAll")) + """>Установить флажки</a>";
+	Ч = Ч + "<a class=""btn btn2"" href=""" + HrefКомандыМоста(Новый Структура("c", "uncheckAll")) + """>Убрать флажки</a></p>";
+	Ч = Ч + "<table><thead><tr><th>Выбор</th><th>Организация</th><th>Действие</th></tr></thead><tbody>";
 	Для Каждого Стр Из ТаблицаОрганизаций Цикл
-		Эл = Новый Структура("id,name,sel", Стр.Идентификатор, Стр.Name, Стр.Выбор);
-		МассивТабОрг.Добавить(Эл);
+		Предст = ПредставлениеОргВТаблице(Стр);
+		СсылкаФлип = HrefКомандыМоста(Новый Структура("c,id", "flipOrg", Строка(Стр.Идентификатор)));
+		Состояние = ?(Стр.Выбор, "да", "нет");
+		Ч = Ч + "<tr><td>" + HTMLЭкранировать(Состояние) + "</td><td>" + HTMLЭкранировать(Предст) + "</td>";
+		Ч = Ч + "<td><a href=""" + СсылкаФлип + """>переключить</a></td></tr>";
 	КонецЦикла;
+	Ч = Ч + "</tbody></table>";
 	
-	МассивОчереди = Новый Массив;
+	Ч = Ч + "<h2>Очередь отправки</h2>";
+	Ч = Ч + "<p><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "addRow")) + """>Добавить в таблицу к отправке</a>";
+	Ч = Ч + "<a class=""btn btn2"" href=""" + HrefКомандыМоста(Новый Структура("c", "install")) + """>Установить даты запрета</a>";
+	Ч = Ч + "<a class=""btn btn2"" href=""" + HrefКомандыМоста(Новый Структура("c", "clearRemote")) + """>Очистить даты (HTTP)</a></p>";
+	Ч = Ч + "<table><thead><tr><th>Пользователь</th><th>Организация</th><th>Открытие</th><th>Отключение</th><th>Задача</th></tr></thead><tbody>";
 	Для Каждого Стр Из ДатыЗапрета Цикл
-		Эл = Новый Структура;
-		Эл.Вставить("pu", Стр.ПользовательПредставление);
-		Эл.Вставить("op", Стр.ОрганизацияПредставление);
-		Эл.Вставить("d1", Формат(Стр.ДатаОткрытия, "ДФ=dd.MM.yyyy"));
-		Эл.Вставить("d2", Формат(Стр.ДатаОкончанияСрокаДействияРазрещения, "ДФ=dd.MM.yyyy"));
-		Эл.Вставить("cm", Стр.Комментарий);
-		МассивОчереди.Добавить(Эл);
+		Ч = Ч + "<tr><td>" + HTMLЭкранировать(Стр.ПользовательПредставление) + "</td>";
+		Ч = Ч + "<td>" + HTMLЭкранировать(Стр.ОрганизацияПредставление) + "</td>";
+		Ч = Ч + "<td>" + HTMLЭкранировать(Формат(Стр.ДатаОткрытия, "ДФ=dd.MM.yyyy")) + "</td>";
+		Ч = Ч + "<td>" + HTMLЭкранировать(Формат(Стр.ДатаОкончанияСрокаДействияРазрещения, "ДФ=dd.MM.yyyy")) + "</td>";
+		Ч = Ч + "<td>" + HTMLЭкранировать(Стр.Комментарий) + "</td></tr>";
 	КонецЦикла;
+	Ч = Ч + "</tbody></table>";
 	
-	МассивИзБазы = Новый Массив;
+	Возврат Ч;
+	
+КонецФункции
+
+&НаСервере
+Функция СформироватьHTMLВкладкаИзБазыНаСервере()
+	
+	Ч = "<h2>Даты запрета в информационной базе</h2>";
+	Ч = Ч + "<p><a class=""btn"" href=""" + HrefКомандыМоста(Новый Структура("c", "refreshDb")) + """>Обновить информацию</a></p>";
+	Ч = Ч + "<table><thead><tr><th>Пользователь</th><th>Организация</th><th>Дата</th><th>Комментарий</th></tr></thead><tbody>";
 	Для Каждого Стр Из ДатыЗапретаИзБазы Цикл
-		Эл = Новый Структура("u,o,d,c", Стр.user, Стр.org, Стр.date, Стр.comment);
-		МассивИзБазы.Добавить(Эл);
+		Ч = Ч + "<tr><td>" + HTMLЭкранировать(Стр.user) + "</td><td>" + HTMLЭкранировать(Стр.org) + "</td>";
+		Ч = Ч + "<td>" + HTMLЭкранировать(Стр.date) + "</td><td>" + HTMLЭкранировать(Стр.comment) + "</td></tr>";
 	КонецЦикла;
+	Ч = Ч + "</tbody></table>";
+	Возврат Ч;
 	
-	МассивБазРасш = Новый Массив;
+КонецФункции
+
+&НаСервере
+Функция СформироватьHTMLВкладкаПараметрыНаСервере()
+	
+	Ч = "<h2>Базы данных (пароли в справочнике не выводятся)</h2>";
+	Ч = Ч + "<table><thead><tr><th>Наименование</th><th>Статус</th><th>Адрес</th><th>Конфиг.</th><th>Пользователь ИБ</th></tr></thead><tbody>";
 	Для Каждого Стр Из БазыДанных Цикл
-		Эл = Новый Структура;
-		Эл.Вставить("id", Стр.Идентификатор);
-		Эл.Вставить("title", Стр.Наименование);
-		Эл.Вставить("cfg", Стр.Конфигурация);
-		Эл.Вставить("url", Стр.АдресПубликации);
-		Эл.Вставить("status", Стр.СтатусБазы);
-		Эл.Вставить("user", Стр.Пользователь);
-		МассивБазРасш.Добавить(Эл);
+		Ч = Ч + "<tr><td>" + HTMLЭкранировать(Стр.Наименование) + "</td><td>" + HTMLЭкранировать(Стр.СтатусБазы) + "</td>";
+		Ч = Ч + "<td style=""word-break:break-all"">" + HTMLЭкранировать(Стр.АдресПубликации) + "</td>";
+		Ч = Ч + "<td>" + HTMLЭкранировать(Стр.Конфигурация) + "</td><td>" + HTMLЭкранировать(Стр.Пользователь) + "</td></tr>";
 	КонецЦикла;
-	
-	ПоляФормы = Новый Структура;
-	ПоляФормы.Вставить("user", параметр_Пользователь);
-	ПоляФормы.Вставить("org", параметр_Организация);
-	ПоляФормы.Вставить("dOpen", ДатаВСтрокуHTML(параметр_ДатаОткрытия));
-	ПоляФормы.Вставить("dClose", ДатаВСтрокуHTML(параметр_ДатаОтключения));
-	ПоляФормы.Вставить("task", параметр_НомерЗадачи);
-	ПоляФормы.Вставить("login", Логин);
-	
-	Состояние = Новый Структура;
-	Состояние.Вставить("bases", МассивБаз);
-	Состояние.Вставить("selectedBaseId", параметр_БазаДанных);
-	Состояние.Вставить("baseConnected", БазаПодключена);
-	Состояние.Вставить("paramsEnabled", БазаПодключена);
-	Состояние.Вставить("extended", РасширеннаяФункциональность);
-	Состояние.Вставить("users", МассивПользователей);
-	Состояние.Вставить("orgs", МассивОргСписка);
-	Состояние.Вставить("torg", МассивТабОрг);
-	Состояние.Вставить("queue", МассивОчереди);
-	Состояние.Вставить("fromDb", МассивИзБазы);
-	Состояние.Вставить("f", ПоляФормы);
-	Состояние.Вставить("basesExt", МассивБазРасш);
-	
-	Возврат Состояние;
+	Ч = Ч + "</tbody></table>";
+	Ч = Ч + "<h2>Авторизация HTTP к выбранной базе</h2><div class=""grid"">";
+	Ч = Ч + "<span class=""lbl"">Логин</span><input type=""text"" value=""" + HTMLЭкранировать(Логин) + """" + АтрибутOnChangeSetField("login") + "/>";
+	Ч = Ч + "<span class=""lbl"">Пароль</span><input type=""password"" placeholder=""изменить"" autocomplete=""off""" + АтрибутOnChangeПарольHTTP() + "/>";
+	Ч = Ч + "</div><p class=""hint"">Пароль меняется только при вводе нового значения.</p>";
+	Возврат Ч;
 	
 КонецФункции
 
@@ -818,83 +1002,6 @@
 		Возврат "";
 	КонецЕсли;
 	Возврат Формат(Д, "ДФ=yyyy-MM-dd");
-	
-КонецФункции
-
-&НаСервере
-Функция ТекстШаблонаHTML()
-	
-	Возврат "<!DOCTYPE html><html><head><meta charset=""UTF-8""/><style>"
-		+ ":root{--bg:#f1f3f6;--fg:#1b1f27;--b:#c5cad3;--a:#2d5a9e;--a2:#173a6b;}"
-		+ "body{font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:12px;background:var(--bg);color:var(--fg);font-size:13px;}"
-		+ ".tabs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;border-bottom:1px solid var(--b);padding-bottom:8px;}"
-		+ ".tabs a{color:var(--a);text-decoration:none;padding:6px 10px;border-radius:4px;}"
-		+ ".tabs a.act{background:#d9e2f3;font-weight:600;color:var(--a2);}"
-		+ "section{display:none;}section.vis{display:block;}"
-		+ ".grid{display:grid;gap:8px;grid-template-columns:160px 1fr;align-items:center;max-width:920px;}"
-		+ ".lbl{opacity:.88;}input,select{max-width:440px;width:100%;padding:6px 8px;border:1px solid var(--b);border-radius:4px;box-sizing:border-box;background:#fff;}"
-		+ "a.btn{display:inline-block;margin:4px 8px 4px 0;padding:7px 14px;background:var(--a);color:#fff!important;text-decoration:none;border-radius:4px;font-size:12px;}"
-		+ "a.btn2{background:#5c6575;}table{width:100%;border-collapse:collapse;background:#fff;margin-top:6px;}"
-		+ "th,td{border:1px solid var(--b);padding:6px 8px;text-align:left;}th{background:#e6e9f0;}tr:nth-child(even){background:#fafbfc;}"
-		+ "h2{font-size:15px;margin:14px 0 8px;}p.hint{opacity:.8;font-size:12px;}</style></head><body>"
-		+ "<div class='tabs' id='tb'></div><div id='m'></div><script>"
-		+ "function u8(b){try{return decodeURIComponent(escape(atob(b)));}catch(e){return'{}';}}"
-		+ "function jb(b){return JSON.parse(u8(b));}var S=jb('@@@B64@@@');var T='t1';"
-		+ "function esc(s){if(s==null)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/""/g,'&quot;');}"
-		+ "function toB64(o){var j=JSON.stringify(o);var u=unescape(encodeURIComponent(j));var bin='';for(var i=0;i<u.length;i++)bin+=String.fromCharCode(u.charCodeAt(i)&255);"
-		+ "var b=btoa(bin);return b.replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');}"
-		+ "function ext(t,s){if(!s)return t;for(var k in s)if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k];return t;}"
-		+ "function go(c,x){location.href='mrsdz://x#'+toB64(ext({c:c},x||{}));}"
-		+ "function upAct(el,r){var p=el;while(p&&p!==r){if(p.getAttribute){var x=p.getAttribute('data-act');if(x)return p;}p=p.parentNode;}return null;}"
-		+ "function dac(t){while(t&&t!==document.documentElement){if(t.getAttribute&&t.getAttribute('data-act'))return t;t=t.parentNode;}return null;}"
-		+ "function setTab(t){T=t;render();}"
-		+ "function render(){var tb=document.getElementById('tb');var m=document.getElementById('m');tb.innerHTML='';"
-		+ "function addTab(id,lb,ok){if(!ok)return;var a=document.createElement('a');a.href='#';a.textContent=lb;if(T===id)a.className='act';"
-		+ "a.onclick=function(e){e.preventDefault();setTab(id);};tb.appendChild(a);}"
-		+ "addTab('t1','Основная',true);addTab('t2','Даты в базе',S.baseConnected);addTab('t3','Параметры',S.extended);"
-		+ "m.innerHTML='';if(T==='t1')rMain(m);else if(T==='t2')rDb(m);else rPar(m);}"
-		+ "function rMain(root){var h='';h+='<h2>База данных</h2><div class=""grid""><span class=""lbl"">База</span><div><select id=""sb"">';"
-		+ "h+='<option value="""">- выберите базу -</option>';for(var i=0;i<S.bases.length;i++){var b=S.bases[i];"
-		+ "h+='<option value=""'+esc(b.id)+'""'+(b.id===S.selectedBaseId?' selected':'')+'>'+esc(b.title)+' ('+esc(b.status)+')</option>';}"
-		+ "h+='</select></div></div>';h+='<div class=""grid"" style=""margin-top:10px""><span class=""lbl"">Пользователь</span><select id=""su"">';"
-		+ "h+='<option value="""">-</option>';for(i=0;i<S.users.length;i++){var u=S.users[i];h+='<option value=""'+esc(u.id)+'""'+(u.id===S.f.user?' selected':'')+'>'+esc(u.name)+'</option>';}"
-		+ "h+='</select><span class=""lbl"">Организация (список)</span><select id=""so"">';h+='<option value="""">-</option>';"
-		+ "for(i=0;i<S.orgs.length;i++){var o=S.orgs[i];h+='<option value=""'+esc(o.id)+'""'+(o.id===S.f.org?' selected':'')+'>'+esc(o.name)+'</option>';}"
-		+ "h+='</select><span class=""lbl"">Дата открытия</span><input type=""date"" id=""d1"" value=""'+esc(S.f.dOpen)+'""'+(S.paramsEnabled?'':' disabled')+'/>';"
-		+ "h+='<span class=""lbl"">Дата отключения</span><input type=""date"" id=""d2"" value=""'+esc(S.f.dClose)+'""'+(S.paramsEnabled?'':' disabled')+'/>';"
-		+ "h+='<span class=""lbl"">Номер задачи</span><input id=""tk"" value=""'+esc(S.f.task)+'""'+(S.paramsEnabled?'':' disabled')+'/></div>';"
-		+ "h+='<h2>Организации для выбора</h2><p class=""hint"">Отметьте организации в таблице ниже.</p>';"
-		+ "h+='<div><a class=""btn"" href=""#"" data-act=""checkAll"">Установить флажки</a><a class=""btn btn2"" href=""#"" data-act=""uncheckAll"">Убрать флажки</a></div>';"
-		+ "h+='<table><thead><tr><th>✓</th><th>Организация</th><th>Идентификатор</th></tr></thead><tbody>';"
-		+ "for(i=0;i<S.torg.length;i++){var r=S.torg[i];h+='<tr><td><input type=""checkbox"" data-act=""toggleOrg"" data-oid=""'+esc(r.id)+'""'+(S.paramsEnabled?'':' disabled')+(r.sel?' checked':'')+'/></td>';"
-		+ "h+='<td>'+esc(r.name)+'</td><td style=""font-size:11px;opacity:.75"">'+esc(r.id)+'</td></tr>';}"
-		+ "h+='</tbody></table>';h+='<h2>Очередь отправки</h2>';"
-		+ "h+='<div><a class=""btn"" href=""#"" data-act=""addRow"">Добавить в таблицу к отправке</a><a class=""btn btn2"" href=""#"" data-act=""install"">Установить даты запрета</a><a class=""btn btn2"" href=""#"" data-act=""clearRemote"">Очистить даты (HTTP)</a></div>';"
-		+ "h+='<table><thead><tr><th>Пользователь</th><th>Организация</th><th>Открытие</th><th>Отключение</th><th>Задача</th></tr></thead><tbody>';"
-		+ "for(i=0;i<S.queue.length;i++){var q=S.queue[i];h+='<tr><td>'+esc(q.pu)+'</td><td>'+esc(q.op)+'</td><td>'+esc(q.d1)+'</td><td>'+esc(q.d2)+'</td><td>'+esc(q.cm)+'</td></tr>';}"
-		+ "h+='</tbody></table>';root.innerHTML=h;"
-		+ "root.onclick=function(e){var t=upAct(e.target,root);if(!t)return;var a=t.getAttribute('data-act');if(a==='toggleOrg')return;e.preventDefault();"
-		+ "if(a==='checkAll')go('checkAll');else if(a==='uncheckAll')go('uncheckAll');else if(a==='addRow')go('addRow');else if(a==='install')go('install');else if(a==='clearRemote')go('clearRemote');};"
-		+ "root.onchange=function(e){var t=e.target;if(t.getAttribute('data-act')==='toggleOrg')go('toggleOrg',{id:t.getAttribute('data-oid'),v:t.checked});};"
-		+ "var sb=document.getElementById('sb');if(sb){sb.onchange=function(){if(this.value)go('selectBase',{id:this.value});else go('selectBase',{id:''});};}"
-		+ "var su=document.getElementById('su');if(su){su.onchange=function(){go('setField',{n:'user',v:this.value});};}"
-		+ "var so=document.getElementById('so');if(so){so.onchange=function(){go('setField',{n:'org',v:this.value});};}"
-		+ "var d1=document.getElementById('d1');if(d1){d1.onchange=function(){go('setField',{n:'dOpen',v:this.value});};}"
-		+ "var d2=document.getElementById('d2');if(d2){d2.onchange=function(){go('setField',{n:'dClose',v:this.value});};}"
-		+ "var tk=document.getElementById('tk');if(tk){tk.onchange=function(){go('setField',{n:'task',v:this.value});};tk.onblur=tk.onchange;}}"
-		+ "function rDb(root){var h='<h2>Даты запрета в информационной базе</h2>';"
-		+ "h+='<a class=""btn"" href=""#"" data-act=""refreshDb"">Обновить информацию</a>';"
-		+ "h+='<table><thead><tr><th>Пользователь</th><th>Организация</th><th>Дата</th><th>Комментарий</th></tr></thead><tbody>';"
-		+ "for(var i=0;i<S.fromDb.length;i++){var r=S.fromDb[i];h+='<tr><td>'+esc(r.u)+'</td><td>'+esc(r.o)+'</td><td>'+esc(r.d)+'</td><td>'+esc(r.c)+'</td></tr>';}"
-		+ "h+='</tbody></table>';root.innerHTML=h;root.onclick=function(e){var t=upAct(e.target,root);if(!t)return;e.preventDefault();if(t.getAttribute('data-act')==='refreshDb')go('refreshDb');};}"
-		+ "function rPar(root){var h='<h2>Базы данных (без паролей)</h2><p class=""hint"">Пароли хранятся в справочнике и не передаются в страницу. Поле пароля ниже меняет только сеансовую авторизацию HTTP, если заполнено.</p>';"
-		+ "h+='<table><thead><tr><th>Наименование</th><th>Статус</th><th>Адрес</th><th>Конфиг.</th><th>Пользователь ИБ</th></tr></thead><tbody>';"
-		+ "for(var i=0;i<S.basesExt.length;i++){var b=S.basesExt[i];h+='<tr><td>'+esc(b.title)+'</td><td>'+esc(b.status)+'</td><td style=""word-break:break-all"">'+esc(b.url)+'</td><td>'+esc(b.cfg)+'</td><td>'+esc(b.user)+'</td></tr>';}"
-		+ "h+='</tbody></table><h2>Авторизация HTTP к выбранной базе</h2><div class=""grid""><span class=""lbl"">Логин</span><input id=""lg"" value=""'+esc(S.f.login)+'""/>';"
-		+ "h+='<span class=""lbl"">Пароль</span><input type=""password"" id=""pw"" placeholder=""не менять""/></div>';root.innerHTML=h;"
-		+ "var lg=document.getElementById('lg');if(lg){lg.onchange=function(){go('setField',{n:'login',v:this.value});};lg.onblur=lg.onchange;}"
-		+ "var pw=document.getElementById('pw');if(pw){pw.onchange=function(){if(this.value)go('setField',{n:'password',v:this.value});};}}"
-		+ "render();</script></body></html>";
 	
 КонецФункции
 
