@@ -32,96 +32,19 @@
 					</Title>
 					<ExtendedTooltip name="СтраницаЧекпоинтПинкодРасширеннаяПодсказка" id="9103"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаШторкаЧекпоинтФон" id="9104">
-							<Group>Vertical</Group>
-							<Behavior>Usual</Behavior>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
+						<HTMLDocumentField name="ПолеHTMLЧекпоинт" id="9124">
+							<DataPath>ТекстЧекпоинтHTML</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>100</Width>
+							<Height>30</Height>
 							<VerticalStretch>true</VerticalStretch>
 							<HorizontalStretch>true</HorizontalStretch>
-							<BackColor>web:DimGray</BackColor>
-							<ExtendedTooltip name="ГруппаШторкаЧекпоинтФонРасширеннаяПодсказка" id="9105"/>
-							<ChildItems>
-								<UsualGroup name="ГруппаШторкаЧекпоинтКарточка" id="9106">
-									<Group>Vertical</Group>
-									<Behavior>Usual</Behavior>
-									<Representation>StrongSeparation</Representation>
-									<ShowTitle>false</ShowTitle>
-									<HorizontalAlign>Center</HorizontalAlign>
-									<VerticalStretch>true</VerticalStretch>
-									<BackColor>web:White</BackColor>
-									<ExtendedTooltip name="ГруппаШторкаЧекпоинтКарточкаРасширеннаяПодсказка" id="9107"/>
-									<ChildItems>
-										<LabelDecoration name="ЧекпоинтЗаголовок" id="9108">
-											<Font ref="style:NormalTextFont" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
-											<Title formatted="false">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Введите пин-код чекпоинт</v8:content>
-												</v8:item>
-											</Title>
-											<GroupHorizontalAlign>Center</GroupHorizontalAlign>
-											<ContextMenu name="ЧекпоинтЗаголовокКонтекстноеМеню" id="9109"/>
-											<ExtendedTooltip name="ЧекпоинтЗаголовокРасширеннаяПодсказка" id="9110"/>
-										</LabelDecoration>
-										<LabelDecoration name="ЧекпоинтПодзаголовок" id="9111">
-											<Font ref="style:SmallTextFont" kind="StyleItem"/>
-											<Title formatted="false">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Шесть цифр. Для проверки допуска используйте 000000.</v8:content>
-												</v8:item>
-											</Title>
-											<GroupHorizontalAlign>Center</GroupHorizontalAlign>
-											<ContextMenu name="ЧекпоинтПодзаголовокКонтекстноеМеню" id="9112"/>
-											<ExtendedTooltip name="ЧекпоинтПодзаголовокРасширеннаяПодсказка" id="9113"/>
-										</LabelDecoration>
-										<InputField name="ПинКодЧекпоинтПолеВвода" id="9114">
-											<DataPath>ПинКодЧекпоинтВвод</DataPath>
-											<TitleLocation>None</TitleLocation>
-											<Width>14</Width>
-											<HorizontalStretch>false</HorizontalStretch>
-											<GroupHorizontalAlign>Center</GroupHorizontalAlign>
-											<DefaultItem>true</DefaultItem>
-											<Font ref="style:NormalTextFont" height="18" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
-											<InputHint>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>000000</v8:content>
-												</v8:item>
-											</InputHint>
-											<ContextMenu name="ПинКодЧекпоинтПолеВводаКонтекстноеМеню" id="9115"/>
-											<ExtendedTooltip name="ПинКодЧекпоинтПолеВводаРасширеннаяПодсказка" id="9116"/>
-											<Events>
-												<Event name="OnChange">ПинКодЧекпоинтПолеВводаПриИзменении</Event>
-											</Events>
-										</InputField>
-										<InputField name="ЧекпоинтСтатусПоле" id="9117">
-											<DataPath>ЧекпоинтСтатусТекст</DataPath>
-											<TitleLocation>None</TitleLocation>
-											<ReadOnly>true</ReadOnly>
-											<Width>42</Width>
-											<HorizontalStretch>false</HorizontalStretch>
-											<GroupHorizontalAlign>Center</GroupHorizontalAlign>
-											<ContextMenu name="ЧекпоинтСтатусПолеКонтекстноеМеню" id="9118"/>
-											<ExtendedTooltip name="ЧекпоинтСтатусПолеРасширеннаяПодсказка" id="9119"/>
-										</InputField>
-										<Button name="ЧекпоинтКнопкаПродолжить" id="9120">
-											<Type>UsualButton</Type>
-											<DefaultButton>true</DefaultButton>
-											<CommandName>Form.Command.ЧекпоинтПодтвердитьПин</CommandName>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Продолжить</v8:content>
-												</v8:item>
-											</Title>
-											<ExtendedTooltip name="ЧекпоинтКнопкаПродолжитьРасширеннаяПодсказка" id="9121"/>
-										</Button>
-									</ChildItems>
-								</UsualGroup>
-							</ChildItems>
-						</UsualGroup>
+							<ContextMenu name="ПолеHTMLЧекпоинтКонтекстноеМеню" id="9125"/>
+							<ExtendedTooltip name="ПолеHTMLЧекпоинтРасширеннаяПодсказка" id="9126"/>
+							<Events>
+								<Event name="OnClick">ПолеHTMLЧекпоинтПриНажатии</Event>
+							</Events>
+						</HTMLDocumentField>
 					</ChildItems>
 				</Page>
 				<Page name="СтраницаРаботаHTML" id="9122">
@@ -1000,21 +923,6 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПинКодЧекпоинтВвод" id="29">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Пин-код чекпоинт</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>10</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="ЧекпоинтСтатусТекст" id="30">
 			<Title>
 				<v8:item>
@@ -1026,6 +934,36 @@
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
 					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстЧекпоинтHTML" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>HTML экрана чекпоинта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧекпоинтHTML_РежимРамки" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим подсветки пин-поля HTML (служебно)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>16</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
@@ -1146,21 +1084,6 @@
 			</Picture>
 			<Action>УбратьФлажки</Action>
 			<Representation>Picture</Representation>
-		</Command>
-		<Command name="ЧекпоинтПодтвердитьПин" id="7">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Продолжить</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Проверить пин-код и открыть форму</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ЧекпоинтПодтвердитьПин</Action>
 		</Command>
 	</Commands>
 </Form>

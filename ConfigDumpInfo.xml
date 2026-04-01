@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
 	<ConfigVersions>
 		<Metadata name="Catalog.MRS_КлассыМеню" id="5cad118c-2b6a-4e5d-90c7-09a1c4c99a27" configVersion="a1a23c5f15d159d3dbab3c1b9ddd82476de2d3e2">
@@ -146,8 +146,10 @@
 		<Metadata name="DataProcessor.УстановкаДатЗапрета" id="b956a59b-8fd5-4b5b-b3a0-81c9553cbf59" configVersion="c8ff43d5636d6cd96d026f5f6f93c7e59eb95014"/>
 		<Metadata name="DataProcessor.УстановкаДатЗапрета.Form.Форма" id="3bca95db-7cb4-4aa1-88e9-67eaeb0db25c" configVersion="ca0831e7533bd8be19659397cdfc0a8b07fc0c58"/>
 		<Metadata name="DataProcessor.УстановкаДатЗапрета.Form.Форма.Form" id="3bca95db-7cb4-4aa1-88e9-67eaeb0db25c.0" configVersion="5f31c04c65ca97c555f3c1f2aabac3f45a290a10"/>
-		<Metadata name="DataProcessor.УстановкаДатЗапрета.Form.Форма_HTML" id="062687c3-9a64-4ad1-b3e0-7112f882fcc9" configVersion="8b3754f582fd9a24df68709b86996b70cc844bad"/>
-		<Metadata name="DataProcessor.УстановкаДатЗапрета.Form.Форма_HTML.Form" id="062687c3-9a64-4ad1-b3e0-7112f882fcc9.0" configVersion="fa344a083eb701f9fe45211a7835063760034294"/>
+		<Metadata name="DataProcessor.УстановкаДатЗапрета.Form.Форма_HTML" id="062687c3-9a64-4ad1-b3e0-7112f882fcc9" configVersion="ea9042af32f5e5d6a4181d90afe414256e490272"/>
+		<Metadata name="DataProcessor.УстановкаДатЗапрета.Form.Форма_HTML.Form" id="062687c3-9a64-4ad1-b3e0-7112f882fcc9.0" configVersion="a640c00e8374bfbdfb32a80681242d85de7c7915"/>
+		<Metadata name="DataProcessor.УстановкаДатЗапрета.Template.ЧекпоинтШпион" id="c7a4f2e1-9b0d-4c8a-a3f6-2d8e1c0b5a71" configVersion="381af8c390869f9d655b314d61a9673de3bc25e8"/>
+		<Metadata name="DataProcessor.УстановкаДатЗапрета.Template.ЧекпоинтШпион.Template" id="c7a4f2e1-9b0d-4c8a-a3f6-2d8e1c0b5a71.0" configVersion="381af8c390869f9d655b314d61a9673de3bc25e8"/>
 		<Metadata name="Document.ВнутреннееПотребление" id="74e8d4cf-9cd8-4aa7-a48d-7c2b8e4b2abd" configVersion="2fe0de311441bc4824d957533d53f1d0ca06c686"/>
 		<Metadata name="Document.ПеремещениеТоваров" id="fb70e6ca-453b-42af-80af-80dc90f81498" configVersion="882b23bbb0fe008f6b67927247d700fae2034c11"/>
 		<Metadata name="Document.ПеремещениеТоваров.ObjectModule" id="fb70e6ca-453b-42af-80af-80dc90f81498.0" configVersion="e113a40eb4cc9dfc2bde0cbe65c43049dbf23c44"/>

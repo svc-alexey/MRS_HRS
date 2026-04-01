@@ -21,64 +21,10 @@
 &НаКлиенте
 Процедура ЧекпоинтСброситьЭкранПриОткрытии()
 	
-	ПинКодЧекпоинтВвод = "";
 	ЧекпоинтСтатусТекст = "";
+	ЧекпоинтHTML_РежимРамки = "";
 	Элементы.СтраницыСЧекпоинтом.ТекущаяСтраница = Элементы.СтраницаЧекпоинтПинкод;
-	ЧекпоинтСброситьЦветаПинПоля();
-	
-КонецПроцедуры
-
-&НаКлиенте
-Процедура ЧекпоинтСброситьЦветаПинПоля()
-	
-	Элементы.ПинКодЧекпоинтПолеВвода.ЦветРамки = Новый Цвет(200, 200, 200);
-	Элементы.ЧекпоинтСтатусПоле.ЦветТекста = Новый Цвет(80, 80, 80);
-	
-КонецПроцедуры
-
-&НаКлиенте
-Процедура ЧекпоинтУстановитьЦветаПинПоля(Знач Режим)
-	
-	Если Режим = "ok" Тогда
-		Элементы.ПинКодЧекпоинтПолеВвода.ЦветРамки = Новый Цвет(22, 163, 74);
-		Элементы.ЧекпоинтСтатусПоле.ЦветТекста = Новый Цвет(21, 128, 61);
-	ИначеЕсли Режим = "err" Тогда
-		Элементы.ПинКодЧекпоинтПолеВвода.ЦветРамки = Новый Цвет(220, 38, 38);
-		Элементы.ЧекпоинтСтатусПоле.ЦветТекста = Новый Цвет(185, 28, 28);
-	Иначе
-		ЧекпоинтСброситьЦветаПинПоля();
-	КонецЕсли;
-	
-КонецПроцедуры
-
-&НаКлиенте
-Процедура ПинКодЧекпоинтПолеВводаПриИзменении(Элемент)
-	
-	ЧекпоинтСтатусТекст = "";
-	ЧекпоинтСброситьЦветаПинПоля();
-	
-КонецПроцедуры
-
-&НаКлиенте
-Процедура ЧекпоинтПодтвердитьПин(Команда)
-	
-	Цифры = Чекпоинт_ТолькоЦифрыИзСтроки(ПинКодЧекпоинтВвод);
-	Если СтрДлина(Цифры) <> 6 Тогда
-		ЧекпоинтСтатусТекст = НСтр("ru = 'Введите ровно 6 цифр.'");
-		ЧекпоинтУстановитьЦветаПинПоля("err");
-		Возврат;
-	КонецЕсли;
-	
-	// Демо-пин; для реальной защиты храните хэш на сервере и проверяйте на сервере.
-	Если Цифры = "000000" Тогда
-		ПинКодЧекпоинтВвод = Цифры;
-		ЧекпоинтСтатусТекст = НСтр("ru = 'Код верный.'");
-		ЧекпоинтУстановитьЦветаПинПоля("ok");
-		ПодключитьОбработчикОжидания("ЧекпоинтОтложенноОткрытьРаботу", 0.55, Истина);
-	Иначе
-		ЧекпоинтСтатусТекст = НСтр("ru = 'Неверный пин-код.'");
-		ЧекпоинтУстановитьЦветаПинПоля("err");
-	КонецЕсли;
+	ТекстЧекпоинтHTML = СформироватьТекстHTMLЧекпоинтНаСервере();
 	
 КонецПроцедуры
 
@@ -87,10 +33,76 @@
 	
 	ОтключитьОбработчикОжидания("ЧекпоинтОтложенноОткрытьРаботу");
 	Элементы.СтраницыСЧекпоинтом.ТекущаяСтраница = Элементы.СтраницаРаботаHTML;
-	ПинКодЧекпоинтВвод = "";
 	ЧекпоинтСтатусТекст = "";
-	ЧекпоинтСброситьЦветаПинПоля();
+	ЧекпоинтHTML_РежимРамки = "";
 	ОбновитьОтображениеHTML();
+	
+КонецПроцедуры
+
+&НаКлиенте
+Процедура ПолеHTMLЧекпоинтПриНажатии(Элемент, ДанныеСобытия, СтандартнаяОбработка)
+	
+	Href = HTML_ИзвлечьHrefИзСобытияПоляHTML(ДанныеСобытия);
+	Если ПустаяСтрока(Href) Тогда
+		Возврат;
+	КонецЕсли;
+	
+	Если СтрНачинаетсяС(НРег(Href), "mrsdz://") Тогда
+		СтандартнаяОбработка = Ложь;
+	КонецЕсли;
+	
+	Если НЕ СтрНачинаетсяС(НРег(Href), "mrsdz://") Тогда
+		Возврат;
+	КонецЕсли;
+	
+	Поз = СтрНайти(Href, "#");
+	Если Поз = 0 Тогда
+		Возврат;
+	КонецЕсли;
+	
+	Фрагмент = Сред(Href, Поз + 1);
+	Если ПустаяСтрока(Фрагмент) Тогда
+		Возврат;
+	КонецЕсли;
+	
+	Команда = РасшифроватьКомандуHTMLИзФрагмента(Фрагмент);
+	Если ИмяКомандыИнтерфейса(Команда) <> "pinCheck" Тогда
+		Возврат;
+	КонецЕсли;
+	
+	ПинСырой = "";
+	Если ТипЗнч(Команда) = Тип("Структура") Тогда
+		ПинСырой = Строка(Команда.p);
+	ИначеЕсли ТипЗнч(Команда) = Тип("Соответствие") Тогда
+		ПинСырой = Строка(Команда.Получить("p"));
+	КонецЕсли;
+	
+	ЧекпоинтОбработатьКомандуPinCheckНаКлиенте(ПинСырой);
+	
+КонецПроцедуры
+
+&НаКлиенте
+Процедура ЧекпоинтОбработатьКомандуPinCheckНаКлиенте(Знач ПинСырой)
+	
+	Цифры = Чекпоинт_ТолькоЦифрыИзСтроки(ПинСырой);
+	Если СтрДлина(Цифры) <> 6 Тогда
+		ЧекпоинтСтатусТекст = НСтр("ru = 'Введите ровно 6 цифр.'");
+		ЧекпоинтHTML_РежимРамки = "err";
+		ТекстЧекпоинтHTML = СформироватьТекстHTMLЧекпоинтНаСервере();
+		Возврат;
+	КонецЕсли;
+	
+	// Демо-пин; для реальной защиты храните хэш на сервере и проверяйте на сервере.
+	Если Цифры = "000000" Тогда
+		ЧекпоинтСтатусТекст = НСтр("ru = 'Код верный.'");
+		ЧекпоинтHTML_РежимРамки = "ok";
+		ТекстЧекпоинтHTML = СформироватьТекстHTMLЧекпоинтНаСервере();
+		ПодключитьОбработчикОжидания("ЧекпоинтОтложенноОткрытьРаботу", 0.55, Истина);
+	Иначе
+		ЧекпоинтСтатусТекст = НСтр("ru = 'Неверный пин-код.'");
+		ЧекпоинтHTML_РежимРамки = "err";
+		ТекстЧекпоинтHTML = СформироватьТекстHTMLЧекпоинтНаСервере();
+	КонецЕсли;
 	
 КонецПроцедуры
 
@@ -120,6 +132,7 @@
 	КонецЕсли;
 	HTML_КалендарьИнициализироватьВидыНаСервере();
 	ТекстПоляHTML = СформироватьТекстHTMLНаСервере();
+	ТекстЧекпоинтHTML = СформироватьТекстHTMLЧекпоинтНаСервере();
 	
 КонецПроцедуры
 
@@ -1554,6 +1567,125 @@
 		B64 = Лев(B64, СтрДлина(B64) - 1);
 	КонецЦикла;
 	Возврат "mrsdz://x#" + B64;
+	
+КонецФункции
+
+&НаСервере
+Функция Чекпоинт_PngDataUriИзМакетаНаСервере()
+	
+	Попытка
+		СырыеДанные = Объект.ПолучитьМакет("ЧекпоинтШпион");
+	Исключение
+		Возврат "";
+	КонецПопытки;
+	
+	ДД = Неопределено;
+	Если ТипЗнч(СырыеДанные) = Тип("ДвоичныеДанные") Тогда
+		ДД = СырыеДанные;
+	КонецЕсли;
+	
+	Если ДД = Неопределено Тогда
+		Возврат "";
+	КонецЕсли;
+	
+	B64 = Base64Строка(ДД);
+	B64 = СтрЗаменить(B64, Символы.ПС, "");
+	B64 = СтрЗаменить(B64, Символы.ВК, "");
+	Возврат "data:image/png;base64," + B64;
+	
+КонецФункции
+
+&НаСервере
+Функция СформироватьТекстHTMLЧекпоинтНаСервере()
+	
+	DataUri = Чекпоинт_PngDataUriИзМакетаНаСервере();
+	Режим = НРег(СокрЛП(Строка(ЧекпоинтHTML_РежимРамки)));
+	Статус = HTMLЭкранировать(ЧекпоинтСтатусТекст);
+	
+	КлассРамки = " pin-digits--neutral";
+	Если Режим = "ok" Тогда
+		КлассРамки = " pin-digits--ok";
+	ИначеЕсли Режим = "err" Тогда
+		КлассРамки = " pin-digits--err";
+	КонецЕсли;
+	
+	КлассСтатуса = "";
+	Если Режим = "ok" Тогда
+		КлассСтатуса = " ok";
+	ИначеЕсли Режим = "err" Тогда
+		КлассСтатуса = " err";
+	КонецЕсли;
+	
+	Если ПустаяСтрока(Статус) Тогда
+		БлокСтатуса = "<p class=""status""></p>";
+	Иначе
+		БлокСтатуса = "<p class=""status" + КлассСтатуса + """>" + Статус + "</p>";
+	КонецЕсли;
+	
+	Если ПустаяСтрока(DataUri) Тогда
+		БлокКартинки = "<div class=""spy-fallback"" aria-hidden=""true""></div>";
+	Иначе
+		БлокКартинки = "<img class=""spy"" src=""" + DataUri + """ alt="""" width=""220"" height=""220""/>";
+	КонецЕсли;
+	
+	Стили = "html,body{height:100%;margin:0;}body{min-height:100%;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif;"
+		+ "background:radial-gradient(ellipse 120% 80% at 50% 20%,rgba(125,211,252,.35) 0%,transparent 55%),"
+		+ "linear-gradient(155deg,#0b1f3a 0%,#123a6d 22%,#1d4ed8 48%,#38bdf8 78%,#bae6fd 100%);color:#f8fafc;}"
+		+ ".shutter{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;}"
+		+ ".card{max-width:440px;width:100%;padding:32px 30px 28px;border-radius:22px;background:rgba(255,255,255,.12);"
+		+ "border:1px solid rgba(255,255,255,.28);box-shadow:0 24px 60px rgba(5,25,60,.45),inset 0 1px 0 rgba(255,255,255,.2);"
+		+ "backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}"
+		+ ".spy{display:block;margin:0 auto 18px;border-radius:18px;box-shadow:0 14px 40px rgba(0,0,0,.35);}"
+		+ ".spy-fallback{width:200px;height:200px;margin:0 auto 18px;border-radius:18px;background:rgba(0,0,0,.15);"
+		+ "border:2px dashed rgba(255,255,255,.35);}"
+		+ "h1{margin:0 0 6px;font-size:23px;font-weight:800;text-align:center;letter-spacing:.02em;"
+		+ "text-shadow:0 2px 10px rgba(0,0,0,.2);}"
+		+ ".mask-hint{margin:0 0 8px;text-align:center;font-size:15px;font-weight:700;color:#e0f2fe;"
+		+ "letter-spacing:.35em;text-indent:.35em;}"
+		+ ".hint{margin:0 0 22px;text-align:center;font-size:13px;line-height:1.45;opacity:.9;color:#dbeafe;}"
+		+ ".pin-digits{display:flex;gap:10px;justify-content:center;margin:0 0 16px;padding:14px 16px;border-radius:16px;"
+		+ "background:rgba(0,20,40,.2);border:2px solid rgba(255,255,255,.3);transition:border-color .25s,box-shadow .25s;}"
+		+ ".pin-digits--neutral{box-shadow:none;}"
+		+ ".pin-digits--ok{border-color:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.35),0 0 28px rgba(34,197,94,.55);}"
+		+ ".pin-digits--err{border-color:#f87171;box-shadow:0 0 0 4px rgba(248,113,113,.35),0 0 28px rgba(239,68,68,.55);}"
+		+ ".pin-digits input{width:46px;height:54px;text-align:center;font-size:24px;font-weight:800;border-radius:12px;"
+		+ "border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.97);color:#0f172a;box-sizing:border-box;}"
+		+ ".status{min-height:24px;margin:0 0 14px;text-align:center;font-size:14px;font-weight:600;color:#e2e8f0;}"
+		+ ".status.ok{color:#bbf7d0;}.status.err{color:#fecaca;}"
+		+ "a.btn-go{display:block;text-align:center;padding:14px 22px;border-radius:14px;text-decoration:none;font-weight:800;"
+		+ "font-size:15px;color:#fff!important;background:linear-gradient(180deg,#60a5fa,#1d4ed8);"
+		+ "box-shadow:0 10px 28px rgba(29,78,216,.45);border:1px solid rgba(255,255,255,.25);}"
+		+ "a.btn-go:hover{filter:brightness(1.07);}";
+	
+	Скрипт = "<script type=""text/javascript"">"
+		+ "function cpM(u){var j=JSON.stringify(u);var x=unescape(encodeURIComponent(j));var b='';"
+		+ "for(var i=0;i<x.length;i++)b+=String.fromCharCode(x.charCodeAt(i)&255);"
+		+ "var y=btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');return 'mrsdz://x#'+y;}"
+		+ "function cpN(el){var v=(el.value||'').replace(/\D/g,'').slice(-1);el.value=v;"
+		+ "if(v){var nx=el.nextElementSibling;while(nx&&nx.tagName&&nx.tagName.toLowerCase()!='input')nx=nx.nextElementSibling;"
+		+ "if(nx&&nx.getAttribute('data-pin')!==null)nx.focus();}}"
+		+ "function cpG(){var a=document.querySelectorAll('input[data-pin]');var p='';"
+		+ "for(var i=0;i<a.length;i++){var v=(a[i].value||'').replace(/\D/g,'');p+=v.length?v.slice(-1):'';}return p;}"
+		+ "function cpH(l){l.href=cpM({c:'pinCheck',p:cpG()});}"
+		+ "</script>";
+	
+	HTML = "<!DOCTYPE html><html><head><meta charset=""utf-8""/><meta name=""viewport"" content=""width=device-width,initial-scale=1""/>"
+		+ "<style>" + Стили + "</style></head><body><div class=""shutter""><div class=""card"">" + БлокКартинки
+		+ "<h1>Пин-код чекпоинт</h1>"
+		+ "<p class=""mask-hint"">_ _ _ _ _ _</p>"
+		+ "<p class=""hint"">Введите <strong>6 цифр</strong>. Для проверки допуска: <strong>000000</strong>.</p>"
+		+ "<div class=""pin-digits" + КлассРамки + """>"
+		+ "<input type=""text"" data-pin=""0"" maxlength=""1"" inputmode=""numeric"" autocomplete=""off"" oninput=""cpN(this)""/>"
+		+ "<input type=""text"" data-pin=""1"" maxlength=""1"" inputmode=""numeric"" autocomplete=""off"" oninput=""cpN(this)""/>"
+		+ "<input type=""text"" data-pin=""2"" maxlength=""1"" inputmode=""numeric"" autocomplete=""off"" oninput=""cpN(this)""/>"
+		+ "<input type=""text"" data-pin=""3"" maxlength=""1"" inputmode=""numeric"" autocomplete=""off"" oninput=""cpN(this)""/>"
+		+ "<input type=""text"" data-pin=""4"" maxlength=""1"" inputmode=""numeric"" autocomplete=""off"" oninput=""cpN(this)""/>"
+		+ "<input type=""text"" data-pin=""5"" maxlength=""1"" inputmode=""numeric"" autocomplete=""off"" oninput=""cpN(this)""/>"
+		+ "</div>" + БлокСтатуса
+		+ "<a class=""btn-go"" href=""about:blank"" onmousedown=""cpH(this);"">Продолжить</a>"
+		+ "</div></div>" + Скрипт + "</body></html>";
+	
+	Возврат HTML;
 	
 КонецФункции
 
