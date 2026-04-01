@@ -1571,34 +1571,8 @@
 КонецФункции
 
 &НаСервере
-Функция Чекпоинт_PngDataUriИзМакетаНаСервере()
-	
-	Попытка
-		СырыеДанные = Объект.ПолучитьМакет("ЧекпоинтШпион");
-	Исключение
-		Возврат "";
-	КонецПопытки;
-	
-	ДД = Неопределено;
-	Если ТипЗнч(СырыеДанные) = Тип("ДвоичныеДанные") Тогда
-		ДД = СырыеДанные;
-	КонецЕсли;
-	
-	Если ДД = Неопределено Тогда
-		Возврат "";
-	КонецЕсли;
-	
-	B64 = Base64Строка(ДД);
-	B64 = СтрЗаменить(B64, Символы.ПС, "");
-	B64 = СтрЗаменить(B64, Символы.ВК, "");
-	Возврат "data:image/png;base64," + B64;
-	
-КонецФункции
-
-&НаСервере
 Функция СформироватьТекстHTMLЧекпоинтНаСервере()
 	
-	DataUri = Чекпоинт_PngDataUriИзМакетаНаСервере();
 	Режим = НРег(СокрЛП(Строка(ЧекпоинтHTML_РежимРамки)));
 	Статус = HTMLЭкранировать(ЧекпоинтСтатусТекст);
 	
@@ -1622,11 +1596,7 @@
 		БлокСтатуса = "<p class=""status" + КлассСтатуса + """>" + Статус + "</p>";
 	КонецЕсли;
 	
-	Если ПустаяСтрока(DataUri) Тогда
-		БлокКартинки = "<div class=""spy-fallback"" aria-hidden=""true""></div>";
-	Иначе
-		БлокКартинки = "<img class=""spy"" src=""" + DataUri + """ alt="""" width=""220"" height=""220""/>";
-	КонецЕсли;
+	БлокКартинки = "<canvas id=""spyCv"" width=""200"" height=""200"" class=""spy-canvas""></canvas>";
 	
 	Стили = "html,body{height:100%;margin:0;}body{min-height:100%;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif;"
 		+ "background:radial-gradient(ellipse 120% 80% at 50% 20%,rgba(125,211,252,.35) 0%,transparent 55%),"
@@ -1635,21 +1605,25 @@
 		+ ".card{max-width:440px;width:100%;padding:32px 30px 28px;border-radius:22px;background:rgba(255,255,255,.12);"
 		+ "border:1px solid rgba(255,255,255,.28);box-shadow:0 24px 60px rgba(5,25,60,.45),inset 0 1px 0 rgba(255,255,255,.2);"
 		+ "backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}"
-		+ ".spy{display:block;margin:0 auto 18px;border-radius:18px;box-shadow:0 14px 40px rgba(0,0,0,.35);}"
-		+ ".spy-fallback{width:200px;height:200px;margin:0 auto 18px;border-radius:18px;background:rgba(0,0,0,.15);"
-		+ "border:2px dashed rgba(255,255,255,.35);}"
+		+ ".spy-canvas{display:block;margin:0 auto 16px;border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,.4);"
+		+ "background:rgba(255,250,235,.95);}"
 		+ "h1{margin:0 0 6px;font-size:23px;font-weight:800;text-align:center;letter-spacing:.02em;"
 		+ "text-shadow:0 2px 10px rgba(0,0,0,.2);}"
 		+ ".mask-hint{margin:0 0 8px;text-align:center;font-size:15px;font-weight:700;color:#e0f2fe;"
 		+ "letter-spacing:.35em;text-indent:.35em;}"
 		+ ".hint{margin:0 0 22px;text-align:center;font-size:13px;line-height:1.45;opacity:.9;color:#dbeafe;}"
-		+ ".pin-digits{display:flex;gap:10px;justify-content:center;margin:0 0 16px;padding:14px 16px;border-radius:16px;"
+		+ ".pin-digits{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;"
+		+ "-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;"
+		+ "-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;"
+		+ "-webkit-align-items:center;align-items:center;margin:0 0 16px;padding:14px 18px;border-radius:16px;"
 		+ "background:rgba(0,20,40,.2);border:2px solid rgba(255,255,255,.3);transition:border-color .25s,box-shadow .25s;}"
 		+ ".pin-digits--neutral{box-shadow:none;}"
 		+ ".pin-digits--ok{border-color:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.35),0 0 28px rgba(34,197,94,.55);}"
 		+ ".pin-digits--err{border-color:#f87171;box-shadow:0 0 0 4px rgba(248,113,113,.35),0 0 28px rgba(239,68,68,.55);}"
-		+ ".pin-digits input{width:46px;height:54px;text-align:center;font-size:24px;font-weight:800;border-radius:12px;"
-		+ "border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.97);color:#0f172a;box-sizing:border-box;}"
+		+ ".pin-digits input{width:44px;height:52px;text-align:center;font-size:22px;font-weight:800;border-radius:12px;"
+		+ "border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.97);color:#0f172a;box-sizing:border-box;"
+		+ "-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;margin:0 7px 0 0;padding:0;}"
+		+ ".pin-digits input:last-child{margin-right:0;}"
 		+ ".status{min-height:24px;margin:0 0 14px;text-align:center;font-size:14px;font-weight:600;color:#e2e8f0;}"
 		+ ".status.ok{color:#bbf7d0;}.status.err{color:#fecaca;}"
 		+ "a.btn-go{display:block;text-align:center;padding:14px 22px;border-radius:14px;text-decoration:none;font-weight:800;"
@@ -1667,6 +1641,19 @@
 		+ "function cpG(){var a=document.querySelectorAll('input[data-pin]');var p='';"
 		+ "for(var i=0;i<a.length;i++){var v=(a[i].value||'').replace(/\D/g,'');p+=v.length?v.slice(-1):'';}return p;}"
 		+ "function cpH(l){l.href=cpM({c:'pinCheck',p:cpG()});}"
+		+ "function cpDrawSpy(){var c=document.getElementById('spyCv');if(!c)return;var g=c.getContext('2d');"
+		+ "var w=c.width,h=c.height;g.clearRect(0,0,w,h);var r=g.createRadialGradient(w*.5,h*.32,4,w*.5,h*.55,h*.85);"
+		+ "r.addColorStop(0,'#fffef5');r.addColorStop(1,'#e8dcc4');g.fillStyle=r;g.fillRect(0,0,w,h);"
+		+ "g.strokeStyle='#dc2626';g.lineWidth=9;g.beginPath();g.arc(w/2,h/2+6,70,0,6.283);g.stroke();"
+		+ "g.beginPath();g.moveTo(52,48);g.lineTo(148,162);g.stroke();"
+		+ "g.fillStyle='#b45309';g.beginPath();g.moveTo(68,128);g.lineTo(132,128);g.lineTo(126,186);g.lineTo(74,186);g.closePath();g.fill();"
+		+ "g.fillStyle='#713f12';g.beginPath();g.moveTo(86,118);g.lineTo(114,118);g.lineTo(116,132);g.lineTo(84,132);g.closePath();g.fill();"
+		+ "g.save();g.translate(100,96);g.scale(1,1.12);g.beginPath();g.arc(0,0,27,0,6.283);g.fillStyle='#0f0f0f';g.fill();g.restore();"
+		+ "g.fillStyle='#f8fafc';g.beginPath();g.arc(91,90,8,0,6.283);g.fill();g.beginPath();g.arc(111,90,8,0,6.283);g.fill();"
+		+ "g.fillStyle='#111';g.beginPath();g.arc(94,90,2.5,0,6.283);g.fill();g.beginPath();g.arc(114,90,2.5,0,6.283);g.fill();"
+		+ "g.fillStyle='#3f2e1f';g.beginPath();g.moveTo(64,80);g.quadraticCurveTo(100,48,136,80);g.lineTo(132,90);g.lineTo(68,90);g.closePath();g.fill();"
+		+ "g.fillStyle='#5c3d1e';g.fillRect(70,84,60,7);var i,b;for(i=0;i<3;i++){b=140+i*13;g.beginPath();g.arc(100,b,2.8,0,6.283);g.fillStyle='#111';g.fill();}}"
+		+ "cpDrawSpy();if(window.addEventListener)window.addEventListener('load',cpDrawSpy);"
 		+ "</script>";
 	
 	HTML = "<!DOCTYPE html><html><head><meta charset=""utf-8""/><meta name=""viewport"" content=""width=device-width,initial-scale=1""/>"
